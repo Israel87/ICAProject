@@ -15,10 +15,12 @@
       
           </center>
        <br />
-
-          <asp:Button ID="studentReg" runat="server" Text="REGISTER" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" style="border-radius:0px"/>
+          <asp:HyperLink ID="studentReg" runat="server" Font-Bold="true" CssClass="btn btn-info btn-md" Width="300px" NavigateUrl="~/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+         
 
           <br />
+          
+         
     </div>
     
 

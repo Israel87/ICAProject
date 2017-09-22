@@ -7,7 +7,7 @@
 .board {
     width: 95%;
     margin: 60px auto;
-    height: 1200px;
+    height: 900px;
     background: #fff;
     /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
@@ -23,7 +23,7 @@
 
     .board > div.board-inner {
         background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
-        background-size: 30%;
+        background-size: 50%;
     }
 
 p.narrow {

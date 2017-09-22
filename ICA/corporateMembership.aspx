@@ -8,46 +8,60 @@
 
             <h3><b>CORPORATE MEMBERSHIP </b> </h3>
             <h5><b>The Categories under this Membership are : </b></h5>
-            <br />
-     <section style="background:#efefe9;"><br /><br />
+            <br /><br />
+    <%-- <section style="background:#efefe9;"><br /><br />--%>
     <center>
-            <div class="row col-md-12">
-                <div class="col-md-6">
+            <div class="row col-md-12" style="padding-left: 100px">
+                <div class="col-md-4 text-center">
 
                     <div class="input-group">
                             <img src="images/silvermembership.png" style="width: 80px; height: 80px" />
-                            <b> Membership </b> <br /><br />
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md"  data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
+                          <br /><br />
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px"  data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
 
                     </div>
 
                 </div>
-                <div class="col-md-6">
+               
+
+
+
+                  <div class="row col-md-4 text-center" >
+                    <div class="input-group">
+                        <img src="images/Gold.png" style="width: 80px; height: 80px;" />
+               
+                              <br /><br />
+                                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                                    <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
+                    </div>
+                </div>
+
+                 <div class="col-md-4 text-center">
 
                         <div class="input-group">
                              <img src="images/Platinum.png" style="width: 80px; height: 80px"/>
-                             <b> Membership </b><br /><br />
-                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
+                         <br /><br />
+                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
 
                     </div>
 
                 </div>
+
+
+
+
+
+
+
+
       
             </div>
 
-        <div class="row col-md-12">
-            <div class="input-group">
-                <img src="images/Gold.png" style="width: 80px; height: 80px" />
-               
-                     <b> Membership </b> <br /><br />
-                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
-            </div>
-        </div>
+      
         </center><br /><br />
-    </section>
+ <%--   </section>--%>
   </div> <br/><br /> 
 
 

@@ -222,58 +222,60 @@
                                                  </select>
                                             </div><br /><br />
                                     </div>
-
+                                <br />
 
                                   
-                                       <div id="InstsAttended">
-                                       <div class="prevInst">
+                                       <%--<div id="InstsAttended">--%>
+                                       <%--<div class="prevInst">--%>
                                             <div class="form-group">
-                                             <b class="col-lg-4 control-label">Institutions Attended with Date</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
+                                             <b class="col-lg-4 control-label">Institution Attended with Date</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
                                  
                                            <div class="col-lg-4">
-                                                 <input runat="server" name="instName" id="instNameID" Class="form-control" style="border:2px solid #0094ff; width:600px; border-radius:0px"  placeholder="Name of Institution" />
+                                                 <textarea runat="server" name="instName" id="instNameID" Class="form-control" style="border:2px solid #0094ff; width:600px; border-radius:0px"  placeholder="Name of Institution" />
                                             </div>
 
                                            <div class="col-lg-4">
                                                  <input class="form-control" name="selDate" id="selDateID"  type="date" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" placeholder="Select Date" />
                                                 
                                             </div><br />
-                                            </div><br />
+                                            </div><br /><br /><br /><br /><br />
 
 
                                             <div class="form-group">
                                              <b class="col-lg-4 control-label">Other Certifications with Date </b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
                                  
                                            <div class="col-lg-4">
-                                                 <input runat="server" name="certName" id="certNameID" Class="form-control" style="border:2px solid #0094ff; width:600px; border-radius:0px"  placeholder="Name of Certification" />
+                                                 <textarea runat="server" name="certName" id="certNameID" Class="form-control" style="border:2px solid #0094ff; width:600px; border-radius:0px"  placeholder="Name of Certification" />
                                              
                                             </div>
                                             <div class="col-lg-4">
-                                                 <input class="form-control" name="selDateI" id="seldateIID" type="date" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" placeholder="Select Date" /> <br />
-                                                   <br /> 
+                                                 <%--<input class="form-control" name="selDateI" id="seldateIID" type="date" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" placeholder="Select Date" /> <br />
+                                                   <br /> --%>
                                             </div>
-                                                <center>
+                                               <%-- <center>
                                                      <a class="btn btn-info custom-btn add-button" style="display: inline; border-radius:0px" ><b>&plus; Add More</b> </a>
-                                                </center>
+                                                </center>--%>
                                                 
                                            
 
                                              </div> 
 
+                               
 
+                                       <%--</div>--%>
+                                 <%--</div>--%>
+                                
+                                         
+                                  
+                                    </div>
 
-                                       </div>
-                                 </div>
-                                        
-                                         <div class="container input-group"><br /> 
+                          <center>
+                                    <div class="container input-group"><br /> <br /><br /> <br /><br />
                                               <button class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px"><b>NEXT</b></button>
                                               <button class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius:0px"><b>PREVIOUS</b></button>
                                      
-                                  </div> 
-                                    </div>
-
-
-                            
+                                         </div> 
+                                </center>
                           
                       </div>
 
@@ -343,10 +345,10 @@
 
                                           <br /><br /> <br />
                                 </div> 
-                             <center><br /> <br />
+                         <%--    <center><br /> <br />
                                   <a class="btn btn-info custom-btn add-buttons" style="display: inline; border-radius:0px"><b>&plus; Add More Employment Details </b> </a> 
 
-                             </center>
+                             </center>--%>
                               
                                  
                                  </div>

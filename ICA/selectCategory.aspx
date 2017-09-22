@@ -10,7 +10,7 @@
           <div class="input-group" >
               <div class="col-md-4">
 
-                   <a href="selectCategory.aspx">
+                   <a href="corporateMembership.aspx">
                        <img src="images/corporate2.png" style="width:120px; height:120px"/>
                    </a>   
               </div>
@@ -22,7 +22,7 @@
               </div>
 
               <div class="col-md-4">
-                   <a  href="selectCategory.aspx" >
+                   <a  href="individualMembers.aspx" >
                        <img src="images/individual2.png" style="width:120px; height:120px" />
                    </a>   
               </div>

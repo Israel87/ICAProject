@@ -118,7 +118,7 @@ namespace ICA {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText instNameID;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea instNameID;
         
         /// <summary>
         /// selDateID control.
@@ -136,16 +136,7 @@ namespace ICA {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText certNameID;
-        
-        /// <summary>
-        /// seldateIID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl seldateIID;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea certNameID;
         
         /// <summary>
         /// experienceID control.

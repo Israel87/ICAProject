@@ -10,41 +10,45 @@
             <h5><b>The Categories under this Membership are : </b></h5>
             <br /><br />
     <center>
-            <div class="row col-md-12">
-                <div class="col-md-6">
+            <div class="row col-md-12 text-center" style="padding-left: 100px">
+                <div class="col-md-4">
 
                     <div class="input-group">
-                        <img src="images/associatemember.png" style="width: 80px; height: 80px" />
+                        <img src="images/associatemember.png" style="width: 80px; height: 80px" /><br /><br />
                         
-                            <b>Associate Members </b> <br /><br />
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md"  data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
+                            <b>ASSOCIATE MEMBERS </b> <br /><br />
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
 
                     </div>
 
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
 
                         <div class="input-group">
-                            <img src="images/member.png" style="width: 80px; height: 80px" />
-                             <b> Members </b><br /><br />
-                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
+                            <img src="images/member.png" style="width: 80px; height: 80px" /><br /><br />
+                             <b> MEMBERS </b><br /><br />
+                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
 
                     </div>
 
                 </div>
+
+                   <div class="row col-md-4">
+            <div class="input-group">
+                <img src="images/fellow.png"  style="width: 80px; height: 80px" /><br /><br />
+                     <b> FELLOW </b> <br /><br />
+                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                            <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
+            </div>
+        </div>
+
+
       
             </div>
 
-        <div class="row col-md-12">
-            <div class="input-group">
-                <img src="images/fellow.png"  style="width: 80px; height: 80px" />
-                     <b> Fellow </b> <br /><br />
-                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
-            </div>
-        </div>
+     
         </center>
   </div> <br/><br /> 
 
@@ -81,7 +85,7 @@
                         <div class="row">
                             <div class="col-md-6 text-center">
                                 <img src="images/membersare.png" style="width: 80px; height: 80px"  />
-                                <h5><b>Members are:</b></h5>
+                                <h5><b>Members are:</b></h5><hr />
                                 <p style="text-align:justify">
                                     Candidate of notable professional and academic
                                     achievements in the field of credit and financial
@@ -90,29 +94,32 @@
                                     financial, accounting and marketing in a directorate or
                                     senior management capacity either at present or in
                                     the past; including membership of related
-                                    professional institutes on similar grade.
-                                </p>
+                                    professional institutes on similar grade.<br /><br /><br /><br /><br />
+                                </p><hr />
                             </div>
                             <div class="col-md-6 text-center">
                                 <img src="images/requirements.png" style="width: 80px; height: 80px" />
-                                <h5><b>Requirements</b></h5>
+                                <h5><b>Requirements</b></h5><hr />
                                 <p style="text-align:justify">
                                     Prospective member fills membership application form and upload curriculum
-                                    vitae (CV) on ICA membership portal.
-                                    Makes payment of #5,000 membership application fee and submit application.
+                                    vitae (CV) on <b>ICA membership portal.</b>
+                                    Makes payment of <b>#5,000 membership application fee and submit application</b>.
                                     Review of uploaded CV
                                     Approval of application for membership
-                                    Payment of direct FICA membership fee of #150,000 and issuance of receipt
-                                    Issuance of membership certificate with covering letter from ICA.Members
+                                    Payment of direct<b> FICA membership fee of #150,000 and issuance of receipt
+                                    Issuance of membership certificate</b> with covering letter from ICA.Members
                                     collect their certificates on induction day
-                                    Payment of AICA membership induction fee of #20.000 and issuance of receipt.
-                                    Induction
-                                </p>
+                                    Payment of <b>AICA membership induction fee of #20.000 and issuance of receipt for Induction</b>
+                                </p><hr /> <br /><br />
                             </div>
                             
                             <center>
-                                <br /> <hr /> <br />
-                                <button class="btn btn-primary btn-block" runat="server" style="width:300px"><b> Register</b></button>
+                                <br /> <hr /> <br /><br />
+
+                                 <asp:HyperLink ID="reg" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" NavigateUrl="~/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+                               
+                                    <%--<button class="btn btn-primary btn-block" runat="server" style="width:300px" href="~/registrationProcess.aspx"><b> Register</b></button>--%>
+          
                             </center>
                             
                         </div>
