@@ -289,8 +289,8 @@
                                  <hr />
 
                           
-                             <div id="EmpDetails">
-                                       <div class="prevEmp">
+                             <%--<div id="EmpDetails">--%>
+                                       <%--<div class="prevEmp">--%>
                                  <div class="form-group">
                                        <b class="col-lg-4 control-label"> 
                                           Years of Experience  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
@@ -351,8 +351,8 @@
                              </center>--%>
                               
                                  
-                                 </div>
-                             </div>
+                                 <%--</div>--%>
+                             <%--</div>--%>
 
                              <div class="container input-group"><br /> <br />
                                               <button class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px"><b>NEXT</b></button>
@@ -381,7 +381,7 @@
                                 </div><br />
 
                                     <center><br /> <br />
-                                         <a class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px"><b>PROCEED TO PAYMENT</b> </a> 
+                                         <a class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" onclick="payWithPaystack()"><b>PROCEED TO PAYMENT</b> </a> 
                                     </center>
 
                                     <div class="container input-group"><br /> <br /><br /> <br />
