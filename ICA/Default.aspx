@@ -13,7 +13,7 @@
 
         <h3><b> Welcome to</b> </h3>
       
-        <h2><b>INSTITUTE OF CREDIT ADMINISTRATION </b> </h2>
+        <%--<h2><b>INSTITUTE OF CREDIT ADMINISTRATION </b> </h2> --%>
 
         <br />
         <a class="btn btn-lg btn-success" href="selectCategory.aspx" runat="server" style="width: 200px; border-radius:0px"><b> GET STARTED</b></a>      <br />      <br />        <br />     <br />     <br />
