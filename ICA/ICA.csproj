@@ -48,11 +48,16 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -127,6 +132,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\charts.html" />
+    <Content Include="Admin\CreatePayment.aspx" />
+    <Content Include="Admin\css\bootstrap-table.css" />
+    <Content Include="Admin\css\bootstrap-theme.css" />
+    <Content Include="Admin\css\bootstrap-theme.min.css" />
+    <Content Include="Admin\css\bootstrap.css" />
+    <Content Include="Admin\css\bootstrap.min.css" />
+    <Content Include="Admin\css\datepicker.css" />
+    <Content Include="Admin\css\datepicker3.css" />
+    <Content Include="Admin\css\font-awesome.min.css" />
+    <Content Include="Admin\css\styles.css" />
+    <Content Include="Admin\elements.html" />
+    <Content Include="Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\index.html" />
+    <Content Include="Admin\js\bootstrap-datepicker.js" />
+    <Content Include="Admin\js\bootstrap.js" />
+    <Content Include="Admin\js\bootstrap.min.js" />
+    <Content Include="Admin\js\chart-data.js" />
+    <Content Include="Admin\js\chart.min.js" />
+    <Content Include="Admin\js\custom.js" />
+    <Content Include="Admin\js\easypiechart-data.js" />
+    <Content Include="Admin\js\easypiechart.js" />
+    <Content Include="Admin\js\html5shiv.min.js" />
+    <Content Include="Admin\js\jquery-1.11.1.min.js" />
+    <Content Include="Admin\js\lumino.glyphs.js" />
+    <Content Include="Admin\js\npm.js" />
+    <Content Include="Admin\js\respond.min.js" />
+    <Content Include="Admin\login.html" />
+    <Content Include="Admin\Manage.aspx" />
+    <Content Include="Admin\panels.html" />
+    <Content Include="Admin\payments.aspx" />
+    <Content Include="Admin\widgets.html" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
@@ -180,9 +219,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="corporateMembership.aspx" />
+    <Content Include="guest\corporateMembership.aspx" />
     <Content Include="css\navbar.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="guest\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -192,6 +231,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Admin\ICAWebService.asmx" />
     <Content Include="images\associatemember.png" />
     <Content Include="images\chams.jpg" />
     <Content Include="images\corporate.png" />
@@ -212,7 +252,8 @@
     <Content Include="images\student.png" />
     <Content Include="images\twitter.png" />
     <Content Include="images\twitter2.png" />
-    <Content Include="individualMembers.aspx" />
+    <Content Include="guest\individualMembers.aspx" />
+    <Content Include="Admin\js\AjaxCalls.js" />
     <Content Include="js\navbar.js" />
     <Content Include="obj\Debug\CoreCompileInputs.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -227,12 +268,29 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Admin\css\bootstrap-theme.css.map" />
+    <Content Include="Admin\css\bootstrap-theme.min.css.map" />
+    <Content Include="Admin\css\bootstrap.css.map" />
+    <Content Include="Admin\css\bootstrap.min.css.map" />
+    <Content Include="Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Admin\fonts\FontAwesome.otf" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Admin\sass\.sass-cache\deff34d1f5b7167181b556002c25068d6adc024d\styles.scssc" />
+    <Content Include="Admin\sass\styles.scss" />
+    <Content Include="Admin\tables\data1.json" />
+    <Content Include="Admin\tables\data2.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\ica.png" />
     <Content Include="obj\Debug\ICA.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ICA.dll" />
     <Content Include="obj\Debug\ICA.pdb" />
-    <Content Include="registrationProcess.aspx" />
+    <Content Include="guest\registrationProcess.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -261,16 +319,46 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="selectCategory.aspx" />
+    <Content Include="guest\selectCategory.aspx" />
     <Content Include="signIn.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="studentmembership.aspx" />
+    <Content Include="guest\studentmembership.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\CreatePayment.aspx.cs">
+      <DependentUpon>CreatePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreatePayment.aspx.designer.cs">
+      <DependentUpon>CreatePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\payments.aspx.cs">
+      <DependentUpon>payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\payments.aspx.designer.cs">
+      <DependentUpon>payments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -280,6 +368,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DAL\ConnectionManager.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,46 +376,54 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="corporateMembership.aspx.cs">
+    <Compile Include="guest\corporateMembership.aspx.cs">
       <DependentUpon>corporateMembership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="corporateMembership.aspx.designer.cs">
+    <Compile Include="guest\corporateMembership.aspx.designer.cs">
       <DependentUpon>corporateMembership.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="guest\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="guest\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="individualMembers.aspx.cs">
+    <Compile Include="Admin\ICAWebService.asmx.cs">
+      <DependentUpon>ICAWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic\logic.cs" />
+    <Compile Include="Model\icaClass.cs" />
+    <Compile Include="Model\userModel.cs" />
+    <Compile Include="ViewModel\registrationViewModel.cs" />
+    <Compile Include="guest\individualMembers.aspx.cs">
       <DependentUpon>individualMembers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="individualMembers.aspx.designer.cs">
+    <Compile Include="guest\individualMembers.aspx.designer.cs">
       <DependentUpon>individualMembers.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="registrationProcess.aspx.cs">
+    <Compile Include="guest\registrationProcess.aspx.cs">
       <DependentUpon>registrationProcess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="registrationProcess.aspx.designer.cs">
+    <Compile Include="guest\registrationProcess.aspx.designer.cs">
       <DependentUpon>registrationProcess.aspx</DependentUpon>
     </Compile>
-    <Compile Include="selectCategory.aspx.cs">
+    <Compile Include="guest\selectCategory.aspx.cs">
       <DependentUpon>selectCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="selectCategory.aspx.designer.cs">
+    <Compile Include="guest\selectCategory.aspx.designer.cs">
       <DependentUpon>selectCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="signIn.aspx.cs">
@@ -350,11 +447,11 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="studentmembership.aspx.cs">
+    <Compile Include="guest\studentmembership.aspx.cs">
       <DependentUpon>studentmembership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="studentmembership.aspx.designer.cs">
+    <Compile Include="guest\studentmembership.aspx.designer.cs">
       <DependentUpon>studentmembership.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -367,6 +464,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Credentials\Passport\" />
+    <Folder Include="Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
