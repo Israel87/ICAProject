@@ -73,6 +73,4 @@ C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\bin\ICA.dll
 C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\bin\ICA.pdb
 C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\obj\Debug\ICA.dll
 C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\obj\Debug\ICA.pdb
-C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\bin\Oracle.DataAccess.dll
-C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\bin\Oracle.ManagedDataAccess.dll
 C:\Users\Hp\Desktop\ICA\ICAPortal\ICA\obj\Debug\ICA.csprojResolveAssemblyReference.cache
