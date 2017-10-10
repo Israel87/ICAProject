@@ -31,21 +31,21 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlSelect memberCatID;
         
         /// <summary>
-        /// manageRegID control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button manageRegID;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// t_body control.
+        /// regResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl t_body;
+        protected global::System.Web.UI.WebControls.GridView regResults;
     }
 }

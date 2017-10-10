@@ -81,7 +81,7 @@ namespace ICA.Admin
                 string html = ""; int count = 1;
                 foreach (DataRow item in dt.Rows)
                 {
-                    html += "<tr><td>" + (count++) + "</td><td>" + item["FULLNAME"] + "</td><td>" + item["USERNAME"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTREFERENCE"] + "</td><td>" + item["TRANSACTION DATE"] + "</td><td>" + item["AMOUNT"] + "</td><td>" + item["DESCRIPTION"] + "</td><td>" + item["APPLICATION STATUS"] + "</td></tr>";
+                    html += "<tr style='line-height:20px'><td>" + (count++) + "</td><td>" + item["FULLNAME"] + "</td><td>" + item["USERNAME"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTREFERENCE"] + "</td><td>" + item["TRANSACTION DATE"] + "</td><td>" + item["AMOUNT"] + "</td><td>" + item["DESCRIPTION"] + "</td><td>" + item["APPLICATION STATUS"] + "</td></tr>";
                 }
 
 

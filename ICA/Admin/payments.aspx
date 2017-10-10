@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>ICA</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION</span>Admin</a>
 				<%--<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -173,18 +173,18 @@
 
 
             <div class="col-lg-12">
-                  <table class="content-box table table-condensed table-striped table-responsive table-hover" width: 100px">
+                  <table class="content-box table table-condensed table-striped table-responsive table-hover" style="width:100%;" >
                           <thead>
                               <tr>
                                   <th>#</th>
-                                  <th>Full Name</th>
-                                  <th>Username</th>
-                                  <th>Member Category</th>
-                                  <th>Payment Reference</th>
-                                  <th>Transaction Date</th>
-                                  <th>Amount</th>
-                                  <th>Description </th>
-                                  <th>Application Status</th>
+                                  <th style="font-weight:100">FULL NAME</th>
+                                  <th style="font-weight:100">USERNAME</th>
+                                  <th style="font-weight:100">MEMBER CATEGORY</th>
+                                  <th style="font-weight:100">PAYMENT REFERENCE</th>
+                                  <th style="font-weight:100">TRANSACTION DATE</th>
+                                  <th style="font-weight:100">AMOUNT</th>
+                                  <th style="font-weight:100">DESCRIPTION </th>
+                                  <th style="font-weight:100">APPLICATION STATUS</th>
                               </tr>
                           </thead>
                           <tbody id ="t_body" runat="server">

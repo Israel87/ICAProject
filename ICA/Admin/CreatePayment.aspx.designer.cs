@@ -13,13 +13,31 @@ namespace ICA.Admin {
     public partial class CreatePayment {
         
         /// <summary>
-        /// paymentType control.
+        /// paymentID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText paymentType;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect paymentID;
+        
+        /// <summary>
+        /// add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox add;
+        
+        /// <summary>
+        /// addNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText addNew;
         
         /// <summary>
         /// amount control.
@@ -40,12 +58,12 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlSelect categoryID;
         
         /// <summary>
-        /// Create control.
+        /// createpayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Create;
+        protected global::System.Web.UI.WebControls.LinkButton createpayments;
     }
 }

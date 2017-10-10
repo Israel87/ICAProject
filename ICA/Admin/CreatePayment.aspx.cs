@@ -16,6 +16,59 @@ namespace ICA.Admin
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // get the list of payments from the database
+            DataTable _paymentTypes = new DataTable();
+            DataTable _memCategoryReport = new DataTable();
+
+
+
+            if (!IsPostBack)
+            {
+
+                OracleConnection conn = new OracleConnection(cs);
+                conn.Open();
+
+                OracleDataAdapter da;
+
+                OracleCommand cmd = new OracleCommand("GETPAYMENTTYPESLIST", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                da = new OracleDataAdapter(cmd);
+                da.Fill(_paymentTypes);
+
+
+                paymentID.DataSource = _paymentTypes;
+                paymentID.DataTextField = "PAYMENTTYPE";
+                paymentID.DataValueField = "PAYMENTTYPE";
+                paymentID.DataBind();
+
+                paymentID.Items.Insert(0, new ListItem("Select Option", ""));
+
+            }
+
+            // get the member category lists from the database.
+            if (!IsPostBack)
+            {
+
+                OracleConnection conn = new OracleConnection(cs);
+                conn.Open();
+
+                OracleDataAdapter da;
+
+                OracleCommand cmd = new OracleCommand("GETMEMLIST", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                da = new OracleDataAdapter(cmd);
+                da.Fill(_memCategoryReport);
+
+
+                categoryID.DataSource = _memCategoryReport;
+                categoryID.DataBind();
+
+
+                categoryID.Items.Insert(0, new ListItem("Select Option", ""));
+
+            }
 
         }
 
@@ -33,9 +86,9 @@ namespace ICA.Admin
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPEID", OracleDbType.Varchar2, _paymentType, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Varchar2, _amount, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, _category, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPE", OracleDbType.Varchar2, _paymentType, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Int32,Convert.ToInt32(_amount), ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, Convert.ToInt32(_category), ParameterDirection.Input));
                        
                         if (conn.State != ConnectionState.Open)
                         {
@@ -62,11 +115,11 @@ namespace ICA.Admin
             return newPaymenTtype;
         }
 
-
-
-        protected void Create_Click(Object sender, EventArgs e)
+        protected void createpayments_Click(object sender, EventArgs e)
         {
-            bool newPayments = createPayments(paymentType.Value, amount.Value, categoryID.Value);
+            string paymnt_item = add.Checked ? addNew.Value : paymentID.Value;
+
+            bool newPayments = createPayments(paymnt_item, amount.Value, categoryID.Value);
 
             if (newPayments == true)
             {
@@ -78,7 +131,6 @@ namespace ICA.Admin
                 Response.Write("<script>alert('Not Created.');</script>");
             }
         }
-
 
 
     }

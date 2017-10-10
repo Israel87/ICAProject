@@ -105,7 +105,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="payments.aspx"><em class="fa fa-calendar">&nbsp;</em> Payment Report</a></li>
 			<li><a href="CreatePayment.aspx"><em class="fa fa-bar-chart">&nbsp;</em> Create Payment</a></li>
 			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>

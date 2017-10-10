@@ -26,9 +26,9 @@ namespace ICA.Model
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPEID", OracleDbType.Varchar2, _paymentType, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Varchar2, _amount, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Varchar2, _category, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPE", OracleDbType.Varchar2, _paymentType, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Int32, _amount, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, _category, ParameterDirection.Input));
 
                         if (conn.State != ConnectionState.Open)
                         {

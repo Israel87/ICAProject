@@ -1,32 +1,35 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreatePayment.aspx.cs" Inherits="ICA.Admin.CreatePayment" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ICA - Create Payment Item</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!--Custom Font-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<!--[if lt IE 9]>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICA - Create Payment Item</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>ICA</span>Admin</a>
-			<%--	<ul class="nav navbar-top-links navbar-right">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION</span>Admin</a>
+                <%--	<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
 					</a>
@@ -79,201 +82,230 @@
 						</ul>
 					</li>
 				</ul>--%>
-			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
             <center>
                 <img src="../images/ica.png" style="width:160px; height:100px" />
             </center>
-           
-			<!--<div class="profile-userpic">
+
+            <!--<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name">Username</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>-->
-			<div class="clear"></div>
-		</div>
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-		</form>
-		<ul class="nav menu">
-			<li ><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li ><a href="payments.aspx"><em class="fa fa-calendar">&nbsp;</em> Payment Report</a></li>
-			<li class="active"><a href="#"><em class="fa fa-bar-chart">&nbsp;</em> Create Payment</a></li>
-			<!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li><a href="payments.aspx"><em class="fa fa-calendar">&nbsp;</em> Payment Report</a></li>
+            <li class="active"><a href="#"><em class="fa fa-bar-chart">&nbsp;</em> Create Payment</a></li>
+            <!--<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>-->
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Registration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="Manage.aspx">
-						<span class="fa fa-arrow-right">&nbsp;</span> Manage
-					</a></li>
-					<!--<li><a class="" href="#">
+            <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                <em class="fa fa-navicon">&nbsp;</em> Registration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+            </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li><a class="" href="Manage.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Manage
+                    </a></li>
+                    <!--<li><a class="" href="#">
 						<span class="fa fa-arrow-right">&nbsp;</span> Create Payment
 					</a></li>-->
-					<!--<li><a class="" href="#">
+                    <!--<li><a class="" href="#">
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 					</a></li>-->
-				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-		</ul>
-	</div><!--/.sidebar-->
+                </ul>
+            </li>
+            <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+        </ul>
+    </div>
+    <!--/.sidebar-->
 
-    	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-            	<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Create Payments</li>
-			</ol>
-		</div><!--/.row-->
-		
-
-        <form runat="server">
-		        <div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Add Payment Items</h1>
-                <hr />
-			</div>
-
-                 <div class="input-group container">
-                                        <label for="title" class="col-lg-3 control-label">
-                                               Create a Payment Item  : 
-                                        </label>
-                                        <div class="col-lg-9">
-
-                                         <input class="form-control" type="text" style="border:2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="paymentType" placeholder="Payment Type" required="required" />
-                                           <%-- <asp:TextBox ID="paymentTypeID" runat="server" CssClass="form-control"  placeholder="Payment Type" style="border:2px solid #0094ff; width: 420px; border-radius: 0px"></asp:TextBox><br />--%>
-                                        </div>
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#">
+                    <em class="fa fa-home"></em>
+                </a></li>
+                <li class="active">Create Payments</li>
+            </ol>
+        </div>
+        <!--/.row-->
 
 
-<%--                                        <div class="col-lg-2">
+        <form runat="server" method="post">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Add Payment Items</h1>
+                    <hr />
+                </div>
+
+                <div class="input-group container">
+                    <label for="title" class="col-lg-3 control-label">
+                        Create a Payment Item  : 
+                    </label>
+                    <div class="col-lg-9">
+
+                        <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
+
+                            <%--    <option value="1">All</option>--%>
+                            <%-- <option value="6">Fellows</option>
+                                                <option value="4">Associate Members</option>
+                                                <option value="5">Student Members</option>--%>
+                        </select><br />
+
+
+
+                        <%--<input class="form-control" type="text" style="border:2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="paymentType" placeholder="Payment Type" required="required" />--%>
+                        <%-- <asp:TextBox ID="paymentTypeID" runat="server" CssClass="form-control"  placeholder="Payment Type" style="border:2px solid #0094ff; width: 420px; border-radius: 0px"></asp:TextBox><br />--%>
+                    </div>
+
+
+
+
+
+                    <%--                                        <div class="col-lg-2">
                                           
                                              <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;"><b>CREATE</b></a>
                                        
                                             <br />
-                                        </div>--%><br />  <br />  <br />
-                                    </div>
+                                        </div>--%><br />
+                    <br />
+
+                </div>
 
 
 
-                                 <div class="form-group container">
-                                        <label for="title" class="col-lg-3 control-label">
-                                             
-                                        </label>
-                                        <div class="col-lg-9">
-                                            <input class="form-control" type="text" style="border:2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
-                                        </div>
+                <div class="form-group container">
+
+                    <div class="col-lg-3 control-label">
+                        <%--<div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input type="checkbox" name="clases" id="add" value="yes">
+                                &nbsp; &nbsp; Add New Item.
+                            </label>
+                        </div>--%>
+                    </div>
 
 
-<%--                                        <div class="col-lg-2">
-                                          
-                                             <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;"><b>CREATE</b></a>
-                                       
-                                            
-                                        </div>--%>
-                                    </div>
+                    <div class="col-lg-9">
+
+                        <div class="input" id="description">
+
+                            <div class="checkbox">
+                                <label class="checkbox-custom">
+                                    <asp:CheckBox ID="add" runat="server" />
+
+                                    <%--<input type="checkbox" name="clases" id="add" value="yes" runat="server">--%>
+                                    &nbsp; &nbsp;<b> Add New Item.</b>
+                                </label>
+                            </div>
+
+                            <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="addNew" placeholder="Type Name here..." required="required" />
+                        </div>
 
 
-                    <div class="form-group container">
-                                        <label for="title" class="col-lg-3 control-label">
-                                             
-                                        </label>
-                                        <div class="col-lg-9">
-                                          <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" required="required">
-                                            <%--    <option value="1">All</option>--%>
-                                                <option value="6">Fellows</option>
-                                                <option value="4">Associate Members</option>
-                                                <option value="5">Student Members</option>
-                                            </select><br />
-                                        </div>
-
-
-<%--                                        <div class="col-lg-2">
-                                          
-                                             <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;"><b>CREATE</b></a>
-                                       
-                                            
-                                        </div>--%>
-                                    </div>
-
-
-              <div class="form-group container">
-                                        <label for="title" class="col-lg-3 control-label">
-                                             
-                                        </label>
-                                        <div class="col-lg-9">
-                                            <asp:Button ID="Create"  runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius:0px; width: 200px;" OnClick="Create_Click" Text="CREATE" Font-Bold="true" />
-                                          <%--  <asp:LinkButton ID="Create" runat="server" OnClick="Create_Click1">CREATE</asp:LinkButton>--%>
-                                        <%--<a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;" onclick="btnCreatePayments"><b>CREATE</b></a>--%>
-                                       
-                                        </div>
-
-
-<%--                                        <div class="col-lg-2">
-                                          
-                                             <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;"><b>CREATE</b></a>
-                                       
-                                            
-                                        </div>--%>
-                                    </div>
+                    </div>
+                </div>
 
 
 
+                <div class="form-group container">
+                    <label for="title" class="col-lg-3 control-label">
+                    </label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
+                    </div>
+                </div>
 
 
+                <div class="form-group container">
+                    <label for="title" class="col-lg-3 control-label">
+                    </label>
+                    <div class="col-lg-9">
+                        <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required" datavaluefield="MEMBERCATEGORYID" datatextfield="MEMBERCATEGORY">
+                        </select><br />
+                    </div>
+                </div>
 
 
+                <div class="form-group container">
+                    <label for="" class="col-lg-3 control-label">
+                    </label>
+                    <div class="col-lg-9">
+                   
+                        <asp:LinkButton ID="createpayments" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createpayments_Click" Font-Bold="true" />
+                        
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
+                </div>
 
 
             </div>
 
-		</form>
+        </form>
 
-    	</div>
+    </div>
 
 
     <script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/custom.js"></script>
-	<script>
-		window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
-		
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        window.onload = function () {
+            var chart1 = document.getElementById("line-chart").getContext("2d");
+            window.myLine = new Chart(chart1).Line(lineChartData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+
+
+        $(function () {
+            var checkbox = $("#add");
+            var hidden = $("#addNew");
+            var memtypes = $("#paymentID");
+
+            memtypes.show();
+            hidden.hide();
+
+            checkbox.change(function () {
+                if (checkbox.is(':checked')) {
+                    // Show and hide fields
+                    memtypes.hide();
+                    hidden.show();
+
+                }
+                else {
+                    // make sure that the fields are done doing what you want.
+                    hidden.hide();
+                    memtypes.show();
+                }
+
+            });
+        });
+
+    </script>
+
 </body>
 </html>
 
