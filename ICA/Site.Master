@@ -108,7 +108,7 @@
         </div>
 
     </form>
-    <script src="/ica/js/navbar.js"></script>
-    <%--<script src="/js/navbar.js"></script>--%>
+   <%-- <script src="/ica/js/navbar.js"></script>--%>
+    <script src="/js/navbar.js"></script>
 </body>
 </html>

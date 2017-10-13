@@ -39,7 +39,8 @@
             <div class="input-group">
                 <img src="../images/fellow.png"  style="width: 80px; height: 80px" /><br /><br />
                      <b> FELLOW </b> <br /><br />
-                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
+                <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">Click to Choose</asp:HyperLink>
+                            <%--<asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />--%>
                             <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
             </div>
         </div>

@@ -146,113 +146,78 @@
 
 
         <form runat="server" method="post">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Add Payment Items</h1>
-                    <hr />
-                </div>
-
-                <div class="input-group container">
-                    <label for="title" class="col-lg-3 control-label">
-                        Create a Payment Item  : 
-                    </label>
-                    <div class="col-lg-9">
-
-                        <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
-
-                            <%--    <option value="1">All</option>--%>
-                            <%-- <option value="6">Fellows</option>
-                                                <option value="4">Associate Members</option>
-                                                <option value="5">Student Members</option>--%>
-                        </select><br />
-
-
-
-                        <%--<input class="form-control" type="text" style="border:2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="paymentType" placeholder="Payment Type" required="required" />--%>
-                        <%-- <asp:TextBox ID="paymentTypeID" runat="server" CssClass="form-control"  placeholder="Payment Type" style="border:2px solid #0094ff; width: 420px; border-radius: 0px"></asp:TextBox><br />--%>
+            
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Add Payment Items</h1>
+                        <hr />
                     </div>
 
+            <div class="row col-lg-12 responsive">
+                <div class="col-lg-6">
 
 
 
+                    <div class="input-group container">
 
-                    <%--                                        <div class="col-lg-2">
-                                          
-                                             <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px; width: 200px;"><b>CREATE</b></a>
-                                       
-                                            <br />
-                                        </div>--%><br />
-                    <br />
-
-                </div>
-
-
-
-                <div class="form-group container">
-
-                    <div class="col-lg-3 control-label">
-                        <%--<div class="checkbox">
-                            <label class="checkbox-custom">
-                                <input type="checkbox" name="clases" id="add" value="yes">
-                                &nbsp; &nbsp; Add New Item.
-                            </label>
-                        </div>--%>
-                    </div>
-
-
-                    <div class="col-lg-9">
-
-                        <div class="input" id="description">
-
-                            <div class="checkbox">
-                                <label class="checkbox-custom">
-                                    <asp:CheckBox ID="add" runat="server" />
-
-                                    <%--<input type="checkbox" name="clases" id="add" value="yes" runat="server">--%>
-                                    &nbsp; &nbsp;<b> Add New Item.</b>
-                                </label>
-                            </div>
-
-                            <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="addNew" placeholder="Type Name here..." required="required" />
+                        <div class="col-lg-12">
+                            <h4>Create a Payment Item  </h4>
+                            <br />
+                            <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
+                            </select><br />
                         </div>
 
+                        <br />
+                        <br />
 
                     </div>
-                </div>
+
+                     <br />
+                       
 
 
-
-                <div class="form-group container">
-                    <label for="title" class="col-lg-3 control-label">
-                    </label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
-                    </div>
-                </div>
+                    <div class="form-group container">
 
 
-                <div class="form-group container">
-                    <label for="title" class="col-lg-3 control-label">
-                    </label>
-                    <div class="col-lg-9">
-                        <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required" datavaluefield="MEMBERCATEGORYID" datatextfield="MEMBERCATEGORY">
-                        </select><br />
-                    </div>
-                </div>
-
-
-                <div class="form-group container">
-                    <label for="" class="col-lg-3 control-label">
-                    </label>
-                    <div class="col-lg-9">
-                   
-                        <asp:LinkButton ID="createpayments" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createpayments_Click" Font-Bold="true" />
-                        
+                        <div class="col-lg-12">
+                            <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
+                        </div>
                     </div>
 
+
+                    <div class="form-group container">
+
+
+                        <div class="col-lg-12">
+                            <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required" datavaluefield="MEMBERCATEGORYID" datatextfield="MEMBERCATEGORY">
+                            </select><br />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group container">
+
+                        <div class="col-lg-12">
+
+                            <asp:LinkButton ID="createpayments" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createpayments_Click" Font-Bold="true" />
+
+                        </div>
+
+                    </div>
+
                 </div>
 
+               <div class="col-lg-6">
+                    <h4> Create Payment Type </h4><br />
 
+                    <div class="col-lg-12">
+                          <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
+                        <br /><br />
+                          <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />
+
+
+                    </div>
+
+                </div>
             </div>
 
         </form>

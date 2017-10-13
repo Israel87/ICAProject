@@ -58,6 +58,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -206,6 +208,16 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\System.Web.Optimization.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Connected Services\MailWebService\ICA.MailWebService.sendmail1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\MailWebService\WebService.disco" />
+    <None Include="Connected Services\MailWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\MailWebService\configuration.svcinfo" />
+    <None Include="Connected Services\MailWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -276,6 +288,7 @@
     <Content Include="Admin\sass\styles.scss" />
     <Content Include="Admin\tables\data1.json" />
     <Content Include="Admin\tables\data2.json" />
+    <None Include="Connected Services\MailWebService\WebService.wsdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\ica.png" />
     <Content Include="obj\Debug\ICA.csproj.FileListAbsolute.txt" />
@@ -359,6 +372,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\MailWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ConnectionManager.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -468,6 +486,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MailWebService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

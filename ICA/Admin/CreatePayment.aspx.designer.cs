@@ -22,24 +22,6 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlSelect paymentID;
         
         /// <summary>
-        /// add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox add;
-        
-        /// <summary>
-        /// addNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText addNew;
-        
-        /// <summary>
         /// amount control.
         /// </summary>
         /// <remarks>
@@ -65,5 +47,23 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton createpayments;
+        
+        /// <summary>
+        /// typeID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText typeID;
+        
+        /// <summary>
+        /// createPaymentType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton createPaymentType;
     }
 }

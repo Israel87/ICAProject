@@ -39,7 +39,7 @@ namespace ICA.Admin
 
                 paymentID.DataSource = _paymentTypes;
                 paymentID.DataTextField = "PAYMENTTYPE";
-                paymentID.DataValueField = "PAYMENTTYPE";
+                paymentID.DataValueField = "PAYMENTTYPEID";
                 paymentID.DataBind();
 
                 paymentID.Items.Insert(0, new ListItem("Select Option", ""));
@@ -79,22 +79,23 @@ namespace ICA.Admin
             try
             {
 
-              
+
                 using (OracleConnection conn = new OracleConnection(cs))
                 {
-                    using (OracleCommand cmd = new OracleCommand("ADD_PAYMENTITEM", conn))
+                    using (OracleCommand cmd = new OracleCommand("ADD_PAYMENTITEMS", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPE", OracleDbType.Varchar2, _paymentType, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Int32,Convert.ToInt32(_amount), ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, Convert.ToInt32(_category), ParameterDirection.Input));
-                       
+                        cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, _category, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPEID", OracleDbType.Int32, _paymentType, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_AMOUNT", OracleDbType.Int32, _amount, ParameterDirection.Input));
+                        
+
                         if (conn.State != ConnectionState.Open)
                         {
                             conn.Open();
                         }
-                        
+
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -117,14 +118,15 @@ namespace ICA.Admin
 
         protected void createpayments_Click(object sender, EventArgs e)
         {
-            string paymnt_item = add.Checked ? addNew.Value : paymentID.Value;
+            // perfect tenary operations.
+            //string paymnt_item = add.Checked ? addNew.Value : paymentID.Value;
 
-            bool newPayments = createPayments(paymnt_item, amount.Value, categoryID.Value);
+            bool newPayments = createPayments(paymentID.Value, amount.Value, categoryID.Value);
 
             if (newPayments == true)
             {
                 Response.Write("<script>alert('Successful...');</script>");
-                //orgNameCreate.Text = "";
+
             }
             else
             {
@@ -133,5 +135,64 @@ namespace ICA.Admin
         }
 
 
+
+
+        protected void createPaymentType_Click(object sender, EventArgs e)
+        {
+            bool typePayments = paymentTypes(typeID.Value);
+
+            if (typePayments == true)
+            {
+                Response.Write("<script>alert('Successful...');</script>");
+
+            }
+            else
+            {
+                Response.Write("<script>alert('Not Created.');</script>");
+            }
+        }
+
+
+
+        public bool paymentTypes(string _itemType)
+        {
+            bool itemType = false;
+
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(cs))
+                {
+                    using (OracleCommand cmd = new OracleCommand("ADD_PAYMENTTYPE", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new OracleParameter("V_PAYMENTTYPE", OracleDbType.Varchar2, _itemType, ParameterDirection.Input));              
+
+                        if (conn.State != ConnectionState.Open)
+                        {
+                            conn.Open();
+                        }
+
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                            itemType = true;
+                        }
+                        catch (Exception ex)
+                        {
+                           
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return itemType;
+
+
+        }
     }
 }

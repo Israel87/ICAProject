@@ -71,6 +71,7 @@
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
                                             <select id="title" class="form-control" name="title" style="border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" required="required">
+                                                populate from the database 
                                                 <option value="Null">Select Title</option>
                                                 <option value="1">Master</option>
                                                 <option value="2">Miss</option>
