@@ -27,7 +27,7 @@ namespace ICA
             {
                 if(Session["UserEmail"] == null)
                 {
-                    Response.Redirect("~/ICA/signIn.aspx.aspx");
+                    Response.Redirect("/ICA/signIn.aspx.aspx");
                 }
                 
                 else
