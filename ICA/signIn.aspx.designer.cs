@@ -13,40 +13,58 @@ namespace ICA {
     public partial class signIn {
         
         /// <summary>
-        /// textUsername control.
+        /// errorDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textUsername;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorDisplay;
         
         /// <summary>
-        /// textPassword control.
+        /// usernameID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textPassword;
+        protected global::System.Web.UI.WebControls.TextBox usernameID;
         
         /// <summary>
-        /// Button5 control.
+        /// passwordID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.TextBox passwordID;
         
         /// <summary>
-        /// Button6 control.
+        /// selectValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
+        protected global::System.Web.UI.WebControls.DropDownList selectValue;
+        
+        /// <summary>
+        /// loginID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button loginID;
+        
+        /// <summary>
+        /// reg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink reg;
         
         /// <summary>
         /// errlbl control.

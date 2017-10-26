@@ -124,7 +124,7 @@
 					</a></li>-->
 				</ul>
 			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 
@@ -188,6 +188,7 @@
                               </tr>
                           </thead>
                           <tbody id ="t_body" runat="server">
+
                           </tbody>
                       </table>
             </div>

@@ -58,13 +58,13 @@ namespace ICA {
         protected global::System.Web.UI.HtmlControls.HtmlInputText middlename;
         
         /// <summary>
-        /// username control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText password;
         
         /// <summary>
         /// dob control.
@@ -112,13 +112,13 @@ namespace ICA {
         protected global::System.Web.UI.WebControls.TextBox city;
         
         /// <summary>
-        /// state control.
+        /// stateID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox state;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect stateID;
         
         /// <summary>
         /// zip control.
@@ -238,6 +238,96 @@ namespace ICA {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea functionID;
         
         /// <summary>
+        /// nameOrgI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nameOrgI;
+        
+        /// <summary>
+        /// posOccI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText posOccI;
+        
+        /// <summary>
+        /// startDateI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText startDateI;
+        
+        /// <summary>
+        /// endDateI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText endDateI;
+        
+        /// <summary>
+        /// functionsI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea functionsI;
+        
+        /// <summary>
+        /// nameOrgII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nameOrgII;
+        
+        /// <summary>
+        /// posOccII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText posOccII;
+        
+        /// <summary>
+        /// startDateII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText startDateII;
+        
+        /// <summary>
+        /// endDateII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText endDateII;
+        
+        /// <summary>
+        /// functionsII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea functionsII;
+        
+        /// <summary>
         /// FileUpload2 control.
         /// </summary>
         /// <remarks>
@@ -256,30 +346,12 @@ namespace ICA {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// paymentCatID control.
+        /// saveReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect paymentCatID;
-        
-        /// <summary>
-        /// saveButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton saveButton;
-        
-        /// <summary>
-        /// transRefID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField transRefID;
+        protected global::System.Web.UI.WebControls.LinkButton saveReg;
     }
 }

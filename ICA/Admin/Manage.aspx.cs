@@ -2,6 +2,8 @@
 using System;
 using System.Configuration;
 using System.Data;
+using System.IO;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ICA.Admin
@@ -9,10 +11,13 @@ namespace ICA.Admin
     public partial class Manage : System.Web.UI.Page
     {
 
-        MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
+        //MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
+        EmailWS.WebService Emal = new EmailWS.WebService();
+        string emailinSession = "";
 
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         string biodata = "";
+        //string getUploadByEmail = "";
 
         DataTable _memCategoryReport = new DataTable();
         DataTable _appStatus = new DataTable();
@@ -20,6 +25,23 @@ namespace ICA.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            if (Session["UserEmail"] == null)
+            {
+
+                Response.Redirect("~/ICA/signIn.aspx");
+            }
+            else
+            {
+                //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
+
+
+            }
+
+
+
             if (!IsPostBack)
             {
                 OracleConnection conn = new OracleConnection(cs);
@@ -37,7 +59,7 @@ namespace ICA.Admin
                 memberCatID.DataSource = _memCategoryReport;
                 memberCatID.DataBind();
 
-            
+
 
             }
 
@@ -50,7 +72,7 @@ namespace ICA.Admin
 
                 OracleDataAdapter da;
 
-      
+
                 OracleCommand cmd = new OracleCommand("GETAPPSTATUS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
@@ -115,7 +137,7 @@ namespace ICA.Admin
             string query = "SELECT B.LASTNAME||', '||B.FIRSTNAME||' '||B.MIDDLENAME \"FULLNAME\", U.USERNAME, B.BIODATAID, B.DATEADDED, M.MEMBERCATEGORY, F.APPLICATIONFLAG \"APPLICATION STATUS\" " +
                             "FROM BIODATA B LEFT JOIN USERS U ON U.BIODATAID = B.BIODATAID LEFT JOIN MEMBERCATEGORY M ON M.MEMBERCATEGORYID = U.MEMCATEGORYID " +
                             "LEFT JOIN MEMBERTYPE T ON T.MEMBERTYPEID = M.MEMBERTYPEID LEFT JOIN APPLICATION_FLAG F ON F.APPLICATIONFLAGID = U.APPLICATIONFLAGID " +
-                            "WHERE U.APPLICATIONFLAGID = "+ _appStatus + " AND T.MEMBERTYPEID = "+ _memberTypes;
+                            "WHERE U.APPLICATIONFLAGID = " + _appStatus + " AND T.MEMBERTYPEID = " + _memberTypes;
             OracleCommand cmd = new OracleCommand(query, conn);
 
             da = new OracleDataAdapter(cmd);
@@ -125,17 +147,20 @@ namespace ICA.Admin
 
         }
 
-        protected void regResults_SelectedIndexChanged(object sender, EventArgs e)
+        protected void regResults_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            regResults.PageIndex = e.NewPageIndex;
+            regResults.DataBind();
 
         }
-   
+
 
         protected void viewReg_Click(object sender, EventArgs e)
         {
             ViewPanel.Visible = true;
             biodata = ((Button)sender).CommandArgument;
             Session["active_biodata"] = biodata;
+
 
             try
             {
@@ -148,7 +173,9 @@ namespace ICA.Admin
                 //Orcl.Parameters.Add(new OracleParameter("v_biodataid", OracleDbType.Int32, biodata, ParameterDirection.Input));
 
                 OracleDataAdapter adpt;
+
                 string query = "SELECT UPPER(t.title||' '||b.lastname||', '||b.firstname||' '||b.MIDDLENAME) FULLNAME, b.EMAIL, B.PHONE, TO_CHAR(b.DATEOFBIRTH, 'DD-MON-YYYY') \"DATEOFBIRTH\", b.GENDER, m.maritalstatus,u.USERNAME, t.membertype||' '||c.membercategory||' MEMBER' \"MEMBER TYPE\", DECODE(NULL, a.STREETNAME, null, a.STREETNAME||', ' )|| DECODE(NULL, a.CITY, null, a.CITY||', ' )|| DECODE(NULL, s.STATENAME, null, s.STATENAME||'.' ) \"ADDRESS 1\", DECODE(NULL, a.STREET2, null, a.STREET2||', ' )|| DECODE(NULL, a.CITY2, null, a.CITY2||', ' )|| DECODE(NULL, s2.STATENAME, null, s2.STATENAME||'.' ) \"ADDRESS 2\", d.DEGREE \"HIGHESTDEGREE\", i2.NAMEOFSCHOOL, to_char(i2.GRADDATE, 'DD-MON-YYYY') \"GRADUATION DATE\" FROM biodata b left join titles t on t.titleid = b.title left join MARITALSTATUS m on m.MARITALSTATUSID = b.MARITALSTATUS left JOIN enroleeaddress a on a.BIODATAID = b.BIODATAID left join EMPLOYMENTINFO i on  i.BIODATAID = b.BIODATAID LEFT JOIN EDUCATIONINFO i2 on i2.biodataid = b.biodataid LEFT JOIN TBL_DEGREES d on d.degreeid = i2.highestdegree left JOIN users u on u.biodataid = b.biodataid left join MEMBERCATEGORY c on c.membercategoryid = u.memcategoryid left JOIN MEMBERTYPE t on t.membertypeid = c.membertypeid left join SETUP_STATE s on s.statecode = a.statecode left join SETUP_STATE s2 on s2.statecode = a.STATECODE2 where b.biodataid = " + biodata;
+
                 OracleCommand cmd = new OracleCommand(query, conn);
 
                 adpt = new OracleDataAdapter(cmd);
@@ -157,8 +184,8 @@ namespace ICA.Admin
 
                 if (_biodata.Rows.Count > 0)
                 {
-                   
-                    fullname.Value = _biodata.Rows[0]["FULLNAME"].ToString();                  
+
+                    fullname.Value = _biodata.Rows[0]["FULLNAME"].ToString();
                     memberstatus.Value = _biodata.Rows[0]["MEMBER TYPE"].ToString();
                     gender.Value = _biodata.Rows[0]["GENDER"].ToString();
                     dateofbirth.Value = _biodata.Rows[0]["DATEOFBIRTH"].ToString();
@@ -173,17 +200,16 @@ namespace ICA.Admin
                 }
                 else
                     conn.Close();
-
-
-
-
-
             }
             catch (Exception ex)
             {
 
             }
-
+            // Session["active_email"] = email.Value.ToString();
+            Session["active_biodata"] = biodata;
+            string emailinSession = _biodata.Rows[0]["EMAIL"].ToString();
+            Session["active_email"] = emailinSession;
+            //emailinSession = Session["active_email"].ToString();
         }
 
 
@@ -201,7 +227,7 @@ namespace ICA.Admin
                 Orcl.Parameters.Add(new OracleParameter("RETVAL", OracleDbType.Int32)).Direction = ParameterDirection.Output;
                 Orcl.CommandType = CommandType.StoredProcedure;
 
-                
+
                 if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
@@ -211,7 +237,7 @@ namespace ICA.Admin
                     Orcl.ExecuteNonQuery();
                     int retval = Convert.ToInt32(Orcl.Parameters["RETVAL"].Value.ToString());
 
-                    if(retval > 0)  check = true;
+                    if (retval > 0) check = true;
                 }
                 catch (Exception ex)
                 {
@@ -240,13 +266,60 @@ namespace ICA.Admin
 
             try
             {
-                
-                string response = sendmail.sendmail1(_email, _subject, _body);
-                Response.Write("<script>alert('sent.');</script>");
+
+                string response = Emal.sendmail1(_email, _subject, _body);
+                Response.Write("<script>alert('Email has been Sent.');</script>");
             }
             catch (Exception ex)
             {
 
+            }
+
+        }
+
+        protected void resume_Click(object sender, EventArgs e)
+        {
+            if (IsPostBack)
+            {
+                string bd = Session["active_biodata"].ToString();
+
+                try
+                {
+                    //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
+                    if (File.Exists(Server.MapPath("~/Credentials/Resume/" + bd + ".pdf")))
+                    {
+
+                        pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/Credentials/Resume/" +
+                                 bd + ".pdf' frameborder ='1' scrolling ='auto' height ='600' width ='1050' ></ iframe ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+        }
+
+        protected void passport_Click(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                string bd = Session["active_biodata"].ToString();
+
+                try
+                {
+                    //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
+                    if (File.Exists(Server.MapPath("~/Credentials/Passport/" + bd + ".jpg")))
+                    {
+                        passportDisplay.Text = "<b><p>Passport</p></b><img src='/Credentials/Passport/"  + bd + ".jpg' width='200' height='200'/>";
+                        // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
 
         }

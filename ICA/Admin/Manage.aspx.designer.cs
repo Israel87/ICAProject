@@ -58,22 +58,22 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewPanel;
         
         /// <summary>
-        /// Button4 control.
+        /// resume control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button resume;
         
         /// <summary>
-        /// Button5 control.
+        /// passport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.Button passport;
         
         /// <summary>
         /// approve control.
@@ -83,6 +83,15 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button approve;
+        
+        /// <summary>
+        /// passportDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label passportDisplay;
         
         /// <summary>
         /// fullname control.
@@ -191,5 +200,14 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText graduationdate;
+        
+        /// <summary>
+        /// pdfDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pdfDisplay;
     }
 }

@@ -10,7 +10,7 @@ namespace ICA
         public personalInfo personalinfo { get; set; }
         public educationInfo educationinfo { get; set; }
         public employmentInfo employmentinfo { get; set; }
-        public otherEmpDetails otherempdetails { get; set; }
+        public residentialInfo residentinfo { get; set; }
         public paymentDetails paymentdetails { get; set; }
     }
 
@@ -21,6 +21,7 @@ namespace ICA
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
         public string Gender { get; set; }
         public string Title { get; set; }
@@ -28,6 +29,18 @@ namespace ICA
         public int MaritalStatus { get; set; }
         public DateTime DateAdded { get; set; }
         public DateTime LastUpdated { get; set; }
+
+    }
+
+
+    public class residentialInfo
+    {
+        public string Streetname { get; set; }
+        public string StreetnameII { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zipcode { get; set; }
+        public string Country { get; set; }
 
     }
 
@@ -49,17 +62,20 @@ namespace ICA
         public string Position { get; set; }
         public string DateEmployed { get; set; }
         public string Functions { get; set; }
-    }
 
-    // class for other  information 
-    public class otherEmpDetails
-    {
-        public string EmployerName { get; set; }
+        public string OtherEmployerII { get; set; }
         public string PositionII { get; set; }
         public string DateEmployedII { get; set; }
-        public string EndYear { get; set; }
-        public string Functions { get; set; }
+        public string EndDateII { get; set; }
+        public string JobDescriptionII { get; set; }
+
+        public string OtherEmployerIII { get; set; }
+        public string PositionIII { get; set; }
+        public string DateEmployedIII { get; set; }
+        public string EndDateIII { get; set; }
+        public string JobDescriptionIII { get; set; }
     }
+
 
     // class for payment information 
     public class paymentDetails

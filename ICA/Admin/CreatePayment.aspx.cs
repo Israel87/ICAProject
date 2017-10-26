@@ -12,7 +12,7 @@ namespace ICA.Admin
 {
     public partial class CreatePayment : System.Web.UI.Page
     {
-
+        string emailinSession = "";
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,18 @@ namespace ICA.Admin
             DataTable _paymentTypes = new DataTable();
             DataTable _memCategoryReport = new DataTable();
 
+            if (Session["UserEmail"] == null)
+            {
 
+                Response.Redirect("~/ICA/signIn.aspx");
+            }
+            else
+            {
+                //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
+
+
+            }
 
             if (!IsPostBack)
             {

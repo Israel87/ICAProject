@@ -222,6 +222,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="guest\forgotPassword.aspx" />
     <Content Include="guest\corporateMembership.aspx" />
     <Content Include="css\navbar.css" />
     <Content Include="guest\Default.aspx" />
@@ -235,6 +236,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Admin\ICAWebService.asmx" />
+    <Content Include="guest\registrationPayment.aspx" />
     <Content Include="images\associatemember.png" />
     <Content Include="images\chams.jpg" />
     <Content Include="images\corporate.png" />
@@ -258,6 +260,43 @@
     <Content Include="guest\individualMembers.aspx" />
     <Content Include="Admin\js\AjaxCalls.js" />
     <Content Include="js\navbar.js" />
+    <Content Include="Member\changePassword.aspx" />
+    <Content Include="Member\charts.html" />
+    <Content Include="Member\css\bootstrap-table.css" />
+    <Content Include="Member\css\bootstrap-theme.css" />
+    <Content Include="Member\css\bootstrap-theme.min.css" />
+    <Content Include="Member\css\bootstrap.css" />
+    <Content Include="Member\css\bootstrap.min.css" />
+    <Content Include="Member\css\datepicker.css" />
+    <Content Include="Member\css\datepicker3.css" />
+    <Content Include="Member\css\font-awesome.min.css" />
+    <Content Include="Member\css\styles.css" />
+    <Content Include="Member\downloads.aspx" />
+    <Content Include="Member\elements.html" />
+    <Content Include="Member\fonts\fontawesome-webfont.svg" />
+    <Content Include="Member\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Member\index.aspx" />
+    <Content Include="Member\index.html" />
+    <Content Include="Member\js\bootstrap-datepicker.js" />
+    <Content Include="Member\js\bootstrap.js" />
+    <Content Include="Member\js\bootstrap.min.js" />
+    <Content Include="Member\js\chart-data.js" />
+    <Content Include="Member\js\chart.min.js" />
+    <Content Include="Member\js\custom.js" />
+    <Content Include="Member\js\easypiechart-data.js" />
+    <Content Include="Member\js\easypiechart.js" />
+    <Content Include="Member\js\html5shiv.min.js" />
+    <Content Include="Member\js\jquery-1.11.1.min.js" />
+    <Content Include="Member\js\lumino.glyphs.js" />
+    <Content Include="Member\js\npm.js" />
+    <Content Include="Member\js\respond.min.js" />
+    <Content Include="Member\login.html" />
+    <Content Include="logout.aspx" />
+    <Content Include="Member\makePayment.aspx" />
+    <Content Include="Member\panels.html" />
+    <Content Include="Member\paymentHistory.aspx" />
+    <Content Include="Member\uploads.aspx" />
+    <Content Include="Member\widgets.html" />
     <Content Include="obj\Debug\CoreCompileInputs.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\ICA.csprojResolveAssemblyReference.cache" />
@@ -289,6 +328,27 @@
     <Content Include="Admin\tables\data1.json" />
     <Content Include="Admin\tables\data2.json" />
     <None Include="Connected Services\MailWebService\WebService.wsdl" />
+    <Content Include="Member\css\bootstrap-theme.css.map" />
+    <Content Include="Member\css\bootstrap-theme.min.css.map" />
+    <Content Include="Member\css\bootstrap.css.map" />
+    <Content Include="Member\css\bootstrap.min.css.map" />
+    <Content Include="Member\fonts\fontawesome-webfont.eot" />
+    <Content Include="Member\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Member\fonts\fontawesome-webfont.woff" />
+    <Content Include="Member\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Member\fonts\FontAwesome.otf" />
+    <Content Include="Member\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Member\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Member\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Member\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Member\sass\.sass-cache\deff34d1f5b7167181b556002c25068d6adc024d\styles.scssc" />
+    <Content Include="Member\sass\styles.scss" />
+    <Content Include="Member\tables\data1.json" />
+    <Content Include="Member\tables\data2.json" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\ica.png" />
     <Content Include="obj\Debug\ICA.csproj.FileListAbsolute.txt" />
@@ -328,6 +388,11 @@
     <Content Include="Site.Master" />
     <Content Include="guest\studentmembership.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web References\EmailWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\EmailWS\WebService.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -385,6 +450,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="guest\forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest\forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="guest\corporateMembership.aspx.cs">
       <DependentUpon>corporateMembership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,9 +478,70 @@
       <DependentUpon>ICAWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="guest\registrationPayment.aspx.cs">
+      <DependentUpon>registrationPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest\registrationPayment.aspx.designer.cs">
+      <DependentUpon>registrationPayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logic\logic.cs" />
+    <Compile Include="Member\changePassword.aspx.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\changePassword.aspx.designer.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\downloads.aspx.cs">
+      <DependentUpon>downloads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\downloads.aspx.designer.cs">
+      <DependentUpon>downloads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\makePayment.aspx.cs">
+      <DependentUpon>makePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\makePayment.aspx.designer.cs">
+      <DependentUpon>makePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\paymentHistory.aspx.cs">
+      <DependentUpon>paymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\paymentHistory.aspx.designer.cs">
+      <DependentUpon>paymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\uploads.aspx.cs">
+      <DependentUpon>uploads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\uploads.aspx.designer.cs">
+      <DependentUpon>uploads.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Model\icaClass.cs" />
     <Compile Include="Model\userModel.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\registrationViewModel.cs" />
     <Compile Include="guest\individualMembers.aspx.cs">
       <DependentUpon>individualMembers.aspx</DependentUpon>
@@ -470,9 +603,17 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\EmailWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Credentials\MemberUploads\UploadOne\" />
+    <Folder Include="Credentials\MemberUploads\UploadThree\" />
+    <Folder Include="Credentials\MemberUploads\UploadTwo\" />
     <Folder Include="Credentials\Passport\" />
     <Folder Include="Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
@@ -480,6 +621,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web References\EmailWS\WebService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -492,6 +634,22 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\MailWebService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://154.113.0.163:1390/mailservice/WebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EmailWS\</RelPath>
+      <UpdateFromURL>http://154.113.0.163:1390/mailservice/WebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ICA_EmailWS_WebService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

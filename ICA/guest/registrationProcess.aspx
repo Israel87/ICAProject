@@ -19,7 +19,7 @@
 
                     <div class="board-inner">
                         <ul class="nav nav-tabs" id="myTab">
-                            <div class="liner"></div>
+                            <%--<div class="liner"></div>--%>
                             <li class="active">
                                 <a href="#home" data-toggle="tab" id="personalDet" title="Personal Details">
                                     <span class="round-tabs one">
@@ -45,7 +45,7 @@
                                 </span>
                             </a></li>
 
-                            <li><a href="#doner" data-toggle="tab" id="payment" title="Payment">
+                            <li><a id="payment" title="Payment">
                                 <span class="round-tabs five">
                                     <i class="glyphicon glyphicon-credit-card"></i>
                                 </span></a>
@@ -70,9 +70,8 @@
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <select id="title" class="form-control" name="title" style="border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" required="required">
-                                                populate from the database 
-                                                <option value="Null">Select Title</option>
+                                            <select id="title" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
+                                                <option value="">Select Title</option>
                                                 <option value="1">Master</option>
                                                 <option value="2">Miss</option>
                                                 <option value="3">Mr</option>
@@ -83,8 +82,8 @@
 
 
                                         <div class="col-lg-5">
-                                            <select id="gender" class="form-control" name="title" style="border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" required="required">
-                                                <option value="Null">Select Gender</option>
+                                            <select id="gender" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
+                                                <option value="">Select Gender</option>
                                                 <option value="M">Male</option>
                                                 <option value="F">Female</option>
 
@@ -97,12 +96,12 @@
                                     <div class="form-group">
                                         <label for="lastname" class="col-lg-1 control-label" id="lastnameVal"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 220px; border-radius: 0px" runat="server" id="lastname" placeholder="Last Name" required="required" />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="lastname" placeholder="Last Name" required="required" />
                                         </div>
 
                                         <div class="col-lg-5">
 
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" id="firstname" placeholder="First Name" required="required" /><br />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="firstname" placeholder="First Name" required="required" /><br />
                                         </div>
 
                                     </div>
@@ -110,13 +109,13 @@
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 220px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
                                         </div>
-                                           <div class="col-lg-5">
-                                            
-                                             <input class="form-control" type="text" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" id="username" placeholder="Username" />
-                                          <br />
-                                            </div>
+                                        <div class="col-lg-5">
+
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="password" placeholder="Password" />
+                                            <br />
+                                        </div>
                                     </div>
 
 
@@ -126,10 +125,10 @@
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="date" style="width: 200px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" name="dob" id="dob" placeholder="Date of Birth" required="required" />
+                                            <input class="form-control" type="date" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" name="dob" id="dob" placeholder="Date of Birth" required="required" />
                                         </div>
                                         <div class="col-lg-5">
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 220px; border-radius: 0px" runat="server" id="email" placeholder="Email Address" required="required" /><br />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="email" placeholder="Email Address" required="required" /><br />
                                         </div>
                                         <%-- <div class="col-lg-5"><asp:TextBox runat="server"></asp:TextBox>
                                             
@@ -140,32 +139,71 @@
                                     <div class="form-group">
                                         <label for="contactAddress" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="addressI" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" TextMode="MultiLine" placeholder="Contact Address" required="required"></asp:TextBox><br />
+                                            <asp:TextBox ID="addressI" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" TextMode="MultiLine" placeholder="Contact Address" required="required"></asp:TextBox><br />
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
+                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="city" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="City"></asp:TextBox>
+                                            <asp:TextBox ID="city" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="City"></asp:TextBox>
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <asp:TextBox ID="state" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Province/State"></asp:TextBox><br />
+                                            <select id="stateID" class="form-control" name="states" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
+                                                <option selected="selected">Select State</option>
+                                                <option value="Abia">Abia</option>
+                                                <option value="Adamawa">Adamawa</option>
+                                                <option value="AkwaIbom">AkwaIbom</option>
+                                                <option value="Anambra">Anambra</option>
+                                                <option value="Bauchi">Bauchi</option>
+                                                <option value="Bayelsa">Bayelsa</option>
+                                                <option value="Benue">Benue</option>
+                                                <option value="Borno">Borno</option>
+                                                <option value="CrossRivers">CrossRivers</option>
+                                                <option value="Delta">Delta</option>
+                                                <option value="Ebonyi">Ebonyi</option>
+                                                <option value="Edo">Edo</option>
+                                                <option value="Ekiti">Ekiti</option>
+                                                <option value="Enugu">Enugu</option>
+                                                <option value="Gombe">Gombe</option>
+                                                <option value="Imo">Imo</option>
+                                                <option value="Jigawa">Jigawa</option>
+                                                <option value="Kaduna">Kaduna</option>
+                                                <option value="Kano">Kano</option>
+                                                <option value="Katsina">Katsina</option>
+                                                <option value="Kebbi">Kebbi</option>
+                                                <option value="Kogi">Kogi</option>
+                                                <option value="Kwara">Kwara</option>
+                                                <option value="Lagos">Lagos</option>
+                                                <option value="Nasarawa">Nasarawa</option>
+                                                <option value="Niger">Niger</option>
+                                                <option value="Ogun">Ogun</option>
+                                                <option value="Ondo">Ondo</option>
+                                                <option value="Osun">Osun</option>
+                                                <option value="Oyo">Oyo</option>
+                                                <option value="Plateau">Plateau</option>
+                                                <option value="Rivers">Rivers</option>
+                                                <option value="Sokoto">Sokoto</option>
+                                                <option value="Taraba">Taraba</option>
+                                                <option value="Yobe">Yobe</option>
+                                                <option value="Zamfara">Zamafara</option>
+                                            </select><br />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
+                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <select id="country" class="form-control" name="country" style="border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server">
+                                            <select id="country" class="form-control" name="country" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
+                                                <option value="Null">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AX">Åland Islands</option>
                                                 <option value="AL">Albania</option>
@@ -425,11 +463,11 @@
                                     <div class="form-group">
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="phoneNUmber" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Phone Number"></asp:TextBox>
+                                            <asp:TextBox ID="phoneNUmber" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Phone Number"></asp:TextBox>
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <select id="maritStats" class="form-control" name="country" style="border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server">
+                                            <select id="maritStats" class="form-control" name="country" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
                                                 <option value="Null">Select Marital Status</option>
                                                 <option value="Single">Single</option>
                                                 <option value="Married">Married</option>
@@ -483,11 +521,11 @@
                                     <b class="col-lg-4 control-label">Institution Attended with Date</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
 
                                     <div class="col-lg-4">
-                                        <textarea runat="server" name="instName" id="instNameID" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Name of Institution" />
+                                        <textarea runat="server" name="instName" id="instNameID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Institution" />
                                     </div>
 
                                     <div class="col-lg-4">
-                                        <input class="form-control" name="graddate" id="graddateID" type="date" style="width: 200px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" placeholder="Select Date" />
+                                        <input class="form-control" name="graddate" id="graddateID" type="date" style="width: 400px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" placeholder="Select Date" />
 
                                     </div>
                                     <br />
@@ -503,7 +541,7 @@
                                     <b class="col-lg-4 control-label">Other Certifications with Date </b><%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
 
                                     <div class="col-lg-4">
-                                        <textarea runat="server" name="certName" id="certNameID" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Name of Certification" />
+                                        <textarea runat="server" name="certName" id="certNameID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Certification" />
 
                                     </div>
                                     <div class="col-lg-4">
@@ -540,77 +578,205 @@
                                 <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
                                 <hr />
 
-
-                                <%--<div id="EmpDetails">--%>
-                                <%--<div class="prevEmp">--%>
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Years of Experience  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
-                                    </b>
-                                    <div class="col-lg-8">
-                                        <select class="form-control" name="experience" id="experienceID" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select </option>
-                                            <option value="3" style="font-weight: bold">&nbsp; 1 - 3 Years</option>
-                                            <option value="5" style="font-weight: bold">&nbsp; 5+ Years</option>
-                                            <option value="15" style="font-weight: bold">&nbsp; 15+ Years</option>
-
-                                        </select>
-                                    </div>
-                                    <br />
-                                </div>
                                 <br />
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Most Recent Work Experience</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
+                                <div class="col-lg-12">
+                                    <div class="col-lg-4">
+                                        <br />
+                                        <p><b>Most Recent Work Experience</b></p>
+                                        <div class="form-group">
 
-                                    <div class="col-lg-8">
-                                        <input runat="server" name="nameOrg" id="nameOrgID" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Name of Organization" />
+                                            <div class="col-lg-8">
+                                                <p>Years of Experience </p>
+                                                <select class="form-control" name="experience" id="experienceID" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
+                                                    <option value="Null">Select </option>
+                                                    <option value="3" style="font-weight: bold">&nbsp; 1 - 3 Years</option>
+                                                    <option value="5" style="font-weight: bold">&nbsp; 5+ Years</option>
+                                                    <option value="15" style="font-weight: bold">&nbsp; 15+ Years</option>
+
+                                                </select><br />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
+
+                                            <div class="col-lg-8">
+                                                <%--<p>Most Recent Work Experience</p>--%>
+                                                <input runat="server" name="nameOrg" id="nameOrgID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
+                                                <br />
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
+
+                                            <div class="col-lg-8">
+                                                <%--<p>Position Occupied</p>--%>
+                                                <input runat="server" name="posOcc" id="posOccID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                                <br />
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--   <b class="col-lg-4 control-label">Date Employed</b> --%>
+
+                                            <div class="col-lg-8">
+                                                <%--<p>Date Employed</p>--%>
+                                                <input runat="server" name="dateEmp" id="dateEmpID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Date Employed" />
+                                                <br />
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
+
+                                            <div class="col-lg-8">
+                                                <p>Functions</p>
+                                                <textarea runat="server" name="functions" id="functionID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                            </div>
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <br />
+                                        <b>Work Experience II</b>
+
+                                        <div class="form-group">
+                                            <br />
+                                            <br />
+
+                                            <div class="col-lg-8">
+                                                <%--  <p>Experience </p>--%>
+                                                <input runat="server" name="nameOrgI" id="nameOrgI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
+
+                                            <div class="col-lg-8">
+                                                <%-- <p>Position Occupied</p>--%>
+                                                <input runat="server" name="posOccI" id="posOccI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                            </div>
+
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%-- <b class="col-lg-4 control-label">Years of Experience  
+                                    </b>--%>
+                                            <div class="col-lg-8">
+                                                <%--<p>Start Date </p>--%>
+                                                <input runat="server" name="startDateI" id="startDateI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
+
+                                            <div class="col-lg-8">
+                                                <%--  <p> End Date </p>--%>
+                                                <input runat="server" name="endDateI" id="endDateI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                            </div>
+
+                                            <br />
+                                        </div>
+                                        <br />
+
+
+
+
+                                        <div class="form-group">
+                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
+
+                                            <div class="col-lg-8">
+                                                <p>Functions</p>
+                                                <textarea runat="server" name="functionsI" id="functionsI" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                            </div>
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <br />
+                                        <b>Work Experience III</b>
+
+                                        <div class="form-group">
+                                            <br />
+                                            <br />
+                                            <div class="col-lg-8">
+                                                <%--  <p>Experience </p>--%>
+                                                <input runat="server" name="nameOrgII" id="nameOrgII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
+
+                                            <div class="col-lg-8">
+                                                <%-- <p>Position Occupied</p>--%>
+                                                <input runat="server" name="posOccII" id="posOccII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                            </div>
+
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%-- <b class="col-lg-4 control-label">Years of Experience  
+                                    </b>--%>
+                                            <div class="col-lg-8">
+                                                <%--<p>Start Date </p>--%>
+                                                <input runat="server" name="startDateII" id="startDateII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
+
+                                            <div class="col-lg-8">
+                                                <%--  <p> End Date </p>--%>
+                                                <input runat="server" name="endDateII" id="endDateII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                            </div>
+
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
+
+                                            <div class="col-lg-8">
+                                                <p>Functions</p>
+                                                <textarea runat="server" name="functionsII" id="functionsII" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                            </div>
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </div>
+
                                     </div>
 
-                                    <br />
                                 </div>
-                                <br />
-
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Position Occupied </b><%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
-
-                                    <div class="col-lg-8">
-                                        <input runat="server" name="posOcc" id="posOccID" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" placeholder="Position Occupied" />
-                                    </div>
-
-                                    <br />
-                                </div>
-                                <br />
-
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Date Employed</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
-
-                                    <div class="col-lg-8">
-                                        <input runat="server" name="dateEmp" id="dateEmpID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" />
-                                    </div>
-
-                                    <br />
-                                </div>
-                                <br />
-
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Functions</b>  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
-
-                                    <div class="col-lg-8">
-                                        <textarea runat="server" name="functions" id="functionID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 600px; border-radius: 0px" />
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <br />
-                                </div>
-                                <%--    <center><br /> <br />
-                                  <a class="btn btn-info custom-btn add-buttons" style="display: inline; border-radius:0px"><b>&plus; Add More Employment Details </b> </a> 
-
-                             </center>--%>
-
-
-                                <%--</div>--%>
-                                <%--</div>--%>
-
                                 <div class="container input-group">
                                     <br />
                                     <br />
@@ -628,7 +794,11 @@
                                 <hr />
                                 <br />
                                 <div class="form-group">
-                                    <b class="col-lg-4 control-label" style="text-align: right">Upload C.V </b>
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD RESUME
+                                        <br />
+                                        | .pdf files only |
+                                    </b>
+
                                     <div class="col-lg-8">
                                         <asp:FileUpload ID="FileUpload2" runat="server" />
                                     </div>
@@ -637,14 +807,23 @@
                                 <br />
                                 <div class="form-group">
                                     <br />
-                                    <b class="col-lg-4 control-label" style="text-align: right">Upload Passport</b>
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD PASSPORT
+                                        <br />
+                                        | .jpg files only |
+                                    </b>
                                     <div class="col-lg-8">
                                         <asp:FileUpload ID="FileUpload1" runat="server" />
                                     </div>
                                     <br />
                                 </div>
                                 <br />
-
+                                
+                                  <center><br /> <br /> 
+                                        
+                                           <p id="errorMsg"></p>
+                                        
+                                        <br /> <br /> 
+                                </center>
 
 
                                 <div class="container input-group">
@@ -652,29 +831,33 @@
                                     <br />
                                     <br />
                                     <br />
-                                    <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('payment').click();"><b>NEXT</b></a>
+                                     <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"> PROCEED TO PAYMENT </asp:LinkButton>
+                                  <%--  <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('payment').click();"><b>SAVE</b></a>--%>
                                     <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('employment').click();"><b>PREVIOUS</b></a>
 
                                 </div>
                             </div>
+                           
 
                         </div>
 
                         <%--                         End of tab four--%>
-                        <div class="tab-pane fade" id="doner">
+                      <%--  <div class="tab-pane fade" id="doner">
                             <div class="container">
                                 <h3 class="container">Select Payment Amount based on Membership Category </h3>
                                 <hr />
                                 <br />
                                 <div class="form-group">
-                                    <b class="col-lg-4 control-label">Choose a Payment Category  <%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
+                                    <b class="col-lg-4 control-label">Choose a Payment Category  <%--<span style="color: red; font-style: italic; text-align: right">*</span>
                                     </b>
                                     <div class="col-lg-8">
                                         <select class="form-control" name="paymentCat" id="paymentCatID" style="border: 2px solid #0094ff; width: 700px; border-radius: 0px" runat="server">
                                             <option value="Null">Select Choice </option>
-                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Member Application &nbsp; | &nbsp; #5,000 </option>
-                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; FICA Membership  &nbsp;&nbsp; &nbsp;  &nbsp;| &nbsp; #150,000</option>
-                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; AICA induction &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;|  &nbsp; #20,000</option>
+                                            <option value="0" style="font-weight: bold" class="form-control">&nbsp; Payment Test  &nbsp; | &nbsp; 200 </option>
+                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Corp  &nbsp; | &nbsp; 15,000 </option>
+                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; Associate Fee &nbsp; | &nbsp; 47,500 </option>
+                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; Member Fee &nbsp;&nbsp;| &nbsp; 67,000</option>
+                                            <option value="4" style="font-weight: bold" class="form-control">&nbsp; Fellow Fee &nbsp; &nbsp;|  &nbsp; 150,000</option>
 
                                         </select>
                                     </div>
@@ -686,9 +869,14 @@
                                         
                                         
                                         <br /> <br /> 
-                                         <asp:LinkButton runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return checkVal();" OnClick="saveButton_Click" ><b>PROCEED TO PAYMENT</b> </asp:LinkButton> 
 
-                                        <%--<button runat="server" id="saveUserButton" class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" onclick="return payWithPaystack();"><b>PROCEED TO PAYMENT</b> </button>--%> 
+
+                                         <%--<asp:Button runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT" ></asp:Button> --%>
+
+                                        <%--<button runat="server" id="saveUserButton" class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" onclick="return makePayment();"><b>PROCEED TO PAYMENT</b> </button>
+
+                                        <asp:Button runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT" OnClick="saveButton_Click"></asp:Button> 
+
                                     </center>
 
                                 </div>
@@ -699,34 +887,12 @@
                                     <br />
                                     <br />
                                     <br />
-                                    <%--<button class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px"><b>NEXT</b></button>--%>
+                                    <%--<button class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px"><b>NEXT</b></button>
                                     <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('credentials').click();"><b>PREVIOUS</b></a>
 
                                 </div>
-
-                                <%--    <center>
-
-
-                                 <div class="alert alert-success" role="alert">
-                                       <b> Registration Successful.</b>
-                                 </div>
-
-
-                                <div class="tab-pane panel panel-success panel-group">
-                                    <center>
-
-                                  <h4 style="font-family:Agency FB" ><b>Thank you for registering with ICA. <br />
-                                    Your Application is being processes,<br /> You will receive a mail once your application is approved.</b> 
-                                </h4>
-                                    </center>
-                               <br /><br />
-
-
-                                </div>
-                               
-                            </center>--%>
                             </div>
-                        </div>
+                        </div>--%>
                         <%-- End of tab five--%>
                         <div class="clearfix"></div>
                     </div>
@@ -746,29 +912,9 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+     <script src="/js/navbar.js"></script>
+     <%-- <script src="/ica/js/navbar.js"></script>--%>
 
 
 </asp:Content>

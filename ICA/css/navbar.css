@@ -127,6 +127,10 @@ li.active span.round-tabs.five {
 .nav-tabs > li {
     width: 20%;
 }
+
+/*.nav-tabs > li {
+    width: 25%;
+}*/
     /*li.active:before {
     content: " ";
     position: absolute;

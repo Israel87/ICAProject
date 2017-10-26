@@ -8,9 +8,10 @@ namespace ICA.Model
     public class userModel
     {
         public PersonalInfo personalInfo { get; set; }
+        public ResidentialInfo residentialInfo { get; set; }
         public EducationInfo educationInfo { get; set; }
         public EmploymentInfo employmentInfo { get; set; }
-        public OtherEmpDetails otherempDetails { get; set; }
+        //public OtherEmpDetails otherempDetails { get; set; }
         public PaymentDetails paymentDetails { get; set; }
     }
 
@@ -23,6 +24,7 @@ namespace ICA.Model
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
         public string Gender { get; set; }
         public string Title { get; set; }
@@ -32,6 +34,17 @@ namespace ICA.Model
         public DateTime LastUpdated { get; set; }
     }
 
+
+    public class ResidentialInfo
+    {
+        public string Streetname { get; set; }
+        public string StreetnameII { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zipcode { get; set; }
+        public string Country { get; set; }
+
+    }
     // class for educational information.
     public class EducationInfo
     {
@@ -54,19 +67,21 @@ namespace ICA.Model
         public string Position { get; set; }
         public string Functions { get; set; }
         public DateTime DateEmployed { get; set; }
-        public string JobDescription { get; set; }
-    }
+        //public string JobDescription { get; set; }
 
-    // class for other  information 
-    public class OtherEmpDetails
-    {
-        public int OtherExperienceID { get; set; }
-        public int BiodataID { get; set; }
-        public string EmployerName { get; set; }
+        public string OtherEmployerII { get; set; }
         public string PositionII { get; set; }
-        public string DateEmployedII { get; set; }
-        public string EndYear { get; set; }
-        public string Functions { get; set; }
+        public DateTime DateEmployedII { get; set; }
+        public DateTime EndDateII { get; set; }
+        public string JobDescriptionII { get; set; }
+
+        public string OtherEmployerIII { get; set; }
+        public string PositionIII { get; set; }
+        public DateTime DateEmployedIII { get; set; }
+        public DateTime EndDateIII { get; set; }
+        public string JobDescriptionIII { get; set; }
+
+
     }
 
     // class for payment information 

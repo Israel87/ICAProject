@@ -15,7 +15,8 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="css/navbar.css" rel="stylesheet" />
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+     
 </head>
 <body>
     <form runat="server">
@@ -63,7 +64,12 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
            <br />
-            <footer style="background-color: #1abc9c; color:#fff">
+           
+        </div>
+
+    </form>
+
+     <footer style="background-color: #1abc9c; color:#fff">
                 <br />
                 <div class="row-fluid container">
                     <div class="col-md-12" >
@@ -105,10 +111,8 @@
                 <p class="container pull-right"><b>Powered by - Chams Plc <img src="../images/chams.jpg" style="margin-bottom: 2px"/> </b></p>
                <br /><br /><br />
             </footer>
-        </div>
 
-    </form>
    <%-- <script src="/ica/js/navbar.js"></script>--%>
-    <script src="/js/navbar.js"></script>
+   
 </body>
 </html>

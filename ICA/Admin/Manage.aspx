@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="ICA.Admin.Manage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="ICA.Admin.Manage"  %>
 
 <!DOCTYPE html>
 <html>
@@ -61,7 +61,7 @@
                     </a></li>
                 </ul>
             </li>
-            <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            <li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div>
     <!--/.sidebar-->
@@ -119,7 +119,7 @@
 
                 <div class="">
                     <div class="table-responsive">
-                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary">
+                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="regResults_PageIndexChanging" PageSize="2">
                             <Columns>
                                 <asp:TemplateField>
                                     <ItemTemplate>
@@ -148,29 +148,31 @@
                 <%-- <hr />
                 <div class="panel panel-primary">--%>
 
-                <div class="row container col-lg-12">
-                    <div class="col-lg-9">
+                <div class="row container">
+                    <div class="col-lg-12">
                         <div class="input-group">
 
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="VIEW RESUME" Font-Bold="true" />
-                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-outline-rounded btn-warning" Style="border-radius: 0px; width: 200px;" Text="VIEW PASSPORT" Font-Bold="true" />
+                            <asp:Button ID="resume" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="VIEW RESUME" Font-Bold="true" OnClick="resume_Click" />
+                            <asp:Button ID="passport" runat="server" CssClass="btn btn-outline-rounded btn-warning" Style="border-radius: 0px; width: 200px;" Text="VIEW PASSPORT" Font-Bold="true" OnClick="passport_Click"/>
                              <asp:Button ID="approve" runat="server" CssClass="btn btn-outline-rounded btn-success" Style="border-radius: 0px; width: 200px;" Text="APPROVE" OnClick="approve_Click" Font-Bold="true" />
                         </div>
 
-                    </div>
-                    <div class="col-lg-3">
+                    </div><br /><br />
+                    <div class="col-lg-12">
                         <div class="input-group">
                            
-                            <%--<asp:Button ID="Button3" runat="server" CssClass="btn btn-outline-rounded btn-danger" Style="border-radius: 0px; width: 200px;" Text="REJECT" Font-Bold="true" />--%>
+                            <asp:Label ID="passportDisplay" runat="server">
+
+                            </asp:Label>
                         </div>
                     </div>
                     <br />
-                    <br />
-                    <br />
-                    <br />
+                  
                 </div>
 
-
+                  <br />
+                    <br />
+                    <br />
 
                 <div class="row">
 
@@ -237,7 +239,7 @@
                         <div class="form-group">
                             <div class="col-lg-6">
                                 <label for="fullname" class="col-lg-4 control-label">ADDRESS II</label>
-                                <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="addressII"  disabled />
+                                <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="addressII" disabled />
                             </div>
 
 
@@ -298,21 +300,27 @@
 
                 <br />
                 <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                    
+                        <div class="col-lg-12 text-center">
+                           
+                            <asp:Label ID="pdfDisplay" runat="server" >
+                            </asp:Label>     
 
-
-                <%--       </div>--%>
+                        </div>
+              
             </div>
+    
+
+                   <br />
+                <br />
 
 
-        </div>
     </form>
-    <br />
-    <br />
-    <br />
+
+    
+ 
+ 
+
 
 
     <script src="js/jquery-1.11.1.min.js"></script>
@@ -333,7 +341,10 @@
                 scaleFontColor: "#c5c7cc"
             });
         };
-    </script>
+    </script>  
+    
+    
+
 
 </body>
 </html>

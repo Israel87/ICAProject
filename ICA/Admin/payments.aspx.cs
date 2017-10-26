@@ -14,9 +14,31 @@ namespace ICA.Admin
     {
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         DataTable _memCategoryReport = new DataTable();
+        string emailinSession = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["UserEmail"] == null)
+            {
+
+                Response.Redirect("~/ICA/signIn.aspx");
+            }
+            else
+            {
+                //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
+
+
+            }
+
+
+
+
+
+
+
+
 
             if (!IsPostBack)
             {
@@ -79,6 +101,7 @@ namespace ICA.Admin
             if (dt != null && dt.Rows.Count > 0)
             {
                 string html = ""; int count = 1;
+                   
                 foreach (DataRow item in dt.Rows)
                 {
                     html += "<tr style='line-height:20px'><td>" + (count++) + "</td><td>" + item["FULLNAME"] + "</td><td>" + item["USERNAME"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTREFERENCE"] + "</td><td>" + item["TRANSACTION DATE"] + "</td><td>" + item["AMOUNT"] + "</td><td>" + item["DESCRIPTION"] + "</td><td>" + item["APPLICATION STATUS"] + "</td></tr>";
@@ -92,7 +115,10 @@ namespace ICA.Admin
             }
             else
             {
-                Response.Write("<script>alert('No Record Found...');</script>");
+                    string err = "<tr style='line-height:100px text-align: center'><td>" + "No Record Found" + "</td></tr>";
+
+                    //Response.Write("<script>alert('No Record Found...');</script>");
+                    t_body.InnerHtml = err;
             }
 
 
