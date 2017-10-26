@@ -42,6 +42,7 @@ function deleteEntryII(index) {
     }
 }
 
+
 function makePayment() {
     var rnd = "ICA-" + Date.now();
 
@@ -58,19 +59,15 @@ function makePayment() {
 
     //get transaction details by email
     getInfoByEmail(email);
-    
-    //alert('amount : ' + amount)
-    //alert(payItemID)
-    //alert('payment_desc : ' + payment_desc)
-    //alert('email : ' + email)
-    ////alert('phone : ' + phone)
-    //alert(rnd)
 
     //log paymnt to db
     logPaymentInfoDB("{'biodataid': '"+ userinfo.Table[0].BIODATAID +"', 'description': '" + payment_desc +"', 'response': '" + response + "', 'payItemId': '" +payItemID + "', 'payRef': '" + rnd + "', 'status': 0 }");
         
     getpaidSetup({
         customer_email: email,
+        customer_name: userinfo.Table[0].FIRSTNAME,
+        customer_mobile: userinfo.Table[0].PHONE,
+        customer_lastname: userinfo.Table[0].LASTNAME,
         amount: amount,
         currency: "NGN",
         country: "NG",
@@ -83,21 +80,23 @@ function makePayment() {
         PBFPubKey: "FLWPUBK-cfd98c44ead933747503ff12631ba1c9-X",
         onclose: function (response) {
             //update payment status
-            updatePaymentInfo(activepayId, 0, "Cancelled");
-
-            alert('Payment Cancelled..');
+            if (triggerPayment == false) {
+                updatePaymentInfo(activepayId, 0, "Cancelled");
+                alert('Payment Cancelled..');
+            }
+                
             return false;
         },
         callback: function (response) {
             var flw_ref = response.tx.flwRef;// collect flwRef returned and pass to a  server page to complete status check.
             console.log("This is the response returned after a charge", response);
 
+            triggerPayment = true;
             
             if (response.tx.chargeResponse == '00' || response.tx.chargeResponse == '0') {
                 alert('Payment Successfull..' + flw_ref);
                 $('#transRefID').val() = flw_ref;
 
-                alert(activepayId);
                 //update payment status
                 updatePaymentInfo(activepayId, 1, "Successfull");
 
@@ -108,7 +107,7 @@ function makePayment() {
             } else {
                  //update payment status
                 updatePaymentInfo(activepayId, 2, "Failed");
-
+               
                 // redirect to a failure page.
                 alert('Payment Failed..');
                 return false;
@@ -129,8 +128,7 @@ function getInfoByEmail(email) {
         dataType: "json",
         async: false,
         success: function (result) {
-            alert('got here')
-            
+           
             if (result.d != "") {
                 var data = JSON.parse(result.d);
                 if (data.length != 0) {
@@ -151,7 +149,6 @@ function logPaymentInfoDB(payinfo) {
         dataType: "json",
         async: false,
         success: function (result) {
-            alert('got here for db test')
 
             if (result.d != "") {
                 var data = JSON.parse(result.d);
@@ -165,7 +162,6 @@ function logPaymentInfoDB(payinfo) {
 }
 
 function updatePaymentInfo(payid, status, response) {
-    alert('here now')
     $.ajax({
         type: "POST",
         url: "/ICA/Admin/ICAWebService.asmx/updatePaymentInfoDB",
@@ -174,7 +170,6 @@ function updatePaymentInfo(payid, status, response) {
         dataType: "json",
         async: true,
         success: function (result) {
-            alert('got here for db test')
 
             if (result.d != "") {
                 var data = JSON.parse(result.d);
