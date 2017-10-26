@@ -63,7 +63,7 @@ namespace ICA
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("Admin/Index.aspx");
+                            Response.Redirect("~/ICA/Admin/Index.aspx");
 
                         }
 
@@ -78,11 +78,11 @@ namespace ICA
 
                             if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
                             {
-                                Response.Redirect("Member/index.aspx");
+                                Response.Redirect("~/ICA/Member/index.aspx");
                             }
                             else
                             {
-                                Response.Redirect("/guest/registrationPayment.aspx", true);
+                                Response.Redirect("~/ICA/guest/registrationPayment.aspx", true);
                             }
                             
                         }

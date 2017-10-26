@@ -141,7 +141,7 @@
     </div>
 
    
-     <script src="/js/navbar.js"></script>
+     <script src="/ica/js/navbar.js"></script>
     <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
      <%-- <script src="/ica/js/navbar.js"></script>--%>
 

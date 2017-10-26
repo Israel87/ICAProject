@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container text-center">
-        <img src="../images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
+        <img src="/ica/images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
         <br />
 
         <h3 style="font-family: Agency FB"><b>ASSOCIATE / FELLOW / MEMBER MEMBERSHIP</b> </h3>
@@ -913,7 +913,7 @@
     </div>
 
    
-     <script src="/js/navbar.js"></script>
+     <script src="/ica/js/navbar.js"></script>
      <%-- <script src="/ica/js/navbar.js"></script>--%>
 
 
