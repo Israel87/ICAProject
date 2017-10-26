@@ -105,7 +105,7 @@ namespace ICA
                 {
                     if (FileUpload1.FileName.EndsWith("jpg"))
                     {
-                        String fileName = Server.MapPath("~") + "/Credentials/Passport/" + biodataid + ".jpg";
+                        String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
                         FileUpload1.SaveAs(fileName);
                         Response.Write("<script>alert('Successful...');</script>");
                     }
@@ -118,7 +118,7 @@ namespace ICA
 
                     if (FileUpload2.FileName.EndsWith("pdf"))
                     {
-                        String fileNameII = Server.MapPath("~") + "/Credentials/Resume/" + biodataid + ".pdf";
+                        String fileNameII = Server.MapPath("~") + "/ICA/Credentials/Resume/" + biodataid + ".pdf";
                         FileUpload2.SaveAs(fileNameII);
 
                         Response.Write("<script>alert('Successful...');</script>");
@@ -137,7 +137,7 @@ namespace ICA
 
                 }
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
-                Response.Redirect("/guest/registrationPayment.aspx");
+                Response.Redirect("/ICA/guest/registrationPayment.aspx");
             }
             else
             {

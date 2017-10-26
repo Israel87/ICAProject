@@ -22,7 +22,7 @@ namespace ICA.Admin
             if (Session["UserEmail"] == null)
             {
 
-                Response.Redirect("~/ICA/signIn.aspx");
+                Response.Redirect("/ICA/signIn.aspx");
             }
             else
             {
@@ -31,13 +31,6 @@ namespace ICA.Admin
 
 
             }
-
-
-
-
-
-
-
 
 
             if (!IsPostBack)

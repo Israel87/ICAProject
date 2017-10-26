@@ -30,7 +30,7 @@ namespace ICA.Admin
             if (Session["UserEmail"] == null)
             {
 
-                Response.Redirect("~/ICA/signIn.aspx");
+                Response.Redirect("/ICA/signIn.aspx");
             }
             else
             {
@@ -286,10 +286,10 @@ namespace ICA.Admin
                 try
                 {
                     //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
-                    if (File.Exists(Server.MapPath("~/Credentials/Resume/" + bd + ".pdf")))
+                    if (File.Exists(Server.MapPath("/ICA/Credentials/Resume/" + bd + ".pdf")))
                     {
 
-                        pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/Credentials/Resume/" +
+                        pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/ICA/Credentials/Resume/" +
                                  bd + ".pdf' frameborder ='1' scrolling ='auto' height ='600' width ='1050' ></ iframe ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
                     }
                 }
