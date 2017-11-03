@@ -57,7 +57,7 @@ namespace ICA.Member
                         string _middlename = _userEmail.Rows[0]["MIDDLENAME"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
                         _biodataid = _userEmail.Rows[0]["biodataid"].ToString();
-                        username.Text = _firstname;
+                        
 
                         title.SelectedValue = _userEmail.Rows[0]["title"].ToString();
                         fullname.Value = _firstname + " " + _middlename + " " + _lastname;
@@ -82,7 +82,11 @@ namespace ICA.Member
                         empIII.Value = _userEmail.Rows[0]["OTHEREMPLOYER3"].ToString();
                         posIII.Value = _userEmail.Rows[0]["position3"].ToString();
 
+                        username.Text = _firstname;
+                        _firstname = Session["active_firstname"].ToString();
+
                         Session["active_biodata"] = _biodataid;
+
 
 
                         if (File.Exists(Server.MapPath("/ICA/Credentials/Passport/" + _biodataid + ".jpg")))

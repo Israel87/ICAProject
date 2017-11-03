@@ -10,6 +10,7 @@ namespace ICA.Member
     public partial class downloads : System.Web.UI.Page
     {
         string emailinSession = "";
+        string _firstname = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,7 +24,8 @@ namespace ICA.Member
                 {
                     //_userSession = Session["UserID"].ToString();
                     emailinSession = Session["UserEmail"].ToString();
-
+                   // _firstname = Session["active_firstname"].ToString();
+                    username.Text = _firstname;
 
                 }
 

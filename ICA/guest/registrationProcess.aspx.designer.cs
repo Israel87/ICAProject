@@ -64,7 +64,16 @@ namespace ICA {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
+        
+        /// <summary>
+        /// passwordII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordII;
         
         /// <summary>
         /// dob control.
@@ -73,7 +82,7 @@ namespace ICA {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dob;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText dob;
         
         /// <summary>
         /// email control.
@@ -175,13 +184,13 @@ namespace ICA {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea instNameID;
         
         /// <summary>
-        /// graddateID control.
+        /// graddate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl graddateID;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText graddate;
         
         /// <summary>
         /// certNameID control.
@@ -220,13 +229,13 @@ namespace ICA {
         protected global::System.Web.UI.HtmlControls.HtmlInputText posOccID;
         
         /// <summary>
-        /// dateEmpID control.
+        /// dateEmp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateEmpID;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText dateEmp;
         
         /// <summary>
         /// functionID control.
@@ -326,6 +335,24 @@ namespace ICA {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea functionsII;
+        
+        /// <summary>
+        /// uploadNotificationI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadNotificationI;
+        
+        /// <summary>
+        /// uploadNotificationII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uploadNotificationII;
         
         /// <summary>
         /// FileUpload2 control.

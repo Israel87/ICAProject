@@ -14,6 +14,7 @@ namespace ICA
 {
     public partial class registrationPayment : System.Web.UI.Page
     {
+        ICA.Model.Util utilities = new Model.Util();
         logic logic = new logic();
         string _userEmail = "";
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
@@ -21,13 +22,16 @@ namespace ICA
         DataTable _paymenttable = new DataTable();
 
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                regNotification.Text = utilities.ShowSuccess("Successful Registration / Login, Please Proceed to Pay for Registration.");
+
                 if(Session["UserEmail"] == null)
                 {
-                    Response.Redirect("/ICA/signIn.aspx.aspx");
+                    Response.Redirect("/signIn.aspx.aspx");
                 }
                 
                 else
@@ -42,7 +46,7 @@ namespace ICA
 
                 OracleDataAdapter da;
 
-                OracleCommand cmd = new OracleCommand("GET_MEMCAT_FEES", conn);
+                OracleCommand cmd = new OracleCommand("GET_MEMCAT_REGFEES", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new OracleParameter("V_MEMBERTYPEID", OracleDbType.Int32, Convert.ToInt32(_membertypeid), ParameterDirection.Input));
                 cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;

@@ -87,6 +87,10 @@
             <!--/.row-->
 
             <div class="">
+                <br />
+                <asp:Label ID="approvalNotification" runat="server"></asp:Label>
+                <br />
+
                 <div class="form-group">
                     <label for="title" class="col-lg-2 control-label">
                         Select from the list : 
@@ -104,7 +108,7 @@
                     </div>
 
                     <div class="col-lg-2">
-                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" OnClick="manageRegID_Click" Text="SEARCH" Font-Bold="true" />
+                        <asp:Button ID="manage_RegID" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" OnClick="manageRegID_Click" Text="SEARCH" Font-Bold="true" />
                     </div>
                 </div>
             </div>
@@ -116,10 +120,13 @@
 
             <div class="col-lg-12">
 
-
+               <%--   <asp:Button ID="exportExcel"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="exportExcel_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />--%>
+                <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />
+                <br /><br />
                 <div class="">
                     <div class="table-responsive">
-                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="regResults_PageIndexChanging" PageSize="2">
+                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound">
+                            
                             <Columns>
                                 <asp:TemplateField>
                                     <ItemTemplate>
@@ -134,6 +141,24 @@
                                 <asp:BoundField DataField="APPLICATION STATUS" HeaderText="MEMBER STATUS" ControlStyle-Font-Bold="true" />
                                 <asp:BoundField DataField="DATEADDED" HeaderText="DATE" ControlStyle-Font-Bold="true" />
                             </Columns>
+
+                            <PagerTemplate>
+                                <table>
+                                    <tr>
+                                        
+                                        <td>
+                                            <asp:LinkButton ID="L1" runat="server" Text="PREVIOUS" CommandName="Page" CommandArgument="Prev" />
+                                             <asp:LinkButton ID="L2" runat="server" Text="NEXT" CommandName="Page" CommandArgument="Next" />
+                                        </td>
+                                        <td>
+                                           Page No:  <asp:Label ID="L3" runat="server"></asp:Label>
+                                           Total Page <asp:Label ID="L4" runat="server"></asp:Label>
+                                        </td>
+                                       
+                                    </tr>
+                                </table>
+                            </PagerTemplate>
+                            <PagerSettings Mode="NextPrevious" Position="Bottom" />
 
                         </asp:GridView>
 
@@ -150,22 +175,25 @@
 
                 <div class="row container">
                     <div class="col-lg-12">
-                        <div class="input-group">
-
-                            <asp:Button ID="resume" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="VIEW RESUME" Font-Bold="true" OnClick="resume_Click" />
-                            <asp:Button ID="passport" runat="server" CssClass="btn btn-outline-rounded btn-warning" Style="border-radius: 0px; width: 200px;" Text="VIEW PASSPORT" Font-Bold="true" OnClick="passport_Click"/>
+                        <div class="input-group">                 
+                            <%--    <asp:Button ID="passport" runat="server" CssClass="btn btn-outline-rounded btn-warning" Style="border-radius: 0px; width: 200px;" Text="VIEW PASSPORT" Font-Bold="true" OnClick="passport_Click"/>--%>
                              <asp:Button ID="approve" runat="server" CssClass="btn btn-outline-rounded btn-success" Style="border-radius: 0px; width: 200px;" Text="APPROVE" OnClick="approve_Click" Font-Bold="true" />
                         </div>
 
-                    </div><br /><br />
-                    <div class="col-lg-12">
-                        <div class="input-group">
-                           
-                            <asp:Label ID="passportDisplay" runat="server">
+                          <div class="input-group" style="float:right">
+                                 <asp:Label ID="passportDisplay" runat="server"></asp:Label>
+                       </div>
 
-                            </asp:Label>
-                        </div>
-                    </div>
+                    </div><br /><br />
+
+                    
+                  <%--  <div class="col-lg-12">--%>
+                        <%--<div class="col-lg-8"></div>
+                        <div class="col-lg-4"> </div>--%>
+                        
+
+
+                   <%-- </div>--%>
                     <br />
                   
                 </div>
@@ -302,9 +330,11 @@
                 <br />
                     
                         <div class="col-lg-12 text-center">
-                           
-                            <asp:Label ID="pdfDisplay" runat="server" >
-                            </asp:Label>     
+
+                          <asp:Label ID="pdfDisplay" runat="server"></asp:Label>  
+                          
+                                <br /><br />
+              
 
                         </div>
               
@@ -313,14 +343,18 @@
 
                    <br />
                 <br />
-
+            </div>
 
     </form>
 
     
  
  
-
+      <br />
+                    <br />  <br />
+                    <br />  <br />
+                    <br />
+                    <br />
 
 
     <script src="js/jquery-1.11.1.min.js"></script>
@@ -331,6 +365,38 @@
     <script src="js/easypiechart-data.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/custom.js"></script>
+
+
+      <script src="http://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+            <script type="text/javascript">
+                $('#excelExport').click(function () {
+                    $('#regResults').table2excel({
+                        name: "Report",
+                        filename: "ReportByCategory"
+                    });
+                });
+
+                //$('#paging')
+                //    .tablesorter({ widthFixed: true, widgets: ['zebra'] })
+                //    .tablesorterPager({
+                //        container: $("#pager")
+
+                //    });
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");

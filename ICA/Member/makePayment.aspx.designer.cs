@@ -13,6 +13,24 @@ namespace ICA.Member {
     public partial class makePayment {
         
         /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label username;
+        
+        /// <summary>
+        /// emailDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText emailDisplay;
+        
+        /// <summary>
         /// paymentCatID control.
         /// </summary>
         /// <remarks>
@@ -31,39 +49,12 @@ namespace ICA.Member {
         protected global::System.Web.UI.WebControls.Button membersPayID;
         
         /// <summary>
-        /// annualPaymentID control.
+        /// recordList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect annualPaymentID;
-        
-        /// <summary>
-        /// annualPayID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button annualPayID;
-        
-        /// <summary>
-        /// inductionPaymentID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inductionPaymentID;
-        
-        /// <summary>
-        /// inductionPayID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button inductionPayID;
+        protected global::System.Web.UI.WebControls.Label recordList;
     }
 }

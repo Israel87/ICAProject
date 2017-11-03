@@ -162,6 +162,8 @@
                         <div class="col-lg-12">
                             <h4>Create a Payment Item  </h4>
                             <br />
+                            <asp:Label ID="paymentItemNotification" runat="server"></asp:Label>
+                            <br />
                             <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
                             </select><br />
                         </div>
@@ -210,6 +212,9 @@
                     <h4> Create Payment Type </h4><br />
 
                     <div class="col-lg-12">
+                        <br />
+                        <asp:Label ID="paymentTypeNotifications" runat="server"></asp:Label>
+                        <br />
                           <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
                         <br /><br />
                           <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />

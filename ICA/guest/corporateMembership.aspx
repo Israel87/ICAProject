@@ -18,7 +18,9 @@
                             <img src="../images/silvermembership.png" style="width: 80px; height: 80px" />
                           <br /><br />
                             <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px"  data-toggle="modal" data-target=".bd-example-modal-lg" Text="Read More" Font-Bold="true" />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+							
+							<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
 
                     </div>
 
@@ -33,7 +35,11 @@
                
                               <br /><br />
                                     <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                                    <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
+                                    <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+									
+									<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
+									
+									
                     </div>
                 </div>
 
@@ -43,8 +49,8 @@
                              <img src="../images/Platinum.png" style="width: 80px; height: 80px"/>
                          <br /><br />
                             <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
-
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+							<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
                     </div>
 
                 </div>

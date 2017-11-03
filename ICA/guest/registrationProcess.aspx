@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container text-center">
-        <img src="/ica/images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
+        <img src="../images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
         <br />
 
         <h3 style="font-family: Agency FB"><b>ASSOCIATE / FELLOW / MEMBER MEMBERSHIP</b> </h3>
@@ -61,6 +61,7 @@
                             <div class="container">
                                 <h3 class="container">Personal Information </h3>
                                 <h5 class="container"><b>Kindly fill the boxes below as appropriate with the requested personal information.</b></h5>
+                                <h6 class="container" style="color:red"> <b>All Fields within this Tab are Compulsory.</b></h6>
                                 <hr />
                                 <%--  <br />--%>
                                 <%--<p style="font-family: monospace"> Kindly fill the boxes below as appropriate with the requested personal information </p><br />--%>
@@ -72,10 +73,11 @@
                                         <div class="col-lg-6">
                                             <select id="title" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
                                                 <option value="">Select Title</option>
-                                                <option value="1">Master</option>
-                                                <option value="2">Miss</option>
-                                                <option value="3">Mr</option>
-                                                <option value="4">Mrs</option>
+                                                <option value="1">MR</option>
+                                                <option value="2">MRS</option>
+                                                <option value="3">MASTER</option>
+                                                <option value="4">MS</option>
+												<option value="5">MISS</option>
 
                                             </select>
                                         </div>
@@ -113,27 +115,24 @@
                                         </div>
                                         <div class="col-lg-5">
 
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="password" placeholder="Password" />
+                                            <input class="form-control" type="password" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="password" placeholder="Password" required/>
                                             <br />
+											 <input class="form-control" type="password" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="passwordII" placeholder="Confirm Password" required />
+											 <br/>
                                         </div>
                                     </div>
-
-
-
 
 
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="date" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" name="dob" id="dob" placeholder="Date of Birth" required="required" />
+                                            <input class="form-control _date" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" name="dob" id="dob" placeholder="Date of Birth" required="required" />
+                                          
                                         </div>
                                         <div class="col-lg-5">
                                             <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="email" placeholder="Email Address" required="required" /><br />
                                         </div>
-                                        <%-- <div class="col-lg-5"><asp:TextBox runat="server"></asp:TextBox>
-                                            
-                                             <input class="form-control" type="text" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" placeholder="Last Name" />
-                                            </div>--%>
+
                                     </div>
 
                                     <div class="form-group">
@@ -464,15 +463,18 @@
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
                                             <asp:TextBox ID="phoneNUmber" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Phone Number"></asp:TextBox>
+                                         
+
                                         </div>
 
                                         <div class="col-lg-5">
                                             <select id="maritStats" class="form-control" name="country" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
                                                 <option value="Null">Select Marital Status</option>
+												<option value="Married">Married</option>
                                                 <option value="Single">Single</option>
-                                                <option value="Married">Married</option>
+                                                <option value="Separated">Separated</option>
                                                 <option value="Divorced">Divorced</option>
-                                                <option value="Seperated">Seperated</option>
+                                                <option value="Widowed">Widowed</option>
                                             </select><br />
 
                                         </div>
@@ -494,6 +496,7 @@
                             <div class="container">
                                 <h3 class="container">Educational Qualification </h3>
                                 <h5 class="container"><b>Please provide accurate details about your educational background</b></h5>
+                                <h6 class="container" style="color:red"> <b>All Fields within this Tab are Compulsory.</b></h6>
                                 <hr />
 
                                 <div class="form-group">
@@ -502,11 +505,13 @@
                                     <div class="col-lg-8">
                                         <select id="degreeID" class="form-control" name="degree" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
                                             <option value="Null">Select </option>
-                                            <option value="1">Master of Business Adminstration</option>
+                                            <option value="1">Bachelor of Science</option>
                                             <option value="2">Master of Science</option>
-                                            <option value="3">Bachelor of Science</option>
-                                            <option value="4">SSCE</option>
-                                            <option value="5">First School Leaving Certificate</option>
+                                            <option value="3">PhD</option>
+                                            <option value="4">OND</option>
+                                            <option value="5">HND</option>
+											<option value="6">SSCE</option>
+											<option value="7">MBA</option>
                                         </select>
                                     </div>
                                     <br />
@@ -525,7 +530,9 @@
                                     </div>
 
                                     <div class="col-lg-4">
-                                        <input class="form-control" name="graddate" id="graddateID" type="date" style="width: 400px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" placeholder="Select Date" />
+                                        <input class="form-control _date" type="text" name="graddate" id="graddate" style="width: 400px; border: 2px solid #0094ff; width: 200px; border-radius: 0px" runat="server" placeholder="Select Date" required="required" />
+
+                                       
 
                                     </div>
                                     <br />
@@ -545,18 +552,14 @@
 
                                     </div>
                                     <div class="col-lg-4">
-                                        <%--<input class="form-control" name="selDateI" id="seldateIID" type="date" style="width:200px; border:2px solid #0094ff; width:200px; border-radius:0px" runat="server" placeholder="Select Date" /> <br />
-                                                   <br /> --%>
+                                   
                                     </div>
-                                    <%-- <center>
-                                                     <a class="btn btn-info custom-btn add-button" style="display: inline; border-radius:0px" ><b>&plus; Add More</b> </a>
-                                                </center>--%>
+                          
                                 </div>
 
 
 
-                                <%--</div>--%>
-                                <%--</div>--%>
+                           
                             </div>
 
                             <center>
@@ -576,6 +579,7 @@
                             <div class="container">
                                 <h3 class="container">Employment Records </h3>
                                 <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
+                                <h6 class="container" style="color:red"> <b>Only the Most Recent Work Experience Fields within this Tab are Compulsory.</b></h6>
                                 <hr />
 
                                 <br />
@@ -625,7 +629,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--<p>Date Employed</p>--%>
-                                                <input runat="server" name="dateEmp" id="dateEmpID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Date Employed" />
+                                                <input runat="server" name="dateEmp" id="dateEmp" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Date Employed" />
                                                 <br />
                                             </div>
                                         </div>
@@ -636,7 +640,7 @@
 
                                             <div class="col-lg-8">
                                                 <p>Functions</p>
-                                                <textarea runat="server" name="functions" id="functionID" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                                <textarea runat="server" name="functions" id="functionID" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
                                             </div>
 
                                             <br />
@@ -678,7 +682,7 @@
                                     </b>--%>
                                             <div class="col-lg-8">
                                                 <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateI" id="startDateI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                                <input runat="server" name="startDateI" id="startDateI" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
                                             </div>
                                             <br />
                                         </div>
@@ -688,7 +692,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateI" id="endDateI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                                <input runat="server" name="endDateI" id="endDateI" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
                                             </div>
 
                                             <br />
@@ -703,7 +707,7 @@
 
                                             <div class="col-lg-8">
                                                 <p>Functions</p>
-                                                <textarea runat="server" name="functionsI" id="functionsI" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                                <textarea runat="server" name="functionsI" id="functionsI" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
                                             </div>
 
                                             <br />
@@ -744,7 +748,7 @@
                                     </b>--%>
                                             <div class="col-lg-8">
                                                 <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateII" id="startDateII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                                <input runat="server" name="startDateII" id="startDateII" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
                                             </div>
                                             <br />
                                         </div>
@@ -754,7 +758,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateII" id="endDateII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                                <input runat="server" name="endDateII" id="endDateII" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
                                             </div>
 
                                             <br />
@@ -766,7 +770,7 @@
 
                                             <div class="col-lg-8">
                                                 <p>Functions</p>
-                                                <textarea runat="server" name="functionsII" id="functionsII" type="date" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                                <textarea runat="server" name="functionsII" id="functionsII" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
                                             </div>
 
                                             <br />
@@ -792,6 +796,9 @@
                             <div class="container">
                                 <h3 class="container">Upload Credentials</h3>
                                 <hr />
+                                <br />
+                                 <asp:Label ID="uploadNotificationI" runat="server"></asp:Label>
+                                 <asp:Label ID="uploadNotificationII" runat="server"></asp:Label>
                                 <br />
                                 <div class="form-group">
                                     <b class="col-lg-4 control-label" style="text-align: right">UPLOAD RESUME
@@ -837,62 +844,8 @@
 
                                 </div>
                             </div>
-                           
-
                         </div>
 
-                        <%--                         End of tab four--%>
-                      <%--  <div class="tab-pane fade" id="doner">
-                            <div class="container">
-                                <h3 class="container">Select Payment Amount based on Membership Category </h3>
-                                <hr />
-                                <br />
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label">Choose a Payment Category  <%--<span style="color: red; font-style: italic; text-align: right">*</span>
-                                    </b>
-                                    <div class="col-lg-8">
-                                        <select class="form-control" name="paymentCat" id="paymentCatID" style="border: 2px solid #0094ff; width: 700px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select Choice </option>
-                                            <option value="0" style="font-weight: bold" class="form-control">&nbsp; Payment Test  &nbsp; | &nbsp; 200 </option>
-                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Corp  &nbsp; | &nbsp; 15,000 </option>
-                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; Associate Fee &nbsp; | &nbsp; 47,500 </option>
-                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; Member Fee &nbsp;&nbsp;| &nbsp; 67,000</option>
-                                            <option value="4" style="font-weight: bold" class="form-control">&nbsp; Fellow Fee &nbsp; &nbsp;|  &nbsp; 150,000</option>
-
-                                        </select>
-                                    </div>
-                                    <br />
-
-                                    <center><br /> <br /> 
-                                        
-                                           <p id="errorMsg"></p>
-                                        
-                                        
-                                        <br /> <br /> 
-
-
-                                         <%--<asp:Button runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT" ></asp:Button> --%>
-
-                                        <%--<button runat="server" id="saveUserButton" class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" onclick="return makePayment();"><b>PROCEED TO PAYMENT</b> </button>
-
-                                        <asp:Button runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT" OnClick="saveButton_Click"></asp:Button> 
-
-                                    </center>
-
-                                </div>
-                                <asp:HiddenField ID="transRefID" runat="server" />
-
-                                <div class="container input-group">
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <%--<button class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px"><b>NEXT</b></button>
-                                    <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('credentials').click();"><b>PREVIOUS</b></a>
-
-                                </div>
-                            </div>
-                        </div>--%>
                         <%-- End of tab five--%>
                         <div class="clearfix"></div>
                     </div>
@@ -902,9 +855,6 @@
         </div>
     </section>
 
-
-
-
     <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -912,9 +862,10 @@
         </div>
     </div>
 
-   
-     <script src="/ica/js/navbar.js"></script>
+    <%--<script src="/js/jquery.datetimepicker.min.js"></script>--%>
+    
      <%-- <script src="/ica/js/navbar.js"></script>--%>
+        
 
 
 </asp:Content>

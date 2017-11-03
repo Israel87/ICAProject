@@ -1,7 +1,7 @@
 ﻿var userinfo = "";
 
 $(function () {
-$('a[title]').tooltip();
+    $('a[title]').tooltip();
 });
 
 // additional view for Educational Records
@@ -48,9 +48,9 @@ function makePayment() {
 
     //log payment to db
 
-    var selectedItem = $('#MainContent_paymentCatID option:selected').text().split('|  ₦');
+    var selectedItem = $('#MainContent_paymentCatID option:selected').text().split('|  ₦ ');
     var payment_desc = selectedItem[0].trim();
-    var amount = parseInt(selectedItem[1].trim().replace(',', ''));
+    var amount = parseInt(selectedItem[1].trim());
     var email = $('#MainContent_emailDisplay').text();
     var payItemID = $('#MainContent_paymentCatID option:selected').val();
     var response = '';
@@ -61,12 +61,12 @@ function makePayment() {
     getInfoByEmail(email);
 
     //log paymnt to db
-    logPaymentInfoDB("{'biodataid': '"+ userinfo.Table[0].BIODATAID +"', 'description': '" + payment_desc +"', 'response': '" + response + "', 'payItemId': '" +payItemID + "', 'payRef': '" + rnd + "', 'status': 0 }");
-        
+    logPaymentInfoDB("{'biodataid': '" + userinfo.Table[0].BIODATAID + "', 'description': '" + payment_desc + "', 'response': '" + response + "', 'payItemId': '" + payItemID + "', 'payRef': '" + rnd + "', 'status': 0 }");
+
     getpaidSetup({
         customer_email: email,
-        customer_name: userinfo.Table[0].FIRSTNAME,
-        customer_mobile: userinfo.Table[0].PHONE,
+        customer_firstname: userinfo.Table[0].FIRSTNAME,
+        customer_phone: userinfo.Table[0].PHONE,
         customer_lastname: userinfo.Table[0].LASTNAME,
         amount: amount,
         currency: "NGN",
@@ -84,7 +84,7 @@ function makePayment() {
                 updatePaymentInfo(activepayId, 0, "Cancelled");
                 alert('Payment Cancelled..');
             }
-                
+
             return false;
         },
         callback: function (response) {
@@ -92,7 +92,7 @@ function makePayment() {
             console.log("This is the response returned after a charge", response);
 
             triggerPayment = true;
-            
+
             if (response.tx.chargeResponse == '00' || response.tx.chargeResponse == '0') {
                 alert('Payment Successfull..' + flw_ref);
                 $('#transRefID').val() = flw_ref;
@@ -105,9 +105,9 @@ function makePayment() {
 
                 return true;
             } else {
-                 //update payment status
+                //update payment status
                 updatePaymentInfo(activepayId, 2, "Failed");
-               
+
                 // redirect to a failure page.
                 alert('Payment Failed..');
                 return false;
@@ -122,18 +122,18 @@ function getInfoByEmail(email) {
 
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/GetInfoByEmail",
-        data: '{email : "'+ email +'"}',
+        url: "/Admin/ICAWebService.asmx/GetInfoByEmail",
+        data: '{email : "' + email + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,
         success: function (result) {
-           
+
             if (result.d != "") {
                 var data = JSON.parse(result.d);
                 if (data.length != 0) {
                     //console.log(data)
-                    userinfo = data;  
+                    userinfo = data;
                 }
             }
         }
@@ -143,7 +143,7 @@ var activepayId;
 function logPaymentInfoDB(payinfo) {
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/logPaymentInfoDB",
+        url: "/Admin/ICAWebService.asmx/logPaymentInfoDB",
         data: payinfo,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -164,8 +164,8 @@ function logPaymentInfoDB(payinfo) {
 function updatePaymentInfo(payid, status, response) {
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/updatePaymentInfoDB",
-        data: "{paymentid: '" + payid + "', status:  '" + status + "', response:  '" + response +"' }",
+        url: "/Admin/ICAWebService.asmx/updatePaymentInfoDB",
+        data: "{paymentid: '" + payid + "', status:  '" + status + "', response:  '" + response + "' }",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: true,
@@ -181,10 +181,25 @@ function updatePaymentInfo(payid, status, response) {
     });
 }
 
+function confirmPass() {
+    alert('Password don\'t match');
+};
+
+
+
+function bvnPhoneNumber(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57) || evt.delegateTarget.value.length > 10)
+        return false;
+    return true;
+}
+
+$('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
+
 
 function checkVal() {
 
-    
+
     // Check form validations 
 
     if ($("#MainContent_title").val() == "") {
@@ -212,6 +227,12 @@ function checkVal() {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
     }
+
+    if ($('#MainContent_password').val() != $('#MainContent_passwordII').val()) {
+        $('#errorMsg').html('<h4 style="color:red"> ** Password and Confirm Password Does not Match **</h4>');
+        return false;
+    }
+
     if ($('#MainContent_dob').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Date Of Birth **</h4>');
         return false;
@@ -232,10 +253,19 @@ function checkVal() {
         $('#errorMsg').html('<h4 style="color:red"> ** state should be included **</h4>');
         return false;
     }
-    if ($('#MainContent_phoneNUmber').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Phone Number must be included **</h4>');
+
+    if (($('#MainContent_phoneNUmber').val()).length == 7 || ($('#MainContent_phoneNUmber').val()).length == 11) {
+
+    }
+    else {
+        $('#errorMsg').html('<h4 style="color:red"> **  Phone Number  must either be 7 or 11 digits **</h4>');
         return false;
     }
+
+    //if ($('#MainContent_phoneNUmber').val() == "") {
+    //    $('#errorMsg').html('<h4 style="color:red"> ** Phone Number must be included **</h4>');
+    //    return false;
+    //}
     if ($('#MainContent_maritStats').val() == "Null") {
         $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Marital Status **</h4>');
         return false;
@@ -277,7 +307,7 @@ function checkVal() {
 
 
 function payWithPaystack() {
- 
+
     var email = $('#email').val() == "" ? 'nnajiisrael@gmail.com' : $('#email').val();
 
     var handler = PaystackPop.setup({
@@ -306,3 +336,19 @@ function payWithPaystack() {
     });
     handler.openIframe();
 }
+
+$(document).ready(function () {
+   
+    $('._date').datetimepicker({
+        timepicker: false,
+        //mask: true,
+        format: 'm/d/Y',
+        //minDate: '-1970/01/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
+        maxDate: '-1970/01/01'//tomorrow is maximum date calendar
+        //onChangeDateTime: function (dp, $input) {
+        //    alert($input.val())
+        //}
+    });
+
+    // other date formats
+})

@@ -26,59 +26,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
 				<a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION</span>Admin</a>
-				<%--<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
-					</a>--%>
-						<%--<ul class="dropdown-menu dropdown-messages">
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">3 mins ago</small>
-										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-									<br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">1 hour ago</small>
-										<a href="#">New message from <strong>Jane Doe</strong>.</a>
-									<br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="all-button"><a href="#">
-									<em class="fa fa-inbox"></em> <strong>All Messages</strong>
-								</a></div>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">5</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-heart"></em> 12 New Likes
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-user"></em> 5 New Followers
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>--%>
+			
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
@@ -168,12 +116,51 @@
                                         </div>
                                     </div>
 
-            <br /><br />
+            <br />
 
 
-
+               
             <div class="col-lg-12">
-                  <table class="content-box table table-condensed table-striped table-responsive table-hover" style="width:100%;" >
+              
+                <%-- <asp:Label ID="dataRec" runat="server" ForeColor="Red" Font-Bold="true"></asp:Label>--%>
+                <br />
+                  <asp:Button ID="exportExcel"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px; " OnClick="exportExcel_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />
+                <br /> <br /> 
+                <asp:GridView ID="gvData" runat="server"  CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="gvData_PageIndexChanging" PageSize="10" OnDataBound="gvData_DataBound">
+                    <Columns>
+                        <asp:BoundField DataField="FULLNAME" HeaderText="FULL NAME" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="USERNAME" HeaderText="EMAIL" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="MEMBERCATEGORY" HeaderText="MEMBER CATEGORY" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="PAYMENTREFERENCE" HeaderText="PAYMENT REFERENCE" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="TRANSACTION DATE" HeaderText="TRANSACTION DATE" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="AMOUNT" HeaderText="AMOUNT" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="DESCRIPTION" HeaderText="DESCRIPTION" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="APPLICATION STATUS" HeaderText="APPLICATION STATUS" ControlStyle-Font-Bold="true" />
+                    </Columns>
+
+                            <PagerTemplate>
+                                <table>
+                                    <tr>
+                                        
+                                        <td>
+                                            <asp:LinkButton ID="L1" runat="server" Text="PREVIOUS" CommandName="Page" CommandArgument="Prev" />
+                                             <asp:LinkButton ID="L2" runat="server" Text="NEXT" CommandName="Page" CommandArgument="Next" />
+                                        </td>
+                                        <td>
+                                           Page No:  <asp:Label ID="L3" runat="server"></asp:Label>
+                                           Total Page <asp:Label ID="L4" runat="server"></asp:Label>
+                                        </td>
+                                       
+                                    </tr>
+                                </table>
+                            </PagerTemplate>
+
+                            <PagerSettings Mode="NextPrevious" Position="Bottom" />
+
+
+                </asp:GridView>
+
+                  <%--<table class="content-box table table-condensed table-striped table-responsive table-hover" style="width:100%;" >
                           <thead>
                               <tr>
                                   <th>#</th>
@@ -190,7 +177,7 @@
                           <tbody id ="t_body" runat="server">
 
                           </tbody>
-                      </table>
+                      </table>--%>
             </div>
 		</div><!--/.row-->
 

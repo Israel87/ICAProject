@@ -12,9 +12,10 @@
             <br />
     </div>
    
-                                <div class="container" id="errorDisplay" runat="server">
+                               <%-- <div class="container" id="errorDisplay" runat="server">
                                    
-                                </div>
+                                </div>--%>
+                     <asp:Label ID="error101" runat="server"></asp:Label>
 
            <div class="col-md-4 col-md-offset-4">
               

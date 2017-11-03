@@ -90,7 +90,10 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-name">
+                   <asp:Label ID="username" runat="server"></asp:Label>
+
+				</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -125,7 +128,7 @@
 			<li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
-		
+		<form runat="server">
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -145,9 +148,43 @@
 	
 		<div class="row">
 			<div class="col-md-12">
+
+                 <asp:Label ID="paymentHistoryNotification" runat="server"></asp:Label>
 				<div class="panel panel-default">
-					
+					<asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" /> <br /><br />
 					<div class="panel-body">
+                        
+                        <div class="container">
+                            <asp:GridView ID="payHistoryID" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="payHistoryID_PageIndexChanging" OnDataBound="payHistoryID_DataBound"  >
+                                <Columns>
+                                    <asp:BoundField DataField="DESCRIPTION" HeaderText="DESCRIPTION"  ControlStyle-Font-Bold="true"  />
+                                    <asp:BoundField DataField="TIMESTAMP" HeaderText="PAYMENT TIME"  ControlStyle-Font-Bold="true"  />
+                                    <asp:BoundField DataField="RESPONSE" HeaderText="PAYMENT RESPONSE"  ControlStyle-Font-Bold="true"  />
+                                    <asp:BoundField DataField="PAYMENTREFERENCE" HeaderText="PAYMENT REFERENCE"  ControlStyle-Font-Bold="true"  />
+                                    <asp:BoundField DataField="PAYMENTREFERENCE" HeaderText="PAYMENT REFERENCE"  ControlStyle-Font-Bold="true"  />
+                                </Columns>
+
+
+                             <PagerTemplate>
+                                <table>
+                                    <tr>
+                                        
+                                        <td>
+                                            <asp:LinkButton ID="L1" runat="server" Text="PREVIOUS" CommandName="Page" CommandArgument="Prev" />
+                                             <asp:LinkButton ID="L2" runat="server" Text="NEXT" CommandName="Page" CommandArgument="Next" />
+                                        </td>
+                                        <td>
+                                           Page No:  <asp:Label ID="L3" runat="server"></asp:Label>
+                                           Total Page <asp:Label ID="L4" runat="server"></asp:Label>
+                                        </td>
+                                       
+                                    </tr>
+                                </table>
+                            </PagerTemplate>
+                            <PagerSettings Mode="NextPrevious" Position="Bottom" />
+
+                            </asp:GridView>
+                        </div>
 						
 					</div>
 				</div>
@@ -158,6 +195,7 @@
 		
 		<!--/.row-->
 	</div>	<!--/.main-->
+            </form>
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

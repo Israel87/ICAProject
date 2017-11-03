@@ -12,9 +12,12 @@ namespace ICA.Admin
 {
     public partial class payments : System.Web.UI.Page
     {
+        ICA.Model.Util utilities = new Model.Util();
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
+
         DataTable _memCategoryReport = new DataTable();
         string emailinSession = "";
+        string _useridInSession = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +31,7 @@ namespace ICA.Admin
             {
                 //_userSession = Session["UserID"].ToString();
                 emailinSession = Session["UserEmail"].ToString();
-
+                _useridInSession = Session["UserID"].ToString();
 
             }
 
@@ -52,17 +55,19 @@ namespace ICA.Admin
 
                 memcatID.DataSource = _memCategoryReport;
                 memcatID.DataBind();
+              //  Session["mc"] = _memCategoryReport;
 
             }
 
+           
 
         }
 
         // generate report by member types.
-        public DataTable GetReportByMemberTypes(string _memberTypeID)
+        public DataSet GetReportByMemberTypes(string _memberTypeID)
         {
-         
-            DataTable dt = new DataTable();
+
+            DataSet dt = new DataSet();
            
             OracleConnection conn = new OracleConnection(cs);
             conn.Open();
@@ -84,34 +89,40 @@ namespace ICA.Admin
         {
             string reportType = memcatID.Value;
 
-            DataTable dt = null;
+            DataSet dt = null;
 
             try {
 
             dt = GetReportByMemberTypes(reportType);
 
 
-            if (dt != null && dt.Rows.Count > 0)
+            if (dt != null && dt.Tables.Count > 0)
             {
-                string html = ""; int count = 1;
-                   
-                foreach (DataRow item in dt.Rows)
-                {
-                    html += "<tr style='line-height:20px'><td>" + (count++) + "</td><td>" + item["FULLNAME"] + "</td><td>" + item["USERNAME"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTREFERENCE"] + "</td><td>" + item["TRANSACTION DATE"] + "</td><td>" + item["AMOUNT"] + "</td><td>" + item["DESCRIPTION"] + "</td><td>" + item["APPLICATION STATUS"] + "</td></tr>";
+                    //string html = ""; int count = 1;
+
+                    //foreach (DataRow item in dt.Rows)
+                    //{
+                    //    html += "<tr style='line-height:20px'><td>" + (count++) + "</td><td>" + item["FULLNAME"] + "</td><td>" + item["USERNAME"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTREFERENCE"] + "</td><td>" + item["TRANSACTION DATE"] + "</td><td>" + item["AMOUNT"] + "</td><td>" + item["DESCRIPTION"] + "</td><td>" + item["APPLICATION STATUS"] + "</td></tr>";
+                    //}
+
+
+                    //t_body.InnerHtml = html;
+                    exportExcel.Visible = true;
+                    gvData.DataSource = dt;
+                    gvData.DataBind();
+                    Session["dt"] = dt;
+
                 }
-
-
-                t_body.InnerHtml = html;
-                //gvData.DataSource = dt;
-                //gvData.DataBind();
-
-            }
             else
             {
-                    string err = "<tr style='line-height:100px text-align: center'><td>" + "No Record Found" + "</td></tr>";
+
+                    Response.Write("<script>alert('No Data Record Found.');</script>");
+
+                   // dataRec.Text = "No Data Record Found.";
+                    //string err = "<tr style='line-height:100px text-align: center'><td>" + "No Record Found" + "</td></tr>";
 
                     //Response.Write("<script>alert('No Record Found...');</script>");
-                    t_body.InnerHtml = err;
+                   // t_body.InnerHtml = err;
             }
 
 
@@ -123,14 +134,48 @@ namespace ICA.Admin
             }
 
 
+        }
+
+        protected void gvData_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvData.PageIndex = e.NewPageIndex;
+            gvData.DataBind();
+
+        }
+
+        protected void gvData_DataBound(object sender, EventArgs e)
+        {
+            GridViewRow pagerrow = gvData.BottomPagerRow;
+            Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
+            Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
+
+            if ((pageno != null) && (totalpageno != null))
+            {
+                int pagen = gvData.PageIndex + 1;
+                int tot = gvData.PageCount;
+
+                pageno.Text = pagen.ToString();
+                totalpageno.Text = tot.ToString();
+            }
+            else
+            {
+              
+            }
+        }
+
+        protected void exportExcel_Click(object sender, EventArgs e)
+        {
+            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payment Report By Category");
+            //Utils.ExportToExcel(((DataSet)Session["ds"]), HttpContext.Current, "DetailedFinancialReport");
+        }
 
 
 
+        void BindGrid()
+        {
 
-
-
-
-
+            gvData.DataSource = ((DataSet)Session["dt"]);
+            gvData.DataBind();
 
         }
     }

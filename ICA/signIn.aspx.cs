@@ -14,10 +14,14 @@ namespace ICA
     {
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
 
-
+        ICA.Model.Util utilities = new Model.Util();
+        int _userid;
+        int _biodataid;
+        string _useremail = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
+         
             //Session.RemoveAll();
             //Response.Redirect("signIn.aspx");
             //if (!IsPostBack)
@@ -29,11 +33,12 @@ namespace ICA
         protected void loginID_Click(object sender, EventArgs e)
         {
             //login to admin or member pages.
+
             string _username = usernameID.Text.ToString();
             string _password = passwordID.Text.ToString();
             string _roleView = selectValue.Text.ToString();
 
-            errorDisplay.InnerHtml = "";
+          //  errorDisplay.InnerHtml = "";
 
             try
             {
@@ -54,22 +59,28 @@ namespace ICA
                     if (dt != null && dt.Rows.Count > 0)
                     {
                         Session["UserEmail"] = dt.Rows[0][2].ToString();
+                        Session["UserID"] = Convert.ToInt32(dt.Rows[0][0]);
+                        //Session["BiodataID"] = Convert.ToInt32(dt.Rows[0][1]);
                         //Session.Add("UserID", dt.Rows[0][0].ToString());
                         
 
-                        string _useremail = Session["UserEmail"].ToString();
-
+                         _useremail = Session["UserEmail"].ToString();
+                        _userid = Convert.ToInt32(Session["UserID"]);
+                      _biodataid = Convert.ToInt32(Session["BiodataID"]);
 
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("/ICA/Admin/Index.aspx");
+                            Response.Redirect("/Admin/Index.aspx");
 
                         }
 
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
-                            //cmd.Dispose(); da.Dispose();
+
+                           Response.Redirect("/Member/index.aspx");
+
+
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
                             cmd.CommandType = CommandType.Text;
                             da = new OracleDataAdapter(cmd);
@@ -78,20 +89,21 @@ namespace ICA
 
                             if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
                             {
-                                Response.Redirect("/ICA/Member/index.aspx");
+                                Response.Redirect("/Member/index.aspx");
                             }
                             else
                             {
-                                Response.Redirect("/ICA/guest/registrationPayment.aspx", true);
+                                Response.Redirect("/guest/registrationPayment.aspx", true);
                             }
-                            
+
                         }
                         else
                             return;
                     }
                     else
                     {
-                        errorDisplay.InnerHtml = "<div class='alert alert-danger container text-center' role='alert'>Invalid Login / Password</div>"; 
+                        error101.Text = utilities.ShowError("Invalid Login / Password");
+                        //errorDisplay.InnerHtml = "<div class='alert alert-danger container text-center' role='alert'>Invalid Login / Password</div>"; 
                     }
 
                 }

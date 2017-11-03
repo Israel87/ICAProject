@@ -12,6 +12,7 @@ namespace ICA
     public partial class registrationProcess : System.Web.UI.Page
     {
         logic logic = new logic();
+        ICA.Model.Util utilities = new Model.Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,7 +51,7 @@ namespace ICA
             {
                 HighestDegree = degreeID.Value,
                 NameofSchool = instNameID.Value,
-                Graddate = graddateID.Value,
+                Graddate = graddate.Value,
                 Certifications = certNameID.Value,
             };
 
@@ -59,7 +60,7 @@ namespace ICA
                 YearsofExperience = experienceID.Value,
                 RecentEmployer = nameOrgID.Value,
                 Position = posOccID.Value,
-                DateEmployed = dateEmpID.Value,
+                DateEmployed = dateEmp.Value,
                 Functions = functionID.Value,
 
                 OtherEmployerII = nameOrgI.Value,
@@ -107,11 +108,12 @@ namespace ICA
                     {
                         String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
                         FileUpload1.SaveAs(fileName);
-                        Response.Write("<script>alert('Successful...');</script>");
+                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+                        
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error saving Passport, Kindly upload with the right format.');</script>");
+                        uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
                     }
 
              // upload pdf files to the folder.
@@ -120,12 +122,13 @@ namespace ICA
                     {
                         String fileNameII = Server.MapPath("~") + "/ICA/Credentials/Resume/" + biodataid + ".pdf";
                         FileUpload2.SaveAs(fileNameII);
+                        uploadNotificationII.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
-                        Response.Write("<script>alert('Successful...');</script>");
+
                     }
                     else
                     {
-                        Response.Write("<script>alert('Error saving Resume, Kindly upload with the right format.');</script>");
+                        uploadNotificationII.Text = utilities.ShowError("Invalid File Format.");
                     }
 
                     
@@ -137,11 +140,11 @@ namespace ICA
 
                 }
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
-                Response.Redirect("/ICA/guest/registrationPayment.aspx");
+                Response.Redirect("/guest/registrationPayment.aspx");
             }
             else
             {
-                Response.Write("<script>alert('Registration Process Failed')</script>");
+               
             }
         }
 

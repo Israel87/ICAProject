@@ -13,6 +13,15 @@ namespace ICA.Admin {
     public partial class Manage {
         
         /// <summary>
+        /// approvalNotification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label approvalNotification;
+        
+        /// <summary>
         /// appStatusID control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,22 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlSelect memberCatID;
         
         /// <summary>
-        /// Button1 control.
+        /// manage_RegID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button manage_RegID;
+        
+        /// <summary>
+        /// excelExport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button excelExport;
         
         /// <summary>
         /// regResults control.
@@ -56,24 +74,6 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewPanel;
-        
-        /// <summary>
-        /// resume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button resume;
-        
-        /// <summary>
-        /// passport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button passport;
         
         /// <summary>
         /// approve control.

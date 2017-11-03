@@ -74,20 +74,20 @@
                         <%--                         End of tab four--%>
                      <div>
                             <div class="container">
-                                <h3 class="container">Select Payment Amount &nbsp;&nbsp;
+                                <h3 class="container">Select Registration Payment Amount &nbsp;&nbsp;
                                     ( <asp:Label ID="emailDisplay" runat="server"></asp:Label> )
                                 </h3>
                                 <hr />
-                                <br />
+                              
                                 <div class="form-group container">
-                                   
-                                    <b class="col-lg-4 control-label">Choose a Payment Category  
+                                 
+                                    <asp:Label ID="regNotification" runat="server"></asp:Label>
+                                   <br />
+                                    <b class="col-lg-3 control-label">Choose a Payment Category  
                                     </b>
-                                    <div class="col-lg-8" >
-                                        <select class="form-control" name="paymentCat" id="paymentCatID" datatextfield="PAYMENTTEXT" datavaluefield="PAYMENTITEMID" style="border: 2px solid #0094ff; width: 700px; border-radius: 0px" runat="server" required="required">
-                                            
+                                    <div class="col-lg-9" >
+                                        <select class="form-control" name="paymentCat" id="paymentCatID" datatextfield="PAYMENTTEXT" datavaluefield="PAYMENTITEMID" style="border: 2px solid #0094ff; width: 900px; border-radius: 0px; font-size:11px" runat="server" required="required"></select>
 
-                                        </select>
                                     </div>
                                     <br />
 
@@ -120,8 +120,6 @@
     </section>
 
 
-
-
     <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -131,7 +129,9 @@
 
    
      <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-     <script src="/ica/js/navbar.js"></script>
+    <script src="/js/navbar.js"></script>
+    
+     
    
      <%-- <script src="/ica/js/navbar.js"></script>--%>
 

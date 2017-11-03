@@ -16,6 +16,7 @@ namespace ICA.Member
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         DataTable _userdata = new DataTable();
         string emailinSession = "";
+        string _firstname = "";
         //string _dbPassword = "";
 
 
@@ -32,7 +33,9 @@ namespace ICA.Member
                 {
                     //_userSession = Session["UserID"].ToString();
                     emailinSession = Session["UserEmail"].ToString();
-              
+                   // _firstname = Session["active_firstname"].ToString();
+                    username.Text = _firstname;
+
 
                 }
 

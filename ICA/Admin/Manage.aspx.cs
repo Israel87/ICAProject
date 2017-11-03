@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.IO;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,7 @@ namespace ICA.Admin
 
         //MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
         EmailWS.WebService Emal = new EmailWS.WebService();
+        ICA.Model.Util utilities = new Model.Util();
         string emailinSession = "";
 
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
@@ -92,7 +94,7 @@ namespace ICA.Admin
             string appStatus = appStatusID.Value;
             string memTypes = memberCatID.Value;
 
-            DataTable dt = null;
+            DataSet dt = null;
 
             try
             {
@@ -100,11 +102,12 @@ namespace ICA.Admin
                 dt = GetRegistrationDetails(appStatus, memTypes);
 
 
-                if (dt != null && dt.Rows.Count > 0)
+                if (dt != null && dt.Tables.Count > 0)
                 {
-
+                    excelExport.Visible = true;
                     regResults.DataSource = dt;
                     regResults.DataBind();
+                    Session["dt"] = dt;
 
                 }
                 else
@@ -124,10 +127,10 @@ namespace ICA.Admin
         }
 
 
-        public DataTable GetRegistrationDetails(string _appStatus, string _memberTypes)
+        public DataSet GetRegistrationDetails(string _appStatus, string _memberTypes)
         {
 
-            DataTable dt = new DataTable();
+            DataSet dt = new DataSet();
 
             OracleConnection conn = new OracleConnection(cs);
             conn.Open();
@@ -200,6 +203,30 @@ namespace ICA.Admin
                 }
                 else
                     conn.Close();
+
+                try
+                {
+                    //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
+                    if (File.Exists(Server.MapPath("~/Credentials/Resume/" + biodata + ".pdf")))
+                    {
+
+                        pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/Credentials/Resume/" +
+                                 biodata + ".pdf' frameborder ='1' scrolling ='auto' height ='600' width ='1050' ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></ iframe >";
+                    }
+
+                    if (File.Exists(Server.MapPath("~/Credentials/Passport/" + biodata + ".jpg")))
+                    {
+                        passportDisplay.Text = "<b><p>Passport</p></b><img src='/Credentials/Passport/" + biodata + ".jpg' width='200' height='200'/>";
+                        // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                }
+
             }
             catch (Exception ex)
             {
@@ -268,7 +295,8 @@ namespace ICA.Admin
             {
 
                 string response = Emal.sendmail1(_email, _subject, _body);
-                Response.Write("<script>alert('Email has been Sent.');</script>");
+                approvalNotification.Text = utilities.ShowSuccess("Member has been Approved, ");
+                //Response.Write("<script>alert('Email has been Sent.');</script>");
             }
             catch (Exception ex)
             {
@@ -277,51 +305,31 @@ namespace ICA.Admin
 
         }
 
-        protected void resume_Click(object sender, EventArgs e)
+        protected void regResults_DataBound(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            GridViewRow pagerrow = regResults.BottomPagerRow;
+            Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
+            Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
+
+            if((pageno != null) && (totalpageno != null))
             {
-                string bd = Session["active_biodata"].ToString();
+                int pagen = regResults.PageIndex + 1;
+                int tot = regResults.PageCount;
 
-                try
-                {
-                    //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
-                    if (File.Exists(Server.MapPath("/ICA/Credentials/Resume/" + bd + ".pdf")))
-                    {
-
-                        pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/ICA/Credentials/Resume/" +
-                                 bd + ".pdf' frameborder ='1' scrolling ='auto' height ='600' width ='1050' ></ iframe ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                }
+                pageno.Text = pagen.ToString();
+                totalpageno.Text = tot.ToString();
+            }
+            else
+            {
+                Response.Write("<script>alert('No more Data to Display');</script>");
             }
 
         }
 
-        protected void passport_Click(object sender, EventArgs e)
+        protected void excelExport_Click(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                string bd = Session["active_biodata"].ToString();
-
-                try
-                {
-                    //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
-                    if (File.Exists(Server.MapPath("~/Credentials/Passport/" + bd + ".jpg")))
-                    {
-                        passportDisplay.Text = "<b><p>Passport</p></b><img src='/Credentials/Passport/"  + bd + ".jpg' width='200' height='200'/>";
-                        // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-
+            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "View Registration By Status & Category");
         }
+
     }
 }

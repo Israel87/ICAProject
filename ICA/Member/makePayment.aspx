@@ -4,229 +4,168 @@
 
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ICA Member - Make Payments </title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/datepicker3.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!--Custom Font-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<!--[if lt IE 9]>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICA Member - Make Payments </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION&nbsp </span>MEMBER</a>
-<%--				<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
-					</a>
-						<ul class="dropdown-menu dropdown-messages">
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">3 mins ago</small>
-										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-									<br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">1 hour ago</small>
-										<a href="#">New message from <strong>Jane Doe</strong>.</a>
-									<br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="all-button"><a href="#">
-									<em class="fa fa-inbox"></em> <strong>All Messages</strong>
-								</a></div>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">5</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-heart"></em> 12 New Likes
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-user"></em> 5 New Followers
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>--%>
-			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-		</form>
-		<ul class="nav menu">
-			<li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Profile</a></li>
-		
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="makePayment.aspx">
-						<span class="fa fa-arrow-right">&nbsp;</span> Make Payments
-					</a></li>
-					<li><a class="" href="paymentHistory.aspx">
-						<span class="fa fa-arrow-right">&nbsp;</span> Payment History
-					</a></li>
-				
-				</ul>
-			</li>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION&nbsp </span>MEMBER</a>
+
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
+            <div class="profile-userpic">
+                <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+            </div>
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    <asp:Label ID="username" runat="server"></asp:Label>
+
+                </div>
+                <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Profile</a></li>
+
+            <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                <em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
+            </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li><a class="" href="makePayment.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Make Payments
+                    </a></li>
+                    <li><a class="" href="paymentHistory.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Payment History
+                    </a></li>
+
+                </ul>
+            </li>
 
             <li><a href="uploads.aspx"><em class="fa fa-calendar">&nbsp;</em> E-Certificates </a></li>
-			<li><a href="downloads.aspx"><em class="fa fa-bar-chart">&nbsp;</em>News & Downloads</a></li>
-			<li><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
-		
-			<li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-		</ul>
-	</div><!--/.sidebar-->
+            <li><a href="downloads.aspx"><em class="fa fa-bar-chart">&nbsp;</em>News & Downloads</a></li>
+            <li><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
 
-	<form runat="server">
+            <li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+        </ul>
+    </div>
+    <!--/.sidebar-->
+
+    <form runat="server">
         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Payments</li>
-			</ol>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Make Payments</h1>
-			</div>
-		</div><!--/.row-->
-		
-	
-		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<br /><br />
-					<div class="panel-body container">
-                        <h4><b> Choose Payment Items </b> </h4><br /><br />
-						<div class="form-group col-lg-12">
-                            <b class="col-lg-4 control-label">Membership Payment (Corporate) </b>
-                                    <div class="col-lg-4">
-                                        <select class="form-control" name="paymentCat" id="paymentCatID" style="border: 2px solid #0094ff; width: 320px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select Choice </option>
-                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Silver  &nbsp; | &nbsp; 1,500,000 </option>
-                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; Gold &nbsp;&nbsp;| &nbsp; 2,500,000</option>
-                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; Platinum  &nbsp; &nbsp;|  &nbsp; 3,000,000</option>
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li><a href="#">
+                        <em class="fa fa-home"></em>
+                    </a></li>
+                    <li class="active">Payments</li>
+                </ol>
+            </div>
+            <!--/.row-->
 
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <asp:Button runat="server" ID="membersPayID" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT"></asp:Button> 
-                                    </div>
-                            
-						</div><br /><br />
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Make Payments</h1>
+                </div>
+            </div>
+            <!--/.row-->
 
-                        <div class="form-group col-lg-12">
-                            <p> </p>
-                                 <b class="col-lg-4 control-label"> Annual Subscription </b>
-                                    <div class="col-lg-4">
-                                        <select class="form-control" name="annualPayment" id="annualPaymentID" style="border: 2px solid #0094ff; width: 320px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select Choice </option>
-                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Associate  &nbsp; | &nbsp; 5,000</option>
-                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; Member &nbsp;&nbsp;| &nbsp; 10,000</option>
-                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; Fellow  &nbsp; &nbsp;|  &nbsp; 15,000</option>
 
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <asp:Button runat="server" ID="annualPayID" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT"></asp:Button>
-                                    </div>
-                             
-						</div><br /><br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <br />
+                         <input runat="server" name="emailDisplay" id="emailDisplay" hidden />
+                        <br />
+                        <div class="panel-body container">
+                            <h4><b>Choose Payment Items </b></h4>
+                            <br />
+                            <br />
+                            <div class="form-group col-lg-12">
+                                <b class="col-lg-4 control-label">Outstanding Payment Item(s) </b>
+                                <div class="col-lg-5">
+                                    <select class="form-control" name="paymentCat" id="paymentCatID" style="border: 2px solid #0094ff; width: 320px; border-radius: 0px; font-size: 11px" runat="server" datavaluefield="PAYMENTITEMID" datatextfield="PAYMENTTEXT">
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <asp:Button runat="server" ID="membersPayID" CssClass="btn btn-success custom-btn add-button" Style="display: inline; border-radius: 0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT"></asp:Button>
+                                </div>
 
-                        
-                        <div class="form-group col-lg-12">
-                            <p>  </p>
-                                 <b class="col-lg-4 control-label">Induction Payment </b>
-                                    <div class="col-lg-4">
-                                        <select class="form-control" name="inductionPayment" id="inductionPaymentID" style="border: 2px solid #0094ff; width: 320px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select Choice </option>
-                                            <option value="1" style="font-weight: bold" class="form-control">&nbsp; Corps  &nbsp; | &nbsp; 20,000</option>
-                                            <option value="2" style="font-weight: bold" class="form-control">&nbsp; Associate &nbsp;&nbsp;| &nbsp; 5,000</option>
-                                            <option value="3" style="font-weight: bold" class="form-control">&nbsp; Member  &nbsp; &nbsp;|  &nbsp; 10,000</option>
-                                            <option value="4" style="font-weight: bold" class="form-control">&nbsp; Fellow  &nbsp; &nbsp;|  &nbsp; 15,000</option>
+                            </div>
+                            <br />
+                            <br />
 
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-3">
-                                         <asp:Button runat="server" ID="inductionPayID" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT"></asp:Button> 
-                                    </div>
-                           
-						</div><br /><br />
-					</div><br /><br />
-				</div>
-			</div>
-		</div><!--/.row-->
-		
-		<!--/.row-->
-		
-		<!--/.row-->
-	</div>
-	</form>	
-		<!--/.main-->
-	
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="/js/navbar.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/custom.js"></script>
+                            <div class="form-group col-lg-12">
 
-	<script>
+                                <asp:Label ID="recordList" runat="server"></asp:Label>
+                            </div>
+                            <br />
+                            <br />
+
+
+
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <!--/.row-->
+
+            <!--/.row-->
+
+            <!--/.row-->
+        </div>
+    </form>
+    <!--/.main-->
+
+
+    <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+   
+    <script src="js/MemberPayment.js"></script>
+
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <%--<script src="/js/navbar.js"></script>--%>
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");
             window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -236,7 +175,7 @@
                 scaleFontColor: "#c5c7cc"
             });
         };
-	</script>
-		
+    </script>
+
 </body>
 </html>

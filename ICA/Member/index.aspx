@@ -134,15 +134,15 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Home</li>
+				<li class="active">Personal Profile.</li>
 			</ol>
 		</div><!--/.row-->
 		
-		<div class="row">
+		<%--<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Profile</h1>
 			</div>
-		</div><!--/.row-->
+		</div--%><!--/.row-->
 		
 		
 		<div class="row">

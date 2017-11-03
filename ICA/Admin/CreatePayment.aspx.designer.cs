@@ -13,6 +13,15 @@ namespace ICA.Admin {
     public partial class CreatePayment {
         
         /// <summary>
+        /// paymentItemNotification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label paymentItemNotification;
+        
+        /// <summary>
         /// paymentID control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton createpayments;
+        
+        /// <summary>
+        /// paymentTypeNotifications control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label paymentTypeNotifications;
         
         /// <summary>
         /// typeID control.

@@ -90,7 +90,10 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-name">
+                    <asp:Label ID="username" runat="server"></asp:Label>
+
+				</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -147,17 +150,41 @@
 	
 		<div class="row">
 			<div class="col-md-12">
+                <br />
+                 <asp:Label ID="uploadnotification" runat="server"></asp:Label>
+                <asp:Label ID="uploadnotificationII" runat="server"></asp:Label>
+                <br />
+
 				<div class="panel panel-default">
 					
 					<div class="panel-body">
                         <br /> <br /> <br /> <br />
-						 <div class="form-group">
+
+                        
+                        <div class="form-group">
                                     <b class="col-lg-4 control-label" style="text-align: right">Upload Document One (.jpg files)<br />
                                        
                                     </b>
 
                                     <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload1" runat="server" /><br /><br />
+                                     
+                                       
+                                    </div>
+                                
+                             
+                          </div>
+
+
+						 <div class="form-group">
+                                    <b class="col-lg-4 control-label" style="text-align: right">Upload Document Two (.pdf files)<br />
+                                       
+                                    </b>
+
+                                    <div class="col-lg-8">
                                         <asp:FileUpload ID="FileUpload2" runat="server" />
+                                          <br /> <br />
+                                         <asp:Button ID="upload3" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 400px;" Text="Upload Files & View Files" Font-Bold="true" Onclick="upload3_Click" />   <br />  <br />
                                           
                               <%--<asp:Button ID="upload1" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  /> <br /> <br />--%> <br /> <br />
                                     </div>  <br />
@@ -167,22 +194,9 @@
                         <br />
 
 
-                        <div class="form-group">
-                                    <b class="col-lg-4 control-label" style="text-align: right">Upload Document Two (.pdf files)<br />
-                                       
-                                    </b>
+                      
 
-                                    <div class="col-lg-8">
-                                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                                     
-                                        <%--<asp:Button ID="upload2" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  /> <br /> <br />--%> <br /> <br />
-                                    </div>
-                                    <br />
-                             
-                          </div>
-                        <br />
-
-                        <div class="form-group">
+               <%--         <div class="form-group">
                                     <b class="col-lg-4 control-label" style="text-align: right">Upload Document Three (.docx files)<br />
                                        
                                     </b>
@@ -191,10 +205,11 @@
                                         <asp:FileUpload ID="FileUpload3" runat="server" />
 
                                    <br /> <br />
-                                     <asp:Button ID="upload3" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 400px;" Text="Upload Files & View Files" Font-Bold="true" Onclick="upload3_Click" /> <br /> <br /> 
+                                     <br /> <br /> 
+                        
                                     </div>
                               
-                        </div>
+                        </div>--%>
 
 
 

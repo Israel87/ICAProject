@@ -17,9 +17,12 @@
                         <img src="../images/associatemember.png" style="width: 80px; height: 80px" /><br /><br />
                         
                             <b>ASSOCIATE MEMBERS </b> <br /><br />
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
-
+                           <%-- <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" /> --%>
+							
+							 <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">Click to Choose</asp:HyperLink>
+							 
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+							<%-- data-toggle="modal" data-target=".bd-example-modal3-lg" --%>
                     </div>
 
                 </div>
@@ -28,9 +31,12 @@
                         <div class="input-group">
                             <img src="../images/member.png" style="width: 80px; height: 80px" /><br /><br />
                              <b> MEMBERS </b><br /><br />
-                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
-
+                            <%-- <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />--%>
+							
+							 <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">Click to Choose</asp:HyperLink>
+							 
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+							<%-- data-toggle="modal" data-target=".bd-example-modal2-lg" --%>
                     </div>
 
                 </div>

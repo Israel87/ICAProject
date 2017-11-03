@@ -14,6 +14,7 @@ namespace ICA.Admin
     {
         string emailinSession = "";
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
+        ICA.Model.Util utilities = new Model.Util();
         protected void Page_Load(object sender, EventArgs e)
         {
             // get the list of payments from the database
@@ -127,6 +128,7 @@ namespace ICA.Admin
             return newPaymenTtype;
         }
 
+
         protected void createpayments_Click(object sender, EventArgs e)
         {
             // perfect tenary operations.
@@ -136,12 +138,14 @@ namespace ICA.Admin
 
             if (newPayments == true)
             {
-                Response.Write("<script>alert('Successful...');</script>");
+                // Response.Write("<script>alert('Successful...');</script>");
+                paymentItemNotification.Text = utilities.ShowSuccess("Amount Created Successfully.");
 
             }
             else
             {
-                Response.Write("<script>alert('Not Created.');</script>");
+                // Response.Write("<script>alert('Not Created.');</script>");
+                paymentItemNotification.Text = utilities.ShowError("Amount Not Created.");
             }
         }
 
@@ -154,12 +158,15 @@ namespace ICA.Admin
 
             if (typePayments == true)
             {
-                Response.Write("<script>alert('Successful...');</script>");
+                // Response.Write("<script>alert('Successful...');</script>");
+                paymentTypeNotifications.Text = utilities.ShowSuccess("Payment Type Created Successfully.");
+              
 
             }
             else
             {
-                Response.Write("<script>alert('Not Created.');</script>");
+                // Response.Write("<script>alert('Not Created.');</script>");
+                paymentTypeNotifications.Text = utilities.ShowError("Payment Type Not Created.");
             }
         }
 
