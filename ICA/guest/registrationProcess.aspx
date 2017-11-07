@@ -3,11 +3,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container text-center">
-        <img src="../images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
+        <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
         <br />
 
-        <h3 style="font-family: Agency FB"><b>ASSOCIATE / FELLOW / MEMBER MEMBERSHIP</b> </h3>
-        <h5><b>REGISTRATION FORM </b></h5>
+        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>
+        <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM</h5>
     </div>
 
 
@@ -59,9 +59,9 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="home">
                             <div class="container">
-                                <h3 class="container">Personal Information </h3>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Personal Information </h3>
                                 <h5 class="container"><b>Kindly fill the boxes below as appropriate with the requested personal information.</b></h5>
-                                <h6 class="container" style="color:red"> <b>All Fields within this Tab are Compulsory.</b></h6>
+                                <h6 class="container" style="color:red"> <b>All Fields with bold blue borders are Compulsory.</b></h6>
                                 <hr />
                                 <%--  <br />--%>
                                 <%--<p style="font-family: monospace"> Kindly fill the boxes below as appropriate with the requested personal information </p><br />--%>
@@ -96,7 +96,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="lastname" class="col-lg-1 control-label" id="lastnameVal"></label>
+                                        <label for="lastname" class="col-lg-1 control-label" id="lastnameVal"> </label>
                                         <div class="col-lg-6">
                                             <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="lastname" placeholder="Last Name" required="required" />
                                         </div>
@@ -111,7 +111,7 @@
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid ridge; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
                                         </div>
                                         <div class="col-lg-5">
 
@@ -142,7 +142,7 @@
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
+                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px; height:70px; border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
                                         </div>
                                     </div>
 
@@ -197,7 +197,7 @@
                                     <div class="form-group">
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
+                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
                                         </div>
 
                                         <div class="col-lg-5">
@@ -484,7 +484,8 @@
 
                                     <center>
                                       <a class="btn btn-outline-rounded btn-primary" runat="server" style="border-radius:0px" onclick="document.getElementById('education').click();"><b>NEXT</b></a>
-                                  </center>
+                                  </center> <br />
+                                    <br />
                                 </div>
                             </div>
 
@@ -494,7 +495,7 @@
 
                         <div class="tab-pane fade" id="profile">
                             <div class="container">
-                                <h3 class="container">Educational Qualification </h3>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Educational Qualification </h3>
                                 <h5 class="container"><b>Please provide accurate details about your educational background</b></h5>
                                 <h6 class="container" style="color:red"> <b>All Fields within this Tab are Compulsory.</b></h6>
                                 <hr />
@@ -577,16 +578,16 @@
 
                         <div class="tab-pane fade" id="messages">
                             <div class="container">
-                                <h3 class="container">Employment Records </h3>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Employment Records </h3>
                                 <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
-                                <h6 class="container" style="color:red"> <b>Only the Most Recent Work Experience Fields within this Tab are Compulsory.</b></h6>
+                                <h6 class="container" style="color:red"> <b>Only the Current Work Experience Fields within this Tab are Compulsory.</b></h6>
                                 <hr />
 
                                 <br />
                                 <div class="col-lg-12">
                                     <div class="col-lg-4">
                                         <br />
-                                        <p><b>Most Recent Work Experience</b></p>
+                                        <p><b> Current Work Experience</b></p>
                                         <div class="form-group">
 
                                             <div class="col-lg-8">
@@ -659,7 +660,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="nameOrgI" id="nameOrgI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
+                                                <input runat="server" name="nameOrgI" id="nameOrgI" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
                                             </div>
                                             <br />
                                         </div>
@@ -670,7 +671,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="posOccI" id="posOccI" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                                <input runat="server" name="posOccI" id="posOccI" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
                                             </div>
 
                                             <br />
@@ -682,7 +683,7 @@
                                     </b>--%>
                                             <div class="col-lg-8">
                                                 <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateI" id="startDateI" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                                <input runat="server" name="startDateI" id="startDateI" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Start Date" />
                                             </div>
                                             <br />
                                         </div>
@@ -692,7 +693,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateI" id="endDateI" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                                <input runat="server" name="endDateI" id="endDateI" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="End Date" />
                                             </div>
 
                                             <br />
@@ -707,7 +708,7 @@
 
                                             <div class="col-lg-8">
                                                 <p>Functions</p>
-                                                <textarea runat="server" name="functionsI" id="functionsI" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                                <textarea runat="server" name="functionsI" id="functionsI" type="text" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" />
                                             </div>
 
                                             <br />
@@ -725,7 +726,7 @@
                                             <br />
                                             <div class="col-lg-8">
                                                 <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="nameOrgII" id="nameOrgII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
+                                                <input runat="server" name="nameOrgII" id="nameOrgII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
                                             </div>
                                             <br />
                                         </div>
@@ -736,7 +737,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="posOccII" id="posOccII" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                                <input runat="server" name="posOccII" id="posOccII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
                                             </div>
 
                                             <br />
@@ -748,7 +749,7 @@
                                     </b>--%>
                                             <div class="col-lg-8">
                                                 <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateII" id="startDateII" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Start Date" />
+                                                <input runat="server" name="startDateII" id="startDateII" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Start Date" />
                                             </div>
                                             <br />
                                         </div>
@@ -758,7 +759,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateII" id="endDateII" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="End Date" />
+                                                <input runat="server" name="endDateII" id="endDateII" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="End Date" />
                                             </div>
 
                                             <br />
@@ -770,7 +771,7 @@
 
                                             <div class="col-lg-8">
                                                 <p>Functions</p>
-                                                <textarea runat="server" name="functionsII" id="functionsII" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
+                                                <textarea runat="server" name="functionsII" id="functionsII" type="text" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" />
                                             </div>
 
                                             <br />
@@ -794,12 +795,25 @@
 
                         <div class="tab-pane fade" id="settings">
                             <div class="container">
-                                <h3 class="container">Upload Credentials</h3>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Upload Credentials</h3>
                                 <hr />
                                 <br />
                                  <asp:Label ID="uploadNotificationI" runat="server"></asp:Label>
                                  <asp:Label ID="uploadNotificationII" runat="server"></asp:Label>
                                 <br />
+
+                                 <div class="form-group">
+                                    <br />
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD PASSPORT
+                                        <br />
+                                        | .jpg files only |
+                                    </b>
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                                    </div>
+                                    <br />
+                                </div>  <br />
+
                                 <div class="form-group">
                                     <b class="col-lg-4 control-label" style="text-align: right">UPLOAD RESUME
                                         <br />
@@ -812,17 +826,7 @@
                                     <br />
                                 </div>
                                 <br />
-                                <div class="form-group">
-                                    <br />
-                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD PASSPORT
-                                        <br />
-                                        | .jpg files only |
-                                    </b>
-                                    <div class="col-lg-8">
-                                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                                    </div>
-                                    <br />
-                                </div>
+                               
                                 <br />
                                 
                                   <center><br /> <br /> 

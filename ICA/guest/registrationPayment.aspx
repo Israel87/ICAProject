@@ -3,11 +3,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container text-center">
-        <img src="../images/ica.png" style="border-radius: 5px; width: 100px; height: 50px" class="text-center" />
+        <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
         <br />
 
-        <h3 style="font-family: Agency FB"><b>ASSOCIATE / FELLOW / MEMBER MEMBERSHIP</b> </h3>
-        <h5><b>REGISTRATION FORM </b></h5>
+        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>
+        <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM </h5>
     </div>
 
 
@@ -74,7 +74,7 @@
                         <%--                         End of tab four--%>
                      <div>
                             <div class="container">
-                                <h3 class="container">Select Registration Payment Amount &nbsp;&nbsp;
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Select Registration Payment Amount &nbsp;&nbsp;
                                     ( <asp:Label ID="emailDisplay" runat="server"></asp:Label> )
                                 </h3>
                                 <hr />

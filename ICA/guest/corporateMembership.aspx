@@ -4,10 +4,10 @@
 
     <br /><br />
 <div class="container text-center">
-         <img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> <br />
+         <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a><br />
 
-            <h3><b>CORPORATE MEMBERSHIP </b> </h3>
-            <h5><b>The Categories under this Membership are : </b></h5>
+            <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">CORPORATE MEMBERSHIP </h3>
+            <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">The Categories under this Membership are : </h5>
             <br /><br />
     <%-- <section style="background:#efefe9;"><br /><br />--%>
     <center>

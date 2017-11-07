@@ -17,6 +17,9 @@ namespace ICA.Member
         DataTable _userdata = new DataTable();
         string emailinSession = "";
         string _firstname = "";
+        bool gChange;
+
+        ICA.Model.Util utilities = new Model.Util();
         //string _dbPassword = "";
 
 
@@ -34,7 +37,7 @@ namespace ICA.Member
                     //_userSession = Session["UserID"].ToString();
                     emailinSession = Session["UserEmail"].ToString();
                    // _firstname = Session["active_firstname"].ToString();
-                    username.Text = _firstname;
+                   // username.Text = _firstname;
 
 
                 }
@@ -47,71 +50,36 @@ namespace ICA.Member
         {
             string _currentPassword = currentPass.Value.ToString();
             string _newPassword = newPass.Value.ToString();
-            string _confPassword = confirm.Value.ToString();
+            //string _confPassword = confirm.Value.ToString();
            string _userEmail = Session["UserEmail"].ToString();
            // string _oldPassword = Session["active_dbPassword"].ToString();
 
 
             try
             {
-                if (_newPassword != _confPassword)
-                {
-                    errorLbl.Text = "password mismatch, please type in correct match";
-                }
-                   
-                else 
-                {
-
-                    _changePassword(_userEmail, _currentPassword, _newPassword);
-                    succLbl.Text = "Password Successfully Changed.";
-
-
-                    //try
-                    //{
-                    //    OracleConnection conn = new OracleConnection(cs);
-                    //    conn.Open();
-
-                    //    OracleDataAdapter adpt;
-
-                    //    string query = "SELECT * FROM USERS WHERE USERNAME = '" + _userEmail + "' and PASSWORD = hash_pwd('" + _userEmail + "','" + _currentPassword + "')";
-                    //    OracleCommand cmd = new OracleCommand(query, conn);
-
-
-                    //    adpt = new OracleDataAdapter(cmd);
-
-                    //    adpt.Fill(_userdata);
-
-                    //    if (_userdata.Rows.Count > 0)
-                    //    {
-
-                    //        _changePassword(_userEmail, _currentPassword, _newPassword);
-                    //        succLbl.Text = "Password Successfully Changed.";
-
-                    //    }
-                    //    else
-                    //    {
-                    //        errorLbl.Text = "Password entered does not exist in the database.";
-                    //        conn.Close();
-                    //    }
-
-
-
-                    //}
-                    //catch (Exception ex)
-                    //{
-
-                    //}
-
-
-
-                }
-                //else
+                //if (_newPassword != _confPassword)
                 //{
-                //    errorLbl.Text = "Password entered does not exist in the database.";
+                //    passwordCheck.Text = utilities.ShowError("Passwords do not match.");
                 //}
 
+                _changePassword(_userEmail, _currentPassword, _newPassword);
 
+                if (gChange != true)
+                {
+                    passwordCheck.Text = utilities.ShowError("Current Password does not match any record in the Database.");
+                  
             }
+                else
+                {
+                   
+
+
+                    passwordCheck.Text = utilities.ShowSuccess("Password Successfully Changed.");
+
+                }
+
+
+        }
             catch (Exception ex)
             {
 
@@ -124,8 +92,8 @@ namespace ICA.Member
         {
             bool change = false;
 
-            try
-            {
+            //try
+            //{
                 OracleConnection conn = new OracleConnection(cs);
                 conn.Open();
                 OracleCommand Orcl = new OracleCommand("change_password", conn);
@@ -145,19 +113,25 @@ namespace ICA.Member
                     Orcl.ExecuteNonQuery();
                     int retval = Convert.ToInt32(Orcl.Parameters["RETVAL"].Value.ToString());
 
-                    if (retval > 0) change = true;
+                    if (retval > 0)
+                    change = true;
+
+                   gChange = change;
+                   
+                 
                 }
                 catch (Exception ex)
                 {
-
+                    
+                    
                 }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
             return change;
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+
         }
     }
 }

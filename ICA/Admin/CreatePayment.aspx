@@ -151,79 +151,117 @@
                         <h1 class="page-header">Add Payment Items</h1>
                         <hr />
                     </div>
+            
+            <br />
+            <asp:Button ID="createPayment" runat="server" Text="CREATE PAYMENTS & ITEMS" OnClick="createPayment_Click" CssClass="btn btn-outline-rounded btn-warning" Font-Bold="true" style="border-radius:0px; width: 300px;" />
+            <br /><br />
+             
+          <div id="ViewPanel" runat="server" visible="false">
+            
+                    <div class="row col-lg-12 responsive">
+                        <div class="col-lg-6">
+                            <div class="input-group container">
 
-            <div class="row col-lg-12 responsive">
-                <div class="col-lg-6">
+                                <div class="col-lg-12">
+                                    <h4>Create a Payment Item  </h4>
+                                
+                                    <asp:Label ID="paymentItemNotification" runat="server"></asp:Label>
+                                    <br />
+                                    <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
+                                    </select><br />
+                                </div>
+
+                                <br />
+                                <br />
+
+                            </div>
+
+                             <br />
+                            <div class="form-group container">
 
 
+                                <div class="col-lg-12">
+                                    <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
+                                </div>
+                            </div>
 
-                    <div class="input-group container">
 
-                        <div class="col-lg-12">
-                            <h4>Create a Payment Item  </h4>
-                            <br />
-                            <asp:Label ID="paymentItemNotification" runat="server"></asp:Label>
-                            <br />
-                            <select id="paymentID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required">
-                            </select><br />
+                            <div class="form-group container">
+
+
+                                <div class="col-lg-12">
+                                    <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required" datavaluefield="MEMBERCATEGORYID" datatextfield="MEMBERCATEGORY">
+                                    </select><br />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group container">
+
+                                <div class="col-lg-12">
+
+                                    <asp:LinkButton ID="createpayments" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createpayments_Click" Font-Bold="true" />
+
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <br />
-                        <br />
+                       <div class="col-lg-6">
+                            <h4> Create Payment Type </h4>
 
-                    </div>
-
-                     <br />
-                       
-
-
-                    <div class="form-group container">
-
-
-                        <div class="col-lg-12">
-                            <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="amount" placeholder="Amount" required="required" />
-                        </div>
-                    </div>
+                            <div class="col-lg-12">
+                             
+                        
+                                <asp:Label ID="paymentTypeNotifications" runat="server"></asp:Label>
+                                <br />
+                                  <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
+                                <br /><br />
+                                  <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />
 
 
-                    <div class="form-group container">
-
-
-                        <div class="col-lg-12">
-                            <select id="categoryID" class="form-control" name="title" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" required="required" datavaluefield="MEMBERCATEGORYID" datatextfield="MEMBERCATEGORY">
-                            </select><br />
-                        </div>
-                    </div>
-
-
-                    <div class="form-group container">
-
-                        <div class="col-lg-12">
-
-                            <asp:LinkButton ID="createpayments" runat="server" CssClass="btn btn-outline-rounded btn-primary" Style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createpayments_Click" Font-Bold="true" />
+                            </div>
 
                         </div>
-
                     </div>
+           </div>   <br />     
+            
+            <br /><br />
+              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true"  /><br /><br /><br /><br />
+            <div class="col-lg-12">
+                <asp:GridView ID="displayPayments" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="displayPayments_PageIndexChanging" OnDataBound="displayPayments_DataBound" PageSize="10">
+                     <%--OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound"--%>
 
-                </div>
+                    <Columns>
+                        <asp:BoundField DataField="MEMBERTYPE" HeaderText="MEMBER TYPE" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="MEMBERCATEGORY" HeaderText="MEMBER CATEGORY" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="PAYMENTTYPE" HeaderText="PAYMENT TYPE" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="AMOUNT" HeaderText="AMOUNT" ControlStyle-Font-Bold="true" />
 
-               <div class="col-lg-6">
-                    <h4> Create Payment Type </h4><br />
+                    </Columns>
 
-                    <div class="col-lg-12">
-                        <br />
-                        <asp:Label ID="paymentTypeNotifications" runat="server"></asp:Label>
-                        <br />
-                          <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
-                        <br /><br />
-                          <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />
+                     <PagerTemplate>
+                                <table>
+                                    <tr>
+                                      <td>
+                                            <asp:LinkButton ID="L1" runat="server" Text="PREVIOUS" CommandName="Page" CommandArgument="Prev" />
+                                             <asp:LinkButton ID="L2" runat="server" Text="NEXT" CommandName="Page" CommandArgument="Next" />
+                                       </td>
+                                       <td>
+                                           Page No:  <asp:Label ID="L3" runat="server"></asp:Label>
+                                           Total Page <asp:Label ID="L4" runat="server"></asp:Label>
+                                       </td>
+                                   </tr>
+                                </table>
+                       </PagerTemplate>
+
+                       <PagerSettings Mode="NextPrevious" Position="Bottom" />
 
 
-                    </div>
-
-                </div>
+                </asp:GridView>
             </div>
+
 
         </form>
 

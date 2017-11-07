@@ -34,7 +34,7 @@ namespace ICA.Member
                     emailinSession = Session["UserEmail"].ToString();
                     biodataidInSession = Convert.ToInt32(Session["BiodataID"]);
                    // _firstname = Session["active_firstname"].ToString();
-                    username.Text = _firstname;
+                    //username.Text = _firstname;
 
 
                 }

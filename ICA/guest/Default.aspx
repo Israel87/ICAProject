@@ -11,12 +11,21 @@
     <div class="row text-center"><br />
         <img src="../images/ica.png" style="border-radius: 5px"/> <br /> <br /> 
 
-        <h3><b> Welcome to</b> </h3>
+        <h3> Welcome to </h3>
       
-        <h2><b>INSTITUTE OF CREDIT ADMINISTRATION </b> </h2> 
+        <h2 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">THE INSTITUTE OF CREDIT ADMINISTRATION </h2> 
 
         <br />
-        <a class="btn btn-lg btn-success" href="selectCategory.aspx" runat="server" style="width: 200px; border-radius:0px"><b> GET STARTED</b></a>      <br />      <br />        <br />     <br />     <br />
+
+        <center>
+             <div class="input-group">
+            <a class="btn btn-lg btn-success" href="selectCategory.aspx" runat="server" style="width: 200px; border-radius:0px"><b> GET STARTED</b></a>  
+         <a class="btn btn-lg btn-warning" href="~/signIn.aspx" runat="server" style="width: 200px; border-radius:0px"><b> SIGN IN</b></a>  
+        </div>
+        </center>
+       
+        
+        <br />      <br />        <br />     <br />     <br />
         <%--<asp:Button ID="submit" runat="server" CssClass="btn btn-lg btn-info" Text="Get Started" Font-Bold="true" style="width: 200px" />--%>
 
       <%--  <div class="col-md-4">

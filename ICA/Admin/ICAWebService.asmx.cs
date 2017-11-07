@@ -213,6 +213,8 @@ namespace ICA
             cmd.Parameters.Add(new OracleParameter("V_DESCRIPTION", OracleDbType.Varchar2, description, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTID", OracleDbType.Varchar2, payItemId, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTREF", OracleDbType.Varchar2, payRef, ParameterDirection.Input));
+            // Added the response variable (V_RESPONSE) after changes made to the Database.
+            cmd.Parameters.Add(new OracleParameter("V_RESPONSE", OracleDbType.Varchar2, response, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_STATUS", OracleDbType.Varchar2, status, ParameterDirection.Input));
             cmd.Parameters.Add("OUT_PAYMENTID", OracleDbType.Int64).Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();

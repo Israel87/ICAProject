@@ -16,7 +16,7 @@ namespace ICA.Member
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         string emailinSession = "";
         DataTable _userEmail = new DataTable();
-        string _biodataid = "";
+        int _biodataid;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,12 +56,14 @@ namespace ICA.Member
                         string _firstname = _userEmail.Rows[0]["firstname"].ToString();
                         string _middlename = _userEmail.Rows[0]["MIDDLENAME"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
-                        _biodataid = _userEmail.Rows[0]["biodataid"].ToString();
+                        _biodataid = Convert.ToInt32(_userEmail.Rows[0]["biodataid"]);
+                        
+                        Session["active_biodata"] = _biodataid;
                         
 
                         title.SelectedValue = _userEmail.Rows[0]["title"].ToString();
                         fullname.Value = _firstname + " " + _middlename + " " + _lastname;
-                        memstats.Value = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
+                        //memstats.Value = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
                         dob.Value = _userEmail.Rows[0]["DATEOFBIRTH"].ToString();
                         gender.Value = _userEmail.Rows[0]["GENDER"].ToString();
                         maritalstatus.SelectedValue = _userEmail.Rows[0]["maritalstatus"].ToString();
@@ -82,16 +84,17 @@ namespace ICA.Member
                         empIII.Value = _userEmail.Rows[0]["OTHEREMPLOYER3"].ToString();
                         posIII.Value = _userEmail.Rows[0]["position3"].ToString();
 
-                        username.Text = _firstname;
-                        _firstname = Session["active_firstname"].ToString();
+                        //username.Text = _firstname;
+                        // _firstname = Session["active_firstname"].ToString();
 
-                        Session["active_biodata"] = _biodataid;
+                        // _biodataid = Convert.ToInt32(Session["active_biodata"]);
+                       
 
 
 
-                        if (File.Exists(Server.MapPath("/ICA/Credentials/Passport/" + _biodataid + ".jpg")))
+                        if (File.Exists(Server.MapPath("../Credentials/Passport/" + _biodataid + ".jpg")))
                         {
-                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='/ICA/Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
+                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='../Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
                             // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                         }
 
@@ -117,7 +120,7 @@ namespace ICA.Member
             {
 
 
-                UpdateDetail(title.SelectedValue, maritalstatus.SelectedValue, deg.SelectedValue, nos.Value, graddate.Value, certyear.Value, recentEmp.Value, position.Value, empII.Value, posII.Value, empIII.Value, posIII.Value);
+                UpdateDetail(title.SelectedValue, maritalstatus.SelectedValue, address.Value, addressII.Value, deg.SelectedValue, nos.Value, graddate.Value, certyear.Value, recentEmp.Value, position.Value, empII.Value, posII.Value, empIII.Value, posIII.Value);
 
 
             }
@@ -127,11 +130,12 @@ namespace ICA.Member
             }
         }
 
-        private bool UpdateDetail(string _title, string _maritalstatus, string _highestdegree, string _nameofschool, string _graddate, string _certYear, string _recentemployer, string _position, string _otheremployerII, string _positionII, string _otheremployerIII, string _postionIII)
+        private bool UpdateDetail(string _title, string _maritalstatus, string _addressI, string _addressII, string _highestdegree, string _nameofschool, string _graddate, string _certYear,  string _recentemployer, string _position, string _otheremployerII, string _positionII, string _otheremployerIII, string _postionIII)
         {
             bool updateRecord = false;
 
-            string biodataid = Session["active_biodata"].ToString();
+            int biodataid = Convert.ToInt32(Session["active_biodata"]);
+       
             try
             {
                 using (OracleConnection conn = new OracleConnection(cs))
@@ -142,10 +146,17 @@ namespace ICA.Member
 
                         cmd.Parameters.Add(new OracleParameter("V_TITLE", OracleDbType.Int32,Convert.ToInt32(_title), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_MARITALSTATUS", OracleDbType.Int32, Convert.ToInt32(_maritalstatus), ParameterDirection.Input));
+
+                        cmd.Parameters.Add(new OracleParameter("V_ADDRESSI", OracleDbType.Varchar2, _addressI, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_ADDRESSII", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
+
+
                         cmd.Parameters.Add(new OracleParameter("V_HIGHESTDEGREE", OracleDbType.Int32,Convert.ToInt32(_highestdegree), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_NAMEOFSCHOOL", OracleDbType.Varchar2, _nameofschool, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_GRADDATE", OracleDbType.Date, Convert.ToDateTime(_graddate), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_OTHERCERTIFICATIONANDYEAR", OracleDbType.Varchar2, _certYear, ParameterDirection.Input));
+                        
+
                         cmd.Parameters.Add(new OracleParameter("V_MOSTRECENTEMPLOYER", OracleDbType.Varchar2, _recentemployer, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_POSITION", OracleDbType.Varchar2, _position, ParameterDirection.Input));
 
@@ -154,7 +165,7 @@ namespace ICA.Member
 
                         cmd.Parameters.Add(new OracleParameter("V_OTHEREMPLOYER3", OracleDbType.Varchar2, _otheremployerIII, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_POSITION3", OracleDbType.Varchar2, _postionIII, ParameterDirection.Input));
-                        cmd.Parameters.Add(new OracleParameter("V_BIODATAID", OracleDbType.Varchar2, biodataid, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_BIODATAID", OracleDbType.Int32, Convert.ToInt32(biodataid), ParameterDirection.Input));
 
                         if (conn.State != ConnectionState.Open)
                         {
@@ -170,7 +181,19 @@ namespace ICA.Member
                         {
                             //Response.Write("<script>alert('Successful');</script>");
                         }
-                        
+
+                        if (FileUpload1.FileName.EndsWith("jpg"))
+                        {
+                            String fileName = Server.MapPath("..") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            FileUpload1.SaveAs(fileName);
+                           // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+
+                        }
+                        else
+                        {
+                            //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
+                        }
+
                     }
                 }
             }

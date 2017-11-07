@@ -34,7 +34,7 @@ namespace ICA.Member
                     _useridInSession = Convert.ToInt32(Session["UserID"]);
                     emailDisplay.Value = emailinSession;
                    // _firstname = Session["active_firstname"].ToString();
-                    username.Text = _firstname;
+                   // username.Text = _firstname;
 
 
                 }

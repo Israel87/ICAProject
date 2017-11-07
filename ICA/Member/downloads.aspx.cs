@@ -25,7 +25,7 @@ namespace ICA.Member
                     //_userSession = Session["UserID"].ToString();
                     emailinSession = Session["UserEmail"].ToString();
                    // _firstname = Session["active_firstname"].ToString();
-                    username.Text = _firstname;
+                   // username.Text = _firstname;
 
                 }
 

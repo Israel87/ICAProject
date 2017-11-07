@@ -13,13 +13,22 @@ namespace ICA.Member {
     public partial class changePassword {
         
         /// <summary>
-        /// username control.
+        /// changePasswordNotification control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username;
+        protected global::System.Web.UI.WebControls.Label changePasswordNotification;
+        
+        /// <summary>
+        /// passwordCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label passwordCheck;
         
         /// <summary>
         /// currentPass control.
@@ -28,7 +37,7 @@ namespace ICA.Member {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText currentPass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword currentPass;
         
         /// <summary>
         /// newPass control.
@@ -49,13 +58,13 @@ namespace ICA.Member {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword confirm;
         
         /// <summary>
-        /// change control.
+        /// changePass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button change;
+        protected global::System.Web.UI.WebControls.LinkButton changePass;
         
         /// <summary>
         /// errorLbl control.
@@ -65,14 +74,5 @@ namespace ICA.Member {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label errorLbl;
-        
-        /// <summary>
-        /// succLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label succLbl;
     }
 }

@@ -116,17 +116,10 @@ namespace ICA.Admin
             else
             {
 
-                    Response.Write("<script>alert('No Data Record Found.');</script>");
-
-                   // dataRec.Text = "No Data Record Found.";
-                    //string err = "<tr style='line-height:100px text-align: center'><td>" + "No Record Found" + "</td></tr>";
-
-                    //Response.Write("<script>alert('No Record Found...');</script>");
+                    // Response.Write("<script>alert('No Data Record Found.');</script>");
+                    DataRecordNotification.Text = utilities.ShowError("Data Record Not Found.");
                    // t_body.InnerHtml = err;
             }
-
-
-
             }
             catch (Exception ex)
             {

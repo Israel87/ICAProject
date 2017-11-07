@@ -8,25 +8,23 @@
 
 
         <div class="container text-center">
-            <img src="../images/ica.png" style="border-radius: 5px; width:200px; height:80px" class="text-center" /><br /><br />
-                  <h3><b>INSTITUTE OF CREDIT ADMINISTRATION</b> </h3>
-                    <h5><b>Forgot Password</b></h5>
-             <br /> 
-          
-            <br />
+             <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a><br /><br />
+                  <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"> THE INSTITUTE OF CREDIT ADMINISTRATION </h3>
+                    <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Forgot Password</h5>
+            
       </div>
 
 
   <center>
         <div class="col-lg-12 container"><br />
-                 <h6><b>Please type in your email address to receive a notification.</b></h6><br />
+                 <h6 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"><b>Please type in your email address to receive a notification.</b></h6><br />
 
             <asp:Label ID="emailLabel" runat="server" Text=""  Font-Bold="true"></asp:Label>
-            <br />
+     
 
                          <input class="form-control" type="text" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" id="emailID" placeholder="enter email address... " /><br />
                
-                  <asp:Button ID="forgotPasswordID" runat="server" CssClass="btn btn-primary btn-md " style="border-radius:0px; width:400px;" Text="RESET" Font-Bold="true" OncLick="forgotPasswordID_Click" />
+                  <asp:Button ID="forgotPasswordID" runat="server" CssClass="btn btn-warning btn-md " style="border-radius:0px; width:400px;" Text="RESET" Font-Bold="true" OncLick="forgotPasswordID_Click" />
             <br />
 
             

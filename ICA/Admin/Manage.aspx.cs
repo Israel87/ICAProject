@@ -90,6 +90,7 @@ namespace ICA.Admin
 
         protected void manageRegID_Click(object sender, EventArgs e)
         {
+            clearView();
             //to generate registration details based on selected values from the drop down.
             string appStatus = appStatusID.Value;
             string memTypes = memberCatID.Value;
@@ -101,7 +102,6 @@ namespace ICA.Admin
 
                 dt = GetRegistrationDetails(appStatus, memTypes);
 
-
                 if (dt != null && dt.Tables.Count > 0)
                 {
                     excelExport.Visible = true;
@@ -110,9 +110,10 @@ namespace ICA.Admin
                     Session["dt"] = dt;
 
                 }
+           
                 else
                 {
-                    Response.Write("<script>alert('No Record Found...');</script>");
+                    DataRecordNotification.Text = utilities.ShowError("No Input Data.");
                 }
 
 
@@ -137,10 +138,8 @@ namespace ICA.Admin
 
             OracleDataAdapter da;
 
-            string query = "SELECT B.LASTNAME||', '||B.FIRSTNAME||' '||B.MIDDLENAME \"FULLNAME\", U.USERNAME, B.BIODATAID, B.DATEADDED, M.MEMBERCATEGORY, F.APPLICATIONFLAG \"APPLICATION STATUS\" " +
-                            "FROM BIODATA B LEFT JOIN USERS U ON U.BIODATAID = B.BIODATAID LEFT JOIN MEMBERCATEGORY M ON M.MEMBERCATEGORYID = U.MEMCATEGORYID " +
-                            "LEFT JOIN MEMBERTYPE T ON T.MEMBERTYPEID = M.MEMBERTYPEID LEFT JOIN APPLICATION_FLAG F ON F.APPLICATIONFLAGID = U.APPLICATIONFLAGID " +
-                            "WHERE U.APPLICATIONFLAGID = " + _appStatus + " AND T.MEMBERTYPEID = " + _memberTypes;
+            string query = "SELECT B.LASTNAME || ', ' || B.FIRSTNAME || ' ' || B.MIDDLENAME \"FULLNAME\", U.USERNAME, B.BIODATAID, B.DATEADDED,T.MEMBERTYPE, M.MEMBERCATEGORY,S.STATUS \"PAYMENT STATUS\", F.APPLICATIONFLAG \"APPLICATION STATUS\" FROM BIODATA B LEFT JOIN USERS U ON U.BIODATAID = B.BIODATAID LEFT JOIN PAYMENTS P ON P.USERID = U.USERID LEFT JOIN PAYMENTSTATUS S ON P.STATUS = S.STATUSID LEFT JOIN MEMBERCATEGORY M ON M.MEMBERCATEGORYID = U.MEMCATEGORYID LEFT JOIN MEMBERTYPE T ON T.MEMBERTYPEID = M.MEMBERTYPEID LEFT JOIN APPLICATION_FLAG F ON F.APPLICATIONFLAGID = U.APPLICATIONFLAGID WHERE U.APPLICATIONFLAGID = " + _appStatus + " AND T.MEMBERTYPEID = " + _memberTypes + " AND P.STATUS = " + 1 + "";
+
             OracleCommand cmd = new OracleCommand(query, conn);
 
             da = new OracleDataAdapter(cmd);
@@ -160,10 +159,10 @@ namespace ICA.Admin
 
         protected void viewReg_Click(object sender, EventArgs e)
         {
+            clearView();
             ViewPanel.Visible = true;
             biodata = ((Button)sender).CommandArgument;
             Session["active_biodata"] = biodata;
-
 
             try
             {
@@ -178,6 +177,7 @@ namespace ICA.Admin
                 OracleDataAdapter adpt;
 
                 string query = "SELECT UPPER(t.title||' '||b.lastname||', '||b.firstname||' '||b.MIDDLENAME) FULLNAME, b.EMAIL, B.PHONE, TO_CHAR(b.DATEOFBIRTH, 'DD-MON-YYYY') \"DATEOFBIRTH\", b.GENDER, m.maritalstatus,u.USERNAME, t.membertype||' '||c.membercategory||' MEMBER' \"MEMBER TYPE\", DECODE(NULL, a.STREETNAME, null, a.STREETNAME||', ' )|| DECODE(NULL, a.CITY, null, a.CITY||', ' )|| DECODE(NULL, s.STATENAME, null, s.STATENAME||'.' ) \"ADDRESS 1\", DECODE(NULL, a.STREET2, null, a.STREET2||', ' )|| DECODE(NULL, a.CITY2, null, a.CITY2||', ' )|| DECODE(NULL, s2.STATENAME, null, s2.STATENAME||'.' ) \"ADDRESS 2\", d.DEGREE \"HIGHESTDEGREE\", i2.NAMEOFSCHOOL, to_char(i2.GRADDATE, 'DD-MON-YYYY') \"GRADUATION DATE\" FROM biodata b left join titles t on t.titleid = b.title left join MARITALSTATUS m on m.MARITALSTATUSID = b.MARITALSTATUS left JOIN enroleeaddress a on a.BIODATAID = b.BIODATAID left join EMPLOYMENTINFO i on  i.BIODATAID = b.BIODATAID LEFT JOIN EDUCATIONINFO i2 on i2.biodataid = b.biodataid LEFT JOIN TBL_DEGREES d on d.degreeid = i2.highestdegree left JOIN users u on u.biodataid = b.biodataid left join MEMBERCATEGORY c on c.membercategoryid = u.memcategoryid left JOIN MEMBERTYPE t on t.membertypeid = c.membertypeid left join SETUP_STATE s on s.statecode = a.statecode left join SETUP_STATE s2 on s2.statecode = a.STATECODE2 where b.biodataid = " + biodata;
+
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
@@ -220,7 +220,6 @@ namespace ICA.Admin
                         // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                     }
 
-
                 }
                 catch (Exception ex)
                 {
@@ -237,8 +236,38 @@ namespace ICA.Admin
             string emailinSession = _biodata.Rows[0]["EMAIL"].ToString();
             Session["active_email"] = emailinSession;
             //emailinSession = Session["active_email"].ToString();
+
+            // select the particular text from a DB Derived Drop down.
+            string _status = appStatusID.Items[appStatusID.SelectedIndex].Text.ToLower();
+
+            if (_status == "approved")
+                approve.Visible = false;
+            else
+                approve.Visible = true;
+
+
+
         }
 
+        internal void clearView()
+        {
+            fullname.Value = "";
+            memberstatus.Value = "";
+            gender.Value = "";
+            dateofbirth.Value = "";
+            maritalstatus.Value = "";
+            address.Value = "";
+            addressII.Value = "";
+            email.Value = "";
+            phonenumber.Value ="";
+            nameofschool.Value = "";
+            highestdegree.Value = "";
+            graduationdate.Value = "";
+            pdfDisplay.Text = "";
+            passportDisplay.Text = "";
+            approve.Visible = false ;
+            
+        }
 
         private bool checkApproval()
         {
@@ -287,15 +316,15 @@ namespace ICA.Admin
             string _fullname = fullname.Value.ToString();
             string _membercategory = memberstatus.Value.ToString();
 
-            string _subject = "ICA Approval Notifications.";
+            string _subject = "ICA Approval Notification.";
 
-            string _body = "Dear " + _fullname + "your application has been approved and your Membership Status is :" + _membercategory + ", Please log in using this address: to view your personal page.";
+            string _body = "Dear " + _fullname + " your application has been approved and your Membership Status is :" + _membercategory + ", Please log in using this address: 154.113.0.163:1010/ICA/guest/Default.aspx or 154.113.0.163:1010/ICA to sign in and view your personal page.";
 
             try
             {
 
                 string response = Emal.sendmail1(_email, _subject, _body);
-                approvalNotification.Text = utilities.ShowSuccess("Member has been Approved, ");
+                approvalNotification.Text = utilities.ShowSuccess("Member has been Approved and Email Notification has been sent. ");
                 //Response.Write("<script>alert('Email has been Sent.');</script>");
             }
             catch (Exception ex)

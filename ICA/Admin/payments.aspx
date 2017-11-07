@@ -95,17 +95,16 @@
 			</div>
 
             <div class="input-group container">
-                                        <label for="title" class="col-lg-3 control-label">
-                                             SELECT REPORT : 
-                                        </label>
-                                        <div class="col-lg-7">
-                                            <select id="memcatID" class="form-control" name="title" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" datavaluefield="MEMBERTYPEID" datatextfield="MEMBERTYPE" required="required">
-                                                <%--<option value="1">All</option>
-                                                <option value="2">Fellows</option>
-                                                <option value="3">Associate Members</option>
-                                                <option value="3">Student Members</option>--%>
-                                            </select>
-                                        </div>
+                <br />
+                    <asp:Label ID="DataRecordNotification" runat="server"></asp:Label>
+                <br />
+                    <label for="title" class="col-lg-3 control-label">
+                         SELECT REPORT : 
+                   </label>
+                    <div class="col-lg-7">
+                         <select id="memcatID" class="form-control" name="title" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" datavaluefield="MEMBERTYPEID" datatextfield="MEMBERTYPE" required="required">
+                           </select>
+                    </div>
 
 
                                         <div class="col-lg-2">
@@ -134,7 +133,7 @@
                         <asp:BoundField DataField="PAYMENTREFERENCE" HeaderText="PAYMENT REFERENCE" ControlStyle-Font-Bold="true" />
                         <asp:BoundField DataField="TRANSACTION DATE" HeaderText="TRANSACTION DATE" ControlStyle-Font-Bold="true" />
                         <asp:BoundField DataField="AMOUNT" HeaderText="AMOUNT" ControlStyle-Font-Bold="true" />
-                        <asp:BoundField DataField="DESCRIPTION" HeaderText="DESCRIPTION" ControlStyle-Font-Bold="true" />
+                        <asp:BoundField DataField="DESCRIPTION" HeaderText="MEMBER CATEGORY FOR MEMBER TYPE" ControlStyle-Font-Bold="true" />
                         <asp:BoundField DataField="APPLICATION STATUS" HeaderText="APPLICATION STATUS" ControlStyle-Font-Bold="true" />
                     </Columns>
 

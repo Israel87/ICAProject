@@ -78,7 +78,7 @@ namespace ICA
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
 
-                           Response.Redirect("/Member/index.aspx");
+                           Response.Redirect("/Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
@@ -89,7 +89,7 @@ namespace ICA
 
                             if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
                             {
-                                Response.Redirect("/Member/index.aspx");
+                                Response.Redirect("/Member/overview.aspx");
                             }
                             else
                             {
@@ -102,7 +102,8 @@ namespace ICA
                     }
                     else
                     {
-                        error101.Text = utilities.ShowError("Invalid Login / Password");
+                        error101.Text = utilities.ShowError("Invalid Login / Password or Wrong view selected." +
+                            "");
                         //errorDisplay.InnerHtml = "<div class='alert alert-danger container text-center' role='alert'>Invalid Login / Password</div>"; 
                     }
 

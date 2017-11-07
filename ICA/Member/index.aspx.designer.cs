@@ -13,15 +13,6 @@ namespace ICA.Member {
     public partial class index {
         
         /// <summary>
-        /// username control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username;
-        
-        /// <summary>
         /// title control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace ICA.Member {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText fullname;
-        
-        /// <summary>
-        /// memstats control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText memstats;
         
         /// <summary>
         /// dob control.
@@ -202,6 +184,15 @@ namespace ICA.Member {
         protected global::System.Web.UI.HtmlControls.HtmlInputText posIII;
         
         /// <summary>
+        /// update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button update;
+        
+        /// <summary>
         /// biodataid control.
         /// </summary>
         /// <remarks>
@@ -227,14 +218,5 @@ namespace ICA.Member {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// update control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button update;
     }
 }

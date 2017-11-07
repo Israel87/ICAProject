@@ -89,6 +89,7 @@
             <div class="">
                 <br />
                 <asp:Label ID="approvalNotification" runat="server"></asp:Label>
+                <asp:Label ID="DataRecordNotification" runat="server"></asp:Label>
                 <br />
 
                 <div class="form-group">
@@ -121,24 +122,27 @@
             <div class="col-lg-12">
 
                <%--   <asp:Button ID="exportExcel"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="exportExcel_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />--%>
-                <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />
+                <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" Visible="false" />
                 <br /><br />
                 <div class="">
                     <div class="table-responsive">
                         <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound">
                             
                             <Columns>
-                                <asp:TemplateField>
+                                <asp:TemplateField HeaderText="ACTION" ControlStyle-Font-Bold="true" >
                                     <ItemTemplate>
                                         <%--<a href="#ViewPanel?id=<%# Eval("BIODATAID").ToString()%>" class="btn btn-primary" onclick="viewReg_Click"> VIEW </a>--%>
                                         <asp:Button ID="viewReg" CssClass="btn btn-primary" runat="server" Text="VIEW" Font-Bold="true" OnClick="viewReg_Click" CommandArgument='<%# Eval("BIODATAID").ToString()%>' Style="width: 150px; border-radius: 0px" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:BoundField DataField="FULLNAME" HeaderText="FULL NAME" ControlStyle-Font-Bold="true"  />
+                                <asp:BoundField DataField="FULLNAME" HeaderText="FULL NAME" ControlStyle-Font-Bold="true" />
                                 <asp:BoundField DataField="USERNAME" HeaderText="EMAIL ADDRESS" ControlStyle-Font-Bold="true" />
+                                <asp:BoundField DataField="MEMBERTYPE" HeaderText="MEMBER TYPE" ControlStyle-Font-Bold="true" />
                                 <asp:BoundField DataField="MEMBERCATEGORY" HeaderText="MEMBER CATEGORY" ControlStyle-Font-Bold="true" />
                                 <asp:BoundField DataField="APPLICATION STATUS" HeaderText="MEMBER STATUS" ControlStyle-Font-Bold="true" />
+                                 <asp:BoundField DataField="PAYMENT STATUS" HeaderText="PAYMENT STATUS" ControlStyle-Font-Bold="true" />
+                                
                                 <asp:BoundField DataField="DATEADDED" HeaderText="DATE" ControlStyle-Font-Bold="true" />
                             </Columns>
 
@@ -177,7 +181,7 @@
                     <div class="col-lg-12">
                         <div class="input-group">                 
                             <%--    <asp:Button ID="passport" runat="server" CssClass="btn btn-outline-rounded btn-warning" Style="border-radius: 0px; width: 200px;" Text="VIEW PASSPORT" Font-Bold="true" OnClick="passport_Click"/>--%>
-                             <asp:Button ID="approve" runat="server" CssClass="btn btn-outline-rounded btn-success" Style="border-radius: 0px; width: 200px;" Text="APPROVE" OnClick="approve_Click" Font-Bold="true" />
+                             <asp:Button ID="approve" runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" Style="border-radius: 0px; width: 200px;" Text="APPROVE" OnClick="approve_Click" Font-Bold="true" visible="true"/>
                         </div>
 
                           <div class="input-group" style="float:right">

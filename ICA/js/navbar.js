@@ -194,11 +194,20 @@ function bvnPhoneNumber(evt) {
     return true;
 }
 
+
+// validate email 
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+// bindings for email and phonenumber validations
 $('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
+$('#MainContent_email').bind('click', checkVal);
 
 
 function checkVal() {
-
+    var email = $('#MainContent_email').val();
 
     // Check form validations 
 
@@ -222,7 +231,8 @@ function checkVal() {
     if ($('#MainContent_firstname').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
-    }
+    } 
+    
     if ($('#MainContent_password').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
@@ -238,7 +248,11 @@ function checkVal() {
         return false;
     }
     if ($('#MainContent_email').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included or not in the right format **</h4>');
+        return false;
+    }
+    if (!validateEmail(email)){
+        $('#errorMsg').html('<h4 style="color:red"> ** Email field  not in the right format **</h4>');
         return false;
     }
     if ($('#MainCOntent_addressI').val() == "") {

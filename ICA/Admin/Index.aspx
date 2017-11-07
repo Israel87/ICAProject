@@ -148,36 +148,48 @@
 		<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-teal panel-widget border-right">
+                    <a href="Manage.aspx" style="text-decoration:none">
+                      <div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-registered color-blue"></em>
 							<div class="large"><span id="totalactivereg">0</span></div>
 							<div class="text-muted"><h4>Active Registrations</h4></div>
 						</div>
 					</div>
+                    </a>
+				
 				</div>
+
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-blue panel-widget border-right">
+                    <a href="payments.aspx" style="text-decoration:none">
+                        <div class="panel panel-blue panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-credit-card color-orange"></em>
 							<div class="large"><span id="totalsuccessfulpayments">0</span></div>
 							<div class="text-muted"><h4>Successful Payments</h4></div>
 						</div>
 					</div>
+                    </a>
+					
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+                    <a href="Manage.aspx" style="text-decoration:none">
 					<div class="panel panel-orange panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-thumbs-up color-teal"></em>
 							<div class="large"><span id="totalapproved">0</span></div>
 							<div class="text-muted"><h4>Approved</h4></div>
 						</div>
 					</div>
+                    </a>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-red panel-widget ">
+                    <a href="Manage.aspx" style="text-decoration:none">
+                        <div class="panel panel-red panel-widget ">
 						<div class="row no-padding"><em class="fa fa-xl fa-pause color-red"></em>
 							<div class="large"><span id="totalpending">0</span></div>
 							<div class="text-muted"><h4>Pending</h4></div>
 						</div>
 					</div>
+                    </a>
+					
 				</div>
 			</div><!--/.row-->
 		</div>

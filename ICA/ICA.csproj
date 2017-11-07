@@ -240,6 +240,7 @@
     <Content Include="guest\registrationPayment.aspx" />
     <Content Include="images\associatemember.png" />
     <Content Include="images\chams.jpg" />
+    <Content Include="images\changepassword.png" />
     <Content Include="images\corporate.png" />
     <Content Include="images\corporate2.png" />
     <Content Include="images\facebook.png" />
@@ -250,9 +251,13 @@
     <Content Include="images\individual.png" />
     <Content Include="images\individual2.png" />
     <Content Include="images\instagram.png" />
+    <Content Include="images\logout.png" />
     <Content Include="images\member.png" />
     <Content Include="images\membersare.png" />
+    <Content Include="images\News.png" />
+    <Content Include="images\payment.png" />
     <Content Include="images\Platinum.png" />
+    <Content Include="images\profile.png" />
     <Content Include="images\requirements.png" />
     <Content Include="images\silvermembership.png" />
     <Content Include="images\student.png" />
@@ -260,6 +265,7 @@
     <Content Include="images\twitter2.png" />
     <Content Include="guest\individualMembers.aspx" />
     <Content Include="Admin\js\AjaxCalls.js" />
+    <Content Include="images\uploads.png" />
     <Content Include="js\jquery.datetimepicker.min.js" />
     <Content Include="js\navbar.js" />
     <Content Include="Member\changePassword.aspx" />
@@ -296,6 +302,7 @@
     <Content Include="Member\login.html" />
     <Content Include="logout.aspx" />
     <Content Include="Member\makePayment.aspx" />
+    <Content Include="Member\overview.aspx" />
     <Content Include="Member\panels.html" />
     <Content Include="Member\paymentHistory.aspx" />
     <Content Include="Member\uploads.aspx" />
@@ -362,7 +369,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery.datetimepicker.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -525,6 +531,13 @@
     </Compile>
     <Compile Include="Member\makePayment.aspx.designer.cs">
       <DependentUpon>makePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\overview.aspx.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\overview.aspx.designer.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\paymentHistory.aspx.cs">
       <DependentUpon>paymentHistory.aspx</DependentUpon>

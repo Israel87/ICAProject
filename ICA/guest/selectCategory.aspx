@@ -2,9 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
       <div class="row text-center"><br />
-            <img src="../images/ica.png" style="border-radius: 5px"/> 
+            <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
           <br /><br /><br />
-          <h4><b>Choose a Membership Type</b></h4> 
+          <h4 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"> Choose a Membership Type</h4> 
           <br /><br /><br />
           <center>
           <div class="input-group" >

@@ -5,13 +5,13 @@
     <br />
 
       <div class="row text-center"><br /><br />
-            <img src="../images/ica.png" style="border-radius: 5px"/> <br /><br /><br />
+             <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a><br /><br /><br />
   <%--  <div class="container text-center">--%>
             <img src="../images/student.png" style="width:120px; height:120px" />
         <br /><br />
           <center>
                  
-                <h5><b>Candidates must hold a BSc/HND degree,<br /> Candidate must also be a serving corp member.</b></h5>
+                <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Candidates must hold a BSc/HND degree,<br /> Candidate must also be a serving corp member.</h5>
       
           </center>
        <br />

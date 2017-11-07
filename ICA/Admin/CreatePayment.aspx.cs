@@ -20,6 +20,9 @@ namespace ICA.Admin
             // get the list of payments from the database
             DataTable _paymentTypes = new DataTable();
             DataTable _memCategoryReport = new DataTable();
+            DataSet _displayPayments = new DataSet();
+
+
 
             if (Session["UserEmail"] == null)
             {
@@ -80,6 +83,36 @@ namespace ICA.Admin
 
                 categoryID.Items.Insert(0, new ListItem("Select Option", ""));
 
+            }
+
+            // display list of payment data
+            {
+
+                OracleConnection conn = new OracleConnection(cs);
+                conn.Open();
+            
+                try {
+
+                    OracleDataAdapter da;
+
+                    OracleCommand cmd = new OracleCommand("DISPLAY_PAYMENTS", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                    da = new OracleDataAdapter(cmd);
+                    da.Fill(_displayPayments);
+
+
+                    displayPayments.DataSource = _displayPayments;
+                    displayPayments.DataBind();
+                    Session["dt"] = _displayPayments;
+
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+                
             }
 
         }
@@ -212,5 +245,43 @@ namespace ICA.Admin
 
 
         }
+
+        protected void displayPayments_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            displayPayments.PageIndex = e.NewPageIndex;
+            displayPayments.DataBind();
+        }
+
+        protected void displayPayments_DataBound(object sender, EventArgs e)
+        {
+            GridViewRow pagerrow = displayPayments.BottomPagerRow;
+            Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
+            Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
+
+            if ((pageno != null) && (totalpageno != null))
+            {
+                int pagen = displayPayments.PageIndex + 1;
+                int tot = displayPayments.PageCount;
+
+                pageno.Text = pagen.ToString();
+                totalpageno.Text = tot.ToString();
+            }
+        }
+
+        protected void createPayment_Click(object sender, EventArgs e)
+        {
+            ViewPanel.Visible = true;
+        }
+
+        protected void excelExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //protected void excelExport_Click(object sender, EventArgs e)
+        //{
+        //    utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "View Registration By Status & Category");
+        //}
     }
 }

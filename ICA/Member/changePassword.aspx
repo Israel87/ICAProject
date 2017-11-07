@@ -18,6 +18,16 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+    
+    <script type="text/javascript">
+        function checkVal() {
+            if ($('#newPass').val() != $('#confirm').val()) {
+                $('#errorLbl').html('<h4 style="color:red"> ** Password and Confirm Password Does not Match **</h4>');
+                return false;
+            }
+        }
+
+     </script>
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -85,17 +95,20 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
+			<div class="profile-sidebar">
+			<%--<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">
-                   <asp:Label ID="username" runat="server"></asp:Label>
-
+			</div>--%>
+            
+				<div style="text-align:center">
+                  
+                         <img src="../images/ica.png" style="width:180px; height:80px" />
+                  
+                   
 				</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+				<%--<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>--%>
+			
+			
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
@@ -105,7 +118,9 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Profile</a></li>
+
+            <li ><a href="overview.aspx"><em class="fa fa-dashboard">&nbsp;</em> Overview</a></li>
+			<li><a href="index.aspx"><em class="fa fa-user-plus">&nbsp;</em> Profile</a></li>
 		
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
@@ -123,7 +138,7 @@
 
             <li><a href="uploads.aspx"><em class="fa fa-calendar">&nbsp;</em> E-Certificates</a></li>
 			<li><a href="downloads.aspx"><em class="fa fa-bar-chart">&nbsp;</em> News & Downloads</a></li>
-			<li><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
+			<li class="active"><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
 		
 			<li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
@@ -151,12 +166,16 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
+
+                    <asp:Label ID="changePasswordNotification" runat="server"></asp:Label>
+                    <asp:Label ID="passwordCheck" runat="server"></asp:Label>
+
 					
 					<div class="panel-body container"><br /><br /><br />
 						<div class="col-lg-9">
                             <div class="form-group">
                                     <label for="gender" class="col-lg-4 control-label"> Current Password </label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="currentPass"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="password" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="currentPass"  /><br /><br />
                             </div>
                             <div class="form-group">
                                     <label for="gender" class="col-lg-4 control-label"> New Password </label>
@@ -170,13 +189,18 @@
 
                             <br />
 
-                          
-                            <asp:Button ID="change" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Text="CHANGE" Font-Bold="true" OnClick="change_Click"  /><br /><br /><br /><br />
+                        <%--  
+                            <asp:LinkButton ID="change" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();" OnClick="change_Click"> CHANGE</asp:LinkButton>--%>
+                            
+                            <asp:LinkButton ID="changePass" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();" OnClick="change_Click">CHANGE</asp:LinkButton>
+                    <%--        <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8"  OnClientClick="return checkVal();" OnClick="change_Click"> PROCEED TO PAYMENT </asp:LinkButton>--%>
+                            
+                            <br /><br /><br /><br />
 						</div>
                             
                         <div class="col-lg-3">
                                 <asp:Label ID="errorLbl" runat="server" ForeColor="Red" Font-Bold="true"></asp:Label>
-                                <asp:Label ID="succLbl" runat="server" ForeColor="green" Font-Bold="true"></asp:Label>
+                               <%-- <asp:Label ID="succLbl" runat="server" ForeColor="green" Font-Bold="true"></asp:Label>--%>
                         </div>
                         
 					</div>
@@ -199,6 +223,8 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
+
+
 	<script>
         window.onload = function () {
             var chart1 = document.getElementById("line-chart").getContext("2d");

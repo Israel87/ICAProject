@@ -36,19 +36,22 @@
         <!-- /.container-fluid -->
     </nav>
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <div class="profile-sidebar">
-            <div class="profile-userpic">
-                <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-            </div>
-            <div class="profile-usertitle">
-                <div class="profile-usertitle-name">
-                    <asp:Label ID="username" runat="server"></asp:Label>
-
-                </div>
-                <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-            </div>
-            <div class="clear"></div>
-        </div>
+        	<div class="profile-sidebar">
+			<%--<div class="profile-userpic">
+				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+			</div>--%>
+            
+				<div style="text-align:center">
+                  
+                         <img src="../images/ica.png" style="width:180px; height:80px" />
+                  
+                   
+				</div>
+				<%--<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>--%>
+			
+			
+			<div class="clear"></div>
+		</div>
         <div class="divider"></div>
         <form role="search">
             <div class="form-group">
@@ -56,13 +59,14 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Profile</a></li>
+             <li ><a href="overview.aspx"><em class="fa fa-dashboard">&nbsp;</em> Overview</a></li>
+            <li><a href="index.aspx"><em class="fa fa-user-plus">&nbsp;</em> Profile</a></li>
 
             <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
                 <em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
             </a>
                 <ul class="children collapse" id="sub-item-1">
-                    <li><a class="" href="makePayment.aspx">
+                    <li class="active"><a class="" href="makePayment.aspx">
                         <span class="fa fa-arrow-right">&nbsp;</span> Make Payments
                     </a></li>
                     <li><a class="" href="paymentHistory.aspx">

@@ -28,73 +28,25 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
 			<a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION&nbsp </span>MEMBER</a>
-				<%--<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
-					</a>
-						<ul class="dropdown-menu dropdown-messages">
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">3 mins ago</small>
-										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-									<br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">1 hour ago</small>
-										<a href="#">New message from <strong>Jane Doe</strong>.</a>
-									<br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="all-button"><a href="#">
-									<em class="fa fa-inbox"></em> <strong>All Messages</strong>
-								</a></div>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">5</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-heart"></em> 12 New Likes
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-user"></em> 5 New Followers
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>--%>
+
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<div class="profile-userpic">
+			<div class="profile-sidebar">
+			<%--<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">
-                     <asp:Label ID="username" runat="server"></asp:Label>
+			</div>--%>
+            
+				<div style="text-align:center">
+                  
+                         <img src="../images/ica.png" style="width:180px; height:80px" />
+                  
+                   
 				</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+				<%--<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>--%>
+			
+			
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
@@ -104,7 +56,8 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.aspx"><em class="fa fa-dashboard">&nbsp;</em> Profile</a></li>
+             <li ><a href="overview.aspx"><em class="fa fa-dashboard">&nbsp;</em> Overview</a></li>
+			<li class="active"><a href="index.aspx"><em class="fa fa-user-plus">&nbsp;</em> Profile</a></li>
 		
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
@@ -171,10 +124,11 @@
 
                                             </select>--%>
                                     <asp:DropDownList ID="title" CssClass="col-lg-8 form-control" runat="server" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" >
-                                        <asp:ListItem Value="1" Text="Master">Master</asp:ListItem>
-                                        <asp:ListItem Value="2" Text="Miss">Miss</asp:ListItem>
-                                        <asp:ListItem Value="3" Text="Mr">Mr</asp:ListItem>
-                                        <asp:ListItem Value="4" Text="Mrs">Mrs</asp:ListItem>
+                                        <asp:ListItem Value="1" Text="MR">MR</asp:ListItem>
+                                        <asp:ListItem Value="2" Text="MRS">MRS</asp:ListItem>
+                                        <asp:ListItem Value="3" Text="MASTER">MASTER</asp:ListItem>
+                                        <asp:ListItem Value="4" Text="MS">MS</asp:ListItem>
+                                        <asp:ListItem Value="5" Text="MISS">MISS</asp:ListItem>
                                     </asp:DropDownList>
 
                                     <br /><br />
@@ -185,10 +139,10 @@
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="fullname" disabled /><br /><br />
                             </div>
 
-                                <div class="form-group">
+                            <%--    <div class="form-group">
                                     <label for="memstats" class="col-lg-4 control-label">MEMBER STATUS </label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="memstats" disabled /><br /><br />
-                            </div>
+                            </div>--%>
 
                              <div class="form-group">
                                     <label for="dob" class="col-lg-4 control-label">DATE OF BIRTH</label>
@@ -202,15 +156,7 @@
 
                             <div class="form-group">
                                     <label for="marStatus" class="col-lg-4 control-label">MARITAL STATUS</label>
-                                   <%-- <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="maritalstatus"  />--%>
 
-                             <%--     <select id="maritalstatus" class="form-control" name="country" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server">
-                                                <option value="Null">Select Marital Status</option>
-                                                <option value="Single">Single</option>
-                                                <option value="Married">Married</option>
-                                                <option value="Divorced">Divorced</option>
-                                                <option value="Seperated">Seperated</option>
-                                            </select>--%>
 
                                      <asp:DropDownList ID="maritalstatus" CssClass="col-lg-8 form-control" runat="server" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px">
                                         <asp:ListItem Value="1" Text="Married">Married</asp:ListItem>
@@ -250,24 +196,16 @@
 
                                 <div class="form-group">
                                     <label for="degree" class="col-lg-4 control-label">DEGREE </label>
-                                   <%-- <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="deg"  />--%>
-                                    <%--   <select id="deg" class="form-control" name="degree" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
-                                            <option value="Null">Select </option>
-                                            <option value="1">Master of Business Adminstration</option>
-                                            <option value="2">Master of Science</option>
-                                            <option value="3">Bachelor of Science</option>
-                                            <option value="4">SSCE</option>
-                                            <option value="5">First School Leaving Certificate</option>
-                                        </select>--%>
+
 
                                       <asp:DropDownList ID="deg" CssClass="col-lg-8 form-control" runat="server" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px">
-                                        <asp:ListItem Value="1" Text="Master of Business Adminstration">Master of Business Adminstration</asp:ListItem>
+                                        <asp:ListItem Value="1" Text="Bachelor of Science">Bachelor of Science</asp:ListItem>
                                         <asp:ListItem Value="2" Text="Master of Science">Master of Science</asp:ListItem>
-                                        <asp:ListItem Value="3" Text="Bachelor of Science">Bachelor of Science</asp:ListItem>
-                                        <asp:ListItem Value="4" Text="SSCE">SSCE</asp:ListItem>
-                                        <asp:ListItem Value="5" Text="First School Leaving Certificate">First School Leaving Certificate</asp:ListItem>
-                                        <asp:ListItem Value="6" Text="First School Leaving Certificate">First School Leaving Certificate</asp:ListItem>
-                                        <asp:ListItem Value="7" Text="First School Leaving Certificate">First School Leaving Certificate</asp:ListItem>
+                                        <asp:ListItem Value="3" Text="PhD">PhD</asp:ListItem>
+                                        <asp:ListItem Value="4" Text="OND">OND</asp:ListItem>
+                                        <asp:ListItem Value="5" Text="HND">HND</asp:ListItem>
+                                        <asp:ListItem Value="6" Text="SSCE">SSCE</asp:ListItem>
+                                        <asp:ListItem Value="7" Text="MBA">MBA</asp:ListItem>
                                     </asp:DropDownList>
 
 
@@ -311,6 +249,9 @@
                                 <div class="form-group">
                                     <label for="posIII" class="col-lg-4 control-label">POSITION III</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posIII"  /><br /><br />
+                                    <br />
+                                     <asp:Button ID="update" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="border-radius: 0px; width: 200px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />
+                                    <br /><br /><br /><br />
                                 </div>
                                  <input type="text" id="biodataid" hidden runat="server" />
 
@@ -328,7 +269,7 @@
                                 <br /><br /><br /><br /><br /><br />
 
 
-                                 <asp:Button ID="update" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="border-radius: 0px; width: 200px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />
+                                
                             </div>
                        </div>
                 </div>
