@@ -207,16 +207,16 @@ namespace ICA.Admin
                 try
                 {
                     //Server.MapPath("~") + "/Credentials/Passport/" + email.Value.ToString() + ".jpg"
-                    if (File.Exists(Server.MapPath("~/Credentials/Resume/" + biodata + ".pdf")))
+                    if (File.Exists(Server.MapPath("/ICA/Credentials/Resume/" + biodata + ".pdf")))
                     {
 
                         pdfDisplay.Text = "<iframe id='' style ='border:1px solid #666CCC' title ='Resume' src ='/Credentials/Resume/" +
                                  biodata + ".pdf' frameborder ='1' scrolling ='auto' height ='600' width ='1050' ><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></ iframe >";
                     }
 
-                    if (File.Exists(Server.MapPath("~/Credentials/Passport/" + biodata + ".jpg")))
+                    if (File.Exists(Server.MapPath("/ICA/Credentials/Passport/" + biodata + ".jpg")))
                     {
-                        passportDisplay.Text = "<b><p>Passport</p></b><img src='/Credentials/Passport/" + biodata + ".jpg' width='200' height='200'/>";
+                        passportDisplay.Text = "<b><p>Passport</p></b><img src='/ICA/Credentials/Passport/" + biodata + ".jpg' width='200' height='200'/>";
                         // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                     }
 

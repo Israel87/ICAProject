@@ -16,7 +16,7 @@ namespace ICA.Member
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         DataTable _userdata = new DataTable();
         string emailinSession = "";
-        string _firstname = "";
+        //string _firstname = "";
         bool gChange;
 
         ICA.Model.Util utilities = new Model.Util();

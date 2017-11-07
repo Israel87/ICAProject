@@ -14,7 +14,9 @@ namespace ICA.Member
     {
         string emailinSession = "";
         int biodataidInSession;
-        string _firstname = "";
+
+        //string _firstname = "";
+
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         ICA.Model.Util utilities = new Model.Util();
         DataSet _payHistory = new DataSet();
@@ -103,7 +105,7 @@ namespace ICA.Member
               
             }
 
-            Response.Redirect("/Member/makePayment.aspx");
+            Response.Redirect("/ICA/Member/makePayment.aspx");
         }
 
         protected void excelExport_Click(object sender, EventArgs e)

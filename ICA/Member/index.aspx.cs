@@ -92,9 +92,9 @@ namespace ICA.Member
 
 
 
-                        if (File.Exists(Server.MapPath("../Credentials/Passport/" + _biodataid + ".jpg")))
+                        if (File.Exists(Server.MapPath("/ICA/Credentials/Passport/" + _biodataid + ".jpg")))
                         {
-                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='../Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
+                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='/ICA/Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
                             // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                         }
 

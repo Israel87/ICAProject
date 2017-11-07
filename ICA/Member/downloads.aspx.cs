@@ -10,7 +10,7 @@ namespace ICA.Member
     public partial class downloads : System.Web.UI.Page
     {
         string emailinSession = "";
-        string _firstname = "";
+        //string _firstname = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

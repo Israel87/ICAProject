@@ -71,14 +71,14 @@ namespace ICA
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("/Admin/Index.aspx");
+                            Response.Redirect("/ICA/Admin/Index.aspx");
 
                         }
 
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
 
-                           Response.Redirect("/Member/overview.aspx");
+                           Response.Redirect("/ICA/Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
@@ -89,11 +89,11 @@ namespace ICA
 
                             if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
                             {
-                                Response.Redirect("/Member/overview.aspx");
+                                Response.Redirect("/ICA/Member/overview.aspx");
                             }
                             else
                             {
-                                Response.Redirect("/guest/registrationPayment.aspx", true);
+                                Response.Redirect("/ICA/guest/registrationPayment.aspx", true);
                             }
 
                         }
