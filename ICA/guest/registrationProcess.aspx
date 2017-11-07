@@ -142,7 +142,7 @@
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px; height:70px; border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
+                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px;  border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
                                         </div>
                                     </div>
 

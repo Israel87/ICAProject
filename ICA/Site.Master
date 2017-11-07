@@ -108,9 +108,9 @@
                             <h4><b>Connect with Us</b> </h4>
                            
                                <div class="input-group">
-                                    <img src="../images/twitter2.png" style="width:50px; height:50px" />
-                                    <img src="../images/facebook2.png" style="width:50px; height:50px" />
-                                    <img src="../images/instagram.png" style="width:50px; height:50px"  />
+                                    <img src="/ica/images/twitter2.png" style="width:50px; height:50px" />
+                                    <img src="/ica/images/facebook2.png" style="width:50px; height:50px" />
+                                    <img src="/ica/images/instagram.png" style="width:50px; height:50px"  />
                                 </div>
 
                                 <br />
@@ -126,7 +126,7 @@
                       
                     </div>
                 </div><br /><br />
-                <p class="container pull-right"><b>Powered by - Chams Plc <img src="../images/chams.jpg" style="margin-bottom: 2px"/> </b></p>
+                <p class="container pull-right"><b>Powered by - Chams Plc <img src="/ica/images/chams.jpg" style="margin-bottom: 2px"/> </b></p>
                <br /><br /><br />
             </footer>
 

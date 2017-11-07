@@ -248,7 +248,7 @@ function checkVal() {
         return false;
     }
     if ($('#MainContent_email').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included or not in the right format **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included **</h4>');
         return false;
     }
     if (!validateEmail(email)){
