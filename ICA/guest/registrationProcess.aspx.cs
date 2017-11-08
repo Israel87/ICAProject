@@ -140,7 +140,7 @@ namespace ICA
 
                 }
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
-                Response.Redirect("/guest/registrationPayment.aspx");
+                Response.Redirect("/ica/guest/registrationPayment.aspx");
             }
             else
             {
