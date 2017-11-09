@@ -1,10 +1,11 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,13 +22,23 @@ namespace ICA
 
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-            //Session.RemoveAll();
-            //Response.Redirect("signIn.aspx");
-            //if (!IsPostBack)
-            //{
-            //    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script> $(document).ready(function(){$('.alert-success').hide();$('.alert-danger').hide();});</script>");
-            //}
+          
+            if (!IsPostBack)
+            {
+                Session.RemoveAll();
+
+                Session.Clear();
+                Session.Abandon();
+                Session.RemoveAll();
+                FormsAuthentication.SignOut();
+
+            }
+           
+        
+
+
+
+
         }
 
         protected void loginID_Click(object sender, EventArgs e)
@@ -72,6 +83,8 @@ namespace ICA
                         if (selectValue.SelectedValue == "ADMIN")
                         {
                             Response.Redirect("/ICA/Admin/Index.aspx");
+                            _useremail = Session["UserEmail"].ToString();
+
 
                         }
 

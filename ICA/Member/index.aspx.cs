@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,20 +20,21 @@ namespace ICA.Member
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserEmail"] == null)
+            {
+
+                Response.Redirect("/ICA/signIn.aspx");
+            }
+            else
+            {
+                //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
+
+
+            }
             if (!IsPostBack)
             {
-                if (Session["UserEmail"] == null)
-                {
-
-                    Response.Redirect("/ICA/signIn.aspx");
-                }
-                else
-                {
-                    //_userSession = Session["UserID"].ToString();
-                    emailinSession = Session["UserEmail"].ToString();
-
-
-                }
+              
 
 
                 try
@@ -184,7 +185,7 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("..") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("~") + "/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
                            // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 

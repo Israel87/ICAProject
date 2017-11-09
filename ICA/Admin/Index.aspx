@@ -115,7 +115,7 @@
 				</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li><a class="" href="Manage.aspx">
-						<span class="fa fa-arrow-right">&nbsp;</span> Manage
+						<span class="fa fa-arrow-right">&nbsp;</span> Manage Approvals
 					</a></li>
 					<!--<li><a class="" href="#">
 						<span class="fa fa-arrow-right">&nbsp;</span> Create Payment

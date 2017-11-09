@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using static ICA.registrationViewModel;
 using ICA.Logic;
 using System.Configuration;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
 namespace ICA

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
 namespace ICA.Admin
@@ -275,7 +275,7 @@ namespace ICA.Admin
 
         protected void excelExport_Click(object sender, EventArgs e)
         {
-
+            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payments Items and Amount");
         }
 
 

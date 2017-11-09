@@ -111,7 +111,7 @@
                                     <div class="form-group">
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid ridge; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
+                                            <input class="form-control" type="text" style="width: 200px; border: 2px solid #aed6f1; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
                                         </div>
                                         <div class="col-lg-5">
 
@@ -142,7 +142,7 @@
                                         </div>
 
                                         <div class="col-lg-5">
-                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px;  border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
+                                            <asp:TextBox ID="addressII" runat="server" CssClass="form-control" Style="border: 2px solid #aed6f1; width: 400px;  border-radius: 0px" TextMode="MultiLine" placeholder="Address II" required="required"></asp:TextBox><br />
                                         </div>
                                     </div>
 
@@ -197,7 +197,7 @@
                                     <div class="form-group">
                                         <label for="city" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
-                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
+                                            <asp:TextBox ID="zip" runat="server" CssClass="form-control" Style="border: 2px solid #aed6f1; width: 400px; border-radius: 0px" placeholder="Postal/Zip Code"></asp:TextBox>
                                         </div>
 
                                         <div class="col-lg-5">

@@ -57,7 +57,7 @@
             </a>
                 <ul class="children collapse" id="sub-item-1">
                     <li class="active"><a class="" href="#">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Manage
+                        <span class="fa fa-arrow-right">&nbsp;</span> Manage Approvals
                     </a></li>
                 </ul>
             </li>
@@ -80,7 +80,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Registrations</h1>
+                    <h1 class="page-header">Manage Approvals</h1>
                     <hr />
                 </div>
             </div>

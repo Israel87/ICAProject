@@ -16,7 +16,7 @@
     <RootNamespace>ICA</RootNamespace>
     <AssemblyName>ICA</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -48,7 +48,11 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -223,6 +227,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Credentials\Passport\57.jpg" />
+    <Content Include="Credentials\Passport\59.jpg" />
+    <Content Include="Credentials\Passport\60.jpg" />
+    <Content Include="Credentials\Passport\88.jpg" />
+    <Content Include="Credentials\Passport\96.jpg" />
     <Content Include="guest\forgotPassword.aspx" />
     <Content Include="guest\corporateMembership.aspx" />
     <Content Include="css\navbar.css" />
@@ -633,7 +642,6 @@
     <Folder Include="Credentials\MemberUploads\UploadOne\" />
     <Folder Include="Credentials\MemberUploads\UploadThree\" />
     <Folder Include="Credentials\MemberUploads\UploadTwo\" />
-    <Folder Include="Credentials\Passport\" />
     <Folder Include="Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -685,7 +693,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51771</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51771/</IISUrl>
+          <IISUrl>http://localhost/ICA</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
