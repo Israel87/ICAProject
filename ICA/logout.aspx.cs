@@ -24,8 +24,7 @@ namespace ICA.Member
                 Session.Clear();
                 Session.Abandon();
                 Session.RemoveAll();
-                FormsAuthentication.SignOut();
-                Response.Redirect("/", true);
+           
                 //_userSession = Session["UserID"].ToString();
               
 

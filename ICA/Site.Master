@@ -130,11 +130,7 @@
                <br /><br /><br />
             </footer>
 
-           <script>
-                 function preventBack() { window.history.forward(); }
-                   setTimeout("preventBack()", 0);
-                   window.onunload = function () { null };
-            </script>
+        
 
      <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
     <script src="/ica/js/navbar.js"></script>

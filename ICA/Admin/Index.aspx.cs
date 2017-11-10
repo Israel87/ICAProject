@@ -22,7 +22,7 @@ namespace ICA.Admin
             {
                 //_userSession = Session["UserID"].ToString();
 
-                Response.Redirect("/ICA/logout.aspx");
+                Response.Redirect("/ICA/signIn.aspx");
 
             }
         }

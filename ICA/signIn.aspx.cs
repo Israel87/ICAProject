@@ -23,22 +23,6 @@ namespace ICA
         protected void Page_Load(object sender, EventArgs e)
         {
           
-            if (!IsPostBack)
-            {
-                Session.RemoveAll();
-
-                Session.Clear();
-                Session.Abandon();
-                Session.RemoveAll();
-                FormsAuthentication.SignOut();
-
-            }
-           
-        
-
-
-
-
         }
 
         protected void loginID_Click(object sender, EventArgs e)
