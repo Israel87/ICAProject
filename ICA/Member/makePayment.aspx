@@ -283,7 +283,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/Admin/ICAWebService.asmx/GetInfoByEmail",
+                url: "/ICA/Admin/ICAWebService.asmx/GetInfoByEmail",
                 data: '{email : "' + email + '"}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -306,7 +306,7 @@
         function logPaymentInfoDB(payinfo) {
             $.ajax({
                 type: "POST",
-                url: "/Admin/ICAWebService.asmx/logPaymentInfoDB",
+                url: "/ICA/Admin/ICAWebService.asmx/logPaymentInfoDB",
                 data: payinfo,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

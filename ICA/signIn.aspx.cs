@@ -75,7 +75,7 @@ namespace ICA
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
 
-                           Response.Redirect("/ICA/Member/overview.aspx");
+                         Response.Redirect("/ICA/Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
@@ -84,7 +84,7 @@ namespace ICA
                             DataTable dt2 = new DataTable();
                             da.Fill(dt2);
 
-                            if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
+                            if (dt2 != null && dt2.Rows[0]["APPLICATIONFLAGID"].ToString() == "1")
                             {
                                 Response.Redirect("/ICA/Member/overview.aspx");
                             }

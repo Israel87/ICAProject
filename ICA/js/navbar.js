@@ -53,7 +53,7 @@ function makePayment() {
     var amount = parseInt(selectedItem[1].trim());
     var email = $('#MainContent_emailDisplay').text();
     var payItemID = $('#MainContent_paymentCatID option:selected').val();
-    var response = 'pending';
+    var response = '';
 
 
 

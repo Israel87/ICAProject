@@ -197,9 +197,10 @@ namespace ICA
         // log payment 
         [WebMethod()]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string logPaymentInfoDB(string biodataid, string description, string response, string payItemId, string payRef, string status)
+        public string logPaymentInfoDB(string biodataid, string description, string payItemId, string payRef, string status)
         {
-            DataSet dt = new DataSet();
+            //string response,
+           DataSet dt = new DataSet();
 
             OracleConnection conn = new OracleConnection(cs);
             if(conn.State != ConnectionState.Open) conn.Open();
@@ -214,7 +215,7 @@ namespace ICA
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTID", OracleDbType.Varchar2, payItemId, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTREF", OracleDbType.Varchar2, payRef, ParameterDirection.Input));
             // Added the response variable (V_RESPONSE) after changes made to the Database.
-            cmd.Parameters.Add(new OracleParameter("V_RESPONSE", OracleDbType.Varchar2, response, ParameterDirection.Input));
+          //  cmd.Parameters.Add(new OracleParameter("V_RESPONSE", OracleDbType.Varchar2, response, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_STATUS", OracleDbType.Varchar2, status, ParameterDirection.Input));
             cmd.Parameters.Add("OUT_PAYMENTID", OracleDbType.Int64).Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();

@@ -93,7 +93,7 @@ namespace ICA.Admin
             clearView();
             //to generate registration details based on selected values from the drop down.
             string appStatus = appStatusID.Value;
-            string memTypes = memberCatID.Value;
+            int memTypes = Convert.ToInt32(memberCatID.Value);
 
             DataSet dt = null;
 
@@ -128,7 +128,7 @@ namespace ICA.Admin
         }
 
 
-        public DataSet GetRegistrationDetails(string _appStatus, string _memberTypes)
+        public DataSet GetRegistrationDetails(string _appStatus, int _memberTypes)
         {
 
             DataSet dt = new DataSet();

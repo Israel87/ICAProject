@@ -58,7 +58,8 @@ namespace ICA.Member
                         string _middlename = _userEmail.Rows[0]["MIDDLENAME"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
                         _biodataid = Convert.ToInt32(_userEmail.Rows[0]["biodataid"]);
-                        
+                        string membertypeDisplay = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
+
                         Session["active_biodata"] = _biodataid;
                         
 
@@ -85,11 +86,13 @@ namespace ICA.Member
                         empIII.Value = _userEmail.Rows[0]["OTHEREMPLOYER3"].ToString();
                         posIII.Value = _userEmail.Rows[0]["position3"].ToString();
 
+                        memDisplay.Text = membertypeDisplay;
+
                         //username.Text = _firstname;
                         // _firstname = Session["active_firstname"].ToString();
 
                         // _biodataid = Convert.ToInt32(Session["active_biodata"]);
-                       
+
 
 
 
