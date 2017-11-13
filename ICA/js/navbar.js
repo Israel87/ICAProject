@@ -203,7 +203,7 @@ function validateEmail(email) {
 
 // bindings for email and phonenumber validations
 $('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
-$('#MainContent_email').bind('click', checkVal);
+//$('#MainContent_email').bind('kepress', checkVal);
 
 
 function checkVal() {
