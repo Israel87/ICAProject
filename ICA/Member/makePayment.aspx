@@ -164,7 +164,7 @@
 
     <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
    
-    <script src="js/MemberPayment.js"></script>
+    <script src="/ICA/Member/js/MemberPayment.js"></script>
 
 
     <script src="js/jquery-1.11.1.min.js"></script>

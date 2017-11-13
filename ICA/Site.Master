@@ -132,7 +132,7 @@
 
 
      <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-    <script src="../js/navbar.js"></script>
-    <script src="../js/jquery.datetimepicker.min.js"></script>
+    <script src="/ICA/js/navbar.js"></script>
+    <script src="/ICA/js/jquery.datetimepicker.min.js"></script>
 </body>
 </html>
