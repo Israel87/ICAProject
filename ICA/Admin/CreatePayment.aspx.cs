@@ -275,7 +275,7 @@ namespace ICA.Admin
 
         protected void excelExport_Click(object sender, EventArgs e)
         {
-            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payments Items and Amount");
+
         }
 
 

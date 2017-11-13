@@ -6,19 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ICA - Manage</title>
-
-     <%--  Disable the browser back button from getting in after logout--%>
-       <script type="text/javascript">
-           function preventBack() { window.history.forward(); }
-           setTimeout("preventBack()", 0);
-           window.onunload = function () { null };
-        </script>
-
-
-
-
-
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
@@ -70,7 +57,7 @@
             </a>
                 <ul class="children collapse" id="sub-item-1">
                     <li class="active"><a class="" href="#">
-                        <span class="fa fa-arrow-right">&nbsp;</span> Manage Approvals
+                        <span class="fa fa-arrow-right">&nbsp;</span> Manage
                     </a></li>
                 </ul>
             </li>
@@ -93,7 +80,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Approvals</h1>
+                    <h1 class="page-header">Manage Registrations</h1>
                     <hr />
                 </div>
             </div>

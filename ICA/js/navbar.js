@@ -122,7 +122,7 @@ function getInfoByEmail(email) {
 
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/GetInfoByEmail",
+        url: "/Admin/ICAWebService.asmx/GetInfoByEmail",
         data: '{email : "' + email + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -143,7 +143,7 @@ var activepayId;
 function logPaymentInfoDB(payinfo) {
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/logPaymentInfoDB",
+        url: "/Admin/ICAWebService.asmx/logPaymentInfoDB",
         data: payinfo,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -164,7 +164,7 @@ function logPaymentInfoDB(payinfo) {
 function updatePaymentInfo(payid, status, response) {
     $.ajax({
         type: "POST",
-        url: "/ICA/Admin/ICAWebService.asmx/updatePaymentInfoDB",
+        url: "/Admin/ICAWebService.asmx/updatePaymentInfoDB",
         data: "{paymentid: '" + payid + "', status:  '" + status + "', response:  '" + response + "' }",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -203,7 +203,7 @@ function validateEmail(email) {
 
 // bindings for email and phonenumber validations
 $('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
-//$('#MainContent_email').bind('kepress', checkVal);
+//$('#MainContent_email').bind('click', checkVal);
 
 
 function checkVal() {

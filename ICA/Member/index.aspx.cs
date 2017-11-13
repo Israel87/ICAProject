@@ -20,21 +20,20 @@ namespace ICA.Member
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserEmail"] == null)
-            {
-
-                Response.Redirect("/ICA/signIn.aspx");
-            }
-            else
-            {
-                //_userSession = Session["UserID"].ToString();
-                emailinSession = Session["UserEmail"].ToString();
-
-
-            }
             if (!IsPostBack)
             {
-              
+                if (Session["UserEmail"] == null)
+                {
+
+                    Response.Redirect("/ICA/signIn.aspx");
+                }
+                else
+                {
+                    //_userSession = Session["UserID"].ToString();
+                    emailinSession = Session["UserEmail"].ToString();
+
+
+                }
 
 
                 try
@@ -58,8 +57,7 @@ namespace ICA.Member
                         string _middlename = _userEmail.Rows[0]["MIDDLENAME"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
                         _biodataid = Convert.ToInt32(_userEmail.Rows[0]["biodataid"]);
-                        string membertypeDisplay = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
-
+                        
                         Session["active_biodata"] = _biodataid;
                         
 
@@ -86,13 +84,11 @@ namespace ICA.Member
                         empIII.Value = _userEmail.Rows[0]["OTHEREMPLOYER3"].ToString();
                         posIII.Value = _userEmail.Rows[0]["position3"].ToString();
 
-                        memDisplay.Text = membertypeDisplay;
-
                         //username.Text = _firstname;
                         // _firstname = Session["active_firstname"].ToString();
 
                         // _biodataid = Convert.ToInt32(Session["active_biodata"]);
-
+                       
 
 
 
@@ -188,7 +184,7 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("~") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("..") + "/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
                            // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 

@@ -12,17 +12,16 @@ namespace ICA.Admin
         string emailinSession = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserEmail"] != null)
+            if (Session["UserEmail"] == null)
             {
-                emailinSession = Session["UserEmail"].ToString();
 
-                
+                Response.Redirect("/ICA/signIn.aspx");
             }
             else
             {
                 //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
 
-                Response.Redirect("/ICA/signIn.aspx");
 
             }
         }

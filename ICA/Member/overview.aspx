@@ -7,15 +7,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ICA Member - Overview </title>
-    
-  <%--  Disable the browser back button from getting in after logout--%>
-       <script type="text/javascript">
-           function preventBack() { window.history.forward(); }
-           setTimeout("preventBack()", 0);
-           window.onunload = function () { null };
-        </script>
-
-
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">

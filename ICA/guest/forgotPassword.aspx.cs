@@ -15,7 +15,6 @@ namespace ICA
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         //MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
         EmailWS.WebService Emal = new EmailWS.WebService();
-        ICA.Model.Util utilities = new Model.Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,13 +66,11 @@ namespace ICA
                             {
                                 string _subject = "PASSWORD RESET";
                                 Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal to Change your Password.");
-                                resetID.Visible = false;
-                                emailLabel.Text = utilities.ShowSuccess("Password Reset was Successful. Check your email for next step");
+                                emailLabel.Text = "Password Reset was Successful. Check your email for next step";
                             }
                             else
                             {
-                                emailLabel.Text = utilities.ShowError("Email Does not Exist.");
-                                    
+                                emailLabel.Text = "Email Does not Exist.";
                             }
                             //emailLabel.Text = _retValStatus.ToLower() == "Success" ? "Password Reset was Successful. Check your email for next step" : "Email Does not Exist.";
 

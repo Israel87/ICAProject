@@ -31,33 +31,6 @@ namespace ICA.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewPanel;
         
         /// <summary>
-        /// paymentTypeNotifications control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label paymentTypeNotifications;
-        
-        /// <summary>
-        /// typeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText typeID;
-        
-        /// <summary>
-        /// createPaymentType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton createPaymentType;
-        
-        /// <summary>
         /// paymentItemNotification control.
         /// </summary>
         /// <remarks>
@@ -101,6 +74,33 @@ namespace ICA.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton createpayments;
+        
+        /// <summary>
+        /// paymentTypeNotifications control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label paymentTypeNotifications;
+        
+        /// <summary>
+        /// typeID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText typeID;
+        
+        /// <summary>
+        /// createPaymentType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton createPaymentType;
         
         /// <summary>
         /// excelExport control.

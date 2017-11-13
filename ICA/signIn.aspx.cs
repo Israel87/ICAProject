@@ -5,7 +5,6 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -22,7 +21,13 @@ namespace ICA
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+         
+            //Session.RemoveAll();
+            //Response.Redirect("signIn.aspx");
+            //if (!IsPostBack)
+            //{
+            //    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "<script> $(document).ready(function(){$('.alert-success').hide();$('.alert-danger').hide();});</script>");
+            //}
         }
 
         protected void loginID_Click(object sender, EventArgs e)
@@ -66,16 +71,14 @@ namespace ICA
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("/ICA/Admin/Index.aspx");
-                            _useremail = Session["UserEmail"].ToString();
-
+                            Response.Redirect("../Admin/Index.aspx");
 
                         }
 
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
 
-                         Response.Redirect("/ICA/Member/overview.aspx");
+                           Response.Redirect("../Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
@@ -84,7 +87,7 @@ namespace ICA
                             DataTable dt2 = new DataTable();
                             da.Fill(dt2);
 
-                            if (dt2 != null && dt2.Rows[0]["APPLICATIONFLAGID"].ToString() == "1")
+                            if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
                             {
                                 Response.Redirect("/ICA/Member/overview.aspx");
                             }

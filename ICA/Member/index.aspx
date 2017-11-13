@@ -7,20 +7,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ICA Member - Profile </title>
-
-
-     <%--  Disable the browser back button from getting in after logout--%>
-       <script type="text/javascript">
-           function preventBack() { window.history.forward(); }
-           setTimeout("preventBack()", 0);
-           window.onunload = function () { null };
-        </script>
-
-
-
-
-
-
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -280,11 +266,7 @@
                                 <p><b>change passport</b></p>
                                 <asp:FileUpload ID="FileUpload1" runat="server"  /><br />
                                 <%--<asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  />--%>
-                                <br /><br /><br />
-                                 <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
-                                
-                                
-                                <br /><br /><br />
+                                <br /><br /><br /><br /><br /><br />
 
 
                                 

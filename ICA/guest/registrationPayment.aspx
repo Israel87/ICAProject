@@ -98,6 +98,10 @@
                                         <br /> <br /> 
 
 
+                                         <%--<asp:Button runat="server" ID="saveButton" CssClass="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" OnClientClick="return makePayment();" Text="PROCEED TO PAYMENT" ></asp:Button> --%>
+
+                                        <%--<button runat="server" id="saveUserButton" class="btn btn-success custom-btn add-button" style="display: inline; border-radius:0px" onclick="return makePayment();"><b>PROCEED TO PAYMENT</b> </button>--%>
+                                   <%--     btn btn-outline-rounded btn-primary pull-right--%>
                                         <asp:Button runat="server" ID="saveButton" CssClass="btn btn-success btn-outline-rounded custom-btn add-button" style="display: inline; width: 300px; " OnClientClick="return makePayment();" Text="PAY" Font-Bold="true" ></asp:Button> 
 
                                     </center>
@@ -129,7 +133,7 @@
     
      
    
-    <%--  <script src="/ica/js/navbar.js"></script>--%>
+     <%-- <script src="/ica/js/navbar.js"></script>--%>
 
 
 </asp:Content>

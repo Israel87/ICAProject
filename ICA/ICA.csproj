@@ -227,11 +227,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Credentials\Passport\57.jpg" />
-    <Content Include="Credentials\Passport\59.jpg" />
-    <Content Include="Credentials\Passport\60.jpg" />
-    <Content Include="Credentials\Passport\88.jpg" />
-    <Content Include="Credentials\Passport\96.jpg" />
     <Content Include="guest\forgotPassword.aspx" />
     <Content Include="guest\corporateMembership.aspx" />
     <Content Include="css\navbar.css" />
@@ -642,6 +637,7 @@
     <Folder Include="Credentials\MemberUploads\UploadOne\" />
     <Folder Include="Credentials\MemberUploads\UploadThree\" />
     <Folder Include="Credentials\MemberUploads\UploadTwo\" />
+    <Folder Include="Credentials\Passport\" />
     <Folder Include="Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
