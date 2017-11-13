@@ -71,14 +71,14 @@ namespace ICA
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("../Admin/Index.aspx");
+                            Response.Redirect("/ICA/Admin/Index.aspx");
 
                         }
 
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
 
-                           Response.Redirect("../Member/overview.aspx");
+                           Response.Redirect("/ICA/Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
