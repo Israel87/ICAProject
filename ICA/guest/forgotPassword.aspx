@@ -18,13 +18,13 @@
   <center>
         <div class="col-lg-12 container"><br />
 
-                     <asp:Label ID="resetID" runat="server" Font-Bold="true" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif" Visible="true"> 
+                     <asp:Label ID="reset" runat="server" Font-Bold="true" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif" Visible="true"> 
                          Please type in your email address to receive a notification. 
                      </asp:Label>
-                <br />  <br />  <br />
+                <br />  
                     <asp:Label ID="emailLabel" runat="server" Font-Bold="true"></asp:Label>
      
-
+            <br />  <br />
                          <input class="form-control" type="text" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" id="emailID" placeholder="enter email address... " /><br />
                
                   <asp:Button ID="forgotPasswordID" runat="server" CssClass="btn btn-warning btn-md " style="border-radius:0px; width:400px;" Text="RESET" Font-Bold="true" OncLick="forgotPasswordID_Click" />

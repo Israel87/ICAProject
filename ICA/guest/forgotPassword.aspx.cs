@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ICA.Model;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,7 +16,7 @@ namespace ICA
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         //MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
         EmailWS.WebService Emal = new EmailWS.WebService();
-        ICA.Model.Util utilities = new Model.Util();
+        Util utilities = new Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,10 +66,11 @@ namespace ICA
 
                             if (_retValStatus == 1)
                             {
+                                reset.Visible = false;
                                 string _subject = "PASSWORD RESET";
-                                Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal to Change your Password.");
-                               // resetID.Visible = false;
                                 emailLabel.Text = utilities.ShowSuccess("Password Reset was Successful. Check your email for next step");
+                                Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal to Change your Password.");
+                               
                             }
                             else
                             {
