@@ -22,7 +22,7 @@
                          Please type in your email address to receive a notification. 
                      </asp:Label>
                 <br />  <br />  <br />
-                    <asp:Label ID="emailLabel" runat="server"  Font-Bold="true"></asp:Label>
+                    <asp:Label ID="emailLabel" runat="server" Font-Bold="true"></asp:Label>
      
 
                          <input class="form-control" type="text" style="border: 2px solid #0094ff; width:400px; border-radius: 0px" runat="server" id="emailID" placeholder="enter email address... " /><br />
