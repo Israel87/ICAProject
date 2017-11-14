@@ -94,22 +94,20 @@ function makePayment() {
             triggerPayment = true;
 
             if (response.tx.chargeResponse == '00' || response.tx.chargeResponse == '0') {
+              
+                //update payment status
+                updatePaymentInfo(activepayId, 2, "Failed");
+                 // redirect to a failure page.
+               
+                return true;
+            } else {
                 alert('Payment Successfull..' + flw_ref);
                 $('#transRefID').val() = flw_ref;
-
                 //update payment status
                 updatePaymentInfo(activepayId, 1, "Successfull");
 
-                // redirect to a success page
-
-
-                return true;
-            } else {
-                //update payment status
-                updatePaymentInfo(activepayId, 2, "Failed");
-
-                // redirect to a failure page.
-                alert('Payment Failed..');
+               // redirect to a success page
+                alert('Payment Successfull..');
                 return false;
             }
         }
