@@ -546,7 +546,7 @@
 
 
                                 <div class="form-group">
-                                    <b class="col-lg-4 control-label">Other Certifications with Date </b><%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
+                                    <b class="col-lg-4 control-label">Other Certifications </b><%--<span style="color: red; font-style: italic; text-align: right">*</span>--%>
 
                                     <div class="col-lg-4">
                                         <textarea runat="server" name="certName" id="certNameID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Certification" />

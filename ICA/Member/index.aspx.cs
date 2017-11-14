@@ -17,6 +17,7 @@ namespace ICA.Member
         string emailinSession = "";
         DataTable _userEmail = new DataTable();
         int _biodataid;
+        ICA.Model.Util utilities = new Model.Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -174,6 +175,7 @@ namespace ICA.Member
 
                             cmd.ExecuteNonQuery();
                             updateRecord = true;
+                            uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
                         }
                         catch (Exception ex)
                         {
