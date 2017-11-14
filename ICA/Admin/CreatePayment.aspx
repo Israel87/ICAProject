@@ -238,7 +238,9 @@
            </div>   <br />     
             
             <br /><br />
-              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" CausesValidation="false"  /><br /><br /><br /><br />
+
+              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/><br /><br /><br /><br />
+
             <div class="col-lg-12">
                 <asp:GridView ID="displayPayments" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="displayPayments_PageIndexChanging" OnDataBound="displayPayments_DataBound" PageSize="10">
                      <%--OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound"--%>

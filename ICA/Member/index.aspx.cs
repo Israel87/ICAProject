@@ -184,7 +184,7 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("~") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
                            // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
