@@ -29,14 +29,14 @@ namespace ICA
         public string GetActiveRegistrations()
         {
             DataSet dt = new DataSet();
-           
+
 
             OracleConnection conn = new OracleConnection(cs);
             conn.Open();
 
             OracleDataAdapter da;
 
-        
+
             OracleCommand cmd = new OracleCommand("TOTALCOUNTS", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
@@ -45,7 +45,7 @@ namespace ICA
             cmd.Parameters.Add("CUR3", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
             da = new OracleDataAdapter(cmd);
             da.Fill(dt);
-         
+
 
             if (dt != null && dt.Tables[0].Rows.Count > 0)
             {
@@ -64,7 +64,7 @@ namespace ICA
         public string GetSuccessfulPayments()
         {
             DataSet dt = new DataSet();
-        
+
             OracleConnection conn = new OracleConnection(cs);
             conn.Open();
 
@@ -164,57 +164,58 @@ namespace ICA
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string GetInfoByEmail(string email)
         {
-      
-                DataSet dt = new DataSet();
 
-                OracleConnection conn = new OracleConnection(cs);
-                conn.Open();
+            DataSet dt = new DataSet();
 
-                OracleDataAdapter da;
+            OracleConnection conn = new OracleConnection(cs);
+            conn.Open();
 
-
-                OracleCommand cmd = new OracleCommand("select biodataid, firstname, lastname, email, phone from biodata where email='" + email.ToUpper() + "'", conn);
-                cmd.CommandType = CommandType.Text;
-                da = new OracleDataAdapter(cmd);
-                da.Fill(dt);
+            OracleDataAdapter da;
 
 
-                if (dt != null && dt.Tables[0].Rows.Count > 0)
-                {
-                    string json = JsonConvert.SerializeObject(dt);
-                    return json;
-                }
+            OracleCommand cmd = new OracleCommand("select biodataid, firstname, lastname, email, phone from biodata where email='" + email.ToUpper() + "'", conn);
+            cmd.CommandType = CommandType.Text;
+            da = new OracleDataAdapter(cmd);
+            da.Fill(dt);
 
-                else
-                {
-                    return "";
-                }
-       
-           
+
+            if (dt != null && dt.Tables[0].Rows.Count > 0)
+            {
+                string json = JsonConvert.SerializeObject(dt);
+                return json;
+            }
+
+            else
+            {
+                return "";
+            }
+
+
 
         }
 
         // log payment 
         [WebMethod()]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string logPaymentInfoDB(string biodataid, string description, string response, string payItemId, string payRef, string status)
+        public string logPaymentInfoDB(string biodataid, string description, string payItemId, string payRef, string status)
         {
+            //string response,
             DataSet dt = new DataSet();
 
             OracleConnection conn = new OracleConnection(cs);
-            if(conn.State != ConnectionState.Open) conn.Open();
+            if (conn.State != ConnectionState.Open) conn.Open();
 
 
             //V_USERID, V_DESCRIPTION, V_PAYMENTID, V_PAYMENTREF, V_STATUS
-           //OracleDataAdapter da;
-           OracleCommand cmd = new OracleCommand("LOGPAYMENTINFO", conn);
+            //OracleDataAdapter da;
+            OracleCommand cmd = new OracleCommand("LOGPAYMENTINFO", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new OracleParameter("V_USERID", OracleDbType.Varchar2,biodataid, ParameterDirection.Input));
+            cmd.Parameters.Add(new OracleParameter("V_USERID", OracleDbType.Varchar2, biodataid, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_DESCRIPTION", OracleDbType.Varchar2, description, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTID", OracleDbType.Varchar2, payItemId, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_PAYMENTREF", OracleDbType.Varchar2, payRef, ParameterDirection.Input));
             // Added the response variable (V_RESPONSE) after changes made to the Database.
-            cmd.Parameters.Add(new OracleParameter("V_RESPONSE", OracleDbType.Varchar2, response, ParameterDirection.Input));
+            //  cmd.Parameters.Add(new OracleParameter("V_RESPONSE", OracleDbType.Varchar2, response, ParameterDirection.Input));
             cmd.Parameters.Add(new OracleParameter("V_STATUS", OracleDbType.Varchar2, status, ParameterDirection.Input));
             cmd.Parameters.Add("OUT_PAYMENTID", OracleDbType.Int64).Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();
@@ -223,7 +224,7 @@ namespace ICA
 
             if (conn.State == ConnectionState.Open) conn.Close();
 
-            
+
             return retval;
         }
 

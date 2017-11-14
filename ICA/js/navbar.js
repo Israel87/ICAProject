@@ -203,7 +203,7 @@ function validateEmail(email) {
 
 // bindings for email and phonenumber validations
 $('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
-//$('#MainContent_email').bind('click', checkVal);
+//$('#MainContent_email').bind('kepress', checkVal);
 
 
 function checkVal() {
@@ -231,8 +231,8 @@ function checkVal() {
     if ($('#MainContent_firstname').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
-    } 
-    
+    }
+
     if ($('#MainContent_password').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
@@ -251,7 +251,7 @@ function checkVal() {
         $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included **</h4>');
         return false;
     }
-    if (!validateEmail(email)){
+    if (!validateEmail(email)) {
         $('#errorMsg').html('<h4 style="color:red"> ** Email field  not in the right format **</h4>');
         return false;
     }
@@ -352,7 +352,7 @@ function payWithPaystack() {
 }
 
 $(document).ready(function () {
-   
+
     $('._date').datetimepicker({
         timepicker: false,
         //mask: true,

@@ -225,6 +225,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Connected Services\ServiceReferenceII\ICA.ServiceReferenceII.sendmail1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReferenceII\WebService.disco" />
+    <None Include="Connected Services\ServiceReferenceII\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceII\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceII\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -362,6 +372,7 @@
     <Content Include="Member\sass\styles.scss" />
     <Content Include="Member\tables\data1.json" />
     <Content Include="Member\tables\data2.json" />
+    <None Include="Connected Services\ServiceReferenceII\WebService.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -455,6 +466,11 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Connected Services\MailWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceII\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -661,6 +677,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\MailWebService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceII\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
