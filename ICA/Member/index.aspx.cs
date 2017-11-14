@@ -93,7 +93,7 @@ namespace ICA.Member
 
                         if (File.Exists(Server.MapPath("/ICA/Credentials/Passport/" + _biodataid + ".jpg")))
                         {
-                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='~/Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
+                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='/ICA/Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
                             // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                         }
 
@@ -184,7 +184,7 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("~") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
                             // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 

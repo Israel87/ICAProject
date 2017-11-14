@@ -275,7 +275,7 @@
 
 
                                 <%--constant 3 column for picture upload--%>
-                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                                 <asp:Label ID="pictureDisplay" runat="server"></asp:Label><br /><br />
                                 <p><b>change passport</b></p>
                                 <asp:FileUpload ID="FileUpload1" runat="server"  /><br />
