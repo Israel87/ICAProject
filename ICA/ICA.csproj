@@ -405,10 +405,10 @@
     <Content Include="Site.Master" />
     <Content Include="guest\studentmembership.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web References\EmailWS\Reference.map">
+    <None Include="Web References\EmailWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\EmailWS\WebService.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
