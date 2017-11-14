@@ -276,7 +276,9 @@
                                 <p><b>change passport</b></p>
                                 <asp:FileUpload ID="FileUpload1" runat="server"  /><br />
                                 <%--<asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  />--%>
-                                <br /><br /><br /><br /><br /><br />
+                                <br /><br /><br />
+                                 <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
+                                <br /><br /><br />
 
 
                                 

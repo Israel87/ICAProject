@@ -110,6 +110,7 @@ namespace ICA
                         }
                         catch (Exception ex)
                         {
+                            return -1;
                             //Response.Write("<script>alert('Successful');</script>");
                         }
                     }

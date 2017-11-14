@@ -130,9 +130,6 @@ namespace ICA
                     {
                         uploadNotificationII.Text = utilities.ShowError("Invalid File Format.");
                     }
-
-                    
-
                 }
                 catch (Exception ex)
                 {
@@ -142,9 +139,13 @@ namespace ICA
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
                 Response.Redirect("/ica/guest/registrationPayment.aspx");
             }
+            else if(biodataid == -1)
+            {
+                Response.Write("<script>alert('Email Address already exists.');</script>");
+            }
             else
             {
-               
+
             }
         }
 

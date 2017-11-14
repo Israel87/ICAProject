@@ -104,6 +104,11 @@
                                    <%--     btn btn-outline-rounded btn-primary pull-right--%>
                                         <asp:Button runat="server" ID="saveButton" CssClass="btn btn-success btn-outline-rounded custom-btn add-button" style="display: inline; width: 300px; " OnClientClick="return makePayment();" Text="PAY" Font-Bold="true" ></asp:Button> 
 
+                                        <br />
+                                        <br />
+
+                                        <a href="/ICA/signIn.aspx" style="text-decoration:none"> Redirect to Sign in Page</a>
+
                                     </center>
 
                                 </div>
