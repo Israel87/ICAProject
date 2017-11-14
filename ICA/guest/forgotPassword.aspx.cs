@@ -68,8 +68,9 @@ namespace ICA
                             {
                                 reset.Visible = false;
                                 string _subject = "PASSWORD RESET";
-                                emailLabel.Text = utilities.ShowSuccess("Password Reset was Successful. Check your email for next step");
                                 Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal to Change your Password.");
+                                emailLabel.Text = utilities.ShowSuccess("Password Reset was Successful. Check your email for next step");
+                              
                                
                             }
                             else
