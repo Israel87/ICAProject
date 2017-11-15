@@ -106,7 +106,7 @@ namespace ICA
                 {
                     if (FileUpload1.FileName.EndsWith("jpg"))
                     {
-                        String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
+                        String fileName = Server.MapPath("~") + "/ICA/Content/Credentials/Passport/" + biodataid + ".jpg";
                         FileUpload1.SaveAs(fileName);
                         uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
                         
@@ -120,7 +120,7 @@ namespace ICA
 
                     if (FileUpload2.FileName.EndsWith("pdf"))
                     {
-                        String fileNameII = Server.MapPath("~") + "/ICA/Credentials/Resume/" + biodataid + ".pdf";
+                        String fileNameII = Server.MapPath("~") + "/ICA/Content/Credentials/Resume/" + biodataid + ".pdf";
                         FileUpload2.SaveAs(fileNameII);
                         uploadNotificationII.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
