@@ -116,8 +116,8 @@
                             <div class="col-lg-9">
                                 <br />
                                 <div class="text-center container"><h3>View Personal Details</h3><br />
-                                  <h5 style="color: forestgreen">* &nbsp; to update details, edit the editable and click the update button below</h5> <br />
-                                       <asp:Label ID="uploadNotificationI" runat="server"></asp:Label><br />
+                                  <h5 style="color: forestgreen">* &nbsp; to update details, edit the editable and click the update button below</h5> <br /><br />
+                                       <asp:Label ID="uploadNotificationI" runat="server"></asp:Label><br /><br /><br />
                                     
                                     <hr />
                                
@@ -274,7 +274,7 @@
 
 
                                 <%--constant 3 column for picture upload--%>
-                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                                 <asp:Label ID="pictureDisplay" runat="server"></asp:Label><br /><br />
                                 <p><b>change passport</b></p>
                                 <asp:FileUpload ID="FileUpload1" runat="server"  /><br />

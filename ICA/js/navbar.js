@@ -101,13 +101,11 @@ function makePayment() {
                
                 return true;
             } else {
-                alert('Payment Successfull..' + flw_ref);
-                $('#transRefID').val() = flw_ref;
-                //update payment status
-                updatePaymentInfo(activepayId, 1, "Successfull");
 
-               // redirect to a success page
-                alert('Payment Successfull..');
+                alert('Payment Successfull..' + flw_ref);
+
+                updatePaymentInfo(activepayId, 1, "Successfull");
+               // $('#transRefID').val() = flw_ref;
                 return false;
             }
         }

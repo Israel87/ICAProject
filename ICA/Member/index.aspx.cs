@@ -175,7 +175,7 @@ namespace ICA.Member
 
                             cmd.ExecuteNonQuery();
                             updateRecord = true;
-                            uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+                            
                         }
                         catch (Exception ex)
                         {
@@ -184,15 +184,14 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("~") + "/ICA/Content/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
-                            // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
-
                         }
                         else
                         {
                             //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
                         }
+                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
                     }
                 }
