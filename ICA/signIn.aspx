@@ -43,9 +43,10 @@
                                          <div class="input-group" style="align-content:center">
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-tasks"></i></span>
                                              <asp:DropDownList ID="selectValue" runat="server" CssClass="form-control" style="width:500px; border-radius:0px; border:2px solid #0094ff">
-                                                 <asp:ListItem Selected="True" Text="Select View" ></asp:ListItem>
-                                                 <asp:ListItem Value="ADMIN" Text="ADMIN"></asp:ListItem>
-                                                 <asp:ListItem Value="MEMBER" Text="MEMBER"></asp:ListItem>
+                                                <%-- <asp:ListItem Selected="True" Text="Select View" ></asp:ListItem>--%>
+                                                  <asp:ListItem Value="MEMBER" Text="MEMBER"></asp:ListItem>
+                                                  <asp:ListItem Value="ADMIN" Text="ADMIN"></asp:ListItem>
+                                                
                                              </asp:DropDownList>
                                              
                                                 </div> 
@@ -63,7 +64,7 @@
                                                      <br />
                                           <div class="input-group"><br />
                                                <a href="guest/forgotPassword.aspx" style="text-decoration: none; text-align:right; color:crimson">FORGOT PASSWORD &nbsp; | </a>
-                                              <a href="guest/registrationProcess.aspx" style="text-decoration: none; text-align:right; color:darkgreen; font-family:Arial"> |&nbsp; REGISTER HERE </a>
+                                              <a href="guest/Default.aspx" style="text-decoration: none; text-align:right; color:darkgreen; font-family:Arial"> |&nbsp; REGISTER HERE </a>
                                              <%--<a class="text-center" href="ChangePassword.aspx" style="text-decoration:none"><b>Change Password</b></a> <br /> <br />--%>
                                            </div>   
                                                 </center>

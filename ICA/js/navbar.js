@@ -360,5 +360,12 @@ $(document).ready(function () {
         //}
     });
 
+    $('._datetime').datetimepicker({
+        
+    });
+
+
+
+
     // other date formats
 })

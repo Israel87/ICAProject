@@ -127,6 +127,9 @@
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
                                             <input class="form-control _date" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" name="dob" id="dob" placeholder="Date of Birth" required="required" />
+                                          <%--  <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>--%>
                                           
                                         </div>
                                         <div class="col-lg-5">

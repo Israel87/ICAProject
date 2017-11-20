@@ -16,7 +16,7 @@
     <RootNamespace>ICA</RootNamespace>
     <AssemblyName>ICA</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -236,6 +236,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Credentials\MemberUploads\UploadOne96.jpg" />
@@ -293,7 +296,9 @@
     <Content Include="guest\individualMembers.aspx" />
     <Content Include="Admin\js\AjaxCalls.js" />
     <Content Include="images\uploads.png" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
     <Content Include="js\jquery.datetimepicker.min.js" />
+    <Content Include="js\moment.js" />
     <Content Include="js\navbar.js" />
     <Content Include="Member\changePassword.aspx" />
     <Content Include="Member\charts.html" />
@@ -409,6 +414,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -732,7 +738,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51771</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51771/</IISUrl>
+          <IISUrl>http://localhost/ICA</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
