@@ -138,7 +138,7 @@
     <script src="/ICA/js/navbar.js"></script>
     <script src="/ICA/js/jquery.datetimepicker.min.js"></script>
     <script src="/ICA/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="/ICA/js/moment.js"></script>
+  <%--  <script src="/ICA/js/moment.js"></script>--%>
 
 </body>
 </html>

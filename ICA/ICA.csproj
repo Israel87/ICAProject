@@ -414,7 +414,6 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -682,11 +681,6 @@
     <Folder Include=".vs\ICA\v15\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Credentials\MemberUploads\UploadThree\" />
-    <Folder Include="Credentials\MemberUploads\UploadOne\" />
-    <Folder Include="Credentials\MemberUploads\UploadThree\" />
-    <Folder Include="Credentials\MemberUploads\UploadTwo\" />
-    <Folder Include="Credentials\Passport\" />
-    <Folder Include="Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
