@@ -230,7 +230,7 @@ function checkVal() {
     }
 
     if ($('#MainContent_password').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Password must be Added **</h4>');
         return false;
     }
 
@@ -281,7 +281,7 @@ function checkVal() {
         return false;
     }
     if ($('#MainCOntent_degreeID').val() == "Null") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Degree  from Education Records Tab **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Degree from Education Records Tab **</h4>');
         return false;
     }
     if ($('#MainContent_instNameID').val() == "") {
@@ -315,6 +315,11 @@ function checkVal() {
     // end of check.
 }
 
+$(function () {
+    $("input").change(function () {
+        $('#errorMsg').html("");
+    })
+});
 
 function payWithPaystack() {
 
@@ -352,7 +357,7 @@ $(document).ready(function () {
     $('._date').datetimepicker({
         timepicker: false,
         //mask: true,
-        format: 'm/d/Y',
+        format: 'd/m/Y',
         //minDate: '-1970/01/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
         maxDate: '-1970/01/01'//tomorrow is maximum date calendar
         //onChangeDateTime: function (dp, $input) {
