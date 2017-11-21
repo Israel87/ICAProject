@@ -13,13 +13,13 @@ namespace ICA {
     public partial class corporateMembership {
         
         /// <summary>
-        /// Button1 control.
+        /// corpID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.HyperLink corpID;
         
         /// <summary>
         /// Button2 control.
@@ -31,13 +31,13 @@ namespace ICA {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Button5 control.
+        /// corpIDI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.HyperLink corpIDI;
         
         /// <summary>
         /// Button6 control.
@@ -49,13 +49,13 @@ namespace ICA {
         protected global::System.Web.UI.WebControls.Button Button6;
         
         /// <summary>
-        /// Button3 control.
+        /// corpIDII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.HyperLink corpIDII;
         
         /// <summary>
         /// Button4 control.
