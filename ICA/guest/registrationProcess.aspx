@@ -6,8 +6,8 @@
         <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
         <br />
 
-        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>
-        <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM</h5>
+<%--        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>--%>
+        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM</h3>
     </div>
 
 
