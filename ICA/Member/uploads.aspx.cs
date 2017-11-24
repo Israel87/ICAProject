@@ -25,25 +25,26 @@ namespace ICA.Member
             }
             else
             {
-                //_userSession = Session["UserID"].ToString();
+            
                 emailinSession = Session["UserEmail"].ToString();
+
                 biodataidInSession = Convert.ToInt32(Session["BiodataID"]);
-                //_firstname = Session["active_firstname"].ToString();
-                //username.Text = _firstname;
+               
             }
 
         }
 
         protected void upload3_Click(object sender, EventArgs e)
         {
-            int biodataid = Convert.ToInt32(Session["BiodataID"]);
+            int biodataid = biodataidInSession;
+         
             try
             {
                 // first file upload for probably image files.
                 //(FileUpload1.FileName.EndsWith("jpg"))
                 if (FileUpload1.FileName.EndsWith("jpg"))
                 {
-                    string fileName = Server.MapPath("..") + "/Credentials/MemberUploads/UploadOne/" + biodataid + ".jpg";
+                    string fileName = Server.MapPath("..") + "/Content/Credentials/MemberUploads/UploadOne/" + biodataid + ".jpg";
                     FileUpload1.SaveAs(fileName);
                     uploadnotification.Text = utilities.ShowSuccess("File Uploaded successfully.");
                 }
@@ -55,7 +56,7 @@ namespace ICA.Member
                 // second file upload for probably resume and any pdf content.
                 if (FileUpload2.FileName.EndsWith("pdf"))
                 {
-                    string fileNameII = Server.MapPath("..") + "/Credentials/MemberUploads/UploadTwo/" + biodataid + ".pdf";
+                    string fileNameII = Server.MapPath("..") + "/Content/Credentials/MemberUploads/UploadTwo/" + biodataid + ".pdf";
                     FileUpload2.SaveAs(fileNameII);
                     uploadnotificationII.Text = utilities.ShowSuccess("File Uploaded successfully.");
                 }

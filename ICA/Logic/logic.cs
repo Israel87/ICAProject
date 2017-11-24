@@ -81,6 +81,11 @@ namespace ICA.Logic
                     JobDescriptionIII = regUser.employmentinfo.JobDescriptionIII,
                 },
 
+                userInfo = new UserInfo()
+                {
+                    MemcategoryID = regUser.userinfo.MemcategoryID,
+                }
+
                 //paymentDetails = new PaymentDetails()
                 //{
                 //    Description = regUser.paymentdetails.Description,

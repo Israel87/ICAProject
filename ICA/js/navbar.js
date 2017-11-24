@@ -374,3 +374,7 @@ $(document).ready(function () {
 
     // other date formats
 })
+
+
+// return the registered users.
+

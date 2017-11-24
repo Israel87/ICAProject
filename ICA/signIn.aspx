@@ -6,7 +6,7 @@
           <div class="container text-center">
             <img src="images/ica.png" style="border-radius: 5px; width:200px; height:80px" class="text-center" /><br /><br />
                   <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"> THE INSTITUTE OF CREDIT ADMINISTRATION </h3>
-                    <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"> Sign In &nbsp;| &nbsp;Register  </h5>
+                   <%-- <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"> Sign In &nbsp;| &nbsp;Register  </h5>--%>
              <br /> 
             <%--<h4><b>SIGN IN</b></h4>--%>
           

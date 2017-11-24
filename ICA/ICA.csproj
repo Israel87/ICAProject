@@ -148,6 +148,7 @@
     <Content Include="Admin\css\datepicker.css" />
     <Content Include="Admin\css\datepicker3.css" />
     <Content Include="Admin\css\font-awesome.min.css" />
+    <Content Include="Admin\css\jquery.dataTables.min.css" />
     <Content Include="Admin\css\styles.css" />
     <Content Include="Admin\elements.html" />
     <Content Include="Admin\fonts\fontawesome-webfont.svg" />
@@ -163,6 +164,7 @@
     <Content Include="Admin\js\easypiechart.js" />
     <Content Include="Admin\js\html5shiv.min.js" />
     <Content Include="Admin\js\jquery-1.11.1.min.js" />
+    <Content Include="Admin\js\jquery.dataTables.min.js" />
     <Content Include="Admin\js\lumino.glyphs.js" />
     <Content Include="Admin\js\npm.js" />
     <Content Include="Admin\js\respond.min.js" />
@@ -170,6 +172,7 @@
     <Content Include="Admin\Manage.aspx" />
     <Content Include="Admin\panels.html" />
     <Content Include="Admin\payments.aspx" />
+    <Content Include="Admin\RegisteredUsers.aspx" />
     <Content Include="Admin\widgets.html" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
@@ -241,16 +244,7 @@
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Credentials\MemberUploads\UploadOne96.jpg" />
     <Content Include="Content\Credentials\MemberUploads\UploadOne\86.jpg" />
-    <Content Include="Content\Credentials\MemberUploads\UploadTwo96.jpg" />
-    <Content Include="Content\Credentials\Passport\57.jpg" />
-    <Content Include="Content\Credentials\Passport\59.jpg" />
-    <Content Include="Content\Credentials\Passport\60.jpg" />
-    <Content Include="Content\Credentials\Passport\88.jpg" />
-    <Content Include="Content\Credentials\Passport\96.jpg" />
-    <Content Include="Content\Credentials\Passport\afolawiyo%40chams.com.jpg" />
-    <Content Include="Content\Credentials\Passport\FranklinEzeugo.jpg" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="guest\forgotPassword.aspx" />
@@ -388,16 +382,7 @@
     <Content Include="Member\tables\data1.json" />
     <Content Include="Member\tables\data2.json" />
     <None Include="Connected Services\ServiceReferenceII\WebService.wsdl" />
-    <Content Include="Content\Credentials\MemberUploads\UploadTwo96.pdf" />
     <Content Include="Content\Credentials\MemberUploads\UploadTwo\86.pdf" />
-    <Content Include="Content\Credentials\Passport\gabbygabbylexy%40gmail.com" />
-    <Content Include="Content\Credentials\Resume\57.pdf" />
-    <Content Include="Content\Credentials\Resume\59.pdf" />
-    <Content Include="Content\Credentials\Resume\60.pdf" />
-    <Content Include="Content\Credentials\Resume\88.pdf" />
-    <Content Include="Content\Credentials\Resume\afolawiyo%40chams.com.pdf" />
-    <Content Include="Content\Credentials\Resume\FranklinEzeugo.pdf" />
-    <Content Include="Content\Credentials\Resume\gabbygabbylexy%40gmail.com" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -481,6 +466,13 @@
     </Compile>
     <Compile Include="Admin\payments.aspx.designer.cs">
       <DependentUpon>payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegisteredUsers.aspx.cs">
+      <DependentUpon>RegisteredUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisteredUsers.aspx.designer.cs">
+      <DependentUpon>RegisteredUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -681,6 +673,8 @@
     <Folder Include=".vs\ICA\v15\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Credentials\MemberUploads\UploadThree\" />
+    <Folder Include="Content\Credentials\Passport\" />
+    <Folder Include="Content\Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

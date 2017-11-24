@@ -124,6 +124,11 @@
                 <em class="fa fa-navicon">&nbsp;</em> Registration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
             </a>
                 <ul class="children collapse" id="sub-item-1">
+
+                    <li class="active"><a class="" href="RegisteredUsers.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Registered Users
+                    </a></li>
+
                     <li><a class="" href="Manage.aspx">
                         <span class="fa fa-arrow-right">&nbsp;</span> Manage
                     </a></li>

@@ -12,7 +12,10 @@ namespace ICA
     public partial class registrationProcess : System.Web.UI.Page
     {
         logic logic = new logic();
+        EmailWS.WebService Emal = new EmailWS.WebService();
         ICA.Model.Util utilities = new Model.Util();
+        string _usermail;
+        string _fullname;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,12 +79,11 @@ namespace ICA
                 JobDescriptionIII = functionsII.Value,
             };
 
-            //paymentDetails paymentdetails = new paymentDetails()
-            //{
-            //    Description = paymentCatID.Value,
-            //    ReferenceID = transRefID.Value,
-            //    PaymentItemID = paymentCatID.Value,
-            //};
+            userInfo userinfo = new userInfo()
+            {
+                MemcategoryID = Convert.ToInt32(memcatgoryID.Value),
+            };
+
 
             registrationViewModel viewObj = new registrationViewModel()
             {
@@ -89,6 +91,7 @@ namespace ICA
                 residentinfo = residentialinfo,
                 educationinfo = educationinfo,
                 employmentinfo = employmentinfo,
+                userinfo = userinfo,
 
             };
 
@@ -99,14 +102,11 @@ namespace ICA
 
             if (biodataid > 0)
             {
-                Session["UserEmail"] = personalinfo.Email;
-                
-
                 try
                 {
                     if (FileUpload1.FileName.EndsWith("jpg"))
                     {
-                        String fileName = Server.MapPath("~") + "/ICA/Content/Credentials/Passport/" + biodataid + ".jpg";
+                        String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
                         FileUpload1.SaveAs(fileName);
                         uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
                         
@@ -120,7 +120,7 @@ namespace ICA
 
                     if (FileUpload2.FileName.EndsWith("pdf"))
                     {
-                        String fileNameII = Server.MapPath("~") + "/ICA/Content/Credentials/Resume/" + biodataid + ".pdf";
+                        String fileNameII = Server.MapPath("~") + "/Content/Credentials/Resume/" + biodataid + ".pdf";
                         FileUpload2.SaveAs(fileNameII);
                         uploadNotificationII.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
@@ -136,8 +136,32 @@ namespace ICA
 
 
                 }
-                Response.Write("<script>alert('Registration Process is Successful');</script>");
-                Response.Redirect("/ica/guest/registrationPayment.aspx");
+                // send notification to the user 
+                Session["UserEmail"] = personalinfo.Email;
+                Session["FirstName"] = personalinfo.FirstName;
+                Session["LastName"] = personalinfo.LastName;
+
+                _usermail = Session["UserEmail"].ToString();
+                _fullname = Session["FirstName"].ToString() + ", " + Session["LastName"].ToString();
+
+                string _subject = "ICA Successfull Registration.";
+
+                string _body = "Dear " + _fullname + " have successfully registered on ICA, Please log in using this address: 154.113.0.163:1010/ICA to sign in and view your personal page.";
+
+                try
+                {
+
+                    string response = Emal.sendmail1(_usermail, _subject, _body);
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                Response.Redirect("~/guest/registrationPayment.aspx");
+                
+
             }
             else if(biodataid == -1)
             {

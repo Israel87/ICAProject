@@ -112,6 +112,15 @@
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
                                             <input class="form-control" type="text" style="width: 200px; border: 2px solid #aed6f1; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
+
+                                              <select id="memcatgoryID" class="form-control" name="memcategory" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
+                                                <option value="Null">Select Member Category</option>
+												<option value="4">Associate </option>
+                                                <option value="5">Member</option>
+                                                <option value="6">Fellow</option>
+                                            </select>
+
+
                                         </div>
                                         <div class="col-lg-5">
 

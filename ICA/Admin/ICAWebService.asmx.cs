@@ -22,6 +22,7 @@ namespace ICA
     public class ICAWebService : System.Web.Services.WebService
     {
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
+        ConnectionManager conMgr = new ConnectionManager();
 
         // getting the count for active registrations.
         [WebMethod()]
@@ -245,6 +246,47 @@ namespace ICA
             int retval = cmd.ExecuteNonQuery();
 
             return retval;
+        }
+
+        // get total user registered 
+        [WebMethod()]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string getRegisteredUsers()
+        {
+            DataTable dt = new DataTable();
+
+            dt = conMgr.GetRegisteredUsers();
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string json = JsonConvert.SerializeObject(dt);
+                return json;
+            }
+            else
+            {
+                return "";
+            }
+
+            
+        }
+
+        // get registered users by batch
+        [WebMethod()]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string getRegisteredUsersBatch(string pageno, string pagecount, string searchstring, string from, string to, string sortstring)
+        {
+            DataTable dt = new DataTable();
+            dt = conMgr.GetRegisteredUsersBatch(Convert.ToInt32(pageno), Convert.ToInt32(pagecount), searchstring, from, to, sortstring);
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string json = JsonConvert.SerializeObject(dt);
+            }
+            else
+            {
+                return "";
+            }
+            return "";
         }
     }
 }
