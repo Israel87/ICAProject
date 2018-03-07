@@ -18,7 +18,7 @@
                       
                             <img src="../images/silvermembership.png" style="width: 80px; height: 80px" /> <br /><br />
                        <div>
-                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent; border-color:green" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
                             <asp:Button ID="Button2" runat="server" CssClass="btn btn-outline-info"  Text="Read More" Font-Bold="true" />
                        </div>
                             
@@ -38,7 +38,7 @@
                         <img src="../images/Gold.png" style="width: 80px; height: 80px;" />
                             <br /><br />
                              <div>
-                                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent; border-color:green" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
                                     <asp:Button ID="Button6" runat="server" CssClass="btn btn-outline-info"  Text="Read More" Font-Bold="true" />
                              </div>
                                    
@@ -56,7 +56,7 @@
                              <img src="../images/Platinum.png" style="width: 80px; height: 80px"/>
                             <br /><br />
                       <div>
-                           <asp:HyperLink ID="HyperLink" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                           <asp:HyperLink ID="HyperLink" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent; border-color:green" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
                             <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-info" Text="Read More" Font-Bold="true" />
                       </div>
                           
