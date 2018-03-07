@@ -15,7 +15,7 @@
       
           </center>
        <br />
-          <asp:HyperLink ID="studentReg" runat="server" Font-Bold="true" CssClass="btn btn-info btn-md" Width="300px" NavigateUrl="~/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+          <asp:HyperLink ID="studentReg" runat="server" Font-Bold="true" CssClass="btn btn-info btn-md" Width="300px" NavigateUrl="~/guest/studentRegistration.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
          
 
           <br />

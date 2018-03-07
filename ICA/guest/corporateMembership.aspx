@@ -7,7 +7,7 @@
          <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a><br />
 
             <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">CORPORATE MEMBERSHIP </h3>
-            <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">The Categories under this Membership are : </h5>
+            <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">The categories under this membership are : </h5>
             <br /><br />
     <%-- <section style="background:#efefe9;"><br /><br />--%>
     <center>
@@ -15,10 +15,13 @@
                 <div class="col-md-4 text-center">
 
                     <div class="input-group">
-                            <img src="../images/silvermembership.png" style="width: 80px; height: 80px" />
-                          <br /><br />
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+                      
+                            <img src="../images/silvermembership.png" style="width: 80px; height: 80px" /> <br /><br />
+                       <div>
+                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-outline-info"  Text="Read More" Font-Bold="true" />
+                       </div>
+                            
 							
 							<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
 
@@ -31,11 +34,14 @@
 
                   <div class="row col-md-4 text-center" >
                     <div class="input-group">
+                        
                         <img src="../images/Gold.png" style="width: 80px; height: 80px;" />
-               
-                              <br /><br />
-                                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                                    <asp:Button ID="Button6" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+                            <br /><br />
+                             <div>
+                                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                                    <asp:Button ID="Button6" runat="server" CssClass="btn btn-outline-info"  Text="Read More" Font-Bold="true" />
+                             </div>
+                                   
 									
 									<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
 									
@@ -46,10 +52,14 @@
                  <div class="col-md-4 text-center">
 
                         <div class="input-group">
+                            
                              <img src="../images/Platinum.png" style="width: 80px; height: 80px"/>
-                         <br /><br />
-                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Click to Choose" Font-Bold="true" />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-info btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+                            <br /><br />
+                      <div>
+                           <asp:HyperLink ID="HyperLink" runat="server" CssClass="btn btn-primary" NavigateUrl="~/guest/corporateRegistration.aspx" style="background-color:transparent;" ForeColor="green" Font-Bold="true">Click to Choose</asp:HyperLink>
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-info" Text="Read More" Font-Bold="true" />
+                      </div>
+                          
 							<%-- data-toggle="modal" data-target=".bd-example-modal-lg" --%>
                     </div>
 

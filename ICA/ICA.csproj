@@ -16,7 +16,7 @@
     <RootNamespace>ICA</RootNamespace>
     <AssemblyName>ICA</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -223,6 +224,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="guest\corporateRegistration.aspx" />
     <Content Include="guest\forgotPassword.aspx" />
     <Content Include="guest\corporateMembership.aspx" />
     <Content Include="css\navbar.css" />
@@ -238,6 +240,7 @@
     </Content>
     <Content Include="Admin\ICAWebService.asmx" />
     <Content Include="guest\registrationPayment.aspx" />
+    <Content Include="guest\studentRegistration.aspx" />
     <Content Include="images\associatemember.png" />
     <Content Include="images\chams.jpg" />
     <Content Include="images\changepassword.png" />
@@ -460,6 +463,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="guest\corporateRegistration.aspx.cs">
+      <DependentUpon>corporateRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest\corporateRegistration.aspx.designer.cs">
+      <DependentUpon>corporateRegistration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="guest\forgotPassword.aspx.cs">
       <DependentUpon>forgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -494,6 +504,13 @@
     </Compile>
     <Compile Include="guest\registrationPayment.aspx.designer.cs">
       <DependentUpon>registrationPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guest\studentRegistration.aspx.cs">
+      <DependentUpon>studentRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest\studentRegistration.aspx.designer.cs">
+      <DependentUpon>studentRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="iTextSharp\text.cs" />
     <Compile Include="Logic\logic.cs" />
@@ -685,7 +702,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51771</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51771/</IISUrl>
+          <IISUrl>http://localhost/ICA</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,17 +1,14 @@
-﻿<%@ Page Title="Registration Membership" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registrationProcess.aspx.cs" Inherits="ICA.registrationProcess" %>
-
-
+﻿<%@ Page Title="Student Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="studentRegistration.aspx.cs" Inherits="ICA.guest.studentRegistration" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container text-center">
+     <div class="container text-center">
         <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
         <br />
 
-        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>
+        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">STUDENT MEMBERSHIP </h3>
         <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM</h5>
     </div>
 
-
-    <section>
+      <section>
         <div class="container">
             <div class="row">
 
@@ -112,13 +109,13 @@
                                         <label for="title" class="col-lg-1 control-label"></label>
                                         <div class="col-lg-6">
                                             <input class="form-control" type="text" style="width: 200px; border: 2px solid #aed6f1; width: 400px; border-radius: 0px" runat="server" id="middlename" placeholder="Middle Name" required="required" /><br />
-
-                                              <select id="memcatgoryID" class="form-control" name="memcategory" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
+                                             <input class="form-control" type="text" style="width: 200px; border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server" id="nyscStateCode" placeholder="NYSC state code" required="required" /><br />
+                                             <%-- <select id="memcatgoryID" class="form-control" name="memcategory" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
                                                 <option value="Null">Select Member Category</option>
 												<option value="4">Associate </option>
                                                 <option value="5">Member</option>
                                                 <option value="6">Fellow</option>
-                                            </select>
+                                            </select>--%>
 
 
                                         </div>
@@ -588,208 +585,52 @@
 
                         <div class="tab-pane fade" id="messages">
                             <div class="container">
-                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Employment records </h3>
-                                <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
-                                <h6 class="container" style="color:red"> <b>Only the current work experience fields within this tab are compulsory.</b></h6>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Upload records </h3>
+                               <%-- <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
+                                <h6 class="container" style="color:red"> <b>Only the current work experience fields within this tab are compulsory.</b></h6>--%>
                                 <hr />
 
+
+                                
+                                 <div class="form-group">
+                                    <br />
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD PASSPORT
+                                        <br />
+                                        | .jpg files only |
+                                    </b>
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                                    </div>
+                                    <br />
+                                </div>  <br />
+
+                                <div class="form-group">
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD RESUME
+                                        <br />
+                                        | .pdf files only |
+                                    </b>
+
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload2" runat="server" />
+                                    </div>
+                                    <br />
+                                </div><br />
+
+                                
+                                <div class="form-group">
+                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD NYSC ID card
+                                        <br />
+                                        | .pdf files only |
+                                    </b>
+
+                                    <div class="col-lg-8">
+                                        <asp:FileUpload ID="FileUpload3" runat="server" />
+                                    </div>
+                                    <br />
+                                </div>
                                 <br />
                                 <div class="col-lg-12">
-                                    <div class="col-lg-4">
-                                        <br />
-                                        <p><b> Current work experience</b></p>
-                                        <div class="form-group">
-
-                                            <div class="col-lg-8">
-                                                <p>Years of experience </p>
-                                                <select class="form-control" name="experience" id="experienceID" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
-                                                    <option value="Null">Select </option>
-                                                    <option value="3" style="font-weight: bold">&nbsp; 1 - 3 Years</option>
-                                                    <option value="5" style="font-weight: bold">&nbsp; 5+ Years</option>
-                                                    <option value="15" style="font-weight: bold">&nbsp; 15+ Years</option>
-
-                                                </select><br />
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <br />
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
-
-                                            <div class="col-lg-8">
-                                                <%--<p>Most Recent Work Experience</p>--%>
-                                                <input runat="server" name="nameOrg" id="nameOrgID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
-                                                <br />
-                                            </div>
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
-
-                                            <div class="col-lg-8">
-                                                <%--<p>Position Occupied</p>--%>
-                                                <input runat="server" name="posOcc" id="posOccID" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
-                                                <br />
-                                            </div>
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--   <b class="col-lg-4 control-label">Date Employed</b> --%>
-
-                                            <div class="col-lg-8">
-                                                <%--<p>Date Employed</p>--%>
-                                                <input runat="server" name="dateEmp" id="dateEmp" type="text" class="form-control _date" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" placeholder="Date Employed" />
-                                                <br />
-                                            </div>
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
-
-                                            <div class="col-lg-8">
-                                                <p>Functions</p>
-                                                <textarea runat="server" name="functions" id="functionID" type="text" class="form-control" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" />
-                                            </div>
-
-                                            <br />
-                                            <br />
-                                            <br />
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <br />
-                                        <b>Work experience II</b>
-
-                                        <div class="form-group">
-                                            <br />
-                                            <br />
-
-                                            <div class="col-lg-8">
-                                                <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="nameOrgI" id="nameOrgI" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
-
-                                            <div class="col-lg-8">
-                                                <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="posOccI" id="posOccI" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
-                                            </div>
-
-                                            <br />
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%-- <b class="col-lg-4 control-label">Years of Experience  
-                                    </b>--%>
-                                            <div class="col-lg-8">
-                                                <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateI" id="startDateI" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Start Date" />
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <br />
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
-
-                                            <div class="col-lg-8">
-                                                <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateI" id="endDateI" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="End Date" />
-                                            </div>
-
-                                            <br />
-                                        </div>
-                                        <br />
-
-
-
-
-                                        <div class="form-group">
-                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
-
-                                            <div class="col-lg-8">
-                                                <p>Functions</p>
-                                                <textarea runat="server" name="functionsI" id="functionsI" type="text" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" />
-                                            </div>
-
-                                            <br />
-                                            <br />
-                                            <br />
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <br />
-                                        <b>Work experience III</b>
-
-                                        <div class="form-group">
-                                            <br />
-                                            <br />
-                                            <div class="col-lg-8">
-                                                <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="nameOrgII" id="nameOrgII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Name of Organization" />
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Position Occupied </b>--%>
-
-                                            <div class="col-lg-8">
-                                                <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="posOccII" id="posOccII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
-                                            </div>
-
-                                            <br />
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%-- <b class="col-lg-4 control-label">Years of Experience  
-                                    </b>--%>
-                                            <div class="col-lg-8">
-                                                <%--<p>Start Date </p>--%>
-                                                <input runat="server" name="startDateII" id="startDateII" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Start Date" />
-                                            </div>
-                                            <br />
-                                        </div>
-                                        <br />
-                                        <div class="form-group">
-                                            <%--  <b class="col-lg-4 control-label">Most Recent Work Experience</b> --%>
-
-                                            <div class="col-lg-8">
-                                                <%--  <p> End Date </p>--%>
-                                                <input runat="server" name="endDateII" id="endDateII" type="text" class="form-control _date" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="End Date" />
-                                            </div>
-
-                                            <br />
-                                        </div>
-                                        <br />
-
-                                        <div class="form-group">
-                                            <%--<b class="col-lg-4 control-label">Functions</b>--%>
-
-                                            <div class="col-lg-8">
-                                                <p>Functions</p>
-                                                <textarea runat="server" name="functionsII" id="functionsII" type="text" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" />
-                                            </div>
-
-                                            <br />
-                                            <br />
-                                            <br />
-                                        </div>
-
-                                    </div>
+                           
 
                                 </div>
                                 <div class="container input-group">
@@ -951,29 +792,6 @@
                                  <asp:Label ID="uploadNotificationII" runat="server"></asp:Label>
                                 <br />
 
-                             <%--    <div class="form-group">
-                                    <br />
-                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD PASSPORT
-                                        <br />
-                                        | .jpg files only |
-                                    </b>
-                                    <div class="col-lg-8">
-                                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                                    </div>
-                                    <br />
-                                </div>  <br />
-
-                                <div class="form-group">
-                                    <b class="col-lg-4 control-label" style="text-align: right">UPLOAD RESUME
-                                        <br />
-                                        | .pdf files only |
-                                    </b>
-
-                                    <div class="col-lg-8">
-                                        <asp:FileUpload ID="FileUpload2" runat="server" />
-                                    </div>
-                                    <br />
-                                </div>--%>
                                 <br />
                                  
                                     <br /> <br />
@@ -992,7 +810,7 @@
                                     <br />
                                  
                                     <br />
-                                     <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>
+                                   <%--  <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>--%>
                                   <%--  <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('payment').click();"><b>SAVE</b></a>--%>
                                     <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('employment').click();"><b>PREVIOUS</b></a>
                                     <br /><br />
@@ -1008,18 +826,5 @@
             </div>
         </div>
     </section>
-
-    <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>
-
-    <%--<script src="/js/jquery.datetimepicker.min.js"></script>--%>
-    
-     <%-- <script src="/ica/js/navbar.js"></script>--%>
-        
-
 
 </asp:Content>

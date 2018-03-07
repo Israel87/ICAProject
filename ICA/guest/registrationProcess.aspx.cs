@@ -102,43 +102,43 @@ namespace ICA
                 Session["UserEmail"] = personalinfo.Email;
                 
 
-                try
-                {
-                    if (FileUpload1.FileName.EndsWith("jpg"))
-                    {
-                        String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
-                        FileUpload1.SaveAs(fileName);
-                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+             //   try
+             //   {
+             //       if (FileUpload1.FileName.EndsWith("jpg"))
+             //       {
+             //           String fileName = Server.MapPath("~") + "/ICA/Credentials/Passport/" + biodataid + ".jpg";
+             //           FileUpload1.SaveAs(fileName);
+             //           uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
                         
-                    }
-                    else
-                    {
-                        uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
-                    }
+             //       }
+             //       else
+             //       {
+             //           uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
+             //       }
 
-             // upload pdf files to the folder.
+             //// upload pdf files to the folder.
 
-                    if (FileUpload2.FileName.EndsWith("pdf"))
-                    {
-                        String fileNameII = Server.MapPath("~") + "/ICA/Credentials/Resume/" + biodataid + ".pdf";
-                        FileUpload2.SaveAs(fileNameII);
-                        uploadNotificationII.Text = utilities.ShowSuccess("Uploaded Successfully.");
+             //       if (FileUpload2.FileName.EndsWith("pdf"))
+             //       {
+             //           String fileNameII = Server.MapPath("~") + "/ICA/Credentials/Resume/" + biodataid + ".pdf";
+             //           FileUpload2.SaveAs(fileNameII);
+             //           uploadNotificationII.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
 
-                    }
-                    else
-                    {
-                        uploadNotificationII.Text = utilities.ShowError("Invalid File Format.");
-                    }
+             //       }
+             //       else
+             //       {
+             //           uploadNotificationII.Text = utilities.ShowError("Invalid File Format.");
+             //       }
 
                     
 
-                }
-                catch (Exception ex)
-                {
+             //   }
+             //   catch (Exception ex)
+             //   {
 
 
-                }
+             //   }
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
                 Response.Redirect("/guest/registrationPayment.aspx");
             }
