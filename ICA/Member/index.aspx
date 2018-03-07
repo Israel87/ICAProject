@@ -7,7 +7,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ICA Member - Profile </title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript">
+           function preventBack() { window.history.forward(); }
+           setTimeout("preventBack()", 0);
+           window.onunload = function () { null };
+    </script>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
@@ -107,7 +114,11 @@
                             <div class="col-lg-9">
                                 <br />
                                 <div class="text-center container"><h3>View Personal Details</h3><br />
-                                  <h5 style="color: forestgreen">* &nbsp; to update details, edit the editable and click the update button below</h5>  <hr />
+                                  <h5 style="color: forestgreen">* &nbsp; to update details, edit the editable and click the update button below</h5> <br /><br />
+                                       <asp:Label ID="uploadNotificationI" runat="server"></asp:Label><br /><br /><br />
+                                    
+                                    <hr />
+                               
                                 </div>
 
 
@@ -261,12 +272,14 @@
 
 
                                 <%--constant 3 column for picture upload--%>
-                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            <div class="col-lg-3"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                                 <asp:Label ID="pictureDisplay" runat="server"></asp:Label><br /><br />
                                 <p><b>change passport</b></p>
                                 <asp:FileUpload ID="FileUpload1" runat="server"  /><br />
                                 <%--<asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  />--%>
-                                <br /><br /><br /><br /><br /><br />
+                                <br /><br /><br />
+                                 <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
+                                <br /><br /><br />
 
 
                                 

@@ -94,22 +94,18 @@ function makePayment() {
             triggerPayment = true;
 
             if (response.tx.chargeResponse == '00' || response.tx.chargeResponse == '0') {
-                alert('Payment Successfull..' + flw_ref);
-                $('#transRefID').val() = flw_ref;
-
-                //update payment status
-                updatePaymentInfo(activepayId, 1, "Successfull");
-
-                // redirect to a success page
-
-
-                return true;
-            } else {
+              
                 //update payment status
                 updatePaymentInfo(activepayId, 2, "Failed");
+                 // redirect to a failure page.
+               
+                return true;
+            } else {
 
-                // redirect to a failure page.
-                alert('Payment Failed..');
+                alert('Payment Successfull..' + flw_ref);
+
+                updatePaymentInfo(activepayId, 1, "Successfull");
+               // $('#transRefID').val() = flw_ref;
                 return false;
             }
         }
@@ -122,7 +118,7 @@ function getInfoByEmail(email) {
 
     $.ajax({
         type: "POST",
-        url: "/Admin/ICAWebService.asmx/GetInfoByEmail",
+        url: "/ICA/Admin/ICAWebService.asmx/GetInfoByEmail",
         data: '{email : "' + email + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -143,7 +139,7 @@ var activepayId;
 function logPaymentInfoDB(payinfo) {
     $.ajax({
         type: "POST",
-        url: "/Admin/ICAWebService.asmx/logPaymentInfoDB",
+        url: "/ICA/Admin/ICAWebService.asmx/logPaymentInfoDB",
         data: payinfo,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -164,7 +160,7 @@ function logPaymentInfoDB(payinfo) {
 function updatePaymentInfo(payid, status, response) {
     $.ajax({
         type: "POST",
-        url: "/Admin/ICAWebService.asmx/updatePaymentInfoDB",
+        url: "/ICA/Admin/ICAWebService.asmx/updatePaymentInfoDB",
         data: "{paymentid: '" + payid + "', status:  '" + status + "', response:  '" + response + "' }",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -203,7 +199,7 @@ function validateEmail(email) {
 
 // bindings for email and phonenumber validations
 $('#MainContent_phoneNUmber').bind('keypress', bvnPhoneNumber);
-$('#MainContent_email').bind('click', checkVal);
+//$('#MainContent_email').bind('kepress', checkVal);
 
 
 function checkVal() {
@@ -231,10 +227,10 @@ function checkVal() {
     if ($('#MainContent_firstname').val() == "") {
         $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
         return false;
-    } 
-    
+    }
+
     if ($('#MainContent_password').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Password must be Added **</h4>');
         return false;
     }
 
@@ -248,10 +244,10 @@ function checkVal() {
         return false;
     }
     if ($('#MainContent_email').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included or not in the right format **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Email field must be included **</h4>');
         return false;
     }
-    if (!validateEmail(email)){
+    if (!validateEmail(email)) {
         $('#errorMsg').html('<h4 style="color:red"> ** Email field  not in the right format **</h4>');
         return false;
     }
@@ -285,7 +281,7 @@ function checkVal() {
         return false;
     }
     if ($('#MainCOntent_degreeID').val() == "Null") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Degree  from Education Records Tab **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Degree from Education Records Tab **</h4>');
         return false;
     }
     if ($('#MainContent_instNameID').val() == "") {
@@ -319,6 +315,11 @@ function checkVal() {
     // end of check.
 }
 
+$(function () {
+    $("input").change(function () {
+        $('#errorMsg').html("");
+    })
+});
 
 function payWithPaystack() {
 
@@ -352,11 +353,11 @@ function payWithPaystack() {
 }
 
 $(document).ready(function () {
-   
+
     $('._date').datetimepicker({
         timepicker: false,
         //mask: true,
-        format: 'm/d/Y',
+        format: 'd/m/Y',
         //minDate: '-1970/01/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
         maxDate: '-1970/01/01'//tomorrow is maximum date calendar
         //onChangeDateTime: function (dp, $input) {
@@ -364,5 +365,16 @@ $(document).ready(function () {
         //}
     });
 
+    $('._datetime').datetimepicker({
+        
+    });
+
+
+
+
     // other date formats
 })
+
+
+// return the registered users.
+

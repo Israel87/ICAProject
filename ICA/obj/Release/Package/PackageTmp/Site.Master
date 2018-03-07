@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ICA.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - ICA </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="Content/jquery.datetimepicker.min.css" rel="stylesheet" />   
+
+<%--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-ui.js"></script>
+          <script>
+              $(function () {
+                  $("#MainContent_dob").datepicker({
+                      dateFormat: 'dd/mm/yy',
+                      changeMonth: true,
+                      changeYear: true,
+                      yearRange: '-100y:c+nn',
+                      maxDate: '-1d'
+                  });
+              });
+          </script>--%>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <%--<asp:ScriptReference Name="jquery.datetimepicker.min.js" Assembly="System.Web" Path="~/Scripts/WebForms/jquery.datetimepicker.min.js" />--%>
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+<%--        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>--%>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           <br />
+           
+        </div>
+
+    </form>
+
+     <footer style="background-color: #1abc9c; color:#fff">
+                <br />
+                <div class="row-fluid container">
+                    <div class="col-md-12" >
+                        <div class="col-md-4">
+                              <h4><b>Category</b> </h4>
+                            <p>Careers</p>
+                            <p>About ICA</p> 
+                            <p>Media </p>
+                            <p>News </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><b>Management</b></h4>
+                                <p>Contact</p>
+                                <p>Affiliate Programs</p>
+                                <p>FAQ</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><b>Connect with Us</b> </h4>
+                           
+                               <div class="input-group">
+                                    <img src="/ica/images/twitter2.png" style="width:50px; height:50px" />
+                                    <img src="/ica/images/facebook2.png" style="width:50px; height:50px" />
+                                    <img src="/ica/images/instagram.png" style="width:50px; height:50px"  />
+                                </div>
+
+                                <br />
+                               <p style="text-align:left"><b> Newsletter</b></p>
+                            <div class="input-group" style="text-align:center">
+                              <input type="text" class="form-control" placeholder="email address">
+                              <span class="input-group-btn">
+                                <button class="btn btn-info" type="button">Send</button>
+                              </span>
+                            </div>
+                          
+                        </div>
+                      
+                    </div>
+                </div><br /><br />
+                <p class="container pull-right"><b>Powered by - Chams Plc <img src="/ica/images/chams.jpg" style="margin-bottom: 2px"/> </b></p>
+               <br /><br /><br />
+            </footer>
+
+
+     <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+    <script src="/ICA/js/navbar.js"></script>
+    <script src="/ICA/js/jquery.datetimepicker.min.js"></script>
+</body>
+</html>

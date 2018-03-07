@@ -89,6 +89,7 @@ namespace ICA
 
                         // Password
                         cmd.Parameters.Add(new OracleParameter("V_PASSWORD", OracleDbType.Varchar2, usermodel.personalInfo.Password, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_MEMCAT", OracleDbType.Int32, usermodel.userInfo.MemcategoryID, ParameterDirection.Input));
 
                         ////Payment Details 
                         //cmd.Parameters.Add(new OracleParameter("V_DESCRIPTION", OracleDbType.Varchar2, usermodel.paymentDetails.Description, ParameterDirection.Input));
@@ -110,6 +111,7 @@ namespace ICA
                         }
                         catch (Exception ex)
                         {
+                            return -1;
                             //Response.Write("<script>alert('Successful');</script>");
                         }
                     }
@@ -169,6 +171,64 @@ namespace ICA
 
             }
             return insertres;
+        }
+
+
+        // get the list of registered members
+        internal DataTable GetRegisteredUsers()
+        {
+            DataTable dt = new DataTable();
+
+            OracleConnection conn = getConnection();
+            OracleDataAdapter da;
+
+            try
+            {
+                OracleCommand cmd = new OracleCommand("GETREGUSERS", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                da = new OracleDataAdapter(cmd);
+                da.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return dt;
+        }
+
+        // get registered users by batch
+        internal DataTable GetRegisteredUsersBatch(int pageno, int pagecount, string searchstring, string from, string to, string sortstring)
+        {
+            DataTable dt = new DataTable();
+
+            OracleConnection conn = getConnection();
+            OracleDataAdapter da;
+
+            try
+            {
+                OracleCommand cmd = new OracleCommand("", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("", OracleDbType.Int32, Convert.ToInt32(pageno), ParameterDirection.Input);
+                cmd.Parameters.Add("", OracleDbType.Int32, Convert.ToInt32(pagecount), ParameterDirection.Input);
+                cmd.Parameters.Add("", OracleDbType.Varchar2, searchstring, ParameterDirection.Input);
+                cmd.Parameters.Add("", OracleDbType.Varchar2, from, ParameterDirection.Input);
+                cmd.Parameters.Add("", OracleDbType.Varchar2, to, ParameterDirection.Input);
+                cmd.Parameters.Add("", OracleDbType.Varchar2, sortstring, ParameterDirection.Input);
+
+                da = new OracleDataAdapter(cmd);
+                da.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return dt;
+           
+
         }
     }
 

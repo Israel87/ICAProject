@@ -6,6 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ICA - Create Payment Item</title>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
@@ -117,6 +124,11 @@
                 <em class="fa fa-navicon">&nbsp;</em> Registration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
             </a>
                 <ul class="children collapse" id="sub-item-1">
+
+                    <li class="active"><a class="" href="RegisteredUsers.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Registered Users
+                    </a></li>
+
                     <li><a class="" href="Manage.aspx">
                         <span class="fa fa-arrow-right">&nbsp;</span> Manage
                     </a></li>
@@ -159,6 +171,25 @@
           <div id="ViewPanel" runat="server" visible="false">
             
                     <div class="row col-lg-12 responsive">
+
+                        
+                       <div class="col-lg-6">
+                            <h4> Create Payment Type </h4>
+
+                            <div class="col-lg-12">
+                             
+                        
+                                <asp:Label ID="paymentTypeNotifications" runat="server"></asp:Label>
+                                <br />
+                                  <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
+                                <br /><br />
+                                  <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />
+
+
+                            </div>
+
+                        </div>
+
                         <div class="col-lg-6">
                             <div class="input-group container">
 
@@ -208,27 +239,13 @@
 
                         </div>
 
-                       <div class="col-lg-6">
-                            <h4> Create Payment Type </h4>
-
-                            <div class="col-lg-12">
-                             
-                        
-                                <asp:Label ID="paymentTypeNotifications" runat="server"></asp:Label>
-                                <br />
-                                  <input class="form-control" type="text" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="typeID" placeholder="Add Payment Type" required="required" />
-                                <br /><br />
-                                  <asp:LinkButton ID="createPaymentType" runat="server" CssClass="btn btn-outline-rounded btn-primary" style="border-radius: 0px; width: 200px;" Text="CREATE" OnClick="createPaymentType_Click" Font-Bold="true" />
-
-
-                            </div>
-
-                        </div>
                     </div>
            </div>   <br />     
             
             <br /><br />
-              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true"  /><br /><br /><br /><br />
+
+              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/><br /><br /><br /><br />
+
             <div class="col-lg-12">
                 <asp:GridView ID="displayPayments" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="displayPayments_PageIndexChanging" OnDataBound="displayPayments_DataBound" PageSize="10">
                      <%--OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound"--%>

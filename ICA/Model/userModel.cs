@@ -13,6 +13,7 @@ namespace ICA.Model
         public EmploymentInfo employmentInfo { get; set; }
         //public OtherEmpDetails otherempDetails { get; set; }
         public PaymentDetails paymentDetails { get; set; }
+        public UserInfo userInfo { get; set; }
     }
 
 
@@ -97,4 +98,19 @@ namespace ICA.Model
         public int paymentitemID { get; set; }
 
     }
+
+    public class UserInfo
+    {
+        public int UserID { get; set; }
+        public int BiodataID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public int Status { get; set; }
+        public int MemcategoryID { get; set; }
+        public DateTime DateAdded { get; set; }
+        public DateTime  Last_Updated { get; set; }
+        public int ApplicationFlagID { get; set; }
+
+    }
+        
 }

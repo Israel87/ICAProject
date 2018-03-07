@@ -6,6 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ICA - Dashboard</title>
+
+    <script type="text/javascript">
+           function preventBack() { window.history.forward(); }
+           setTimeout("preventBack()", 0);
+           window.onunload = function () { null };
+    </script>
+
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -114,6 +121,9 @@
 				<em class="fa fa-navicon">&nbsp;</em> Registration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
+                    <li class="active"><a class="" href="RegisteredUsers.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Registered Users
+                    </a></li>
 					<li><a class="" href="Manage.aspx">
 						<span class="fa fa-arrow-right">&nbsp;</span> Manage
 					</a></li>

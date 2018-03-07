@@ -1,4 +1,5 @@
-﻿using Oracle.DataAccess.Client;
+﻿using ICA.Model;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,6 +16,9 @@ namespace ICA
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
         //MailWebService.WebServiceSoapClient sendmail = new MailWebService.WebServiceSoapClient();
         EmailWS.WebService Emal = new EmailWS.WebService();
+        //EmailWS.WebService emailWebServ = new EmailWS.WebService();
+
+        Util utilities = new Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,13 +68,17 @@ namespace ICA
 
                             if (_retValStatus == 1)
                             {
+                                reset.Visible = false;
                                 string _subject = "PASSWORD RESET";
-                                Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal to Change your Password.");
-                                emailLabel.Text = "Password Reset was Successful. Check your email for next step";
+                                Emal.sendmail1(_email, _subject, "Your New Password is " + _password + "<br/>Please Sign in to ICA Member Portal : http://154.113.0.163:1010/ica/ to Change your Password or continue.");
+                                emailLabel.Text = utilities.ShowSuccess("Password Reset was Successful. Check your email for next step");
+                              
+                               
                             }
                             else
                             {
-                                emailLabel.Text = "Email Does not Exist.";
+                                emailLabel.Text = utilities.ShowError("Email Does not Exist.");
+                                    
                             }
                             //emailLabel.Text = _retValStatus.ToLower() == "Success" ? "Password Reset was Successful. Check your email for next step" : "Email Does not Exist.";
 

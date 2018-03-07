@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -21,7 +21,12 @@ namespace ICA
 
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
+            //OracleConnection conn = new OracleConnection(cs);
+            //conn.Open();
+
+            //OracleCommand cmd = new OracleCommand("Select * from USERS where", conn);
+
             //Session.RemoveAll();
             //Response.Redirect("signIn.aspx");
             //if (!IsPostBack)
@@ -60,25 +65,26 @@ namespace ICA
                     {
                         Session["UserEmail"] = dt.Rows[0][2].ToString();
                         Session["UserID"] = Convert.ToInt32(dt.Rows[0][0]);
-                        //Session["BiodataID"] = Convert.ToInt32(dt.Rows[0][1]);
+                        
                         //Session.Add("UserID", dt.Rows[0][0].ToString());
                         
 
                          _useremail = Session["UserEmail"].ToString();
                         _userid = Convert.ToInt32(Session["UserID"]);
-                      _biodataid = Convert.ToInt32(Session["BiodataID"]);
+                         _biodataid = Convert.ToInt32(Session["BiodataID"]);
 
 
                         if (selectValue.SelectedValue == "ADMIN")
                         {
-                            Response.Redirect("/Admin/Index.aspx");
+                            Response.Redirect("Admin/Index.aspx");
 
                         }
 
                         else if (selectValue.SelectedValue == "MEMBER")
                         {
+                            Session["BiodataID"] = Convert.ToInt32(dt.Rows[0][1]);
 
-                           Response.Redirect("/Member/overview.aspx");
+                            Response.Redirect("Member/overview.aspx");
 
 
                             cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
@@ -87,13 +93,13 @@ namespace ICA
                             DataTable dt2 = new DataTable();
                             da.Fill(dt2);
 
-                            if (dt2 != null && dt2.Rows[0]["STATUS"].ToString() == "1")
+                            if (dt2 != null && dt2.Rows[0]["APPLICATIONFLAGID"].ToString() == "1")
                             {
-                                Response.Redirect("/Member/overview.aspx");
+                                Response.Redirect("/ICA/Member/overview.aspx");
                             }
                             else
                             {
-                                Response.Redirect("/guest/registrationPayment.aspx", true);
+                                Response.Redirect("/ICA/guest/registrationPayment.aspx", true);
                             }
 
                         }

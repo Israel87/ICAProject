@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,25 +17,24 @@ namespace ICA.Member
         string emailinSession = "";
         DataTable _userEmail = new DataTable();
         int _biodataid;
+        ICA.Model.Util utilities = new Model.Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserEmail"] == null)
+            {
+
+                Response.Redirect("/ICA/signIn.aspx");
+            }
+            else
+            {
+                //_userSession = Session["UserID"].ToString();
+                emailinSession = Session["UserEmail"].ToString();
+
+
+            }
             if (!IsPostBack)
             {
-                if (Session["UserEmail"] == null)
-                {
-
-                    Response.Redirect("/ICA/signIn.aspx");
-                }
-                else
-                {
-                    //_userSession = Session["UserID"].ToString();
-                    emailinSession = Session["UserEmail"].ToString();
-
-
-                }
-
-
                 try
                 {
                     OracleConnection conn = new OracleConnection(cs);
@@ -43,7 +42,7 @@ namespace ICA.Member
 
                     OracleDataAdapter adpt;
 
-                    string query = "SELECT t.title, b.lastname, b.firstname, b.MIDDLENAME , b.biodataid, b.EMAIL, B.PHONE, TO_CHAR(b.DATEOFBIRTH, 'DD-MON-YYYY') \"DATEOFBIRTH\", b.GENDER, m.maritalstatus,u.USERNAME, t.membertype || ' ' || c.membercategory || ' MEMBER' \"MEMBER TYPE\", DECODE(NULL, a.STREETNAME, null, a.STREETNAME || ', ') || DECODE(NULL, a.CITY, null, a.CITY || ', ') || DECODE(NULL, s.STATENAME, null, s.STATENAME || '.') \"ADDRESS 1\",  DECODE(NULL, a.STREET2, null, a.STREET2 || ', ') || DECODE(NULL, a.CITY2, null, a.CITY2 || ', ') || DECODE(NULL, s2.STATENAME, null, s2.STATENAME || '.') \"ADDRESS 2\", d.DEGREE \"HIGHESTDEGREE\", i2.othercertificationandyear \"Other Certification\", i2.NAMEOFSCHOOL, to_char(i2.GRADDATE, 'DD-MON-YYYY') \"GRADUATION DATE\", i.mostrecentemployer, i.position, i.otheremployer, i.position2, i.OTHEREMPLOYER3, i.position3 FROM biodata b left join titles t on t.titleid = b.title left join MARITALSTATUS m on m.MARITALSTATUSID = b.MARITALSTATUS left JOIN enroleeaddress a on a.BIODATAID = b.BIODATAID left join EMPLOYMENTINFO i on i.BIODATAID = b.BIODATAID LEFT JOIN EDUCATIONINFO i2 on i2.biodataid = b.biodataid LEFT JOIN TBL_DEGREES d on d.degreeid = i2.highestdegree left JOIN users u on u.biodataid = b.biodataid left join MEMBERCATEGORY c on c.membercategoryid = u.memcategoryid left JOIN MEMBERTYPE t on t.membertypeid = c.membertypeid left join SETUP_STATE s on s.statecode = a.statecode left join SETUP_STATE s2 on s2.statecode = a.STATECODE2 where u.username = '" + emailinSession +"'";
+                    string query = "SELECT t.title, b.lastname, b.firstname, b.MIDDLENAME , b.biodataid, b.EMAIL, B.PHONE, TO_CHAR(b.DATEOFBIRTH, 'DD-MON-YYYY') \"DATEOFBIRTH\", b.GENDER, m.maritalstatus,u.USERNAME, t.membertype || ' ' || c.membercategory || ' MEMBER' \"MEMBER TYPE\", DECODE(NULL, a.STREETNAME, null, a.STREETNAME || ', ') || DECODE(NULL, a.CITY, null, a.CITY || ', ') || DECODE(NULL, s.STATENAME, null, s.STATENAME || '.') \"ADDRESS 1\",  DECODE(NULL, a.STREET2, null, a.STREET2 || ', ') || DECODE(NULL, a.CITY2, null, a.CITY2 || ', ') || DECODE(NULL, s2.STATENAME, null, s2.STATENAME || '.') \"ADDRESS 2\", d.DEGREE \"HIGHESTDEGREE\", i2.othercertificationandyear \"Other Certification\", i2.NAMEOFSCHOOL, to_char(i2.GRADDATE, 'DD-MON-YYYY') \"GRADUATION DATE\", i.mostrecentemployer, i.position, i.otheremployer, i.position2, i.OTHEREMPLOYER3, i.position3 FROM biodata b left join titles t on t.titleid = b.title left join MARITALSTATUS m on m.MARITALSTATUSID = b.MARITALSTATUS left JOIN enroleeaddress a on a.BIODATAID = b.BIODATAID left join EMPLOYMENTINFO i on i.BIODATAID = b.BIODATAID LEFT JOIN EDUCATIONINFO i2 on i2.biodataid = b.biodataid LEFT JOIN TBL_DEGREES d on d.degreeid = i2.highestdegree left JOIN users u on u.biodataid = b.biodataid left join MEMBERCATEGORY c on c.membercategoryid = u.memcategoryid left JOIN MEMBERTYPE t on t.membertypeid = c.membertypeid left join SETUP_STATE s on s.statecode = a.statecode left join SETUP_STATE s2 on s2.statecode = a.STATECODE2 where u.username = '" + emailinSession + "'";
 
                     OracleCommand cmd = new OracleCommand(query, conn);
 
@@ -57,9 +56,10 @@ namespace ICA.Member
                         string _middlename = _userEmail.Rows[0]["MIDDLENAME"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
                         _biodataid = Convert.ToInt32(_userEmail.Rows[0]["biodataid"]);
-                        
+                        string membertypeDisplay = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
+
                         Session["active_biodata"] = _biodataid;
-                        
+
 
                         title.SelectedValue = _userEmail.Rows[0]["title"].ToString();
                         fullname.Value = _firstname + " " + _middlename + " " + _lastname;
@@ -84,17 +84,16 @@ namespace ICA.Member
                         empIII.Value = _userEmail.Rows[0]["OTHEREMPLOYER3"].ToString();
                         posIII.Value = _userEmail.Rows[0]["position3"].ToString();
 
-                        //username.Text = _firstname;
-                        // _firstname = Session["active_firstname"].ToString();
+                        memDisplay.Text = membertypeDisplay;
 
-                        // _biodataid = Convert.ToInt32(Session["active_biodata"]);
-                       
+                     
 
 
 
-                        if (File.Exists(Server.MapPath("../Credentials/Passport/" + _biodataid + ".jpg")))
+
+                        if (File.Exists(Server.MapPath("/ICA/Content/Credentials/Passport/" + _biodataid + ".jpg")))
                         {
-                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='../Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
+                            pictureDisplay.Text = "<b><p>Passport</p></b><img src='/ICA/Content/Credentials/Passport/" + _biodataid + ".JPG' width='200' height='200'/>";
                             // lblcac.Text = "<b><p>CAC Certificate</p></b><img src='../CAC/" + orgid.ToString() + ".JPG' width='600' />";
                         }
 
@@ -107,7 +106,7 @@ namespace ICA.Member
                 {
 
                 }
-                
+
 
             }
 
@@ -130,12 +129,12 @@ namespace ICA.Member
             }
         }
 
-        private bool UpdateDetail(string _title, string _maritalstatus, string _addressI, string _addressII, string _highestdegree, string _nameofschool, string _graddate, string _certYear,  string _recentemployer, string _position, string _otheremployerII, string _positionII, string _otheremployerIII, string _postionIII)
+        private bool UpdateDetail(string _title, string _maritalstatus, string _addressI, string _addressII, string _highestdegree, string _nameofschool, string _graddate, string _certYear, string _recentemployer, string _position, string _otheremployerII, string _positionII, string _otheremployerIII, string _postionIII)
         {
             bool updateRecord = false;
 
             int biodataid = Convert.ToInt32(Session["active_biodata"]);
-       
+
             try
             {
                 using (OracleConnection conn = new OracleConnection(cs))
@@ -144,18 +143,18 @@ namespace ICA.Member
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new OracleParameter("V_TITLE", OracleDbType.Int32,Convert.ToInt32(_title), ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_TITLE", OracleDbType.Int32, Convert.ToInt32(_title), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_MARITALSTATUS", OracleDbType.Int32, Convert.ToInt32(_maritalstatus), ParameterDirection.Input));
 
                         cmd.Parameters.Add(new OracleParameter("V_ADDRESSI", OracleDbType.Varchar2, _addressI, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_ADDRESSII", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
 
 
-                        cmd.Parameters.Add(new OracleParameter("V_HIGHESTDEGREE", OracleDbType.Int32,Convert.ToInt32(_highestdegree), ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_HIGHESTDEGREE", OracleDbType.Int32, Convert.ToInt32(_highestdegree), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_NAMEOFSCHOOL", OracleDbType.Varchar2, _nameofschool, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_GRADDATE", OracleDbType.Date, Convert.ToDateTime(_graddate), ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_OTHERCERTIFICATIONANDYEAR", OracleDbType.Varchar2, _certYear, ParameterDirection.Input));
-                        
+
 
                         cmd.Parameters.Add(new OracleParameter("V_MOSTRECENTEMPLOYER", OracleDbType.Varchar2, _recentemployer, ParameterDirection.Input));
                         cmd.Parameters.Add(new OracleParameter("V_POSITION", OracleDbType.Varchar2, _position, ParameterDirection.Input));
@@ -176,6 +175,7 @@ namespace ICA.Member
 
                             cmd.ExecuteNonQuery();
                             updateRecord = true;
+                            
                         }
                         catch (Exception ex)
                         {
@@ -184,15 +184,14 @@ namespace ICA.Member
 
                         if (FileUpload1.FileName.EndsWith("jpg"))
                         {
-                            String fileName = Server.MapPath("..") + "/Credentials/Passport/" + biodataid + ".jpg";
+                            String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
                             FileUpload1.SaveAs(fileName);
-                           // uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
-
                         }
                         else
                         {
                             //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
                         }
+                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
 
                     }
                 }
@@ -200,8 +199,9 @@ namespace ICA.Member
             catch (Exception ex)
             {
 
-            } return updateRecord;
-            
+            }
+            return updateRecord;
+
         }
     }
 }

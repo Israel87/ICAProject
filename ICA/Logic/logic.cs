@@ -27,7 +27,8 @@ namespace ICA.Logic
                     Phone = regUser.personalinfo.Phone,
                     Gender = regUser.personalinfo.Gender,
                     Title = regUser.personalinfo.Title,
-                    DateofBirth = regUser.personalinfo.DateofBirth != "" ? Convert.ToDateTime(regUser.personalinfo.DateofBirth) : new DateTime(),
+                    // DateofBirth = regUser.personalinfo.DateofBirth != "" ? Convert.ToDateTime(regUser.personalinfo.DateofBirth) : new DateTime(),
+                    DateofBirth = regUser.personalinfo.DateofBirth != "" ? DateTime.ParseExact(regUser.personalinfo.DateofBirth, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     MaritalStatus = regUser.personalinfo.MaritalStatus,
                   
           
@@ -49,7 +50,8 @@ namespace ICA.Logic
                 {
                     HighestDegree = regUser.educationinfo.HighestDegree,
                     NameofSchool = regUser.educationinfo.NameofSchool,
-                    Graddate = regUser.educationinfo.Graddate != "" ? Convert.ToDateTime(regUser.educationinfo.Graddate) : new DateTime(),
+                   // Graddate = regUser.educationinfo.Graddate != "" ? Convert.ToDateTime(regUser.educationinfo.Graddate) : new DateTime(),
+                   Graddate = regUser.educationinfo.Graddate != "" ? DateTime.ParseExact(regUser.educationinfo.Graddate, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     Certifications = regUser.educationinfo.Certifications
                 },
 
@@ -58,26 +60,31 @@ namespace ICA.Logic
                     YearsofExperience = Convert.ToInt32(regUser.employmentinfo.YearsofExperience),
                     RecentEmployer = regUser.employmentinfo.RecentEmployer,
                     Position = regUser.employmentinfo.Position,
-                    DateEmployed = regUser.employmentinfo.DateEmployed != "" ? Convert.ToDateTime(regUser.employmentinfo.DateEmployed) : new DateTime(),
+                    DateEmployed = regUser.employmentinfo.DateEmployed != "" ? DateTime.ParseExact(regUser.employmentinfo.DateEmployed, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     Functions = regUser.employmentinfo.Functions,
                     
 
                     OtherEmployerII = regUser.employmentinfo.OtherEmployerII,
                     PositionII = regUser.employmentinfo.PositionII,
-                    DateEmployedII = regUser.employmentinfo.DateEmployedII != "" ? Convert.ToDateTime(regUser.employmentinfo.DateEmployedII) : new DateTime(),
+                    DateEmployedII = regUser.employmentinfo.DateEmployedII != "" ? DateTime.ParseExact(regUser.employmentinfo.DateEmployedII, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
 
-                    EndDateII = regUser.employmentinfo.EndDateII != "" ? Convert.ToDateTime(regUser.employmentinfo.EndDateII) : new DateTime(),
-                  
+                    EndDateII = regUser.employmentinfo.EndDateII != "" ? DateTime.ParseExact(regUser.employmentinfo.EndDateII, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
+
                     JobDescriptionII = regUser.employmentinfo.JobDescriptionII,
 
                     OtherEmployerIII = regUser.employmentinfo.OtherEmployerIII,
                     PositionIII = regUser.employmentinfo.PositionIII,
-                    DateEmployedIII = regUser.employmentinfo.DateEmployedIII != "" ? Convert.ToDateTime(regUser.employmentinfo.DateEmployedIII) : new DateTime(),
+                    DateEmployedIII = regUser.employmentinfo.DateEmployedIII != "" ? DateTime.ParseExact(regUser.employmentinfo.DateEmployedIII, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
 
-                    EndDateIII = regUser.employmentinfo.EndDateIII != "" ? Convert.ToDateTime(regUser.employmentinfo.EndDateIII) : new DateTime(),
-               
+                    EndDateIII = regUser.employmentinfo.EndDateIII != "" ? DateTime.ParseExact(regUser.employmentinfo.EndDateIII, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
+
                     JobDescriptionIII = regUser.employmentinfo.JobDescriptionIII,
                 },
+
+                userInfo = new UserInfo()
+                {
+                    MemcategoryID = regUser.userinfo.MemcategoryID,
+                }
 
                 //paymentDetails = new PaymentDetails()
                 //{

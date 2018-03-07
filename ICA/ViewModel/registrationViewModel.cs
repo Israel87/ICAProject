@@ -12,6 +12,7 @@ namespace ICA
         public employmentInfo employmentinfo { get; set; }
         public residentialInfo residentinfo { get; set; }
         public paymentDetails paymentdetails { get; set; }
+        public userInfo userinfo { get; set; }
     }
 
     // class for personal information.
@@ -83,5 +84,10 @@ namespace ICA
         public string Description { get; set; }
         public string PaymentItemID { get; set; }
         public string ReferenceID { get; set; }
+    }
+
+    public class userInfo
+    {
+        public int MemcategoryID { get; set; }
     }
 }

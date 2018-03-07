@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -158,7 +158,7 @@ namespace ICA.Admin
 
         protected void exportExcel_Click(object sender, EventArgs e)
         {
-            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payment Report By Category");
+            utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payment Types");
             //Utils.ExportToExcel(((DataSet)Session["ds"]), HttpContext.Current, "DetailedFinancialReport");
         }
 

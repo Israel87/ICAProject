@@ -49,7 +49,11 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -145,6 +149,7 @@
     <Content Include="Admin\css\datepicker.css" />
     <Content Include="Admin\css\datepicker3.css" />
     <Content Include="Admin\css\font-awesome.min.css" />
+    <Content Include="Admin\css\jquery.dataTables.min.css" />
     <Content Include="Admin\css\styles.css" />
     <Content Include="Admin\elements.html" />
     <Content Include="Admin\fonts\fontawesome-webfont.svg" />
@@ -160,6 +165,7 @@
     <Content Include="Admin\js\easypiechart.js" />
     <Content Include="Admin\js\html5shiv.min.js" />
     <Content Include="Admin\js\jquery-1.11.1.min.js" />
+    <Content Include="Admin\js\jquery.dataTables.min.js" />
     <Content Include="Admin\js\lumino.glyphs.js" />
     <Content Include="Admin\js\npm.js" />
     <Content Include="Admin\js\respond.min.js" />
@@ -167,6 +173,7 @@
     <Content Include="Admin\Manage.aspx" />
     <Content Include="Admin\panels.html" />
     <Content Include="Admin\payments.aspx" />
+    <Content Include="Admin\RegisteredUsers.aspx" />
     <Content Include="Admin\widgets.html" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
@@ -212,6 +219,9 @@
     <Content Include="Connected Services\MailWebService\ICA.MailWebService.sendmail1Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include=".vs\ProjectSettings.json" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\VSWorkspaceState.json" />
     <None Include="Connected Services\MailWebService\WebService.disco" />
     <None Include="Connected Services\MailWebService\configuration91.svcinfo" />
     <None Include="Connected Services\MailWebService\configuration.svcinfo" />
@@ -219,9 +229,23 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Connected Services\ServiceReferenceII\ICA.ServiceReferenceII.sendmail1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReferenceII\WebService.disco" />
+    <None Include="Connected Services\ServiceReferenceII\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceII\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceII\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Credentials\MemberUploads\UploadOne\86.jpg" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="guest\corporateRegistration.aspx" />
@@ -269,7 +293,9 @@
     <Content Include="guest\individualMembers.aspx" />
     <Content Include="Admin\js\AjaxCalls.js" />
     <Content Include="images\uploads.png" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
     <Content Include="js\jquery.datetimepicker.min.js" />
+    <Content Include="js\moment.js" />
     <Content Include="js\navbar.js" />
     <Content Include="Member\changePassword.aspx" />
     <Content Include="Member\charts.html" />
@@ -358,6 +384,9 @@
     <Content Include="Member\sass\styles.scss" />
     <Content Include="Member\tables\data1.json" />
     <Content Include="Member\tables\data2.json" />
+    <None Include="Connected Services\ServiceReferenceII\WebService.wsdl" />
+    <Content Include="Content\Credentials\MemberUploads\UploadTwo\86.pdf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -401,10 +430,10 @@
     <Content Include="Site.Master" />
     <Content Include="guest\studentmembership.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web References\EmailWS\Reference.map">
+    <None Include="Web References\EmailWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\EmailWS\WebService.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -441,6 +470,13 @@
     <Compile Include="Admin\payments.aspx.designer.cs">
       <DependentUpon>payments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\RegisteredUsers.aspx.cs">
+      <DependentUpon>RegisteredUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisteredUsers.aspx.designer.cs">
+      <DependentUpon>RegisteredUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -451,6 +487,11 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Connected Services\MailWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReferenceII\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -646,12 +687,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vs\ICA\v15\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Credentials\MemberUploads\UploadOne\" />
-    <Folder Include="Credentials\MemberUploads\UploadThree\" />
-    <Folder Include="Credentials\MemberUploads\UploadTwo\" />
-    <Folder Include="Credentials\Passport\" />
-    <Folder Include="Credentials\Resume\" />
+    <Folder Include="Content\Credentials\MemberUploads\UploadThree\" />
+    <Folder Include="Content\Credentials\Passport\" />
+    <Folder Include="Content\Credentials\Resume\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -670,6 +710,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\MailWebService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceII\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
