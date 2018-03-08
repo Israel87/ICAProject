@@ -586,6 +586,7 @@
                         <div class="tab-pane fade" id="messages">
                             <div class="container">
                                 <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Upload records </h3>
+                                <h6 class="container"> <b>Please upload documents with the specified format</b></h6>
                                <%-- <h5 class="container" style="text-align: justify">Please complete the fields below with information regarding your employment records. The records expected here are jobs considered to have given you the minimum requirements based on the different grades of membership as specified.</h5>
                                 <h6 class="container" style="color:red"> <b>Only the current work experience fields within this tab are compulsory.</b></h6>--%>
                                 <hr />
@@ -620,7 +621,7 @@
                                 <div class="form-group">
                                     <b class="col-lg-4 control-label" style="text-align: right">UPLOAD NYSC ID card
                                         <br />
-                                        | .pdf files only |
+                                        | .jpg files only |
                                     </b>
 
                                     <div class="col-lg-8">
@@ -647,7 +648,7 @@
                      <div class="tab-pane fade" id="settings">
                             <div class="container">
                                 <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Business referees</h3>
-                                 <h6 class="container" style="color:red"> <b>All fields with bold blue borders are compulsory.</b></h6>
+                                 <h6 class="container"> <b>Please fill in the details of your referees</b></h6>
                                 <hr />
                                 <br />
 

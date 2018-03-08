@@ -208,13 +208,13 @@ function checkVal() {
     // Check form validations 
 
     if ($("#MainContent_title").val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Title must be Selected **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Title must be selected **</h4>');
         return false;
     }
 
 
     if ($("#MainContent_gender").val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Gender must be Selected **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Gender must be selected **</h4>');
         return false;
     }
 
@@ -243,28 +243,37 @@ function checkVal() {
 
     // end of form validations
 
+    // validation for student membership
+
+    if ($("#MainContent_nyscStateCode").val() == "") {
+        $('#errorMsg').html('<h4 style="color:red"> ** Position of the contact person needs to be added. **</h4>');
+        return false;
+    }
+    // end of form validation for student membership
+
+
 
     if ($("#MainContent_lastname").val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Last Name must be Added **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Last Name must be added **</h4>');
         return false;
     }
     if ($('#MainContent_firstname').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** First Name must be Added **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** First Name must be added **</h4>');
         return false;
     }
 
     if ($('#MainContent_password').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Password must be Added **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Password must be added **</h4>');
         return false;
     }
 
     if ($('#MainContent_password').val() != $('#MainContent_passwordII').val()) {
-        $('#errorMsg').html('<h4 style="color:red"> ** Password and Confirm Password Does not Match **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Password and confirm password does not match **</h4>');
         return false;
     }
 
     if ($('#MainContent_dob').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Date Of Birth **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please select a date Of birth **</h4>');
         return false;
     }
     if ($('#MainContent_email').val() == "") {
@@ -292,7 +301,7 @@ function checkVal() {
 
     }
     else {
-        $('#errorMsg').html('<h4 style="color:red"> **  Phone Number  must either be 7 or 11 digits **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> **  Phone number  must either be 7 or 11 digits **</h4>');
         return false;
     }
 
@@ -301,39 +310,39 @@ function checkVal() {
     //    return false;
     //}
     if ($('#MainContent_maritStats').val() == "Null") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Marital Status **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please select a marital status **</h4>');
         return false;
     }
     if ($('#MainCOntent_degreeID').val() == "Null") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Degree from Education Records Tab **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please select a degree from education records tab **</h4>');
         return false;
     }
     if ($('#MainContent_instNameID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Include a Name of Institution from Education Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please include a name of institution from education records tab**</h4>');
         return false;
     }
     if ($('#MainContent_graddateID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a Graduation Date from Education Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please select a graduation date from education records tab**</h4>');
         return false;
     }
     if ($('#MainContent_experienceID').val() == "Null") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please Select a range for years of experience from Employment Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please select a range for years of experience from employment records tab**</h4>');
         return false;
     }
     if ($('#MainContent_nameOrgID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please add the Name of Organization from Employment Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please add the name of organization from employment eecords tab**</h4>');
         return false;
     }
     if ($('#MainContent_posOccID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please add the position you occupied from Employment Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please add the position you occupied from employment records tab**</h4>');
         return false;
     }
     if ($('#MainContent_dateEmpID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please add the Date Employed from Employment Records Tab**</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please add the date employed from employment records tab**</h4>');
         return false;
     }
     if ($('#MainContent_functionID').val() == "") {
-        $('#errorMsg').html('<h4 style="color:red"> ** Please add Job Functions from Employment Records Tab **</h4>');
+        $('#errorMsg').html('<h4 style="color:red"> ** Please add job functions from employment records tab **</h4>');
         return false;
     }
     // end of check.
