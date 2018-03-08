@@ -22,22 +22,22 @@ namespace ICA.guest {
         protected global::System.Web.UI.HtmlControls.HtmlInputText nameofCompany;
         
         /// <summary>
-        /// addressofCompany control.
+        /// adressofCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText addressofCompany;
+        protected global::System.Web.UI.WebControls.TextBox adressofCompany;
         
         /// <summary>
-        /// TextBox1 control.
+        /// streetAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox streetAddress;
         
         /// <summary>
         /// city control.
@@ -85,48 +85,57 @@ namespace ICA.guest {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
         
         /// <summary>
-        /// contactPersonFirstName control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText contactPersonFirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText firstname;
         
         /// <summary>
-        /// contactPersonLastName control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText contactPersonLastName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText lastname;
         
         /// <summary>
-        /// Text2 control.
+        /// position control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText position;
         
         /// <summary>
-        /// contactPhoneNumber control.
+        /// phoneNUmber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText contactPhoneNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phoneNUmber;
         
         /// <summary>
-        /// contactEmail control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText contactEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        
+        /// <summary>
+        /// saveReg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton saveReg;
     }
 }

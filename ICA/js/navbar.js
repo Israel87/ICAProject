@@ -218,6 +218,30 @@ function checkVal() {
         return false;
     }
 
+    // form validations for corporate membership
+
+    if ($("#MainContent_nameofCompany").val() == "") {
+        $('#errorMsg').html('<h4 style="color:red"> ** Name of company needs to be added. **</h4>');
+        return false;
+    }
+
+    if ($("#MainContent_adressofCompany").val() == "") {
+        $('#errorMsg').html('<h4 style="color:red"> ** Address of company needs to be added. **</h4>');
+        return false;
+    }
+
+
+    if ($("#MainContent_streetAddress").val() == "") {
+        $('#errorMsg').html('<h4 style="color:red"> ** Street address needs to be added **</h4>');
+        return false;
+    }
+
+    if ($("#MainContent_position").val() == "") {
+        $('#errorMsg').html('<h4 style="color:red"> ** Position of the contact person needs to be added. **</h4>');
+        return false;
+    }
+
+    // end of form validations
 
 
     if ($("#MainContent_lastname").val() == "") {

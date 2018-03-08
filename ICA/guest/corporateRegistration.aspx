@@ -78,16 +78,17 @@
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    <label for="usr">ADDRESS OF COMPANY</label>
+                                    <label for="">ADDRESS OF COMPANY</label>
                                     <br />
-                                    <input type="text" class="form-control" runat="server" id="addressofCompany">
+                                     <asp:TextBox ID="adressofCompany" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                  
                                 </div>
                             </div>
 
                             <div class="row container">
                                 <div class="col-lg-6">
                                     <label for="">STREET ADDRESS</label>
-                                    <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="streetAddress" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                                 </div>
 
 
@@ -451,18 +452,18 @@
                                 <div class="form-group col-lg-4">
                                     <label for="usr">First Name </label>
                                     <br />
-                                    <input type="text" class="form-control" runat="server" id="contactPersonFirstName">
+                                    <input type="text" class="form-control" runat="server" id="firstname">
                                 </div>
 
                                 <div class="form-group col-lg-4">
                                     <label for="usr">Last Name</label>
                                     <br />
-                                    <input type="text" class="form-control" runat="server" id="contactPersonLastName">
+                                    <input type="text" class="form-control" runat="server" id="lastname">
                                 </div>
 
                                 <div class="col-lg-4">
                                     <label for="">Position</label>
-                                    <input type="text" class="form-control" runat="server" id="Text2">
+                                    <input type="text" class="form-control" runat="server" id="position">
                                 </div>
 
                             </div>
@@ -471,13 +472,13 @@
                                 <div class="form-group col-lg-4">
                                     <label for="usr">Phonenumber</label>
                                     <br />
-                                    <input type="text" class="form-control" runat="server" id="contactPhoneNumber">
+                                    <input type="text" class="form-control" runat="server" id="phoneNUmber">
                                 </div>
 
-                                    <div class="form-group col-lg-4">
+                                <div class="form-group col-lg-4">
                                     <label for="usr">Email</label>
                                     <br />
-                                     <input type="text" class="form-control" runat="server" id="contactEmail">
+                                    <input type="text" class="form-control" runat="server" id="email">
 
                                     <br />
 
@@ -485,7 +486,12 @@
 
                             </div>
 
-                   
+                            <center><br /> <br /> 
+                                        
+                                           <p id="errorMsg"></p>
+                                        
+                                        <br /> <br /> 
+                                </center>
 
 
 
@@ -494,9 +500,13 @@
 
                         <center>
                                     <div class="container input-group"><br /> <br /><br /> <br /><br />
-                                              <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('employment').click();" ><b>NEXT</b></a>
+                                            <%--  <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('employment').click();" ><b>NEXT</b></a>
                                               <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('personalDet').click();"><b>PREVIOUS</b></a>
-                                     
+                                     --%>
+                                                       <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();"><b> PROCEED TO PAYMENT</b></asp:LinkButton>
+                                          <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('personalDet').click();"><b>PREVIOUS</b></a>
+                                        <%--<asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>--%>
+                     
                                          </div> 
                                 </center>
 

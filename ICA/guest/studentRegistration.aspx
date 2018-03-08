@@ -810,7 +810,8 @@
                                     <br />
                                  
                                     <br />
-                                   <%--  <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>--%>
+                                    <%--<asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>--%>
+                                    <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();"><b> PROCEED TO PAYMENT</b></asp:LinkButton>
                                   <%--  <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('payment').click();"><b>SAVE</b></a>--%>
                                     <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius: 0px" onclick="document.getElementById('employment').click();"><b>PREVIOUS</b></a>
                                     <br /><br />
