@@ -8,11 +8,13 @@ namespace ICA
     public class registrationViewModel
     {
         public personalInfo personalinfo { get; set; }
-        public educationInfo educationinfo { get; set; }
-        public employmentInfo employmentinfo { get; set; }
         public residentialInfo residentinfo { get; set; }
+        public educationInfo educationinfo { get; set; }
+        public employmentInfo employmentinfo { get; set; } 
+        public businessReferee businessreferee { get; set; }
         public paymentDetails paymentdetails { get; set; }
         public userInfo userinfo { get; set; }
+        public studentInfo studentinfo { get; set; }
     }
 
     // class for personal information.
@@ -45,6 +47,8 @@ namespace ICA
 
     }
 
+    
+  
     // class for educational information.
     public class educationInfo
     {
@@ -77,6 +81,22 @@ namespace ICA
         public string JobDescriptionIII { get; set; }
     }
 
+    // class for business referee information
+    public class businessReferee
+    {
+        public string RefereeFirstName { get; set; }
+        public string RefereeLastName { get; set; }
+        public string PositionOccupied { get; set; }
+        public string RefereeEmail { get; set; }
+        public string RefereePhoneNumber { get; set; }
+
+        public string RefereeFirstNameII { get; set; }
+        public string RefereeLastNameII { get; set; }
+        public string PositionOccupiedII { get; set; }
+        public string RefereeEmailII { get; set; }
+        public string RefereePhoneNumberII { get; set; }
+    }
+
 
     // class for payment information 
     public class paymentDetails
@@ -89,5 +109,10 @@ namespace ICA
     public class userInfo
     {
         public int MemcategoryID { get; set; }
+    }
+
+    public class studentInfo
+    {
+        public string NyscStateCode { get; set; }
     }
 }

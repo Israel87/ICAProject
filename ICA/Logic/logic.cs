@@ -30,8 +30,8 @@ namespace ICA.Logic
                     // DateofBirth = regUser.personalinfo.DateofBirth != "" ? Convert.ToDateTime(regUser.personalinfo.DateofBirth) : new DateTime(),
                     DateofBirth = regUser.personalinfo.DateofBirth != "" ? DateTime.ParseExact(regUser.personalinfo.DateofBirth, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     MaritalStatus = regUser.personalinfo.MaritalStatus,
-                  
-          
+
+
 
                 },
 
@@ -50,8 +50,8 @@ namespace ICA.Logic
                 {
                     HighestDegree = regUser.educationinfo.HighestDegree,
                     NameofSchool = regUser.educationinfo.NameofSchool,
-                   // Graddate = regUser.educationinfo.Graddate != "" ? Convert.ToDateTime(regUser.educationinfo.Graddate) : new DateTime(),
-                   Graddate = regUser.educationinfo.Graddate != "" ? DateTime.ParseExact(regUser.educationinfo.Graddate, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
+                    // Graddate = regUser.educationinfo.Graddate != "" ? Convert.ToDateTime(regUser.educationinfo.Graddate) : new DateTime(),
+                    Graddate = regUser.educationinfo.Graddate != "" ? DateTime.ParseExact(regUser.educationinfo.Graddate, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     Certifications = regUser.educationinfo.Certifications
                 },
 
@@ -62,7 +62,7 @@ namespace ICA.Logic
                     Position = regUser.employmentinfo.Position,
                     DateEmployed = regUser.employmentinfo.DateEmployed != "" ? DateTime.ParseExact(regUser.employmentinfo.DateEmployed, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     Functions = regUser.employmentinfo.Functions,
-                    
+
 
                     OtherEmployerII = regUser.employmentinfo.OtherEmployerII,
                     PositionII = regUser.employmentinfo.PositionII,
@@ -81,20 +81,41 @@ namespace ICA.Logic
                     JobDescriptionIII = regUser.employmentinfo.JobDescriptionIII,
                 },
 
+                businessReferee = new BusinessReferee()
+                {
+                    RefereeFirstName = regUser.businessreferee.RefereeFirstName,
+                    RefereeLastName = regUser.businessreferee.RefereeLastName,
+                    Position = regUser.businessreferee.PositionOccupied,
+                    RefereeEmail = regUser.businessreferee.RefereeEmail,
+                    RefereePhoneNumber = regUser.businessreferee.RefereePhoneNumber,
+
+                    RefereeFirstNameII = regUser.businessreferee.RefereeFirstNameII,
+                    RefereeLastNameII = regUser.businessreferee.RefereeLastNameII,
+                    PositionII = regUser.businessreferee.PositionOccupiedII,
+                    RefereeEmailII = regUser.businessreferee.RefereeEmailII,
+                    RefereePhoneNumberII = regUser.businessreferee.RefereePhoneNumberII
+
+                },
+
                 userInfo = new UserInfo()
                 {
                     MemcategoryID = regUser.userinfo.MemcategoryID,
-                }
+                },
 
+                studentInfo = new StudentInfo()
+                {
+                    NyscStateCode = regUser.studentinfo.NyscStateCode
+                }
                 //paymentDetails = new PaymentDetails()
                 //{
                 //    Description = regUser.paymentdetails.Description,
                 //    ReferenceID = regUser.paymentdetails.ReferenceID,
                 //    paymentitemID = Convert.ToInt32(regUser.paymentdetails.PaymentItemID),
                 //    Status = 1,
-                                    
+
                 //}
             };
+
             return conn.saveUser(userObj);
         }
 

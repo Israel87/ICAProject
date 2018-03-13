@@ -32,7 +32,7 @@ namespace ICA
                 Gender = gender.Value,
                 Title = title.Value,
                 DateofBirth = dob.Value,
-                MaritalStatus = 1,
+                MaritalStatus = Convert.ToInt32(maritStats.Value),
 
             };
 
@@ -46,6 +46,10 @@ namespace ICA
                 Country = country.Value,
 
             };
+
+            // add the business referee to the save method.
+
+          
 
             educationInfo educationinfo = new educationInfo()
             {
@@ -76,6 +80,31 @@ namespace ICA
                 JobDescriptionIII = functionsII.Value,
             };
 
+            businessReferee businessreferee = new businessReferee()
+            {
+                RefereeFirstName = referenceFirstname.Value,
+                RefereeLastName = referenceLastname.Value,
+                PositionOccupied = positionOccupied.Value,
+                RefereeEmail = referenceEmail.Value,
+                RefereePhoneNumber = referencePhoneNumber.Value,
+
+                RefereeFirstNameII = referenceFirstnameII.Value,
+                RefereeLastNameII = referenceLastnameII.Value,
+                PositionOccupiedII = positionOccupiedII.Value,
+                RefereeEmailII = referenceLastnameII.Value,
+                RefereePhoneNumberII = referencePhoneNumberII.Value
+            };
+
+            userInfo userinfo = new userInfo()
+            {
+                MemcategoryID = Convert.ToInt32(memcatgoryID.Value),
+            };
+
+            //studentInfo studentinfo = new studentInfo()
+            //{
+            //    NyscStateCode = nyscstateCode.Value,
+            //};
+
             //paymentDetails paymentdetails = new paymentDetails()
             //{
             //    Description = paymentCatID.Value,
@@ -87,8 +116,11 @@ namespace ICA
             {
                 personalinfo = personalinfo,
                 residentinfo = residentialinfo,
+                businessreferee = businessreferee,
                 educationinfo = educationinfo,
                 employmentinfo = employmentinfo,
+                userinfo = userinfo,
+              //  studentinfo = studentinfo,
 
             };
 
@@ -140,7 +172,7 @@ namespace ICA
 
              //   }
                 Response.Write("<script>alert('Registration Process is Successful');</script>");
-                Response.Redirect("/guest/registrationPayment.aspx");
+                Response.Redirect("~/guest/registrationPayment.aspx");
             }
             else
             {

@@ -391,49 +391,49 @@ namespace ICA {
         protected global::System.Web.UI.HtmlControls.HtmlInputText referencePhoneNumber;
         
         /// <summary>
-        /// Text1 control.
+        /// referenceFirstnameII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText referenceFirstnameII;
         
         /// <summary>
-        /// Text2 control.
+        /// referenceLastnameII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText referenceLastnameII;
         
         /// <summary>
-        /// Text3 control.
+        /// positionOccupiedII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText positionOccupiedII;
         
         /// <summary>
-        /// Text4 control.
+        /// referenceEmailII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText referenceEmailII;
         
         /// <summary>
-        /// Text5 control.
+        /// referencePhoneNumberII control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text5;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText referencePhoneNumberII;
         
         /// <summary>
         /// uploadNotificationI control.

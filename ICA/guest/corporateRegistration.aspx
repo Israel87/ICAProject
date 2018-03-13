@@ -483,6 +483,20 @@
                                     <br />
 
                                 </div>
+                                   <div class="form-group col-lg-4">
+                                    <label for="usr">Corporate category</label>
+                                    <br />
+                                    <select id="memcatgoryID" class="form-control" name="memcategory" runat="server">
+                                                <option value="Null">Select corporate category</option>
+												<option value="1">Gold </option>
+                                                <option value="2">Silver</option>
+                                                <option value="3">Platinum</option>
+                                            </select>
+
+                                    <br />
+
+                                </div>
+
 
                             </div>
 

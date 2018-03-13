@@ -11,13 +11,13 @@
     </div>
 
 
-    <section style="background: #efefe9;">
+    <section>
         <div class="container">
             <div class="row">
 
-                <div class="board">
+              <%--  <div class="board">--%>
 
-                    <div class="board-inner">
+                 <%--   <div class="board-inner">--%>
                         <ul class="nav nav-tabs" id="myTab">
                             <%--<div class="liner"></div>--%>
                             <li>
@@ -52,7 +52,7 @@
                             </li>
 
                         </ul>
-                    </div>
+                  <%--  </div>--%>
 
                     <%--  beginning of tabs --%>
 
@@ -119,7 +119,7 @@
                         <div class="clearfix"></div>
                     </div>
 
-                </div>
+               <%-- </div>--%>
             </div>
         </div>
     </section>

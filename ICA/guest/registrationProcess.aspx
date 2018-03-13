@@ -480,11 +480,11 @@
                                         <div class="col-lg-5">
                                             <select id="maritStats" class="form-control" name="country" style="border: 2px solid #0094ff; width: 400px; border-radius: 0px" runat="server">
                                                 <option value="Null">Select Marital Status</option>
-												<option value="Married">Married</option>
-                                                <option value="Single">Single</option>
-                                                <option value="Separated">Separated</option>
-                                                <option value="Divorced">Divorced</option>
-                                                <option value="Widowed">Widowed</option>
+												<option value="1">Married</option>
+                                                <option value="2">Single</option>
+                                                <option value="3">Separated</option>
+                                                <option value="4">Divorced</option>
+                                                <option value="5">Widowed</option>
                                             </select><br />
 
                                         </div>
@@ -806,7 +806,7 @@
                      <div class="tab-pane fade" id="settings">
                             <div class="container">
                                 <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Business referees</h3>
-                                 <h6 class="container" style="color:red"> <b>All fields with bold blue borders are compulsory.</b></h6>
+                                 <h6 class="container"> <b>All fields with bold blue borders are compulsory.</b></h6>
                                 <hr />
                                 <br />
 
@@ -820,7 +820,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="referenceFirstname" id="referenceFirstname" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference First Name" />
+                                                <input runat="server" name="referenceFirstname" type="text" id="referenceFirstname" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference First Name" />
                                             </div>
                                             <br />
                                         </div>
@@ -888,7 +888,7 @@
 
                                             <div class="col-lg-8">
                                                 <%--  <p>Experience </p>--%>
-                                                <input runat="server" name="referenceFirstname" id="Text1" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference First Name" />
+                                                <input runat="server" name="referenceFirstname" id="referenceFirstnameII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference First Name" />
                                             </div>
                                             <br />
                                         </div>
@@ -899,7 +899,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="referenceLastname" id="Text2" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference Last Name" />
+                                                <input runat="server" name="referenceLastname" id="referenceLastnameII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Reference Last Name" />
                                             </div>
 
                                             <br />
@@ -911,7 +911,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="positionOccupied" id="Text3" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
+                                                <input runat="server" name="positionOccupied" id="positionOccupiedII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Position Occupied" />
                                             </div>
 
                                             <br />
@@ -923,7 +923,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="referenceEmail" id="Text4" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Email" />
+                                                <input runat="server" name="referenceEmail" id="referenceEmailII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="Email" />
                                             </div>
 
                                             <br />
@@ -938,7 +938,7 @@
 
                                             <div class="col-lg-8">
                                                 <%-- <p>Position Occupied</p>--%>
-                                                <input runat="server" name="referencePhoneNumber" id="Text5" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="PhoneNumber" />
+                                                <input runat="server" name="referencePhoneNumber" id="referencePhoneNumberII" class="form-control" style="border: 2px solid ridge; width: 400px; border-radius: 0px" placeholder="PhoneNumber" />
                                             </div>
 
                                             <br />

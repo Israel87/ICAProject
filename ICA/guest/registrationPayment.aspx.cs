@@ -27,7 +27,7 @@ namespace ICA
         {
             if (!Page.IsPostBack)
             {
-                regNotification.Text = utilities.ShowSuccess("Successful Registration / Login, Please Proceed to Pay for Registration.");
+                regNotification.Text = utilities.ShowSuccess("Successful registration / login, please proceed to pay for registration.");
 
                 if(Session["UserEmail"] == null)
                 {

@@ -130,6 +130,15 @@ namespace ICA.guest {
         protected global::System.Web.UI.HtmlControls.HtmlInputText email;
         
         /// <summary>
+        /// memcatgoryID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect memcatgoryID;
+        
+        /// <summary>
         /// saveReg control.
         /// </summary>
         /// <remarks>

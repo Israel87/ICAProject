@@ -11,9 +11,11 @@ namespace ICA.Model
         public ResidentialInfo residentialInfo { get; set; }
         public EducationInfo educationInfo { get; set; }
         public EmploymentInfo employmentInfo { get; set; }
+        public BusinessReferee businessReferee { get; set; }
         //public OtherEmpDetails otherempDetails { get; set; }
         public PaymentDetails paymentDetails { get; set; }
         public UserInfo userInfo { get; set; }
+        public StudentInfo studentInfo { get; set; }
     }
 
 
@@ -46,6 +48,7 @@ namespace ICA.Model
         public string Country { get; set; }
 
     }
+
     // class for educational information.
     public class EducationInfo
     {
@@ -56,6 +59,7 @@ namespace ICA.Model
         public DateTime Graddate { get; set; }
         public string Certifications { get; set; }
     }
+
 
 
     // class for employment information
@@ -85,6 +89,26 @@ namespace ICA.Model
 
     }
 
+    // class object for Business referee
+    public class BusinessReferee
+    {
+        public int RefereeID { get; set; }
+        public int BiodataID { get; set; }
+
+        public string RefereeFirstName { get; set; }
+        public string RefereeLastName { get; set; }
+        public string Position { get; set; }
+        public string RefereeEmail { get; set; }
+        public string RefereePhoneNumber { get; set; }
+
+        public string RefereeFirstNameII { get; set; }
+        public string RefereeLastNameII { get; set; }
+        public string PositionII { get; set; }
+        public string RefereeEmailII { get; set; }
+        public string RefereePhoneNumberII { get; set; }
+
+    }
+
     // class for payment information 
     public class PaymentDetails
     {
@@ -111,6 +135,13 @@ namespace ICA.Model
         public DateTime  Last_Updated { get; set; }
         public int ApplicationFlagID { get; set; }
 
+    }
+
+    public class StudentInfo
+    {
+        public int NyscID { get; set; }
+        public int BiodataID { get; set; }
+        public string NyscStateCode { get; set; }
     }
         
 }
