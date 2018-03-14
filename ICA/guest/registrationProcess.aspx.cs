@@ -100,6 +100,10 @@ namespace ICA
                 MemcategoryID = Convert.ToInt32(memcatgoryID.Value),
             };
 
+            studentInfo studentinfo = new studentInfo()
+            {
+                NyscStateCode = null,
+            };
             //studentInfo studentinfo = new studentInfo()
             //{
             //    NyscStateCode = nyscstateCode.Value,
@@ -120,11 +124,13 @@ namespace ICA
                 educationinfo = educationinfo,
                 employmentinfo = employmentinfo,
                 userinfo = userinfo,
+                studentinfo = studentinfo
               //  studentinfo = studentinfo,
 
             };
 
 
+            Session["ActiveMemCatID"] = userinfo.MemcategoryID;
 
             long biodataid = logic.RegisterUser(viewObj);
             //biodataid =Convert.ToInt64(Session["active_biodataid"]);

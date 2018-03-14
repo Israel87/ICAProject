@@ -9,10 +9,12 @@ using System.Web;
 
 namespace ICA.Logic
 {
+   
     public class logic  
     {
         ConnectionManager conn = new ConnectionManager();
-
+     
+      
         internal long RegisterUser(registrationViewModel regUser)
         {
             userModel userObj = new userModel()
@@ -30,9 +32,6 @@ namespace ICA.Logic
                     // DateofBirth = regUser.personalinfo.DateofBirth != "" ? Convert.ToDateTime(regUser.personalinfo.DateofBirth) : new DateTime(),
                     DateofBirth = regUser.personalinfo.DateofBirth != "" ? DateTime.ParseExact(regUser.personalinfo.DateofBirth, "dd/MM/yyyy", CultureInfo.InvariantCulture) : new DateTime(1900, 1, 1),
                     MaritalStatus = regUser.personalinfo.MaritalStatus,
-
-
-
                 },
 
                 residentialInfo = new ResidentialInfo()
@@ -100,8 +99,9 @@ namespace ICA.Logic
                 userInfo = new UserInfo()
                 {
                     MemcategoryID = regUser.userinfo.MemcategoryID,
+                    
                 },
-
+                
                 studentInfo = new StudentInfo()
                 {
                     NyscStateCode = regUser.studentinfo.NyscStateCode
@@ -114,8 +114,16 @@ namespace ICA.Logic
                 //    Status = 1,
 
                 //}
+
             };
 
+            int memcatID = regUser.userinfo.MemcategoryID;
+            if (memcatID == 7)
+            {
+             
+                return conn.saveStudent(userObj);
+            }
+          
             return conn.saveUser(userObj);
         }
 

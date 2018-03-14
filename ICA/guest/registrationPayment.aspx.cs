@@ -18,7 +18,7 @@ namespace ICA
         logic logic = new logic();
         string _userEmail = "";
         string cs = ConfigurationManager.ConnectionStrings["icaname"].ConnectionString;
-        int _membertypeid = 3;
+        int _membercategoryid = 2;
         DataTable _paymenttable = new DataTable();
 
 
@@ -37,6 +37,7 @@ namespace ICA
                 else
                 {
                     _userEmail = Session["UserEmail"].ToString();
+                    _membercategoryid = Convert.ToInt32(Session["ActiveMemCatID"]);
                     emailDisplay.Text = _userEmail.ToLower();
                 }
 
@@ -48,7 +49,7 @@ namespace ICA
 
                 OracleCommand cmd = new OracleCommand("GET_MEMCAT_REGFEES", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new OracleParameter("V_MEMBERTYPEID", OracleDbType.Int32, Convert.ToInt32(_membertypeid), ParameterDirection.Input));
+                cmd.Parameters.Add(new OracleParameter("V_MEMBERCATEGORYID", OracleDbType.Int32, Convert.ToInt32(_membercategoryid), ParameterDirection.Input));
                 cmd.Parameters.Add("CUR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
                 da = new OracleDataAdapter(cmd);
 

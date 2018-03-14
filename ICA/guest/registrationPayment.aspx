@@ -6,8 +6,8 @@
         <a href="Default.aspx"><img src="../images/ica.png" style="border-radius: 5px" class="text-center"/> </a>
         <br />
 
-        <h3 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">ASSOCIATE / FELLOW / MEMBER MEMBERSHIP </h3>
-        <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM </h5>
+        <h4 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION PAYMENT VIEW  </h4>
+        <h5 style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif"></h5>
     </div>
 
 
@@ -83,7 +83,7 @@
                                  
                                     <asp:Label ID="regNotification" runat="server"></asp:Label>
                                    <br />
-                                    <b class="col-lg-3 control-label">Choose a Payment Category  
+                                    <b class="col-lg-3 control-label"> Registration details:
                                     </b>
                                     <div class="col-lg-9" >
                                         <select class="form-control" name="paymentCat" id="paymentCatID" datatextfield="PAYMENTTEXT" datavaluefield="PAYMENTITEMID" style="border: 2px solid #0094ff; width: 900px; border-radius: 0px; font-size:11px" runat="server" required="required"></select>

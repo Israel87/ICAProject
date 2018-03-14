@@ -27,10 +27,10 @@ namespace ICA.guest
                 Email = email.Value,
                 Password = password.Value,
                 Phone = phoneNUmber.Text,
-                Gender = (gender.SelectedIndex).ToString(),
-                Title = (title.SelectedIndex).ToString(),
+                Gender = gender.Value,
+                Title = title.Value,
                 DateofBirth = dob.Value,
-                MaritalStatus = maritStats.SelectedIndex,
+                MaritalStatus = Convert.ToInt32(maritStats.Value),
 
             };
 
@@ -59,23 +59,23 @@ namespace ICA.guest
 
             employmentInfo employmentinfo = new employmentInfo()
             {
-                YearsofExperience = null,
-                RecentEmployer = null,
-                Position = null,
-                DateEmployed = null,
-                Functions = null,
+                YearsofExperience = "3",
+                RecentEmployer = "NA",
+                Position = "NA",
+                DateEmployed = "01/01/1991",
+                Functions = "NA",
 
-                OtherEmployerII = null,
-                PositionII = null,
-                DateEmployedII = null,
-                EndDateII = null,
-                JobDescriptionII = null,
+                OtherEmployerII = "null",
+                PositionII = "null",
+                DateEmployedII = "01/01/1991",
+                EndDateII = "01/01/1991",
+                JobDescriptionII = "null",
 
-                OtherEmployerIII = null,
-                PositionIII = null,
-                DateEmployedIII = null,
-                EndDateIII = null,
-                JobDescriptionIII = null,
+                OtherEmployerIII = "null",
+                PositionIII = "null",
+                DateEmployedIII = "01/01/1991",
+                EndDateIII = "01/01/1991",
+                JobDescriptionIII = "null",
             };
 
             businessReferee businessreferee = new businessReferee()
@@ -122,7 +122,7 @@ namespace ICA.guest
 
             };
 
-
+            Session["ActiveMemCatID"] = userinfo.MemcategoryID;
 
             long biodataid = logic.RegisterUser(viewObj);
             //biodataid =Convert.ToInt64(Session["active_biodataid"]);
