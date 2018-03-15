@@ -16,6 +16,7 @@ namespace ICA.Model
         public PaymentDetails paymentDetails { get; set; }
         public UserInfo userInfo { get; set; }
         public StudentInfo studentInfo { get; set; }
+        public CompanyInfo companyInfo { get; set; }
     }
 
 
@@ -143,5 +144,15 @@ namespace ICA.Model
         public int BiodataID { get; set; }
         public string NyscStateCode { get; set; }
     }
-        
+    
+    public class CompanyInfo
+    {
+        public int CorporateID { get; set; }
+        public int BiodataID { get; set; }
+        public string Position { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanyAddress { get; set; }
+        public string CompanyEmail { get; set; }
+        public string WebAddress { get; set; }
+    }
 }

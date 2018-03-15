@@ -8,7 +8,7 @@
         </a>
         <br />
 
-        <h3 style="font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">CORPORATE MEMBERSHIP</h3>
+        <h3 style="font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">SILVER / GOLD / PLATINUM MEMBERSHIP</h3>
         <h5 style="font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">REGISTRATION FORM</h5>
     </div>
     <section>
@@ -414,14 +414,14 @@
                                 <div class="row container">
                                     <div class="col-lg-6">
                                         <label for="">COMPANY EMAIL</label>
-                                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="companyEmail" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
 
 
                                     <div class="form-group col-lg-6">
                                         <label for="usr">WEB ADDRESS</label>
                                         <br />
-                                        <input type="text" class="form-control" runat="server" id="Text1">
+                                        <input type="Text" class="form-control" runat="server" id="webAddress">
                                     </div>
 
                                 </div>
@@ -472,7 +472,7 @@
                                 <div class="form-group col-lg-4">
                                     <label for="usr">Phonenumber</label>
                                     <br />
-                                    <input type="text" class="form-control" runat="server" id="phoneNUmber">
+                                    <input type="text" class="form-control" runat="server" id="phoneNumber">
                                 </div>
 
                                 <div class="form-group col-lg-4">
@@ -500,6 +500,19 @@
 
                             </div>
 
+                            <div class="row container">
+                                <div class="form-group col-lg-4">
+                                    <label for="">Password</label>
+                                       <input class="form-control" type="password" runat="server" id="password" placeholder="Password" required/>
+                                            <br />
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label for="">Confirm Password</label>
+                                       <input class="form-control" type="password" runat="server" id="passwordII" placeholder="Password" required/>
+                                            <br />
+                                </div>
+                            </div>
+
                             <center><br /> <br /> 
                                         
                                            <p id="errorMsg"></p>
@@ -517,7 +530,7 @@
                                             <%--  <a class="btn btn-outline-rounded btn-primary pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('employment').click();" ><b>NEXT</b></a>
                                               <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('personalDet').click();"><b>PREVIOUS</b></a>
                                      --%>
-                                                       <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();"><b> PROCEED TO PAYMENT</b></asp:LinkButton>
+                                                       <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();"  OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>
                                           <a class="btn btn-outline-rounded btn-warning pull-right" runat="server" style="border-radius:0px" onclick="document.getElementById('personalDet').click();"><b>PREVIOUS</b></a>
                                         <%--<asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-primary pull-right" OnClientClick="return checkVal();" OnClick="saveButton_Click"><b> PROCEED TO PAYMENT</b></asp:LinkButton>--%>
                      

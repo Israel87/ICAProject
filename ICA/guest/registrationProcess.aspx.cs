@@ -104,6 +104,15 @@ namespace ICA
             {
                 NyscStateCode = null,
             };
+
+            companyInfo companyinfo = new companyInfo()
+            {
+                Position = null,
+                CompanyName = null,
+                CompanyAddress = null,
+                CompanyEmail = null,
+                WebAddress = null,
+            };
             //studentInfo studentinfo = new studentInfo()
             //{
             //    NyscStateCode = nyscstateCode.Value,
@@ -124,7 +133,8 @@ namespace ICA
                 educationinfo = educationinfo,
                 employmentinfo = employmentinfo,
                 userinfo = userinfo,
-                studentinfo = studentinfo
+                studentinfo = studentinfo,
+                companyinfo = companyinfo
               //  studentinfo = studentinfo,
 
             };

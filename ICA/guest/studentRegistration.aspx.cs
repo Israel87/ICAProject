@@ -17,6 +17,7 @@ namespace ICA.guest
         {
 
         }
+
         protected void saveButton_Click(object sender, EventArgs e)
         {
             personalInfo personalinfo = new personalInfo()
@@ -109,6 +110,14 @@ namespace ICA.guest
             //    ReferenceID = transRefID.Value,
             //    PaymentItemID = paymentCatID.Value,
             //};
+            companyInfo companyinfo = new companyInfo()
+            {
+                Position = null,
+                CompanyName = null,
+                CompanyAddress = null,
+                CompanyEmail = null,
+                WebAddress = null,
+            };
 
             registrationViewModel viewObj = new registrationViewModel()
             {
@@ -118,7 +127,8 @@ namespace ICA.guest
                 educationinfo = educationinfo,
                 employmentinfo = employmentinfo,
                 userinfo = userinfo,
-                studentinfo = studentinfo
+                studentinfo = studentinfo,
+                companyinfo = companyinfo
 
             };
 

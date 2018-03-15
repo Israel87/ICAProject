@@ -105,6 +105,15 @@ namespace ICA.Logic
                 studentInfo = new StudentInfo()
                 {
                     NyscStateCode = regUser.studentinfo.NyscStateCode
+                },
+
+                companyInfo = new CompanyInfo()
+                {
+                    Position = regUser.companyinfo.Position,
+                    CompanyName = regUser.companyinfo.CompanyName,
+                    CompanyAddress = regUser.companyinfo.CompanyAddress,
+                    CompanyEmail = regUser.companyinfo.CompanyEmail,
+                    WebAddress = regUser.companyinfo.WebAddress
                 }
                 //paymentDetails = new PaymentDetails()
                 //{
@@ -119,12 +128,11 @@ namespace ICA.Logic
 
             int memcatID = regUser.userinfo.MemcategoryID;
             if (memcatID == 7)
-            {
-             
                 return conn.saveStudent(userObj);
-            }
-          
-            return conn.saveUser(userObj);
+            else if (memcatID == 4 || memcatID == 5 || memcatID == 6)
+                return conn.saveUser(userObj);
+            else
+                return conn.saveCorporateData(userObj);
         }
 
 

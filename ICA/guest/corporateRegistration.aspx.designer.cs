@@ -67,22 +67,22 @@ namespace ICA.guest {
         protected global::System.Web.UI.HtmlControls.HtmlSelect country;
         
         /// <summary>
-        /// TextBox2 control.
+        /// companyEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox companyEmail;
         
         /// <summary>
-        /// Text1 control.
+        /// webAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText webAddress;
         
         /// <summary>
         /// firstname control.
@@ -112,13 +112,13 @@ namespace ICA.guest {
         protected global::System.Web.UI.HtmlControls.HtmlInputText position;
         
         /// <summary>
-        /// phoneNUmber control.
+        /// phoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText phoneNUmber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phoneNumber;
         
         /// <summary>
         /// email control.
@@ -137,6 +137,24 @@ namespace ICA.guest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect memcatgoryID;
+        
+        /// <summary>
+        /// password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
+        
+        /// <summary>
+        /// passwordII control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordII;
         
         /// <summary>
         /// saveReg control.

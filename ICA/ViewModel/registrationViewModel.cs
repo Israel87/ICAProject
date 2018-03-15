@@ -15,6 +15,7 @@ namespace ICA
         public paymentDetails paymentdetails { get; set; }
         public userInfo userinfo { get; set; }
         public studentInfo studentinfo { get; set; }
+        public companyInfo companyinfo { get; set; }
     }
 
     // class for personal information.
@@ -115,4 +116,14 @@ namespace ICA
     {
         public string NyscStateCode { get; set; }
     }
+
+    public class companyInfo
+    {
+        public string Position { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanyAddress { get; set; }
+        public string CompanyEmail { get; set; }
+        public string WebAddress { get; set; }
+    }
+
 }
