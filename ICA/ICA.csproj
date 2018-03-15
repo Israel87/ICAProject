@@ -692,7 +692,9 @@
     <Folder Include="Content\Credentials\MemberUploads\UploadThree\" />
     <Folder Include="Content\Credentials\Passport\" />
     <Folder Include="Content\Credentials\Resume\" />
+    <Folder Include="Corporate\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

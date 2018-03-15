@@ -18,6 +18,7 @@ namespace ICA
         int _userid;
         int _biodataid;
         string _useremail = "";
+        int memcategoryID = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,7 +66,7 @@ namespace ICA
                     {
                         Session["UserEmail"] = dt.Rows[0][2].ToString();
                         Session["UserID"] = Convert.ToInt32(dt.Rows[0][0]);
-                        
+                        memcategoryID = Convert.ToInt32(dt.Rows[0][5]);
                         //Session.Add("UserID", dt.Rows[0][0].ToString());
                         
 
@@ -84,23 +85,33 @@ namespace ICA
                         {
                             Session["BiodataID"] = Convert.ToInt32(dt.Rows[0][1]);
 
-                            Response.Redirect("Member/overview.aspx");
-
-
-                            cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
-                            cmd.CommandType = CommandType.Text;
-                            da = new OracleDataAdapter(cmd);
-                            DataTable dt2 = new DataTable();
-                            da.Fill(dt2);
-
-                            if (dt2 != null && dt2.Rows[0]["APPLICATIONFLAGID"].ToString() == "1")
+                            if (memcategoryID == 1 || memcategoryID == 2 || memcategoryID == 3)
                             {
-                                Response.Redirect("/ICA/Member/overview.aspx");
+                                Response.Redirect("~/Corporate/overview.aspx");
+                            }
+                            else if (memcategoryID == 4 || memcategoryID == 5 || memcategoryID == 6)
+                            {
+                                Response.Redirect("~/Member/overview.aspx");
                             }
                             else
                             {
-                                Response.Redirect("/ICA/guest/registrationPayment.aspx", true);
+                                Response.Redirect("~/Student/overview.aspx");
                             }
+                           
+                            //cmd = new OracleCommand("Select * FROM USERS WHERE USERNAME = '" + _username.ToUpper() + "'", conn);
+                            //cmd.CommandType = CommandType.Text;
+                            //da = new OracleDataAdapter(cmd);
+                            //DataTable dt2 = new DataTable();
+                            //da.Fill(dt2);
+
+                            //if (dt2 != null && dt2.Rows[0]["APPLICATIONFLAGID"].ToString() == "1")
+                            //{
+                            //    Response.Redirect("/ICA/Member/overview.aspx");
+                            //}
+                            //else
+                            //{
+                            //    Response.Redirect("/ICA/guest/registrationPayment.aspx", true);
+                            //}
 
                         }
                         else
