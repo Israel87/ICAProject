@@ -6,10 +6,63 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ICA - Create Payment Item</title>
+
+
+     <script src="js/jquery-1.11.1.min.js"></script>
+     <link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="js/jquery.dataTables.min.js"></script>
+
+       <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" />
+            <script src="js/dataTables.bootstrap.min.js"></script>
+
+     <script src="js/dataTables.buttons.min.js"></script>
+            <script src="js/buttons.flash.min.js"></script>
+            <script src="js/jszip.min.js"></script>
+            <script src="js/pdfmake.min.js"></script>
+            <script src="js/vfs_fonts.js"></script>
+            <script src="js/buttons.html5.min.js"></script>
+            <script src="js/buttons.print.min.js"></script>
+
+
+
     <script type="text/javascript">
         function preventBack() { window.history.forward(); }
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
+
+
+
+                //$( function() {
+                //    $("#datepickerID").datepicker();
+
+                //    $("#datepickerIDB").datepicker();
+                // });
+
+
+                $(document).ready(function () {
+                    $('#datatable').DataTable({
+                        "dom": 'Bfrtip',
+                        "buttons": [
+                            {
+
+                                extend: 'excel',
+                                text: 'Download Excel'
+
+
+                            },
+
+                        ],
+                        "paging": true,
+                        "ordering": true,
+                        "info": false,
+                        // "buttons": true,
+
+                    });
+                });
+
+
+
+
     </script>
 
 
@@ -36,59 +89,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION</span>Admin</a>
-                <%--	<ul class="nav navbar-top-links navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
-					</a>
-						<ul class="dropdown-menu dropdown-messages">
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">3 mins ago</small>
-										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-									<br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">1 hour ago</small>
-										<a href="#">New message from <strong>Jane Doe</strong>.</a>
-									<br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="all-button"><a href="#">
-									<em class="fa fa-inbox"></em> <strong>All Messages</strong>
-								</a></div>
-							</li>
-						</ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-						<em class="fa fa-bell"></em><span class="label label-info">5</span>
-					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-heart"></em> 12 New Likes
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-user"></em> 5 New Followers
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>--%>
+                
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -99,13 +100,7 @@
                 <img src="../images/ica.png" style="width:160px; height:100px" />
             </center>
 
-            <!--<div class="profile-userpic">
-				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>-->
+
             <div class="clear"></div>
         </div>
         <div class="divider"></div>
@@ -244,11 +239,33 @@
             
             <br /><br />
 
-              <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/><br /><br /><br /><br />
-
+            <%--  <asp:Button ID="excelExport"  runat="server" CssClass="btn btn-outline-rounded btn-success pull-right" style="border-radius:0px; width: 200px;" OnClick="excelExport_Click" Text="EXPORT TO EXCEL" Font-Bold="true" CausesValidation="false" OnClientClick="javascript:Page_ValidationActive = false;"/><br /><br /><br /><br />--%>
             <div class="col-lg-12">
-                <asp:GridView ID="displayPayments" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="displayPayments_PageIndexChanging" OnDataBound="displayPayments_DataBound" PageSize="10">
-                     <%--OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound"--%>
+
+                <table class="table table-responsive table-hover table-striped" id="datatable">
+
+                     <thead>
+                                <tr style="width: 700px">
+                                    <th>MEMBERTYPE</th>
+                                    <th>MEMBERCATEGORY</th>
+                                    <th>PAYMENTTYPE</th>
+                                    <th>AMOUNT</th>
+                                    <%--<th>STATUS </th>--%>
+                                </tr>
+                            </thead>
+                               <tbody id ="t_body" runat="server">
+                              </tbody>
+                </table>
+
+            </div><br /><br /><br />
+          <%--  <div class="col-lg-12">
+
+                 <asp:ScriptManager ID="ToolkitScriptManager1" runat="server">
+                 </asp:ScriptManager>
+         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                <asp:GridView ID="displayPayments" runat="server"  AllowPaging="True" CssClass="gvv display" AutoGenerateColumns="False">
+              
 
                     <Columns>
                         <asp:BoundField DataField="MEMBERTYPE" HeaderText="MEMBER TYPE" ControlStyle-Font-Bold="true" />
@@ -258,34 +275,22 @@
 
                     </Columns>
 
-                     <PagerTemplate>
-                                <table>
-                                    <tr>
-                                      <td>
-                                            <asp:LinkButton ID="L1" runat="server" Text="PREVIOUS" CommandName="Page" CommandArgument="Prev" />
-                                             <asp:LinkButton ID="L2" runat="server" Text="NEXT" CommandName="Page" CommandArgument="Next" />
-                                       </td>
-                                       <td>
-                                           Page No:  <asp:Label ID="L3" runat="server"></asp:Label>
-                                           Total Page <asp:Label ID="L4" runat="server"></asp:Label>
-                                       </td>
-                                   </tr>
-                                </table>
-                       </PagerTemplate>
-
-                       <PagerSettings Mode="NextPrevious" Position="Bottom" />
 
 
                 </asp:GridView>
-            </div>
+                    </ContentTemplate>
+
+        </asp:UpdatePanel>
+             
+            </div>--%>
 
 
-        </form>
+        </form><br /><br /><br />
 
     </div>
 
 
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <%--<script src="js/jquery-1.11.1.min.js"></script>--%>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chart-data.js"></script>

@@ -5,11 +5,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ICA - Payments</title>
+      <script src="js/jquery-1.11.1.min.js"></script>
+     <link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="js/jquery.dataTables.min.js"></script>
+
+
+
+       <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" />
+            <script src="js/dataTables.bootstrap.min.js"></script>
+
+     <script src="js/dataTables.buttons.min.js"></script>
+            <script src="js/buttons.flash.min.js"></script>
+            <script src="js/jszip.min.js"></script>
+            <script src="js/pdfmake.min.js"></script>
+            <script src="js/vfs_fonts.js"></script>
+            <script src="js/buttons.html5.min.js"></script>
+            <script src="js/buttons.print.min.js"></script>
 
     <script type="text/javascript">
            function preventBack() { window.history.forward(); }
            setTimeout("preventBack()", 0);
            window.onunload = function () { null };
+
+
+           $(document).ready(function () {
+               $(".gvv").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                   "lengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]] //value:item pair
+               });
+           });
     </script>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -135,7 +158,7 @@
                 <br />
                   <asp:Button ID="exportExcel"  runat="server" CssClass="btn btn-outline-rounded btn-success" style="border-radius:0px; width: 200px; " OnClick="exportExcel_Click" Text="EPORT TO EXCEL" Font-Bold="true" Visible="false" />
                 <br /> <br /> 
-                <asp:GridView ID="gvData" runat="server"  CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="gvData_PageIndexChanging" PageSize="10" OnDataBound="gvData_DataBound">
+                <asp:GridView ID="gvData" runat="server"  CssClass="table table-striped table-bordered gvv display" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="gvData_PageIndexChanging" PageSize="10" OnDataBound="gvData_DataBound">
                     <Columns>
                         <asp:BoundField DataField="FULLNAME" HeaderText="FULL NAME" ControlStyle-Font-Bold="true" />
                         <asp:BoundField DataField="USERNAME" HeaderText="EMAIL" ControlStyle-Font-Bold="true" />
@@ -202,7 +225,7 @@
 
 
 
-    	<script src="js/jquery-1.11.1.min.js"></script>
+    <%--	<script src="js/jquery-1.11.1.min.js"></script>--%>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
 	<script src="js/chart-data.js"></script>

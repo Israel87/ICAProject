@@ -104,7 +104,7 @@ C:\Users\Hp\Documents\ICAPortal\ICA\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Hp\Documents\ICAPortal\ICA\bin\ICA.dll.config
 C:\Users\Hp\Documents\ICAPortal\ICA\bin\ICA.dll
 C:\Users\Hp\Documents\ICAPortal\ICA\bin\ICA.pdb
-C:\Users\Hp\Documents\ICAPortal\ICA\obj\Debug\ICA.csprojResolveAssemblyReference.cache
 C:\Users\Hp\Documents\ICAPortal\ICA\obj\Debug\ICA.csproj.CoreCompileInputs.cache
 C:\Users\Hp\Documents\ICAPortal\ICA\obj\Debug\ICA.dll
 C:\Users\Hp\Documents\ICAPortal\ICA\obj\Debug\ICA.pdb
+C:\Users\Hp\Documents\ICAPortal\ICA\obj\Debug\ICA.csprojResolveAssemblyReference.cache

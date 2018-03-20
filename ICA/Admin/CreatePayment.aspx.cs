@@ -20,7 +20,7 @@ namespace ICA.Admin
             // get the list of payments from the database
             DataTable _paymentTypes = new DataTable();
             DataTable _memCategoryReport = new DataTable();
-            DataSet _displayPayments = new DataSet();
+            DataTable _displayPayments = new DataTable();
 
 
 
@@ -86,6 +86,7 @@ namespace ICA.Admin
             }
 
             // display list of payment data
+            if(!IsPostBack)
             {
 
                 OracleConnection conn = new OracleConnection(cs);
@@ -101,10 +102,21 @@ namespace ICA.Admin
                     da = new OracleDataAdapter(cmd);
                     da.Fill(_displayPayments);
 
+                    if(_displayPayments != null && _displayPayments.Rows.Count > 0)
+                    {
+                        string html = "";
 
-                    displayPayments.DataSource = _displayPayments;
-                    displayPayments.DataBind();
-                    Session["dt"] = _displayPayments;
+                        foreach (DataRow item in _displayPayments.Rows)
+                        {
+                            //countDisplay.Text = count++.ToString();
+                            html += "<td>" + item["MEMBERTYPE"] + "</td><td>" + item["MEMBERCATEGORY"] + "</td><td>" + item["PAYMENTTYPE"] + "</td><td>" + item["AMOUNT"] + "</td></tr>";
+                            t_body.InnerHtml = html;
+
+                        }
+                    }
+                    //displayPayments.DataSource = _displayPayments;
+                    //displayPayments.DataBind();
+                    //Session["dt"] = _displayPayments;
 
 
                 }
@@ -246,27 +258,27 @@ namespace ICA.Admin
 
         }
 
-        protected void displayPayments_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            displayPayments.PageIndex = e.NewPageIndex;
-            displayPayments.DataBind();
-        }
+        //protected void displayPayments_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //{
+        //    displayPayments.PageIndex = e.NewPageIndex;
+        //    displayPayments.DataBind();
+        //}
 
-        protected void displayPayments_DataBound(object sender, EventArgs e)
-        {
-            GridViewRow pagerrow = displayPayments.BottomPagerRow;
-            Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
-            Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
+        //protected void displayPayments_DataBound(object sender, EventArgs e)
+        //{
+        //    GridViewRow pagerrow = displayPayments.BottomPagerRow;
+        //    Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
+        //    Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
 
-            if ((pageno != null) && (totalpageno != null))
-            {
-                int pagen = displayPayments.PageIndex + 1;
-                int tot = displayPayments.PageCount;
+        //    if ((pageno != null) && (totalpageno != null))
+        //    {
+        //        int pagen = displayPayments.PageIndex + 1;
+        //        int tot = displayPayments.PageCount;
 
-                pageno.Text = pagen.ToString();
-                totalpageno.Text = tot.ToString();
-            }
-        }
+        //        pageno.Text = pagen.ToString();
+        //        totalpageno.Text = tot.ToString();
+        //    }
+        //}
 
         protected void createPayment_Click(object sender, EventArgs e)
         {
@@ -275,7 +287,7 @@ namespace ICA.Admin
 
         protected void excelExport_Click(object sender, EventArgs e)
         {
-			utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payments Items and Amount");
+			//utilities.ExportToExcel(((DataSet)Session["dt"]), HttpContext.Current, "Payments Items and Amount");
         }
 
 

@@ -103,21 +103,12 @@ namespace ICA.Admin {
         protected global::System.Web.UI.WebControls.LinkButton createpayments;
         
         /// <summary>
-        /// excelExport control.
+        /// t_body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button excelExport;
-        
-        /// <summary>
-        /// displayPayments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView displayPayments;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl t_body;
     }
 }

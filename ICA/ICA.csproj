@@ -248,6 +248,10 @@
     <Content Include="Content\Credentials\MemberUploads\UploadOne\86.jpg" />
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Corporate\changePassword.aspx" />
+    <Content Include="Corporate\ManagePayment.aspx" />
+    <Content Include="Corporate\overview.aspx" />
+    <Content Include="Corporate\profile.aspx" />
     <Content Include="guest\corporateRegistration.aspx" />
     <Content Include="guest\forgotPassword.aspx" />
     <Content Include="guest\corporateMembership.aspx" />
@@ -386,6 +390,10 @@
     <Content Include="Member\tables\data2.json" />
     <None Include="Connected Services\ServiceReferenceII\WebService.wsdl" />
     <Content Include="Content\Credentials\MemberUploads\UploadTwo\86.pdf" />
+    <Content Include="MasterPages\SiteAdmin.Master" />
+    <Content Include="MasterPages\SiteCorporate.Master" />
+    <Content Include="MasterPages\SiteStudent.Master" />
+    <Content Include="MasterPages\SiteMember.Master" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -429,6 +437,12 @@
     <Content Include="signIn.aspx" />
     <Content Include="Site.Master" />
     <Content Include="guest\studentmembership.aspx" />
+    <Content Include="Student\changePassword.aspx" />
+    <Content Include="Student\eCertificates.aspx" />
+    <Content Include="Student\News.aspx" />
+    <Content Include="Student\overview.aspx" />
+    <Content Include="Student\ManagePayment.aspx" />
+    <Content Include="Student\profile.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <None Include="Web References\EmailWS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -496,6 +510,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Corporate\changePassword.aspx.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\changePassword.aspx.designer.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\ManagePayment.aspx.cs">
+      <DependentUpon>ManagePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\ManagePayment.aspx.designer.cs">
+      <DependentUpon>ManagePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\overview.aspx.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\overview.aspx.designer.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ConnectionManager.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -555,6 +597,34 @@
     </Compile>
     <Compile Include="iTextSharp\text.cs" />
     <Compile Include="Logic\logic.cs" />
+    <Compile Include="MasterPages\SiteCorporate.Master.cs">
+      <DependentUpon>SiteCorporate.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\SiteCorporate.Master.designer.cs">
+      <DependentUpon>SiteCorporate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\SiteAdmin.Master.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\SiteAdmin.Master.designer.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\SiteMember.Master.cs">
+      <DependentUpon>SiteMember.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\SiteMember.Master.designer.cs">
+      <DependentUpon>SiteMember.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\SiteStudent.Master.cs">
+      <DependentUpon>SiteStudent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\SiteStudent.Master.designer.cs">
+      <DependentUpon>SiteStudent.Master</DependentUpon>
+    </Compile>
     <Compile Include="Member\changePassword.aspx.cs">
       <DependentUpon>changePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -618,6 +688,48 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Student\changePassword.aspx.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\changePassword.aspx.designer.cs">
+      <DependentUpon>changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\eCertificates.aspx.cs">
+      <DependentUpon>eCertificates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\eCertificates.aspx.designer.cs">
+      <DependentUpon>eCertificates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\overview.aspx.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\overview.aspx.designer.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ManagePayment.aspx.cs">
+      <DependentUpon>ManagePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\ManagePayment.aspx.designer.cs">
+      <DependentUpon>ManagePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\registrationViewModel.cs" />
     <Compile Include="guest\individualMembers.aspx.cs">
@@ -692,9 +804,7 @@
     <Folder Include="Content\Credentials\MemberUploads\UploadThree\" />
     <Folder Include="Content\Credentials\Passport\" />
     <Folder Include="Content\Credentials\Resume\" />
-    <Folder Include="Corporate\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Student\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

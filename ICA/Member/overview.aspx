@@ -95,7 +95,7 @@
 				</a></li>
 				<li class="active">Overview.</li>
 			</ol>
-		</div><!--/.row-->
+		</div><!--/.row-->  
 		
 	<div class="row">
 			<div class="col-lg-12">
@@ -146,11 +146,6 @@
 			</div>
 			
              </div><br />
-
-
-
-
-
 
         <div class="">
             <div class="col-xs-6 col-md-4">

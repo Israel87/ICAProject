@@ -6,11 +6,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ICA - Manage</title>
+         <script src="js/jquery-1.11.1.min.js"></script>
+        <link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+        <script src="js/jquery.dataTables.min.js"></script>
+
+
+
+            <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" />
+            <script src="js/dataTables.bootstrap.min.js"></script>
+
+            <script src="js/dataTables.buttons.min.js"></script>
+            <script src="js/buttons.flash.min.js"></script>
+            <script src="js/jszip.min.js"></script>
+            <script src="js/pdfmake.min.js"></script>
+            <script src="js/vfs_fonts.js"></script>
+            <script src="js/buttons.html5.min.js"></script>
+            <script src="js/buttons.print.min.js"></script>
+
 
      <script type="text/javascript">
         function preventBack() { window.history.forward(); }
         setTimeout("preventBack()", 0);
-        window.onunload = function () { null };
+         window.onunload = function () { null };
+
+
+
+        
+             $(document).ready(function() {
+                 $(".gvv").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                     "lengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]] //value:item pair
+                 });
+    });
+    
     </script>
 
 
@@ -139,7 +166,7 @@
                 <br /><br />
                 <div class="">
                     <div class="table-responsive">
-                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" OnPageIndexChanging="regResults_PageIndexChanging" PageSize="5" OnDataBound="regResults_DataBound">
+                        <asp:GridView ID="regResults" runat="server" CssClass="table table-striped table-bordered gvv display" AutoGenerateColumns="false" Font-Size="Medium" ForeColor="Black" Width="100%" HeaderStyle-CssClass="bg-primary" AllowPaging="true" PageSize="5">
                             
                             <Columns>
                                 <asp:TemplateField HeaderText="ACTION" ControlStyle-Font-Bold="true" >
@@ -159,7 +186,7 @@
                                 <asp:BoundField DataField="DATEADDED" HeaderText="DATE" ControlStyle-Font-Bold="true" />
                             </Columns>
 
-                            <PagerTemplate>
+                     <%--       <PagerTemplate>
                                 <table>
                                     <tr>
                                         
@@ -175,7 +202,7 @@
                                     </tr>
                                 </table>
                             </PagerTemplate>
-                            <PagerSettings Mode="NextPrevious" Position="Bottom" />
+                            <PagerSettings Mode="NextPrevious" Position="Bottom" />--%>
 
                         </asp:GridView>
 
@@ -374,7 +401,7 @@
                     <br />
 
 
-    <script src="js/jquery-1.11.1.min.js"></script>
+   <%-- <script src="js/jquery-1.11.1.min.js"></script>--%>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.min.js"></script>
     <script src="js/chart-data.js"></script>

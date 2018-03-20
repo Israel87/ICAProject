@@ -149,12 +149,12 @@ namespace ICA.Admin
 
         }
 
-        protected void regResults_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            regResults.PageIndex = e.NewPageIndex;
-            regResults.DataBind();
+        //protected void regResults_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //{
+        //    regResults.PageIndex = e.NewPageIndex;
+        //    regResults.DataBind();
 
-        }
+        //}
 
 
         protected void viewReg_Click(object sender, EventArgs e)
@@ -334,26 +334,26 @@ namespace ICA.Admin
 
         }
 
-        protected void regResults_DataBound(object sender, EventArgs e)
-        {
-            GridViewRow pagerrow = regResults.BottomPagerRow;
-            Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
-            Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
+        //protected void regResults_DataBound(object sender, EventArgs e)
+        //{
+        //    GridViewRow pagerrow = regResults.BottomPagerRow;
+        //    Label pageno = (Label)pagerrow.Cells[0].FindControl("L3");
+        //    Label totalpageno = (Label)pagerrow.Cells[0].FindControl("L4");
 
-            if((pageno != null) && (totalpageno != null))
-            {
-                int pagen = regResults.PageIndex + 1;
-                int tot = regResults.PageCount;
+        //    if((pageno != null) && (totalpageno != null))
+        //    {
+        //        int pagen = regResults.PageIndex + 1;
+        //        int tot = regResults.PageCount;
 
-                pageno.Text = pagen.ToString();
-                totalpageno.Text = tot.ToString();
-            }
-            else
-            {
-                Response.Write("<script>alert('No more Data to Display');</script>");
-            }
+        //        pageno.Text = pagen.ToString();
+        //        totalpageno.Text = tot.ToString();
+        //    }
+        //    else
+        //    {
+        //        Response.Write("<script>alert('No more Data to Display');</script>");
+        //    }
 
-        }
+        //}
 
         protected void excelExport_Click(object sender, EventArgs e)
         {
