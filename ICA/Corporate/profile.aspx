@@ -39,13 +39,13 @@
                             <div class="form-group">
 
                                     <label for="fullname" class="col-lg-4 control-label">NAME OF COMPANY</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="fullname" disabled /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="companyname" disabled /><br /><br />
                             </div>
                              
                   
                             <div class="form-group">
                                     <label for="address" class="col-lg-4 control-label">ADDRESS OF COMPANY</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="address"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="companyaddress"  /><br /><br />
                             </div>
 
                              <div class="form-group">
@@ -55,33 +55,33 @@
 
                             <div class="form-group">
                                     <label for="email" class="col-lg-4 control-label">COMPANY EMAIL</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="email" disabled /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="companyemail" disabled /><br /><br />
                             </div>
 
                               <div class="form-group">
                                     <label for="phoneNo" class="col-lg-4 control-label">WEB ADDRESS</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="Text1"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="webaddress"  /><br /><br />
                             </div>
 
 
-                            <div class="form-group">
+<%--                            <div class="form-group">
                                     <label for="phoneNo" class="col-lg-4 control-label">PHONE NUMBER</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="phonenum"  /><br /><br />
-                            </div>
+                            </div>--%>
 
                               <br />
                                 <h5><b>Details of contact person</b> </h5>
                             <br />
                             <div class="form-group">
                                     <label for="nos" class="col-lg-4 control-label">FIRSTNAME </label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="nos"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="firstname"  /><br /><br />
                             </div>
 
                               
 
                              <div class="form-group">
                                     <label for="graddate" class="col-lg-4 control-label">LASTNAME</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="graddate"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="lastname"  /><br /><br />
                             </div>
 
 
@@ -94,15 +94,15 @@
                                 </div>
                                    <div class="form-group">
                                     <label for="certyear" class="col-lg-4 control-label">PHONE NUMBER</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="certyear"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="phonenumber"  /><br /><br />
                                 </div>
                                   <div class="form-group">
                                     <label for="empII" class="col-lg-4 control-label">EMAIL</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="empII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="email"  /><br /><br />
                                 </div>
                                 <div class="form-group">
                                     <label for="posII" class="col-lg-4 control-label">CATEGORY</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="category"  /><br /><br />
                                 </div>
 
                        

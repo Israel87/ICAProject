@@ -22,22 +22,22 @@ namespace ICA.Corporate {
         protected global::System.Web.UI.WebControls.Label uploadNotificationI;
         
         /// <summary>
-        /// fullname control.
+        /// companyname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fullname;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText companyname;
         
         /// <summary>
-        /// address control.
+        /// companyaddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText address;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText companyaddress;
         
         /// <summary>
         /// addressII control.
@@ -49,49 +49,40 @@ namespace ICA.Corporate {
         protected global::System.Web.UI.HtmlControls.HtmlInputText addressII;
         
         /// <summary>
-        /// email control.
+        /// companyemail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText companyemail;
         
         /// <summary>
-        /// Text1 control.
+        /// webaddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText webaddress;
         
         /// <summary>
-        /// phonenum control.
+        /// firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText phonenum;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText firstname;
         
         /// <summary>
-        /// nos control.
+        /// lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nos;
-        
-        /// <summary>
-        /// graddate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText graddate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText lastname;
         
         /// <summary>
         /// position control.
@@ -103,31 +94,31 @@ namespace ICA.Corporate {
         protected global::System.Web.UI.HtmlControls.HtmlInputText position;
         
         /// <summary>
-        /// certyear control.
+        /// phonenumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText certyear;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phonenumber;
         
         /// <summary>
-        /// empII control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText empII;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
         
         /// <summary>
-        /// posII control.
+        /// category control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText posII;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText category;
         
         /// <summary>
         /// biodataid control.

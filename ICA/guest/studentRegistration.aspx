@@ -647,14 +647,14 @@
 
                      <div class="tab-pane fade" id="settings">
                             <div class="container">
-                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Business referees</h3>
+                                <h3 class="container" style="font-family:Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif">Referees</h3>
                                  <h6 class="container"> <b>Please fill in the details of your referees</b></h6>
                                 <hr />
                                 <br />
 
                                  <div class="col-lg-6">
                                         <br />
-                                        <b>Reference I</b>
+                                        <b>Referee I</b>
 
                                         <div class="form-group">
                                             <br />
@@ -722,7 +722,7 @@
                                     </div>
                                 <div class="col-lg-6">
                                         <br />
-                                        <b>Reference II</b>
+                                        <b>Referee II</b>
 
                                         <div class="form-group">
                                             <br />

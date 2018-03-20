@@ -22,6 +22,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
                     <div class="container">
+                        
                             <div class="col-lg-12">
                             <div class="col-lg-9">
                                 <br />
@@ -33,7 +34,10 @@
                                
                                 </div>
 
-
+                                
+                        <%--               <br />
+                                <h5><b>Biodata</b> </h5>
+                            <br />--%>
                                 <div class="form-group"><br /><br />
                                     <label for="title" class="col-lg-4 control-label"> TITLE </label>
                                       <%--<input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="title"  />--%>
@@ -112,6 +116,10 @@
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="phonenum"  /><br /><br />
                             </div>
 
+                                  <br />
+                                <h5><b>Educational details</b> </h5>
+                           <hr />
+
                                 <div class="form-group">
                                     <label for="nos" class="col-lg-4 control-label">NAME OF SCHOOL </label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="nos"  /><br /><br />
@@ -155,22 +163,32 @@
                                     <label for="certyear" class="col-lg-4 control-label">OTHER CERTIFICATE</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="certyear"  /><br /><br />
                                 </div>
+
+                                       <br />
+                                <h5><b>Referee details</b> </h5>
+                           
+                                <hr />
                                   <div class="form-group">
-                                    <label for="empII" class="col-lg-4 control-label">EMPLOYER II</label>
+                                    <label for="empII" class="col-lg-4 control-label">FIRSTNAME</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="empII"  /><br /><br />
                                 </div>
                                 <div class="form-group">
-                                    <label for="posII" class="col-lg-4 control-label">POSITION II</label>
+                                    <label for="posII" class="col-lg-4 control-label">LASTNAME</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posII"  /><br /><br />
                                 </div>
 
                                  <div class="form-group">
-                                    <label for="empIII" class="col-lg-4 control-label">EMPLOYER III</label>
+                                    <label for="empIII" class="col-lg-4 control-label">POSITION</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="empIII"  /><br /><br />
                                 </div>
 
+                                  <div class="form-group">
+                                    <label for="empIII" class="col-lg-4 control-label">EMAIL</label>
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="Text1"  /><br /><br />
+                                </div>
+
                                 <div class="form-group">
-                                    <label for="posIII" class="col-lg-4 control-label">POSITION III</label>
+                                    <label for="posIII" class="col-lg-4 control-label">PHONENUMBER</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posIII"  /><br /><br />
                                     <br />
                     
@@ -192,7 +210,7 @@
                                 <%--<asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-primary col-lg-8" Style="border-radius: 0px; width: 100px;" Text="upload" Font-Bold="true"  />--%>
                                 <br /><br /><br />
                                  <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
-                                <br />
+                             
                                     <%--             <asp:Button ID="update" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="border-radius: 0px; width: 200px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />--%>
                                 <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="width: 300px;" Text="UPDATE" Font-Bold="true" />
 
