@@ -33,10 +33,8 @@
                                        <asp:Label ID="uploadNotificationI" runat="server"></asp:Label><br />
                                
                                 </div><br />
-
-                               <h5><b> Company details</b></h5>
-                                <br /> <br />
-                            <div class="form-group">
+                           
+                                             <div class="form-group">
 
                                     <label for="fullname" class="col-lg-4 control-label">NAME OF COMPANY</label>
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="companyname" disabled /><br /><br />
@@ -63,6 +61,11 @@
                                     <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="webaddress"  /><br /><br />
                             </div>
 
+                         
+
+                               <h5><b> Company details</b></h5>
+                                <br /> <br />
+                   
 
 <%--                            <div class="form-group">
                                     <label for="phoneNo" class="col-lg-4 control-label">PHONE NUMBER</label>
@@ -123,8 +126,8 @@
                                  <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
                                 <br />
 
-                                 <asp:Button runat="server" Text="UPDATE" CssClass="btn btn-success pull-right" style="width:300px;" Font-Bold="true"/>
-                            
+                                 <asp:Button runat="server" Text="UPDATE" CssClass="btn btn-success pull-right" style="width:300px;" Font-Bold="true" OnClick="update_Click"/>
+                             
                                 
                             </div>
                                 

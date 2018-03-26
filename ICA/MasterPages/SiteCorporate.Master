@@ -8,13 +8,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %>  ICA Corporate View</title>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
 
-    </asp:ContentPlaceHolder> 
-	<link href="../Member/css/bootstrap.min.css" rel="stylesheet">
+   
+
+
+            $(document).ready(function () {
+                $('#datatable').DataTable({
+                    "dom": 'Bfrtip',
+                    "buttons": [
+                        {
+
+                            extend: 'excel',
+                            text: 'Download Excel'
+
+
+                        },
+
+                    ],
+                    "paging": true,
+                    "ordering": true,
+                    "info": false,
+                    // "buttons": true,
+
+                });
+            });
+
+
+
+    </script>
+
+    	<link href="../Member/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../Member/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../Member/css/datepicker3.css" rel="stylesheet">
 	<link href="../Member/css/styles.css" rel="stylesheet">
+
+            <script src="../Admin/js/jquery-1.11.1.min.js"></script>
+            <link href="../Admin/css/jquery.dataTables.min.css" rel="stylesheet" />
+         <%--   <script src="js/jquery.dataTables.min.js"></script>--%>
+            <script src="../Admin/js/jquery.dataTables.min.js"></script>
+
+            <link href="../Admin/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+            <script src="../Admin/js/dataTables.bootstrap.min.js"></script>
+
+            <script src="../Admin/js/dataTables.buttons.min.js"></script>
+            <script src="../Admin/js/buttons.flash.min.js"></script>
+            <script src="../Admin/js/jszip.min.js"></script>
+            <script src="../Admin/js/pdfmake.min.js"></script>
+            <script src="../Admin/js/vfs_fonts.js"></script>
+            <script src="../Admin/js/buttons.html5.min.js"></script>
+            <script src="../Admin/js/buttons.print.min.js"></script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder> 
+
+
+
+
 	
 </head>
 
@@ -85,7 +142,7 @@
         </div>
   <%--  </form>--%>
 
-    	<script src="../Member/js/jquery-1.11.1.min.js"></script>
+    	<%--<script src="../Member/js/jquery-1.11.1.min.js"></script>--%>
 	<script src="../Member/js/bootstrap.min.js"></script>
 	<script src="../Member/js/chart.min.js"></script>
 	<script src="../Member/js/chart-data.js"></script>

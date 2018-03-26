@@ -264,9 +264,7 @@
                                      <asp:Button ID="update" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="border-radius: 0px; width: 200px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />
                                     <br /><br /><br /><br />
                                 </div>
-                                 <input type="text" id="biodataid" hidden runat="server" />
-
-                           
+                                 <input type="text" id="biodataid" hidden runat="server" /> 
                 
                             </div>
 

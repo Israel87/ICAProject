@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.OracleClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 namespace ICA.Corporate
 {
     public partial class profile : System.Web.UI.Page
@@ -58,7 +58,7 @@ namespace ICA.Corporate
                         string _middlename = _userEmail.Rows[0]["middlename"].ToString();
                         string _lastname = _userEmail.Rows[0]["lastname"].ToString();
                         _biodataid = Convert.ToInt32(_userEmail.Rows[0]["biodataid"]);
-                       // string membertypeDisplay = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
+                        // string membertypeDisplay = _userEmail.Rows[0]["MEMBER TYPE"].ToString();
 
                         Session["active_biodata"] = _biodataid;
 
@@ -77,7 +77,7 @@ namespace ICA.Corporate
                         phonenumber.Value = _userEmail.Rows[0]["PHONE"].ToString();
                         email.Value = _userEmail.Rows[0]["EMAIL"].ToString();
                         category.Value = _userEmail.Rows[0]["MEMBERCATEGORY"].ToString();
-                     
+
                     }
                     else
                         conn.Close();
@@ -92,62 +92,93 @@ namespace ICA.Corporate
             }
         }
 
-        //private bool updateCorporateData(string _firstname, string _lastname, string _position, string _phonenumber,
-        //    string _email, string _companyname, string _companyaddress, string _addressII, string _companyemail, string _webaddress )
-        //{
-        //    bool updateRecord = false;
-        //    try {
-
-        //        using (OracleConnection conn = new OracleConnection(cs))
-        //        {
-        //            using (OracleCommand cmd = new OracleCommand("UPDATECORPORATEDETAILS", conn))
-        //            {
-        //                cmd.CommandType = CommandType.StoredProcedure;
-
-        //                cmd.Parameters.Add(new OracleParameter("V_FIRSTNAME", OracleDbType.Varchar2, _firstname, ParameterDirection.Input));
-                      
-        //                cmd.Parameters.Add(new OracleParameter("V_BIODATAID", OracleDbType.Int32, Convert.ToInt32(biodataid), ParameterDirection.Input));
-
-        //                if (conn.State != ConnectionState.Open)
-        //                {
-        //                    conn.Open();
-        //                }
-        //                try
-        //                {
-
-        //                    cmd.ExecuteNonQuery();
-        //                    updateRecord = true;
-
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    //Response.Write("<script>alert('Successful');</script>");
-        //                }
-
-        //                if (FileUpload1.FileName.EndsWith("jpg"))
-        //                {
-        //                    String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
-        //                    FileUpload1.SaveAs(fileName);
-        //                }
-        //                else
-        //                {
-        //                    //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
-        //                }
-        //                uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
-
-        //            }
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //    int biodataid = Convert.ToInt32(Session["active_biodata"]);
+        private bool updateCorporateData(string _firstname, string _lastname, string _phonenumber, string _email, string _addressII,
+          string _companyaddress, string _companyemail, string _webaddress, string _position)
+        {
+            bool updateCorporateRecord = false;
+            int biodataid = Convert.ToInt32(Session["active_biodata"]);
 
 
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(cs))
+                {
+                    using (OracleCommand cmd = new OracleCommand("UPDATECORPORATEDETAILS", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-        //    return true;
-        //}
+                        cmd.Parameters.Add(new OracleParameter("V_FIRSTNAME", OracleDbType.Varchar2, _firstname, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_LASTNAME", OracleDbType.Varchar2, _lastname, ParameterDirection.Input));
+
+                        cmd.Parameters.Add(new OracleParameter("V_PHONE", OracleDbType.Varchar2, _phonenumber, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, _email, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_STREETADDRESSII", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_COMPANYADDRESS", OracleDbType.Varchar2, _companyaddress, ParameterDirection.Input));
+
+
+                        cmd.Parameters.Add(new OracleParameter("V_COMPANYEMAIL", OracleDbType.Varchar2, _companyemail, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_WEBADDRESS", OracleDbType.Varchar2, _webaddress, ParameterDirection.Input));
+
+                        cmd.Parameters.Add(new OracleParameter("V_POSITION", OracleDbType.Varchar2, _position, ParameterDirection.Input));
+                        ;
+                        cmd.Parameters.Add(new OracleParameter("V_BIODATAID", OracleDbType.Int32, Convert.ToInt32(biodataid), ParameterDirection.Input));
+
+                        if (conn.State != ConnectionState.Open)
+                        {
+                            conn.Open();
+                        }
+                        try
+                        {
+
+                            cmd.ExecuteNonQuery();
+                            updateCorporateRecord = true;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            //Response.Write("<script>alert('Successful');</script>");
+                        }
+
+                        if (FileUpload1.FileName.EndsWith("jpg"))
+                        {
+                            String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
+                            FileUpload1.SaveAs(fileName);
+                        }
+                        else
+                        {
+                            //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
+                        }
+                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return updateCorporateRecord;
+
+
+        }
+
+
+        protected void update_Click(object sender, EventArgs e)
+        {
+            // view pictures
+            try
+            {
+
+
+                updateCorporateData(firstname.Value, lastname.Value, phonenumber.Value, email.Value, addressII.Value, companyaddress.Value, companyemail.Value, webaddress.Value, position.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
     }
 }

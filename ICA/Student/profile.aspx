@@ -42,21 +42,15 @@
                                     <label for="title" class="col-lg-4 control-label"> TITLE </label>
                                       <%--<input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="title"  />--%>
 
-                           <%--       <select id="title" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required">
-                                                <option value="Null">Select Title</option>
+                                  <select id="titles" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required">
+                                               <%-- <option value="Null">Select Title</option>--%>
                                                 <option value="1">Master</option>
                                                 <option value="2">Miss</option>
                                                 <option value="3">Mr</option>
                                                 <option value="4">Mrs</option>
 
-                                            </select>--%>
-                                    <asp:DropDownList ID="title" CssClass="col-lg-8 form-control" runat="server" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" >
-                                        <asp:ListItem Value="1" Text="MR">MR</asp:ListItem>
-                                        <asp:ListItem Value="2" Text="MRS">MRS</asp:ListItem>
-                                        <asp:ListItem Value="3" Text="MASTER">MASTER</asp:ListItem>
-                                        <asp:ListItem Value="4" Text="MS">MS</asp:ListItem>
-                                        <asp:ListItem Value="5" Text="MISS">MISS</asp:ListItem>
-                                    </asp:DropDownList>
+                                            </select>
+                                
 
                                     <br /><br />
                                 </div>
@@ -83,15 +77,17 @@
 
                             <div class="form-group">
                                     <label for="marStatus" class="col-lg-4 control-label">MARITAL STATUS</label>
+                                      <select id="maritalstatuses" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required">
+                                             
+                                                <option value="1">Married</option>
+                                                <option value="2">Single</option>
+                                                <option value="3">Seperated</option>
+                                                <option value="4">Divorced</option>
+                                                <option value="5">Widowed</option>
 
+                                            </select>
 
-                                     <asp:DropDownList ID="maritalstatus" CssClass="col-lg-8 form-control" runat="server" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px">
-                                        <asp:ListItem Value="1" Text="Married">Married</asp:ListItem>
-                                        <asp:ListItem Value="2" Text="Single">Single</asp:ListItem>
-                                        <asp:ListItem Value="3" Text="Divorced">Seperated</asp:ListItem>
-                                        <asp:ListItem Value="4" Text="Divorced">Divorced</asp:ListItem>
-                                         <asp:ListItem Value="5" Text="Widowed">Widowed</asp:ListItem>
-                                    </asp:DropDownList>
+                                  
 
                                 <br /><br />
                             </div>
@@ -170,26 +166,26 @@
                                 <hr />
                                   <div class="form-group">
                                     <label for="empII" class="col-lg-4 control-label">FIRSTNAME</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="empII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="refFirstname"  /><br /><br />
                                 </div>
                                 <div class="form-group">
                                     <label for="posII" class="col-lg-4 control-label">LASTNAME</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="refLastname"  /><br /><br />
                                 </div>
 
                                  <div class="form-group">
                                     <label for="empIII" class="col-lg-4 control-label">POSITION</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="empIII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="refPosition"  /><br /><br />
                                 </div>
 
                                   <div class="form-group">
                                     <label for="empIII" class="col-lg-4 control-label">EMAIL</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="Text1"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="refEmail"  /><br /><br />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="posIII" class="col-lg-4 control-label">PHONENUMBER</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="posIII"  /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="refPhoneNumber"  /><br /><br />
                                     <br />
                     
                                       
