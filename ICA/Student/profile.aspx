@@ -42,7 +42,7 @@
                                     <label for="title" class="col-lg-4 control-label"> TITLE </label>
                                       <%--<input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="title"  />--%>
 
-                                  <select id="titles" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required">
+                                  <select id="titles" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required" disabled>
                                                <%-- <option value="Null">Select Title</option>--%>
                                                 <option value="1">Master</option>
                                                 <option value="2">Miss</option>
@@ -57,7 +57,7 @@
                             <div class="form-group">
 
                                     <label for="fullname" class="col-lg-4 control-label">FULLNAME</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="fullname" disabled /><br /><br />
+                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="fullname" disabled  /><br /><br />
                             </div>
 
                             <%--    <div class="form-group">
@@ -77,7 +77,7 @@
 
                             <div class="form-group">
                                     <label for="marStatus" class="col-lg-4 control-label">MARITAL STATUS</label>
-                                      <select id="maritalstatuses" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required">
+                                      <select id="maritalstatuses" name="title" class="form-control col-lg-8" style="border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" required="required" disabled>
                                              
                                                 <option value="1">Married</option>
                                                 <option value="2">Single</option>
@@ -208,7 +208,7 @@
                                  <asp:Label ID="memDisplay" runat="server" Font-Bold="true" ForeColor="#5d6df5"></asp:Label><br /><br />
                              
                                     <%--             <asp:Button ID="update" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="border-radius: 0px; width: 200px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />--%>
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="width: 300px;" Text="UPDATE" Font-Bold="true" />
+                               <%-- <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-rounded btn-success col-lg-8" Style="width: 300px;" Text="UPDATE" Font-Bold="true" OnClick="update_Click" />--%>
 
                                 
                             </div>

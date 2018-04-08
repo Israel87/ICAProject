@@ -21,7 +21,7 @@
 							
 							 <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="true" CssClass="btn btn-warning btn-md" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">Click to Choose</asp:HyperLink>
 							 
-                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px"  data-toggle="modal" data-target=".bd-example-modal2-lg" Text="Read More" Font-Bold="true" />
 							<%-- data-toggle="modal" data-target=".bd-example-modal3-lg" --%>
                     </div>
 
@@ -35,7 +35,7 @@
 							
 							 <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="true" CssClass="btn btn-warning btn-md" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">Click to Choose</asp:HyperLink>
 							 
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" Text="Read More" Font-Bold="true" />
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-success btn-md" style="border-radius:0px" data-toggle="modal" data-target=".bd-example-modal3-lg" Text="Read More" Font-Bold="true" />
 							<%-- data-toggle="modal" data-target=".bd-example-modal2-lg" --%>
                     </div>
 
@@ -63,9 +63,51 @@
     <%--<button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>--%>
 <%--    Silver Membership --%>
             <div class="modal fade bd-example-modal2-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  ...
+              <div class="modal-dialog modal-lg" style="width: 800px">
+                <div class="modal-content" style="padding:50px">
+                    <div class="container">
+                          <div style="text-align:center">
+                            <h4><b> ASSOCIATE MEMBERSHIP</b></h4>
+                        </div><br />
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <img src="../images/membersare.png" style="width: 80px; height: 80px"  />
+                                <h5><b>Members are:</b></h5><hr />
+                                <p style="text-align:justify">
+                                   Candidate must have completed the institute’s final professional examinations.
+                                   However, a candidate with good honors degree or its equivalent in Accounting,
+                                   Banking & Finance, Business Management, Marketing, etc with relevant work experience
+                                   of not less than three years may be considered.<br /><br /><br />
+                                   <center>
+                                        <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+                                  </center>
+                                </p><hr />
+                            </div>
+
+                              <div class="col-md-6 text-center">
+                                <img src="../images/requirements.png" style="width: 80px; height: 80px"  />
+                                <h5><b>Requirements:</b></h5><hr />
+                              
+                                    <ul style="text-align:justify">
+                                        <li>Prospective member fills membership application form and upload curriculum vitae (CV) on ICA membership portal.</li>
+                                        <li> Make payment of #5,000 membership application fee and submit application.</li>
+                                        <li>Review of uploaded CV</li>
+                                        <li> Approval of application for membership by authorized ICA official.</li>
+                                        <li> Payment of direct AICA membership fee of #47,500 and issuance of receipt.</li>
+                                        <li>Issuance of membership certificate with covering letter from ICA. Members collect their certificates on induction day.</li>
+                                        <li>  Payment of AICA membership induction fee of #10.000 and issuance of receipt.</li>
+                                        <li> Induction</li>
+                                        <li>  Members collect their certificates on induction day</li>
+                                    </ul>
+                                    <br />
+                                 
+                                  
+                               <hr />
+                            </div>
+
+                        </div>
+                    </div>
+         
                 </div>
               </div>
             </div>
@@ -73,9 +115,52 @@
 
     <%--    Platinum Membership --%>
             <div class="modal fade bd-example-modal3-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                 a
+              <div class="modal-dialog modal-lg" style="width:800px;">
+                  <div class="modal-content" style="padding:50px">
+                    <div class="container">
+                          <div style="text-align:center">
+                            <h4><b> MEMBER</b></h4>
+                        </div><br />
+                   <div class="row">
+                            <div class="col-md-6 text-center">
+                                <img src="../images/membersare.png" style="width: 80px; height: 80px"  />
+                                <h5><b>Members are:</b></h5><hr />
+                                <p style="text-align:justify">
+                                  Candidate must possess good honors degree or its equivalent with relevant work experience
+                                  at middle management level with functions having to do with Credit Management, Accounting,
+                                  Banking and Finance and Marketing of not less than five years. In addition,
+                                  candidate must show evidence of professional membership in the same grade or “associate grade”
+                                  obtained from relevant recognized professional body.<br /><br /><br />
+                                   <center>
+                                        <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+                                  </center>
+                                </p><hr />
+                            </div>
+
+                              <div class="col-md-6 text-center">
+                                <img src="../images/requirements.png" style="width: 80px; height: 80px"  />
+                                <h5><b>Requirements:</b></h5><hr />
+                              
+                                    <ul style="text-align:justify">
+                                        <li>Prospective member fills membership application form and upload curriculum vitae (CV) on ICA membership portal.</li>
+                                        <li>Makes payment of #5,000 membership application fee and submit application.</li>
+                                        <li>Review of uploaded CV</li>
+                                        <li> Approval of application for membership by authorized ICA official.</li>
+                                        <li> Payment of direct MICA membership fee of #67,000</li>
+                                        <li>Issuance of membership certificate with covering letter from ICA. Members collect their certificates on induction day.</li>
+                                        <li> Payment of MICA membership induction fee of #15.000 and issuance of receipt.</li>
+                                        <li> Induction</li>
+                                    
+                                    </ul>
+                                    <br />
+                                 
+                                  
+                               <hr />
+                            </div>
+
+                        </div>
+                    </div>
+         
                 </div>
               </div>
             </div>
@@ -101,29 +186,38 @@
                                     financial, accounting and marketing in a directorate or
                                     senior management capacity either at present or in
                                     the past; including membership of related
-                                    professional institutes on similar grade.<br /><br /><br /><br /><br />
+                                    professional institutes on similar grade.<br /><br /><br />
+
+                                    <center>
+                                         <asp:HyperLink ID="reg" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+                                    </center>
+
+                                     
+                                    
+                                    <br /><br />
                                 </p><hr />
                             </div>
                             <div class="col-md-6 text-center">
                                 <img src="../images/requirements.png" style="width: 80px; height: 80px" />
                                 <h5><b>Requirements</b></h5><hr />
-                                <p style="text-align:justify">
-                                    Prospective member fills membership application form and upload curriculum
-                                    vitae (CV) on <b>ICA membership portal.</b>
-                                    Makes payment of <b>#5,000 membership application fee and submit application</b>.
-                                    Review of uploaded CV
-                                    Approval of application for membership
-                                    Payment of direct<b> FICA membership fee of #150,000 and issuance of receipt
-                                    Issuance of membership certificate</b> with covering letter from ICA.Members
-                                    collect their certificates on induction day
-                                    Payment of <b>AICA membership induction fee of #20,000 and issuance of receipt for Induction</b>
-                                </p><hr /> <br /><br />
+                                 <ul style="text-align:justify">
+                                        <li>Prospective member fills membership application form and upload curriculum vitae (CV) on ICA membership portal.</li>
+                                        <li>Makes payment of #5,000 membership application fee and submit application.</li>
+                                        <li>Review of uploaded CV</li>
+                                        <li> Approval of application for membership by authorized ICA official.</li>
+                                        <li> Payment of direct FICA membership fee of #150,000 and issuance of receipt</li>
+                                        <li>Issuance of membership certificate with covering letter from ICA. Members collect their certificates on induction day.</li>
+                                        <li> Payment of MICA membership induction fee of #15.000 and issuance of receipt.</li>
+                                        <li> Induction</li>
+                                    
+                                    </ul>
+                                <hr /> <br /><br />
                             </div>
                             
                             <center>
                                 <br /> <hr /> <br /><br />
 
-                                 <asp:HyperLink ID="reg" runat="server" Font-Bold="true" CssClass="btn btn-success btn-md" Width="200px" NavigateUrl="~/guest/registrationProcess.aspx" style="border-radius:0px">REGISTER</asp:HyperLink>
+                               
                                
                                     <%--<button class="btn btn-primary btn-block" runat="server" style="width:300px" href="~/registrationProcess.aspx"><b> Register</b></button>--%>
           

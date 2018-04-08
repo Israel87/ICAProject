@@ -158,6 +158,37 @@
 
             <!--/.row-->
         </div>
+
+        
+                  <div class="col-lg-12">
+                    <h3 class="page-header">View payment history</h3>
+                </div>
+
+
+          <div class="row">
+                   <div class="col-md-12">
+                    <div class="panel panel-default"></div>
+                     
+
+                <table class="table table-responsive table-hover table-striped" id="datatable">
+
+                     <thead>
+                                <tr style="width: 700px">
+                                    <th>DESCRIPTION</th>
+                                    <th>TIME STAMP</th>
+                                    <th>RESPONSE</th>
+                                    <th>PAYMENT REFERENCE</th>
+                                    <%--<th>STATUS </th>--%>
+                                </tr>
+                            </thead>
+                               <tbody id ="t_body" runat="server">
+                              </tbody>
+                </table>
+
+       <br /><br /><br />
+
+                       </div>
+             </div>
     </form>
     <!--/.main-->
 

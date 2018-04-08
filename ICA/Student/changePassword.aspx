@@ -49,7 +49,7 @@
                             <asp:LinkButton ID="change" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();" OnClick="change_Click"> CHANGE</asp:LinkButton>--%>
                             
                        <%--     <asp:LinkButton ID="changePass" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();" OnClick="change_Click">CHANGE</asp:LinkButton>--%>
-                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();"><b>CHANGE</b></asp:LinkButton>
+                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8" Style="border-radius: 0px; text-align:center; width: 200px;" Font-Bold="true"  OnClientClick="return checkVal();"  OnClick="change_Click"><b>CHANGE</b></asp:LinkButton>
                     <%--        <asp:LinkButton ID="saveReg" runat="server" CssClass="btn btn-outline-rounded btn-info col-lg-8"  OnClientClick="return checkVal();" OnClick="change_Click"> PROCEED TO PAYMENT </asp:LinkButton>--%>
                             
                             <br /><br /><br /><br />

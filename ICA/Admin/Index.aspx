@@ -158,7 +158,7 @@
 		<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-                    <a href="Manage.aspx" style="text-decoration:none">
+                    <a href="RegisteredUsers.aspx" style="text-decoration:none">
                       <div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-registered color-blue"></em>
 							<div class="large"><span id="totalactivereg">0</span></div>

@@ -101,5 +101,104 @@ namespace ICA.Student
 
 
         }
+        protected void update_click(object sender, EventArgs args)
+        {
+            try {
+
+                //updateStudentData(address.Value, addressII.Value, phonenum.Value, nos.Value, deg.SelectedValue, graddate.Value, recentEmp.Value,
+                //   position.Value, certyear.Value, refFirstname.Value, refLastname.Value,refPosition.Value, refEmail.Value, refPhoneNumber.Value );
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+       // update student records
+       private bool updateStudentData(string _firstname, string _middlename, string _lastname, string _email, string _phonenumber, string _address, string _addressII,
+                string _nameofschool, string _certyear, string _recentEmp, string _position,  string _refFirstname, string _refLastname, string _refPosition, string _refEmail, string _refPhonenumber)
+        {
+            bool updateStudentRecord = false;
+            int biodataid = Convert.ToInt32(Session["active_biodata"]);
+
+
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(cs))
+                {
+                    using (OracleCommand cmd = new OracleCommand("UPDATESTUDENTDATA", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new OracleParameter("V_FIRSTNAME", OracleDbType.Varchar2, _firstname, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_MIDDLENAME", OracleDbType.Varchar2, _middlename, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_LASTNAME", OracleDbType.Varchar2, _lastname, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_EMAIL", OracleDbType.Varchar2, _email, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_PHONE", OracleDbType.Varchar2, _phonenumber, ParameterDirection.Input));
+
+                        
+                        cmd.Parameters.Add(new OracleParameter("V_STREETNAME", OracleDbType.Varchar2, _phonenumber, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_STREETADDRESSII", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
+
+
+                        cmd.Parameters.Add(new OracleParameter("V_NAMEOFSCHOOL", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_OTHERCERTANDYEAR", OracleDbType.Varchar2, _addressII, ParameterDirection.Input));
+
+
+                        cmd.Parameters.Add(new OracleParameter("MOSTRECENTEMPLOYER", OracleDbType.Varchar2, _recentEmp, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_POSITION", OracleDbType.Varchar2, _position, ParameterDirection.Input));
+
+
+                        cmd.Parameters.Add(new OracleParameter("V_REFFIRSTNAME", OracleDbType.Varchar2, _refFirstname, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_REFLASTNAME", OracleDbType.Varchar2, _refLastname, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_REFPOSITION", OracleDbType.Varchar2, _refPosition, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_REFEMAIL", OracleDbType.Varchar2, _refEmail, ParameterDirection.Input));
+                        cmd.Parameters.Add(new OracleParameter("V_REFPHONENUMBER", OracleDbType.Varchar2, _refPhonenumber, ParameterDirection.Input));
+        
+
+
+                        cmd.Parameters.Add(new OracleParameter("V_BIODATAID", OracleDbType.Int32, Convert.ToInt32(biodataid), ParameterDirection.Input));
+
+                        if (conn.State != ConnectionState.Open)
+                        {
+                            conn.Open();
+                        }
+                        try
+                        {
+
+                            cmd.ExecuteNonQuery();
+                            updateStudentRecord = true;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            //Response.Write("<script>alert('Successful');</script>");
+                        }
+
+                        if (FileUpload1.FileName.EndsWith("jpg"))
+                        {
+                            String fileName = Server.MapPath("~") + "/Content/Credentials/Passport/" + biodataid + ".jpg";
+                            FileUpload1.SaveAs(fileName);
+                        }
+                        else
+                        {
+                            //uploadNotificationI.Text = utilities.ShowError("Invalid File Format.");
+                        }
+                        uploadNotificationI.Text = utilities.ShowSuccess("Uploaded Successfully.");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return updateStudentRecord;
+
+
+        }
     }
+
+
+
 }
