@@ -14,29 +14,26 @@
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
 
-   
+            //$(document).ready(function () {
+            //    $('#datatable').DataTable({
+            //        "dom": 'Bfrtip',
+            //        "buttons": [
+            //            {
+
+            //                extend: 'excel',
+            //                text: 'Download Excel'
 
 
-            $(document).ready(function () {
-                $('#datatable').DataTable({
-                    "dom": 'Bfrtip',
-                    "buttons": [
-                        {
+            //            },
 
-                            extend: 'excel',
-                            text: 'Download Excel'
+            //        ],
+            //        "paging": true,
+            //        "ordering": true,
+            //        "info": false,
+            //        // "buttons": true,
 
-
-                        },
-
-                    ],
-                    "paging": true,
-                    "ordering": true,
-                    "info": false,
-                    // "buttons": true,
-
-                });
-            });
+            //    });
+            //});
 
 
 
@@ -47,7 +44,9 @@
 	<link href="../Member/css/datepicker3.css" rel="stylesheet">
 	<link href="../Member/css/styles.css" rel="stylesheet">
 
-            <script src="../Admin/js/jquery-1.11.1.min.js"></script>
+            <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+            <script src="../Corporate/js/MemberPayment.js"></script>
+             <script src="../Admin/js/jquery-1.11.1.min.js"></script>
             <link href="../Admin/css/jquery.dataTables.min.css" rel="stylesheet" />
          <%--   <script src="js/jquery.dataTables.min.js"></script>--%>
             <script src="../Admin/js/jquery.dataTables.min.js"></script>
@@ -68,9 +67,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder> 
-
-
-
 
 	
 </head>
@@ -151,7 +147,13 @@
 	<script src="../Member/js/easypiechart-data.js"></script>
 	<script src="../Member/js/bootstrap-datepicker.js"></script>
 	<script src="../Member/js/custom.js"></script>
-	<script>
+
+
+    <script src="../js/moment.js"></script>
+    <script src="/ICA/js/jquery.datetimepicker.min.js"></script>
+    <script src="/ICA/js/bootstrap-datetimepicker.min.js"></script>
+
+<%--	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -161,7 +163,7 @@
 	scaleFontColor: "#c5c7cc"
 	});
 };
-	</script>
+	</script>--%>
 		
 </body>
 </html>

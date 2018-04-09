@@ -150,22 +150,11 @@
                         <br />
                         <br />
                     </div>
-                </div>
-            </div>
-            <!--/.row-->
+                    <br />
+                    <br />
+                      <h3 class="page-header">View payment history</h3>
 
-            <!--/.row-->
-
-            <!--/.row-->
-        </div>
-
-        
-                  <div class="col-lg-12">
-                    <h3 class="page-header">View payment history</h3>
-                </div>
-
-
-          <div class="row">
+                       <div class="row">
                    <div class="col-md-12">
                     <div class="panel panel-default"></div>
                      
@@ -189,6 +178,20 @@
 
                        </div>
              </div>
+
+                </div>
+
+
+                           <div class="col-lg-12">
+                  
+                </div>
+
+
+       
+
+            </div>
+
+        </div>
     </form>
     <!--/.main-->
 

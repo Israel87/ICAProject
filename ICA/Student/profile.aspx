@@ -67,7 +67,7 @@
 
                              <div class="form-group">
                                     <label for="dob" class="col-lg-4 control-label">DATE OF BIRTH</label>
-                                    <input class="form-control col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="dob" disabled /><br /><br />
+                                    <input class="form-control _date col-lg-8" type="text" style="width: 200px; border: 2px solid #0094ff; width: 420px; border-radius: 0px" runat="server" id="dob"  /><br /><br />
                             </div>
 
                              <div class="form-group">
@@ -84,10 +84,7 @@
                                                 <option value="3">Seperated</option>
                                                 <option value="4">Divorced</option>
                                                 <option value="5">Widowed</option>
-
                                             </select>
-
-                                  
 
                                 <br /><br />
                             </div>
@@ -231,8 +228,6 @@
 
     </form>
          
-
-
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

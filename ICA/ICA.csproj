@@ -249,6 +249,7 @@
     <Content Include="Content\jquery.datetimepicker.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Corporate\changePassword.aspx" />
+    <Content Include="Corporate\js\MemberPayment.js" />
     <Content Include="Corporate\ManagePayment.aspx" />
     <Content Include="Corporate\overview.aspx" />
     <Content Include="Corporate\profile.aspx" />
@@ -439,6 +440,7 @@
     <Content Include="guest\studentmembership.aspx" />
     <Content Include="Student\changePassword.aspx" />
     <Content Include="Student\eCertificates.aspx" />
+    <Content Include="Student\js\MemberPayment.js" />
     <Content Include="Student\News.aspx" />
     <Content Include="Student\overview.aspx" />
     <Content Include="Student\ManagePayment.aspx" />

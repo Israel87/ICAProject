@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteCorporate.Master" AutoEventWireup="true" CodeBehind="ManagePayment.aspx.cs" Inherits="ICA.Corporate.ManagePayment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+  
      <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
             <div class="row">
                 <ol class="breadcrumb">
@@ -9,10 +10,9 @@
                     <li class="active"><b>Make payments & view payment history</b></li>
                 </ol>
                     <div class="col-lg-12">
-                    <h4 class="page-header">Make payments</h4>
+                    <h3 class="page-header">Make Payments</h3>
                 </div>
             </div>
-            <!--/.row-->
 
            
          <form runat="server">
@@ -58,11 +58,11 @@
 
 
                   <div class="col-lg-12">
-                    <h4 class="page-header"><b>View payment history</b></h4>
+                    <h3 class="page-header">View payment history</h3>
                 </div>
 
 
-             <div class="row">
+          <div class="row">
                    <div class="col-md-12">
                     <div class="panel panel-default"></div>
                      
@@ -88,27 +88,23 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                        </div>
              </div>
          </form>
-
-
-
     </div>
+
+
+
+<%--    <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+    <script src="../Member/js/MemberPayment.js"></script>
+        <script src="../Member/js/jquery-1.11.1.min.js"></script>--%>
+    
+    <script src="../js/moment.js"></script>
+    <script src="../js/jquery.datetimepicker.min.js"></script>
+  <%--  <script src="../js/navbar.js"></script>--%>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

@@ -6,11 +6,11 @@ function makePayment() {
 
     //log payment to db
 
-    var selectedItem = $('#paymentCatID option:selected').text().split('|  ₦ ');
+    var selectedItem = $('#head_paymentCatID option:selected').text().split('|  ₦ ');
     var payment_desc = selectedItem[0].trim();
     var amount = parseInt(selectedItem[1].trim());
-    var email = $('#emailDisplay').val();
-    var payItemID = $('#paymentCatID option:selected').val();
+    var email = $('#head_emailDisplay').val();
+    var payItemID = $('#head_paymentCatID option:selected').val();
     var response = '';
 
     //get transaction details by email

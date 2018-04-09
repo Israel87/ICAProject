@@ -4,14 +4,14 @@
 
 <html>
 <head runat="server">
-     <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %>  ICA Student View</title>
 
-       <script type="text/javascript">
-           function preventBack() { window.history.forward(); }
-           setTimeout("preventBack()", 0);
-           window.onunload = function () { null };
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
 
 
 
@@ -41,116 +41,127 @@
 
     </script>
 
-    	<link href="../Member/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../Member/css/font-awesome.min.css" rel="stylesheet">
-	<link href="../Member/css/datepicker3.css" rel="stylesheet">
-	<link href="../Member/css/styles.css" rel="stylesheet">
 
-            <script src="../Admin/js/jquery-1.11.1.min.js"></script>
-            <link href="../Admin/css/jquery.dataTables.min.css" rel="stylesheet" />
-         <%--   <script src="js/jquery.dataTables.min.js"></script>--%>
-            <script src="../Admin/js/jquery.dataTables.min.js"></script>
+    <link href="../Member/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Member/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Member/css/datepicker3.css" rel="stylesheet">
+    <link href="../Member/css/styles.css" rel="stylesheet">
 
-            <link href="../Admin/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-            <script src="../Admin/js/dataTables.bootstrap.min.js"></script>
 
-            <script src="../Admin/js/dataTables.buttons.min.js"></script>
-            <script src="../Admin/js/buttons.flash.min.js"></script>
-            <script src="../Admin/js/jszip.min.js"></script>
-            <script src="../Admin/js/pdfmake.min.js"></script>
-            <script src="../Admin/js/vfs_fonts.js"></script>
-            <script src="../Admin/js/buttons.html5.min.js"></script>
-            <script src="../Admin/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+    <script src="../Student/js/MemberPayment.js"></script>
+    <script src="../Admin/js/jquery-1.11.1.min.js"></script>
+    <link href="../Admin/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--   <script src="js/jquery.dataTables.min.js"></script>--%>
+    <script src="../Admin/js/jquery.dataTables.min.js"></script>
+
+    <link href="../Admin/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Admin/js/dataTables.bootstrap.min.js"></script>
+
+    <script src="../Admin/js/dataTables.buttons.min.js"></script>
+    <script src="../Admin/js/buttons.flash.min.js"></script>
+    <script src="../Admin/js/jszip.min.js"></script>
+    <script src="../Admin/js/pdfmake.min.js"></script>
+    <script src="../Admin/js/vfs_fonts.js"></script>
+    <script src="../Admin/js/buttons.html5.min.js"></script>
+    <script src="../Admin/js/buttons.print.min.js"></script>
 
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
-
-    </asp:ContentPlaceHolder> 
-	<link href="../Member/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../Member/css/font-awesome.min.css" rel="stylesheet">
-	<link href="../Member/css/datepicker3.css" rel="stylesheet">
-	<link href="../Member/css/styles.css" rel="stylesheet">
-	
+    </asp:ContentPlaceHolder>
+    <link href="../Member/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Member/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Member/css/datepicker3.css" rel="stylesheet">
+    <link href="../Member/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
-			<a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION&nbsp </span>STUDENT</a>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>INSTITUTE OF CREDIT ADMINISTRATION&nbsp </span>STUDENT</a>
 
-			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<div class="profile-sidebar">
-			<%--<div class="profile-userpic">
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
+            <%--<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>--%>
-            
-				<div style="text-align:center">
-                  
-                         <img src="../images/ica.png" style="width:180px; height:80px" />
-                  
-                   
-				</div>
-				<%--<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>--%>
-			
-			
-			<div class="clear"></div>
-		</div>
-		<div class="divider"></div>
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-		</form>
-		<ul class="nav menu">
-			<li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Overview</a></li>
-		    <li><a href="../Student/profile.aspx"><em class="fa fa-user-plus">&nbsp;</em> Profile</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="../Student/ManagePayment.aspx">
-						<span class="fa fa-arrow-right">&nbsp;</span> Make Payments
-					</a></li>
-					<%--<li><a class="" href="paymentHistory.aspx">
+
+            <div style="text-align: center">
+
+                <img src="../images/ica.png" style="width: 180px; height: 80px" />
+
+
+            </div>
+            <%--<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>--%>
+
+
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Overview</a></li>
+            <li><a href="../Student/profile.aspx"><em class="fa fa-user-plus">&nbsp;</em> Profile</a></li>
+            <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+                <em class="fa fa-navicon">&nbsp;</em> Payments <span data-toggle="collapse" class="icon pull-right"><em class="fa fa-plus"></em></span>
+            </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li><a class="" href="../Student/ManagePayment.aspx">
+                        <span class="fa fa-arrow-right">&nbsp;</span> Make Payments
+                    </a></li>
+                    <%--<li><a class="" href="paymentHistory.aspx">
 						<span class="fa fa-arrow-right">&nbsp;</span> Payment History
 					</a></li>--%>
-				
-				</ul>
-			</li>
+                </ul>
+            </li>
 
-     <%--       <li><a href="../Student/eCertificates.aspx"><em class="fa fa-calendar">&nbsp;</em> E-Certificates </a></li>
+            <%--       <li><a href="../Student/eCertificates.aspx"><em class="fa fa-calendar">&nbsp;</em> E-Certificates </a></li>
 			<li><a href="../Student/News.aspx"><em class="fa fa-bar-chart">&nbsp;</em>News & Downloads</a></li>--%>
-			<li><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
-		
-			<li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-		</ul>
-	</div>
+            <li><a href="changePassword.aspx"><em class="fa fa-toggle-off">&nbsp;</em> Change Password</a></li>
 
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+            <li><a href="../logout.aspx"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 
 
-    	<%--<script src="../Member/js/jquery-1.11.1.min.js"></script>--%>
-	<script src="../Member/js/bootstrap.min.js"></script>
-	<script src="../Member/js/chart.min.js"></script>
-	<script src="../Member/js/chart-data.js"></script>
-  
-	<script src="../Member/js/easypiechart.js"></script>
-	<script src="../Member/js/easypiechart-data.js"></script>
-	<script src="../Member/js/bootstrap-datepicker.js"></script>
-	<script src="../Member/js/custom.js"></script>
-	<script>
+
+    <%-- <script src="../Member/js/jquery-1.11.1.min.js"></script>--%>
+    <script src="../Member/js/bootstrap.min.js"></script>
+    <script src="../Member/js/chart.min.js"></script>
+    <script src="../Member/js/chart-data.js"></script>
+
+    <script src="../Member/js/easypiechart.js"></script>
+    <script src="../Member/js/easypiechart-data.js"></script>
+    <script src="../Member/js/bootstrap-datepicker.js"></script>
+    <script src="../Member/js/custom.js"></script>
+
+    <script src="../js/moment.js"></script>
+
+    <script src="/ICA/js/jquery.datetimepicker.min.js"></script>
+    <script src="/ICA/js/bootstrap-datetimepicker.min.js"></script>
+
+    <%--	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -160,7 +171,6 @@
 	scaleFontColor: "#c5c7cc"
 	});
 };
-	</script>
-		
+	</script>--%>
 </body>
 </html>
