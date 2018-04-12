@@ -16,7 +16,7 @@ function makePayment() {
     //get transaction details by email
     getInfoByEmail(email);
 
-    //log paymnt to db
+    //log payment to db
     logPaymentInfoDB("{'biodataid': '" + userinfo.Table[0].BIODATAID + "', 'description': '" + payment_desc + "', 'response': '" + response + "', 'payItemId': '" + payItemID + "', 'payRef': '" + rnd + "', 'status': 0 }");
 
     getpaidSetup({
@@ -54,7 +54,7 @@ function makePayment() {
                 $('#transRefID').val() = flw_ref;
 
                 //update payment status
-                updatePaymentInfo(activepayId, 1, "Successfull");
+                updatePaymentInfo(activepayId, 1, "Successful");
 
                 // redirect to a success page
 
